@@ -1,10 +1,12 @@
+import Aboutus from "./aboutus"
 
 
 const Page = () => {
   return (
-    <div>
-      <h1 className='text-white'>Main Page</h1>
-    </div>
+    <>
+    <Aboutus/>
+    </>
+   
   )
 }
 
