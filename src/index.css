@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-[#000000]  ;
+  @apply bg-[#000000] text-amber-50 ;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/lufga/LufgaRegular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-lufga {
+  font-family: 'Lufga', sans-serif;
 }
