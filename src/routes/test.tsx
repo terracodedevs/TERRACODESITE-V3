@@ -10,8 +10,8 @@ export const Route = createFileRoute('/test')({
 function RouteComponent() {
   return (
   <div>
-    <Navbar/>
-    <ProcessCard/>
+    {/* <Navbar/> */}
+    {/* <ProcessCard/> */}
     <Page/>
   </div>
   )

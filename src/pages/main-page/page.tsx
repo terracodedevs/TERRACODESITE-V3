@@ -1,10 +1,18 @@
+import Aboutus from "./aboutus"
+import FandQ from "./F&Q"
+import WhatWeDoBest from "./we-do-best"
+import Workwithus from "./Work-with-us"
 
 
 const Page = () => {
   return (
-    <div>
-      <h1 className='text-white'>Main Page</h1>
-    </div>
+    <>
+    {/* <Aboutus/> */}
+    {/* <Workwithus /> */}
+    {/* <WhatWeDoBest /> */}
+    <FandQ />
+    </>
+   
   )
 }
 
