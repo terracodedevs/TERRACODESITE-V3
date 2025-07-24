@@ -14,3 +14,11 @@ body {
 .font-lufga {
   font-family: 'Lufga', sans-serif;
 }
+
+.not-container {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

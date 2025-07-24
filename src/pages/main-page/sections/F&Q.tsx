@@ -88,7 +88,7 @@ const FandQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-4">
+    <div className="min-h-screen bg-black text-white py-4 font-lufga">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Side - FAQ */}

@@ -58,7 +58,7 @@ const WorkWithUs: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white font-lufga">
       <div className="grid grid-cols-1 lg:grid-cols-2 py-4 gap-8 mx-auto">
         {/* Left Column */}
         <div className="flex flex-col items-start justify-start p-4 space-y-6">
