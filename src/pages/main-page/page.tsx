@@ -1,5 +1,6 @@
 
 import Aboutus from "./sections/aboutus"
+import Awards from "./sections/awards"
 import FandQ from "./sections/F&Q"
 import OurProcess from "./sections/ourProcess"
 import WhatWeDoBest from "./sections/we-do-best"
@@ -13,6 +14,7 @@ const Page = () => {
     <WhatWeDoBest/>
     <WorkWithUs/>
     <OurProcess/>
+    <Awards/>
     <FandQ />
     </>
    
