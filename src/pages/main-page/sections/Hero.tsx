@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
 
   return (
     
-    <div className="relative w-full min-h-screen h-screen overflow-hidden font-lufga">
+    <div className="relative w-full  overflow-hidden font-lufga">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -45,11 +45,11 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70 z-10" />
-      <div className="absolute inset-0  z-30 mx-10 mt-10">
+      <div className="relative inset-0  z-30  mt-10">
        <Navbar/> 
        </div>
       {/* Content */}
-      <div className="relative z-20 grid grid-cols-4 gap-4 items-center justify-center min-h-screen h-full px-4 py-8">
+      <div className="relative z-20 grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
                 <LucideLightbulb className="w-10 h-10 text-[#FDA10A] mr-4" />
