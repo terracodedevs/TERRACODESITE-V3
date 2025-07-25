@@ -5,6 +5,8 @@ import FandQ from "./sections/F&Q"
 import OurProcess from "./sections/ourProcess"
 import WhatWeDoBest from "./sections/we-do-best"
 import WorkWithUs from "./sections/Work-with-us"
+import OurClients from "./sections/ourClients"
+
 
 
 
@@ -15,8 +17,9 @@ const Page = () => {
     <WhatWeDoBest/>
     <WorkWithUs/>
     <OurProcess/>
+    <OurClients/>
+    <Articles />
     <Awards/>
-     <Articles />
     <FandQ />
     </>
    

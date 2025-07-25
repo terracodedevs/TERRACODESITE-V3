@@ -2,7 +2,7 @@ import { ScrollingEffect, type ScrollingEffectRef } from "@/components/scrollEff
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
-export default function Awards() {
+export default function OurClients() {
   const scrollRef = useRef<ScrollingEffectRef>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -30,45 +30,22 @@ export default function Awards() {
     setTimeout(updateScrollState, 100);
   }, []);
 
-  const awards = [
+  const clients =[
     {
-      id: 1,
-      title: "Best Research",
-      date: "January 2025",
-      image: "image 33.png"
-    },
-    {
-      id: 2,
-      title: "Innovation Award",
-      date: "March 2024",
-      image: "image 33.png"
-    },
-    {
-      id: 3,
-      title: "Excellence in Technology",
-      date: "June 2023",
-      image: "image 33.png"
-    },
-    {
-      id: 3,
-      title: "Excellence in Technology",
-      date: "June 2023",
-      image: "image 33.png"
-    },
-    {
-      id: 3,
-      title: "Excellence in Technology",
-      date: "June 2023",
-      image: "image 33.png"
+      name:"Nomin",
+      image: "nomin.png",
+      position: "CEO",
+      comment: "Terracode's team transformed our operations with their AI solutions. Their expertise is unmatched.",
+      rate: 5
     }
-  ];
+  ]
 
   return (
     <div className="grid grid-cols-3 gap-4 p-4 font-lufga">
       <div className=" p-4 rounded flex flex-col justify-between ">
         <div className="flex flex-col">
-            <h1 className="text-5xl font-extralight mb-4 text-[#FDA10A]">Awards</h1>
-            <p className="text-xl font-extralight text-neutral-400">We’re committed to excellence - and we’ve got the credentials to prove it.</p>
+            <h1 className="text-6xl font-extralight mb-4 text-[#FDA10A]">Our Client Success</h1>
+            <p className="text-xl font-extralight text-neutral-400">Hear from businesses that have transformed their operations with our AI-driven solutions.</p>
 
         </div>
         <div className="flex flex-row items-center  mt-4 gap-4">
@@ -101,19 +78,24 @@ export default function Awards() {
               scrollSpeed={3000}
               showControls={false}
               gap={6}>
-            <div className="flex flex-row gap-4">
-                {awards.map((award) => (
-                    <div key={award.id} className="group relative items-center justify-center min-w-[424px] h-[294px] rounded-3xl overflow-hidden">
-                        <div className="w-full h-full">
-                            <img className="h-full w-full object-cover" alt={award.title} src={award.image} />
-                        </div>
-                        <div className="absolute inset-0 p-4 bg-gradient-to-t from-black to-transparent"></div>
-                        <div className="absolute inset-0 flex flex-col items-start justify-end p-4 gap-3">
-                            <h1 className="text-3xl font-extralight text-white">{award.title}</h1>
-                            <div className="rounded-[56px] bg-white flex flex-row items-center justify-center py-1 px-4 gap-4 text-center text-base text-gray">
-                                <div className="w-[15px] relative rounded-[50%] bg-orange-600 h-[15px]" />
-                                <div className="relative tracking-[0.04px] leading-[30px] text-slate-400">Issued: {award.date}</div>
+            <div className="flex flex-row gap-4 font-lufga">
+                {clients.map((client) => (
+                    <div  className="group relative items-center justify-center p-6 min-w-[424px] h-[294px] rounded-3xl bg-[#212121] overflow-hidden">
+                        <div className="flex flex-row  items-center justify-start gap-4 ">
+                            <img className="w-10 h-10 rounded-full object-cover "  src={client.image} />
+                            <div className="flex flex-col items-start justify-start">
+                                <h2 className="text-xl  text-[#fda10a]">{client.name}</h2>
+                                <p className="text-sm text-neutral-400">{client.position}</p>
                             </div>
+                            
+                        </div>
+                        {/* <div className="absolute inset-0 p-4 bg-gradient-to-t from-black to-transparent"></div> */}
+                        <div className="absolute inset-0 flex flex-col items-start justify-end p-4 gap-3">
+                            <h1 className="text-3xl font-extralight text-white">{client.position}</h1>
+                            {/* <div className="rounded-[56px] bg-white flex flex-row items-center justify-center py-1 px-4 gap-4 text-center text-base text-gray">
+                                <div className="w-[15px] relative rounded-[50%] bg-orange-600 h-[15px]" />
+                                <div className="relative tracking-[0.04px] leading-[30px] text-slate-400">Issued: {client.comment}</div>
+                            </div> */}
                         </div>
                     </div>
                 ))}
