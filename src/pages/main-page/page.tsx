@@ -1,18 +1,23 @@
-import Aboutus from "./aboutus"
 import Articles from "./Artical"
-import FandQ from "./F&Q"
-import WhatWeDoBest from "./we-do-best"
-import Workwithus from "./Work-with-us"
+import Aboutus from "./sections/aboutus"
+import Awards from "./sections/awards"
+import FandQ from "./sections/F&Q"
+import OurProcess from "./sections/ourProcess"
+import WhatWeDoBest from "./sections/we-do-best"
+import WorkWithUs from "./sections/Work-with-us"
+
 
 
 const Page = () => {
   return (
     <>
-    {/* <Aboutus/> */}
-    {/* <Workwithus /> */}
-    {/* <WhatWeDoBest /> */}
-    {/* <FandQ /> */}
-    <Articles />
+    <Aboutus/>
+    <WhatWeDoBest/>
+    <WorkWithUs/>
+    <OurProcess/>
+    <Awards/>
+     <Articles />
+    <FandQ />
     </>
    
   )
