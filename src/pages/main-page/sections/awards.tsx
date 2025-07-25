@@ -64,8 +64,9 @@ export default function Awards() {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-4 font-lufga">
-      <div className=" p-4 rounded flex flex-col justify-between ">
+
+    <div className="grid grid-cols-3 gap-4 p-4 font-lufga mt-10 xl:mt-20 font-lufga">
+      <div className=" p-4 rounded flex flex-col justify-between">
         <div className="flex flex-col">
             <h1 className="text-5xl font-extralight mb-4 text-[#FDA10A]">Awards</h1>
             <p className="text-xl font-extralight text-neutral-400">We’re committed to excellence - and we’ve got the credentials to prove it.</p>

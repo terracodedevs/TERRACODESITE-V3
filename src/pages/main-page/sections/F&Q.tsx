@@ -88,8 +88,8 @@ const FandQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-4 font-lufga">
-      <div className="max-w-7xl mx-auto">
+    <div className=" bg-black text-white py-4 font-lufga my-10 xl:my-20">
+      <div className="max-w-8xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Side - FAQ */}
           <div className="space-y-6">
@@ -108,13 +108,18 @@ const FandQ = () => {
                   onMouseLeave={handleMouseLeave}    
                 >
                   <div 
-                    className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-500 cursor-pointer border-2 ${
+                    className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-500 cursor-pointer border-2 relative overflow-hidden group ${
                       expandedSection === section.id 
-                         ? 'border-y-[#f56d04] border-transparent pb-6 animate-bounce-gentle ' 
+                         ? 'border-transparent pb-6 animate-bounce-gentle ' 
                     : 'border-transparent'
                     }`}
                     onClick={() => handleSectionClick(section.id)}
                   >
+                    {/* Top gradient line on hover */}
+                    <div className="absolute top-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+                    
+                    {/* Bottom gradient line on hover */}
+                    <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                     <div className="flex items-center justify-between px-4 lg:px-6 py-4 lg:py-6">
                       <div className="flex items-center gap-3">
                         <div className="rounded-full bg-[#f56d04] h-3 w-3 lg:h-4 lg:w-4 flex-shrink-0"></div>
@@ -123,7 +128,7 @@ const FandQ = () => {
                         </p>
                       </div>
                       <ChevronRight 
-                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#f56d04] transition-all duration-500 flex-shrink-0 ${
+                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#F56D04] transition-all duration-500 flex-shrink-0 ${
                           expandedSection === section.id ? 'rotate-90 scale-110' : 'hover:scale-110'
                         }`}
                       />

@@ -58,7 +58,7 @@ const WorkWithUs: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-lufga">
+    <div className=" bg-black text-white font-lufga mt-10 xl:mt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 py-4 gap-8 mx-auto">
         {/* Left Column */}
         <div className="flex flex-col items-start justify-start p-4 space-y-6">
@@ -67,7 +67,7 @@ const WorkWithUs: React.FC = () => {
             <span className="text-[#FDA10A]">TerraCode</span>
           </h1>
           
-          <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light">
+          <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-xl font-light">
             Tech expertise. Human-centered process.
           </p>
           
@@ -94,13 +94,18 @@ const WorkWithUs: React.FC = () => {
               onMouseLeave={handleMouseLeave}    
             >
               <div 
-                className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-500 cursor-pointer border-2 ${
+                className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-500 cursor-pointer border-2 relative overflow-hidden group ${
                   expandedSection === section.id 
-                    ? 'border-y-[#f56d04] border-transparent pb-6 animate-bounce-gentle ' 
+                    ? 'border-transparent pb-6 animate-bounce-gentle ' 
                     : 'border-transparent'
                 }`}
                 onClick={() => handleSectionClick(section.id)}
               >
+                {/* Top gradient line on hover */}
+                <div className="absolute top-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+                
+                {/* Bottom gradient line on hover */}
+                <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="flex items-center justify-between px-4 lg:px-6 py-4 lg:py-6">
                   <div className="flex items-center gap-3">
                     <div className="rounded-full bg-[#f56d04] h-3 w-3 lg:h-4 lg:w-4 flex-shrink-0"></div>

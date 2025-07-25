@@ -2,18 +2,18 @@ import { Link } from '@tanstack/react-router'
 
 const Aboutus = () => {
   return (
-     <div className=" w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#1A1A1A] font-lufga ">
-      <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto">
+     <div className=" w-screen relative left-1/2 right-1/2 -ml-[51vw] -mr-[50vw] bg-[#1A1A1A] font-lufga mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto ">
         <div className="flex flex-col  items-start justify-start p-4 md:space-y-5">
             <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>
-            <p className="text-[#A4A4A4] mt-2 text-lg md:text-2xl">
+            <p className="text-[#A4A4A4] text-lg md:text-xl">
               We’re Your AI-Powered Innovation Partners.
             </p>
             <p className="text-white mt-2 text-2xl md:text-3xl">
               We are TerraCode, a future-focused development partner crafting intelligent digital products. Specializing in AI-integrated software, we help startups and enterprises build scalable, user-first solutions that drive impact.
             </p>
             <Link to="/about">
-              <h1 className="text-lg md:text-2xl text-[#f56d04] mt-4 md:mt-10 hover:text-[#FDA10A]">
+              <h1 className="text-lg md:text-2xl text-[#f56d04] mt-4 hover:text-[#FDA10A]">
                 Learn More →
               </h1>
             </Link>
@@ -22,61 +22,61 @@ const Aboutus = () => {
           <div className='bg-gray-700 rounded-4xl md:p-2 m-2 '>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2 md:text-2xl'>Guided by data.</p>
+                <p className='p-2 md:text-xl'>Guided by data.</p>
             </div>
           </div>
           <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2  md:text-2xl'>Driven by curiosity.</p>
+                <p className='p-2  md:text-xl'>Driven by curiosity.</p>
             </div>
           </div>
           <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2 text-lg md:text-2xl'>Obsessed with impact.</p>
+                <p className='p-2 text-lg md:text-xl'>Obsessed with impact.</p>
             </div>
           </div>
             <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                    <p className='p-2 text-lg md:text-2xl'>Empowered</p>
+                    <p className='p-2 text-lg md:text-xl'>Empowered</p>
                 </div>
             </div>
              <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                    <p className='p-2 text-lg md:text-2xl'>Collaboration.</p>
+                    <p className='p-2 text-lg md:text-xl'>Collaboration.</p>
                 </div>
             </div>
             <div className='bg-gray-700 rounded-4xl md:p-2 m-2'> 
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2 text-lg md:text-2xl'>Innovative solutions.</p>
+                <p className='p-2 text-lg md:text-xl'>Innovative solutions.</p>
             </div>
           </div>
           <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2 text-lg md:text-2xl'>Focused on user experience.</p>
+                <p className='p-2 text-lg md:text-xl'>Focused on user experience.</p>
             </div>
           </div>
           <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                <p className='p-2 text-lg md:text-2xl'>User experience.</p>
+                <p className='p-2 text-lg md:text-xl'>User experience.</p>
             </div>
           </div>
             <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                    <p className='p-2 text-lg md:text-2xl'>Inspired by creativity.</p>
+                    <p className='p-2 text-lg md:text-xl'>Inspired by creativity.</p>
                 </div>
             </div>
              <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
-                    <p className='p-2 text-lg md:text-2xl'>Committed to excellence.</p>
+                    <p className='p-2 text-lg md:text-xl'>Committed to excellence.</p>
                 </div>
             </div>
         </div>
