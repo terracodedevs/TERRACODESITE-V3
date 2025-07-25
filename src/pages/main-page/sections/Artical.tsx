@@ -19,7 +19,7 @@ const Articles = () => {
       description: 'Discover how AI is accelerating workflows, reducing bugs, and transforming the developer experience - and what it means for your next project.',
       likes: 92,
       comments: 6,
-      image: '',
+      image: '/Mask group.png',
     },
     {
       id: '2',
@@ -28,7 +28,7 @@ const Articles = () => {
       description: 'As automation rises, human-centered design matters more than ever. Here\'s how we balance AI logic with user empathy.',
       likes: 192,
       comments: 4,
-      image: ''
+      image: '/Mask group (1).png'
     },
     {
       id: '3',
@@ -37,7 +37,7 @@ const Articles = () => {
       description: 'Diversity of thought and background in design teams fosters creativity and innovation, leading to better user experiences.',
       likes: 220,
       comments: 4,
-      image: ''
+      image: '/Mask group (2).png'
     },
     {
       id: '4',
@@ -46,7 +46,7 @@ const Articles = () => {
       description: 'Exploring eco-friendly materials and methods in design to create a more sustainable future for industry and planet.',
       likes: 180,
       comments: 4,
-      image: ''
+      image: '/Mask group (3).png'
     },
     {
       id: '5',
@@ -55,7 +55,7 @@ const Articles = () => {
       description: 'As we innovate, it\'s crucial to ensure that our designs are inclusive and accessible to all users, regardless of ability.',
       likes: 210,
       comments: 4,
-      image: ''
+      image: '/Mask group (4).png'
     }
   ];
 
@@ -79,33 +79,35 @@ const Articles = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* First Article - spans 2 columns */}
             <div className="md:col-span-2 bg-[#1A1A1A] rounded-xl p-8 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+              <img src={articles[0].image} alt={articles[0].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
               {/* Date Badge */}
               <div className="absolute top-6 left-6">
-                <span className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                <span className="bg-white text-black px-8 py-2 rounded-full text-xl font-medium flex items-center gap-2">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                   {articles[0].date}
+
                 </span>
               </div>
               
               {/* Content */}
               <div className="z-10">
                 <h3 className="text-2xl md:text-4xl font-light mb-4 leading-tight">{articles[0].title}</h3>
-                <p className="text-gray-400 md:text-xl mb-6">{articles[0].description}</p>
+                <p className=" md:text-xl mb-6">{articles[0].description}</p>
                 
                 {/* Stats */}
-                <div className="flex  items-center gap-6 text-gray-400">
-                  <div className="flex items-center gap-2 border-2 border-gray-600 px-3 py-1 rounded-full">
+                <div className="flex  items-center gap-6 ">
+                  <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
                     <Heart className="w-5 h-5" />
                     <span className="font-medium">{articles[0].likes}</span>
                   </div>
-                  <div className="flex items-center gap-2 border-2 border-gray-600 px-3 py-1 rounded-full">
+                  <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
                     <MessageCircle className="w-5 h-5" />
                     <span className="font-medium">{articles[0].comments}k</span>
                   </div>
                   {/* Read More Arrow */}
                   <div className="ml-auto">
-                    <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                      <ArrowRight className="w-5 h-5 text-white" />
+                    <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
+                      <ArrowRight className="w-5 h-5 text-[#f56d04]" />
                     </div>
                   </div>
                 </div>
@@ -114,9 +116,10 @@ const Articles = () => {
 
             {/* Second Article - spans 1 column */}
             <div className="bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+              <img src={articles[1].image} alt={articles[1].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
               {/* Date Badge */}
               <div className="absolute top-4 left-4">
-                <span className="bg-white text-black px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
+                <span className="bg-white text-black px-6 py-1.5 rounded-full  font-medium flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
                   {articles[1].date}
                 </span>
@@ -125,23 +128,23 @@ const Articles = () => {
               {/* Content */}
               <div className="z-10">
                 <h3 className="text-2xl md:text-4xl font-light mb-4">{articles[1].title}</h3>
-                <p className="text-gray-400 md:text-xl mb-6">{articles[1].description}</p>
+                <p className=" md:text-xl mb-6">{articles[1].description}</p>
                 
                 {/* Stats */}
                 <div className="flex  items-center justify-between">
-                  <div className="flex flex-col lg:flex-row items-center gap-4 text-gray-500 text-sm">
-                    <div className="flex items-center gap-1.5 border-2 border-gray-600 px-3 py-1 rounded-full ">
+                  <div className="flex flex-col lg:flex-row items-center gap-4  text-sm">
+                    <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full ">
                       <Heart className="w-4 h-4" />
                       <span>{articles[1].likes}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 border-2 border-gray-600 px-3 py-1 rounded-full">
+                    <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
                       <MessageCircle className="w-4 h-4" />
                       <span>{articles[1].comments}k</span>
                     </div>
                   </div>
                   {/* Read More Arrow */}
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                    <ArrowRight className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
+                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
                   </div>
                 </div>
               </div>
@@ -152,9 +155,10 @@ const Articles = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
             {articles.slice(2, 5).map((article) => (
               <div key={article.id} className="bg-[#1A1A1A] h-1/2 rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+                <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white text-black px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
+                  <span className="bg-white text-black px-6 py-1.5 rounded-full font-medium flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
                     {article.date}
                   </span>
@@ -163,24 +167,24 @@ const Articles = () => {
                 {/* Content */}
                 <div className="z-10">
                   <h3 className="text-2xl md:text-4xl font-light mb-4">{article.title}</h3>
-                  <p className="text-gray-400 md:text-xl mb-6">{article.description}</p>
+                  <p className=" md:text-xl mb-6">{article.description}</p>
                   
                   {/* Stats */}
                   <div className="flex items-center justify-between ">
-                    <div className="flex flex-col lg:flex-row  items-center gap-4 text-gray-500 text-sm">
-                      <div className="flex items-center gap-1.5 border-2 border-gray-600 px-3 py-1 rounded-full">
+                    <div className="flex flex-col lg:flex-row  items-center gap-4  text-sm">
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
                         <Heart className="w-4 h-4" />
                         <span>{article.likes}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 border-2 border-gray-600 px-3 py-1 rounded-full">
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
                         <MessageCircle className="w-4 h-4" />
                         <span>{article.comments}k</span>
                       </div>
                     </div>
                     {/* Read More Arrow */}
-                    <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
-                      <ArrowRight className="w-4 h-4 text-white" />
-                    </div>
+                    <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
+                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
+                  </div>
                   </div>
                 </div>
               </div>

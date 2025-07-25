@@ -68,7 +68,7 @@ export default function WhatWeDoBest() {
                   key={i}
                   className="flex items-center gap-4 bg-neutral-800 text-[#8E8E8E] group-hover:text-[#ffff] text-lg px-6 py-1 rounded-full transition-colors duration-800"
                 >
-                  <div className="rounded-full bg-[#F56D04] group-hover:bg-[#f56d04] h-4 w-4 transition-colors duration-800"/>{tag}
+                  <div className="rounded-full bg-[#A75516] group-hover:bg-[#f56d04] h-4 w-4 transition-colors duration-800"/>{tag}
                 </span>
               ))}
             </div>
