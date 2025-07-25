@@ -6,6 +6,7 @@ import OurProcess from "./sections/ourProcess"
 import WhatWeDoBest from "./sections/we-do-best"
 import WorkWithUs from "./sections/Work-with-us"
 import OurClients from "./sections/ourClients"
+import HeroSection from "./sections/Hero"
 
 
 
@@ -13,6 +14,7 @@ import OurClients from "./sections/ourClients"
 const Page = () => {
   return (
     <>
+    <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>
     <WorkWithUs/>
