@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router'
 
 const Aboutus = () => {
   return (
-     <div className="bg-[#1A1A1A] w-screen absolute left-0 ">
+     <div className=" w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#1A1A1A] font-lufga ">
       <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto">
         <div className="flex flex-col  items-start justify-start p-4 md:space-y-5">
             <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>

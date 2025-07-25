@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-[#000000] ;
+  @apply bg-[#000000] text-amber-50 ;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('/lufga/LufgaLight.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.font-lufga {
+  font-family: 'Lufga', sans-serif;
+}
+
+.not-container {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hide scrollbar for all elements with this class */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
