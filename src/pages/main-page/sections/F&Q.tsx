@@ -88,8 +88,8 @@ const FandQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-4 font-lufga">
-      <div className="max-w-7xl mx-auto">
+    <div className=" bg-black text-white py-4 font-lufga my-10 xl:my-20">
+      <div className="max-w-8xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Side - FAQ */}
           <div className="space-y-6">
@@ -128,7 +128,7 @@ const FandQ = () => {
                         </p>
                       </div>
                       <ChevronRight 
-                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#f56d04] transition-all duration-500 flex-shrink-0 ${
+                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#F56D04] transition-all duration-500 flex-shrink-0 ${
                           expandedSection === section.id ? 'rotate-90 scale-110' : 'hover:scale-110'
                         }`}
                       />
