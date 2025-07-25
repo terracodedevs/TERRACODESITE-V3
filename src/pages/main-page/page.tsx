@@ -16,7 +16,7 @@ const Page = () => {
     <WorkWithUs/>
     <OurProcess/>
     <Awards/>
-     <Articles />
+    <Articles />
     <FandQ />
     </>
    
