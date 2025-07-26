@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
                 e.currentTarget.playbackRate = 0.5; // 75% speed
             }}
       >
-        <source src="/Hero1.webp" type="video/webp" />
+        <source src="/Hero.mp4" type="video/mp4" />
         <source src="/Hero.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
