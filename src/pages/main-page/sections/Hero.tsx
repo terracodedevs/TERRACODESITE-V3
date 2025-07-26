@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
                 e.currentTarget.playbackRate = 0.5; // 75% speed
             }}
       >
-        <source src="/Hero.mp4" type="video/mp4" />
+        <source src="/Hero1.webp" type="video/webp" />
         <source src="/Hero.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
@@ -78,7 +78,7 @@ const HeroSection: React.FC = () => {
       
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/80 z-10" />
+      <div className="absolute inset-0 bg-black/75 z-10" />
       <div className="relative inset-0  z-30  mt-10">
        <Navbar/> 
        </div>
