@@ -99,8 +99,9 @@ export default function Awards() {
             <ScrollingEffect 
               ref={scrollRef}
               autoScroll={false}
-              scrollSpeed={3000}
+              scrollSpeed={300}
               showControls={false}
+               pauseOnHover={true}
               gap={6}>
             <div className="flex flex-row gap-4">
                 {awards.map((award) => (

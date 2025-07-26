@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
 
 // Add this interface for the ref
 export interface ScrollingEffectRef {
@@ -9,6 +9,8 @@ export interface ScrollingEffectRef {
   canScrollLeft: boolean;
   canScrollRight: boolean;
   getScrollState: () => { canScrollLeft: boolean; canScrollRight: boolean };
+  toggleAutoScroll: () => void;
+  setAutoScroll: (enabled: boolean) => void;
 }
 
 // Card interface
@@ -59,26 +61,31 @@ interface ScrollingEffectProps {
   scrollSpeed?: number;
   showControls?: boolean;
   gap?: number;
+  pauseOnHover?: boolean;
 }
 
 export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectProps>(({
   children,
   cards = [],
-//   autoScroll = true,
+  autoScroll = false,
+  scrollSpeed = 3000,
   showControls = true,
-  gap = 6
+  gap = 6,
+  pauseOnHover = true
 }, ref) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-//   const [isAutoScrolling, setIsAutoScrolling] = useState(autoScroll);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(autoScroll);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Check scroll position to enable/disable navigation buttons
   const checkScrollPosition = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      const newCanScrollLeft = scrollLeft > 10; // Add small threshold
-      const newCanScrollRight = scrollLeft < scrollWidth - clientWidth - 10; // Add small threshold
+      const newCanScrollLeft = scrollLeft > 10;
+      const newCanScrollRight = scrollLeft < scrollWidth - clientWidth - 10;
       
       setCanScrollLeft(newCanScrollLeft);
       setCanScrollRight(newCanScrollRight);
@@ -88,20 +95,55 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
   // Manual scroll functions
   const scrollLeft = () => {
     if (scrollRef.current) {
-      const scrollAmount = 440; // 424px + gap
+      const scrollAmount = 200;
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      // Update scroll state after animation
       setTimeout(checkScrollPosition, 300);
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      const scrollAmount = 440; // 424px + gap
+      const scrollAmount = 200;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      // Update scroll state after animation
       setTimeout(checkScrollPosition, 300);
     }
+  };
+
+  // Add these missing functions
+  const handleMouseEnter = () => {
+    if (pauseOnHover && isAutoScrolling) {
+      setIsPaused(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (pauseOnHover && isAutoScrolling) {
+      setIsPaused(false);
+    }
+  };
+
+  // Improved auto scroll function for continuous movement
+  const autoScrollNext = () => {
+    if (scrollRef.current && !isPaused) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const scrollAmount = 1;
+      
+      if (scrollLeft >= scrollWidth - clientWidth - 1) {
+        scrollRef.current.scrollTo({ left: 0, behavior: 'instant' });
+      } else {
+        scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'auto' });
+      }
+    }
+  };
+
+  // Toggle auto scroll
+  const toggleAutoScroll = () => {
+    setIsAutoScrolling(!isAutoScrolling);
+  };
+
+  // Set auto scroll programmatically
+  const setAutoScrollState = (enabled: boolean) => {
+    setIsAutoScrolling(enabled);
   };
 
   // Get current scroll state
@@ -116,13 +158,52 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
     scrollRight,
     canScrollLeft,
     canScrollRight,
-    getScrollState
+    getScrollState,
+    toggleAutoScroll,
+    setAutoScroll: setAutoScrollState
   }));
 
-  // Toggle auto scroll
-//   const toggleAutoScroll = () => {
-//     setIsAutoScrolling(!isAutoScrolling);
-//   };
+  // Modified auto scroll effect for continuous movement
+  useEffect(() => {
+    if (isAutoScrolling && scrollSpeed > 0) {
+      // Use much faster interval for smooth continuous scroll
+      intervalRef.current = setInterval(autoScrollNext, 50); // 50ms for smooth movement
+      
+      return () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+      };
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    }
+  }, [isAutoScrolling, scrollSpeed, isPaused]);
+
+  // Alternative: CSS-based infinite scroll approach
+  const duplicateContent = () => {
+    if (children) {
+      return (
+        <>
+          {children}
+          {children} {/* Duplicate for seamless loop */}
+        </>
+      );
+    }
+    
+    return (
+      <>
+        {cards.map((card) => (
+          <Card key={card.id} card={card} />
+        ))}
+        {cards.map((card) => (
+          <Card key={`duplicate-${card.id}`} card={card} />
+        ))}
+      </>
+    );
+  };
 
   // Setup scroll listener and initial check
   useEffect(() => {
@@ -130,7 +211,6 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
     if (scrollElement) {
       scrollElement.addEventListener('scroll', checkScrollPosition);
       
-      // Initial check with a small delay to ensure DOM is ready
       const timeoutId = setTimeout(checkScrollPosition, 100);
       
       return () => {
@@ -138,7 +218,16 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
         clearTimeout(timeoutId);
       };
     }
-  }, [children, cards]); // Re-run when content changes
+  }, [children, cards]);
+
+  // Cleanup interval on unmount
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="relative w-full">
@@ -161,6 +250,20 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
               <ChevronRight size={20} />
             </button>
           </div>
+          
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleAutoScroll}
+              className={`p-2 rounded-lg transition-colors ${
+                isAutoScrolling 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+              title={isAutoScrolling ? 'Pause auto scroll' : 'Start auto scroll'}
+            >
+              {isAutoScrolling ? <Pause size={20} /> : <Play size={20} />}
+            </button>
+          </div>
         </div>
       )}
 
@@ -169,19 +272,21 @@ export const ScrollingEffect = forwardRef<ScrollingEffectRef, ScrollingEffectPro
         ref={scrollRef}
         className={`flex overflow-x-auto gap-${gap} pb-4 scrollbar-hide cursor-grab active:cursor-grabbing`}
         style={{
-          scrollbarWidth: 'none', // Firefox
-          msOverflowStyle: 'none', // IE/Edge
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
         }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        {/* Render cards or children */}
-        {children ? (
-          children
-        ) : (
-          cards.map((card) => (
-            <Card key={card.id} card={card} />
-          ))
-        )}
+        {duplicateContent()}
       </div>
+
+      {/* Auto scroll indicator */}
+      {/* {isAutoScrolling && (
+        <div className="absolute bottom-2 right-2 bg-blue-600 text-white px-2 py-1 rounded text-xs">
+          Auto Scroll {isPaused ? '(Paused)' : ''}
+        </div>
+      )} */}
 
       {/* Custom scrollbar hide styles */}
       <style>
