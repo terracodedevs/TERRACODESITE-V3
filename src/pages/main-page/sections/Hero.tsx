@@ -78,7 +78,7 @@ const HeroSection: React.FC = () => {
       
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
+      <div className="absolute inset-0 bg-black/80 z-10" />
       <div className="relative inset-0  z-30  mt-10">
        <Navbar/> 
        </div>
@@ -170,8 +170,8 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="col-span-1">
           <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
-                <div className="text-3xl font-extrabold text-amber-600">3k</div>
-                <h1 className="text-2xl text-nowrap ">Projects Completed</h1>
+                
+                <h1 className="text-3xl ">The Stack That Powers Innovation.</h1>
           </div>
         </div>
         <div className="col-span-3 flex flex-row">
@@ -180,9 +180,9 @@ const HeroSection: React.FC = () => {
               autoScroll={true}
               scrollSpeed={3000}
               showControls={false}
-              pauseOnHover={true}
+              pauseOnHover={false}
               gap={6}>
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-2 opacity-60">
               {stack.map((item, index) => (
                 <div key={index} className="group relative items-center justify-center min-w-[200px] h-[120px] rounded-2xl overflow-hidden ">
                   <div className="w-full h-full flex items-center justify-center p-4">
