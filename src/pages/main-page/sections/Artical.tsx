@@ -1,3 +1,4 @@
+import TerraButton from '@/components/button';
 import { Heart, MessageCircle, ArrowRight } from 'lucide-react';
 
 interface Article {
@@ -193,13 +194,9 @@ const Articles = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <button className="bg-[#f56d04] hover:bg-[#e55a03] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 mx-auto group">
-            View all Articles
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+        <div className='flex justify-center mt-12'>
+        <TerraButton label="View All Articles" />
         </div>
-
       </div>
     </div>
   );

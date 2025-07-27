@@ -1,3 +1,4 @@
+import TerraButton from "@/components/button";
 import Navbar from "@/components/navbar";
 import { ScrollingEffect,  type ScrollingEffectRef } from "@/components/scrollEffect";
 import { ArrowRightCircle, Heart,  LucideLightbulb, Rocket, Send } from "lucide-react";
@@ -86,6 +87,7 @@ const HeroSection: React.FC = () => {
       <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <LucideLightbulb className="w-10 h-10 text-[#FDA10A] mr-4" />
                 <h1 className="text-3xl  ">Build You Ideas!</h1>
             </div>
@@ -117,13 +119,14 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-col   mt-8">
                 <h1 className="text-6xl font-extralight mb-4 text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
                 <p className="text-lg text-gray-400">We craft scalable, user-driven digital solutions that empower startups and enterprises to move faster, smarter, and better.</p>
-                <button
+                {/* <button
                 
                 className="mt-10 w-48 rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)] h-16 flex flex-row items-center justify-center gap-4 py-2 px-4 box-border text-xl text-white "
                 >
                 Talk to us
                 <ArrowRightCircle className="w-7 h-7" />
-                </button>
+                </button> */}
+                <TerraButton className="mt-4"/>
             </div>
         </div>
         <div className="col-span-1 flex flex-col gap-4">
@@ -211,13 +214,14 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-col gap-4   mt-">
                 <h1 className="text-4xl font-extralight mb- text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
                 <p className="text-lg text-gray-400">We craft scalable, user-driven digital solutions that empower startups and enterprises to move faster, smarter, and better.</p>
-                <button
+                {/* <button
                 
                 className=" w-fit rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)]  flex flex-row items-center justify-center gap-4 py-2 px-4 box-border text-xl text-white "
                 >
                 Talk to us
                 <ArrowRightCircle className="w-7 h-7" />
-                </button>
+                </button> */}
+                <TerraButton className="mt-4"/>
                 <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-ful text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-2xl font-extrabold text-amber-600">5+</div>

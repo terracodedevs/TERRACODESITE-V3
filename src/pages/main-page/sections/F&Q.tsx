@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { ChevronRight, Send } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import TerraButton from '@/components/button';
 
 interface Section {
   id: string;
@@ -233,14 +234,15 @@ const FandQ = () => {
                 </div>
                 {/* Submit Button */}
                 
-              <button
+              {/* <button
                 type="submit"
                 disabled={!formData.agreeToTerms}
                 className="flex w-1/3 items-center justify-between bg-amber-600 rounded-4xl p-6 text-2xl "
               >
                 Submit
                 <Send className="w-5 h-5" />
-              </button>
+              </button> */}
+              <TerraButton type='submit' label='Submit'    />
               </div>
             </form>
           </div>

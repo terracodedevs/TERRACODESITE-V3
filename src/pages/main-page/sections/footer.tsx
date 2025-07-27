@@ -1,3 +1,4 @@
+import TerraButton from "@/components/button";
 import { Facebook, Instagram,  Linkedin, Twitter } from "lucide-react";
 
 
@@ -10,8 +11,8 @@ export default function Footer() {
                     <img className="w-[102px] h-[65px] object-cover" alt="" src="Frame 9.png" />
                     <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
                     <div className="rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)] h-16 flex flex-row items-center justify-center py-2 pl-6 pr-3 my-3 box-border gap-4">
-                        <div className="relative tracking-[0.04px] leading-6 font-semibold">Talk to Us</div>
-                        <img className="w-12 rounded-3xl max-h-full overflow-hidden shrink-0" alt="" src="Icon Large Primary/Icons 24px/Property 23.svg" />
+                        <TerraButton/>
+                        
                     </div>
                 </div>
                 <div className=" flex flex-col gap-4  md:flex-row items-start justify-between md:gap-0">
