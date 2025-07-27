@@ -52,7 +52,7 @@ export default function OurProcess() {
                 A proven approach that transforms your vision into scalable, intelligent software.
                 </p>
             </div>
-            <div className="flex flex-col justify-center sm:flex-row gap-5">
+            <div className="flex flex-col justify-center items-center sm:flex-row gap-5">
             {ProcessCardData.map((item, index) => (
                 <ProcessCardItem
                 key={index}

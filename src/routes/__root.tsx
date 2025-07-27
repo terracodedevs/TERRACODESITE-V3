@@ -6,7 +6,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 export const Route = createRootRoute({
   component: () => (
     <>
-    <div className='container mx-auto px-4  static '>
+    <div className='container mx-auto md:px-4  static '>
       {/* <Navbar/> */}
       <Outlet />
       <Footer/>

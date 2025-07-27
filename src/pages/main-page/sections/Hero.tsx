@@ -67,7 +67,7 @@ const HeroSection: React.FC = () => {
         onError={(e) => console.error('Video failed to load:', e)}
         onCanPlay={(e) => {
                 console.log('Video ready to play');
-                e.currentTarget.playbackRate = 0.5; // 75% speed
+                e.currentTarget.playbackRate = 0.4; // 75% speed
             }}
       >
         <source src="/Hero.mp4" type="video/mp4" />
@@ -79,11 +79,11 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/75 z-10" />
-      <div className="relative inset-0  z-30  mt-10">
+      <div className="relative inset-0  z-30  mt-5 lg:mt-10">
        <Navbar/> 
        </div>
       {/* Content */}
-      <div className="relative z-20 grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
+      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
                 <LucideLightbulb className="w-10 h-10 text-[#FDA10A] mr-4" />
@@ -199,6 +199,63 @@ const HeroSection: React.FC = () => {
             </ScrollingEffect>
         </div>
       </div>
+       <div className=" relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
+        <div className=" flex flex-col  gap-4 ">
+            <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
+                <Rocket className="w-8 h-8 text-[#FDA10A] mr-4" />
+                <h1 className="text-lg text-nowrap ">AI-first digital experiences.</h1>
+            </div>
+            <div className="flex flex-col gap-4   mt-">
+                <h1 className="text-4xl font-extralight mb- text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
+                <p className="text-lg text-gray-400">We craft scalable, user-driven digital solutions that empower startups and enterprises to move faster, smarter, and better.</p>
+                <button
+                
+                className=" w-fit rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)]  flex flex-row items-center justify-center gap-4 py-2 px-4 box-border text-xl text-white "
+                >
+                Talk to us
+                <ArrowRightCircle className="w-7 h-7" />
+                </button>
+                <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-ful text-white shadow-lg flex justify-center items-center flex-row gap-4">
+                <div className="text-2xl font-extrabold text-amber-600">5+</div>
+                <h1 className="text-2xl text-nowrap ">Number of Years</h1>
+            </div>
+            <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+                <div className="text-2xl font-extrabold text-amber-600">3k</div>
+                <h1 className="text-2xl text-nowrap ">Projects Completed</h1>
+            </div>
+             <div className="">
+          <div className=" text-white  flex justify-center items-center text-center mt-2">
+                
+                <h1 className="text-xl ">The Stack That Powers Innovation.</h1>
+          </div>
+        </div>
+        <div className="col-span-3 flex flex-row">
+            <ScrollingEffect
+              ref={scrollRef}
+              autoScroll={true}
+              scrollSpeed={3000}
+              showControls={false}
+              pauseOnHover={false}
+              gap={6}>
+                <div className="flex flex-row gap-2 opacity-60">
+              {stack.map((item, index) => (
+                <div key={index} className="group relative items-center justify-center min-w-[200px] h-[120px] rounded-2xl overflow-hidden ">
+                  <div className="w-full h-full flex items-center justify-center p-4">
+                    <img 
+                      className="w-24 h-24 object-contai" 
+                      src={item.image} 
+                      alt={item.name} 
+                    />
+                  </div>
+                  
+                </div>
+              ))}
+            </div>
+            </ScrollingEffect>
+        </div>
+            </div>
+        </div>
+       </div>
     </div>
   );
 };

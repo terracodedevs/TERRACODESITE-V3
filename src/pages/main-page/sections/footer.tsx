@@ -3,20 +3,20 @@ import { Facebook, Instagram,  Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="w-full relative flex flex-col items-center justify-start text-left text-xl text-white font-lufga">
-        <div className="self-stretch flex flex-col sm:flex-row items-center justify-center py-8 px-[100px]">
-            <div className="flex-1 flex flex-col sm:flex-row items-start justify-between gap-0">
+    <div className="w-full relative flex flex-col gap-4 items-center justify-start text-left text-xl text-white font-lufga">
+        <div className="self-stretch flex flex-col gap-4 sm:flex-row items-center justify-center py-8 lg:px-[100px]">
+            <div className="flex-1 flex flex-col md:flex-row items-start justify-between gap-0">
                 <div className="flex flex-col items-start justify-end gap-8">
                     <img className="w-[102px] h-[65px] object-cover" alt="" src="Frame 9.png" />
                     <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
-                    <div className="rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)] h-16 flex flex-row items-center justify-center py-2 pl-6 pr-3 box-border gap-4">
+                    <div className="rounded-[32px] [background:linear-gradient(90deg,_#f56d04,_#fb9709)] h-16 flex flex-row items-center justify-center py-2 pl-6 pr-3 my-3 box-border gap-4">
                         <div className="relative tracking-[0.04px] leading-6 font-semibold">Talk to Us</div>
                         <img className="w-12 rounded-3xl max-h-full overflow-hidden shrink-0" alt="" src="Icon Large Primary/Icons 24px/Property 23.svg" />
                     </div>
                 </div>
-                <div className="w-[819px] flex flex-row items-start justify-between gap-0">
+                <div className=" flex flex-col gap-4  md:flex-row items-start justify-between md:gap-0">
                     <div className="flex flex-row items-start justify-start gap-4">
-                        <div className="w-[185px] flex flex-col items-start justify-start gap-6">
+                        <div className=" flex flex-col items-start justify-start gap-6">
                             <div className="relative font-semibold">Company</div>
                             <div className="flex flex-col items-start justify-start gap-3 text-base">
                                 <div className="relative leading-6">Contact Us</div>
@@ -27,7 +27,7 @@ export default function Footer() {
                                 <div className="relative leading-6">Pricing Packages</div>
                             </div>
                         </div>
-                        <div className="w-[185px] flex flex-col items-start justify-start gap-6">
+                        <div className=" flex flex-col items-start justify-start gap-6">
                             <div className="relative font-semibold">Services</div>
                             <div className="flex flex-col items-start justify-start gap-3 text-base">
                                 <div className="relative leading-6">UI/UX Design</div>
@@ -40,18 +40,18 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="self-stretch flex flex-col items-start justify-between gap-0">
-                        <div className="w-[311px] flex flex-col items-start justify-start gap-4">
+                        <div className=" flex flex-col items-start justify-start gap-4">
                             <div className="self-stretch flex flex-row items-center justify-start gap-4">
                                 <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" />
-                                <div className="w-[311px] relative tracking-[0.04px] leading-6 font-semibold inline-block shrink-0">{`Terracode Private Limited, `}</div>
+                                <div className="md:w-[311px] relative tracking-[0.04px] leading-6 font-semibold inline-block shrink-0">{`Terracode Private Limited, `}</div>
                             </div>
-                            <div className="w-[311px] relative text-base leading-6 inline-block"><a href="https://maps.app.goo.gl/QKy9ety7Cet7NC4JA" target="_blank">
+                            <div className=" relative text-base leading-6 inline-block"><a href="https://maps.app.goo.gl/QKy9ety7Cet7NC4JA" target="_blank">
                                 <p className="m-0">274 3/1 (3rd floor), Highlevel Rd,</p>
                                 <p className="m-0">Maharagama, Sri Lanka</p>
                             </a></div>
                             <div className="self-stretch relative tracking-[0.04px] leading-6 font-semibold" ><a href="tel:+9477 582 4406">+9477 582 4406</a></div>
                         </div>
-                        <div className="w-[200px] h-8 flex flex-row items-center justify-start gap-6">
+                        <div className=" h-8 flex flex-row items-center justify-start gap-6">
                            <Facebook/>
                            <Twitter/>
                            <Linkedin/>

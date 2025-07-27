@@ -82,7 +82,7 @@ export default function OurClients() {
   ]
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-4 font-lufga mt-10 xl:mt-20">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 font-lufga mt-10 xl:mt-20">
       <div className=" p-4 rounded flex flex-col justify-between ">
         <div className="flex flex-col">
             <h1 className="text-6xl font-extralight mb-4 text-[#FDA10A]">Our Client Success</h1>
