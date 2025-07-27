@@ -1,12 +1,12 @@
 import TerraButton from "@/components/button";
-import { Facebook, Instagram,  Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram,  Linkedin} from "lucide-react";
 
 
 export default function Footer() {
   return (
     <div className="w-full relative flex flex-col gap-4 items-center justify-start text-left text-xl text-white font-lufga">
-        <div className="self-stretch flex flex-col gap-4 sm:flex-row items-center justify-center py-8 lg:px-[100px]">
-            <div className="flex-1 flex flex-col md:flex-row items-start justify-between gap-0">
+        <div className="self-stretch flex flex-col gap-4 sm:flex-row items-center justify-between py-8 lg:px-[100px]">
+            <div className="flex-1 flex flex-col md:flex-row  md:items-start md:justify-between ">
                 <div className="flex flex-col items-start justify-end gap-8">
                     <img className="w-[102px] h-[65px] object-cover" alt="" src="Frame 9.png" />
                     <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
@@ -15,8 +15,8 @@ export default function Footer() {
                         
                     </div>
                 </div>
-                <div className=" flex flex-col gap-4  md:flex-row items-start justify-between md:gap-0">
-                    <div className="flex flex-row items-start justify-start gap-4">
+                
+                    
                         <div className=" flex flex-col items-start justify-start gap-6">
                             <div className="relative font-semibold">Company</div>
                             <div className="flex flex-col items-start justify-start gap-3 text-base">
@@ -39,7 +39,7 @@ export default function Footer() {
                                 <div className="relative leading-6">Support Services</div>
                             </div>
                         </div>
-                    </div>
+                    
                     <div className="self-stretch flex flex-col items-start justify-between gap-0">
                         <div className=" flex flex-col items-start justify-start gap-4">
                             <div className="self-stretch flex flex-row items-center justify-start gap-4">
@@ -53,13 +53,13 @@ export default function Footer() {
                             <div className="self-stretch relative tracking-[0.04px] leading-6 font-semibold" ><a href="tel:+9477 582 4406">+9477 582 4406</a></div>
                         </div>
                         <div className=" h-8 flex flex-row items-center justify-start gap-6">
-                           <Facebook/>
-                           <Twitter/>
-                           <Linkedin/>
-                           <Instagram/> 
+                           <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer"><Facebook/></a>
+                           {/* <a href="https://twitter.com/terracodedev" target="_blank" rel="noopener noreferrer"><Twitter/></a> */}
+                           <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer"><Linkedin/></a>
+                           <a href="https://instagram.com/terracodedev" target="_blank" rel="noopener noreferrer"><Instagram/></a>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     <div className="self-stretch -m-6 flex flex-row items-center justify-center pt-4 px-[100px] pb-6 text-base bg-[#1A1A1A] ">
