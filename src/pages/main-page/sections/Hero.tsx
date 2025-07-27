@@ -158,11 +158,14 @@ const HeroSection: React.FC = () => {
                   </button>
               </div>
             </div>
+            
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-3xl font-extrabold text-amber-600">5+</div>
                 <h1 className="text-2xl text-nowrap ">Number of Years</h1>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-3xl font-extrabold text-amber-600">3k</div>
                 <h1 className="text-2xl text-nowrap ">Projects Completed</h1>
             </div>
@@ -170,7 +173,7 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="col-span-1">
           <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
-                
+           <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />     
                 <h1 className="text-3xl ">The Stack That Powers Innovation.</h1>
           </div>
         </div>
@@ -216,17 +219,19 @@ const HeroSection: React.FC = () => {
                 <ArrowRightCircle className="w-7 h-7" />
                 </button>
                 <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-ful text-white shadow-lg flex justify-center items-center flex-row gap-4">
+                <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-2xl font-extrabold text-amber-600">5+</div>
                 <h1 className="text-2xl text-nowrap ">Number of Years</h1>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-2xl font-extrabold text-amber-600">3k</div>
                 <h1 className="text-2xl text-nowrap ">Projects Completed</h1>
             </div>
              <div className="">
-          <div className=" text-white  flex justify-center items-center text-center mt-2">
-                
+          <div className=" text-white  flex flex-col justify-center items-center text-center mt-2">
                 <h1 className="text-xl ">The Stack That Powers Innovation.</h1>
+                <div className=" bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
           </div>
         </div>
         <div className="col-span-3 flex flex-row">
