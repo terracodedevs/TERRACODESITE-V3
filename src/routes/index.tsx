@@ -1,13 +1,17 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { useEffect } from 'react'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
 function Index() {
-  return (
-    <div className="p-2">
-      <h3>Welcome /</h3>
-    </div>
-  )
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Immediate redirect to /home since assets are already loaded by root
+    navigate({ to: '/home' })
+  }, [navigate])
+
+  return null
 }
