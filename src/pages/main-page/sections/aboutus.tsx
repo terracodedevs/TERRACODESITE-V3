@@ -19,61 +19,61 @@ const Aboutus = () => {
             </Link>
         </div>
         <div className=" text-white flex flex-wrap ">
-          <div className='bg-gray-700 rounded-4xl md:p-2 m-2 '>
+          <div className='bg-[#303030] rounded-4xl md:p-2 m-2 '>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2 md:text-xl'>Guided by data.</p>
             </div>
           </div>
-          <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2  md:text-xl'>Driven by curiosity.</p>
             </div>
           </div>
-          <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2 text-lg md:text-xl'>Obsessed with impact.</p>
             </div>
           </div>
-            <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                     <p className='p-2 text-lg md:text-xl'>Empowered</p>
                 </div>
             </div>
-             <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+             <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                     <p className='p-2 text-lg md:text-xl'>Collaboration.</p>
                 </div>
             </div>
-            <div className='bg-gray-700 rounded-4xl md:p-2 m-2'> 
+            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'> 
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2 text-lg md:text-xl'>Innovative solutions.</p>
             </div>
           </div>
-          <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2 text-lg md:text-xl'>Focused on user experience.</p>
             </div>
           </div>
-          <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                 <p className='p-2 text-lg md:text-xl'>User experience.</p>
             </div>
           </div>
-            <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                     <p className='p-2 text-lg md:text-xl'>Inspired by creativity.</p>
                 </div>
             </div>
-             <div className='bg-gray-700 rounded-4xl md:p-2 m-2'>
+             <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-4 w-4'></div>
                     <p className='p-2 text-lg md:text-xl'>Committed to excellence.</p>
