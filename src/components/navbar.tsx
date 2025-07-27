@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 
 const navbar = {
   links: [
-    { name: 'Home', path: '/' },
+    { name: 'Home', path: '/home' },
     { name: 'Services', path: '/about' },
     { name: 'Contact', path: '/test' },
     { name: 'Career', path: '/test' },
@@ -18,7 +18,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen((o) => !o)
 
   const linkBase = `rounded-[32px] h-12 flex items-center justify-center py-3 px-4 transition-colors text-[#8e8e8e] font-light hover:bg-black hover:text-amber-600`
-  const linkActive = `[&.active]:text-amber-600 [&.active]:font-semibold [&.active]:bg-black`
+  const linkActive = `[&.active]:text-amber-600  [&.active]:bg-black`
 
   return (
     <>
