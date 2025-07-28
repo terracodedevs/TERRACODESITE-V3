@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button onClick={toggleMenu} className="lg:hidden p-2 rounded-lg bg-[#141414] text-white hover:bg-black transition-colors">
+        <button onClick={toggleMenu} className="lg:hidden p-2 rounded-full bg-[#141414] text-white hover:bg-black transition-colors">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

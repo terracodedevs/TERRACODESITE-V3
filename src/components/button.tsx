@@ -18,14 +18,14 @@ const TerraButton: React.FC<TerraButtonProps> = ({
   type = 'button',
   className = '',
   gradient = 'bg-gradient-to-r from-[#f56d04] to-[#fb9709]',
-  padding ='pl-4 pr-2 py-2 rounded-4xl text-xl',
+  padding ='pl-4 pr-2 py-2 rounded-4xl text-xl gap-2',
   img = 'w-4'
 }) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`relative  ${gradient} flex flex-row items-center justify-center ${padding} w-fit box-border gap-2 text-left  text-white font-lufga ${className}`}
+      className={`relative  ${gradient} flex flex-row items-center justify-center ${padding} w-fit box-border  text-left  text-white font-lufga ${className}`}
     >
       <span className="tracking-[0.04px]  leading-6 font-semibold">{label}</span>
       <span className="bg-white rounded-full p-4">

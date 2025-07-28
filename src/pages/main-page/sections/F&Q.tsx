@@ -89,7 +89,7 @@ const FandQ = () => {
   };
 
   return (
-    <div className=" bg-black text-white py-4 font-lufga my-10 xl:my-20">
+    <div className="px-4 md:px-0 bg-black text-white py-4 font-lufga my-10 xl:my-20">
       <div className="max-w-8xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Side - FAQ */}
@@ -217,7 +217,7 @@ const FandQ = () => {
               </div>
 
               {/* Terms Checkbox */}
-              <div className="flex md:flex-row items-center gap-3 justify-between">
+              <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
                 <div>
                 <input
                   type="checkbox"
