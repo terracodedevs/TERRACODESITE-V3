@@ -4,7 +4,7 @@ import { Facebook, Instagram,  Linkedin} from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="w-full relative flex flex-col gap-4 items-center justify-start text-left text-xl text-white font-lufga">
+    <div className="w-full relative flex flex-col gap-4 items-center justify-start  text-left text-xl text-white font-lufga">
         <div className="self-stretch flex flex-col gap-4 sm:flex-row items-center justify-between py-8 lg:px-[100px]">
             <div className="flex-1 flex flex-col md:flex-row  md:items-start md:justify-between ">
                 <div className="flex flex-col items-start justify-end gap-8">
@@ -62,7 +62,7 @@ export default function Footer() {
                 
             </div>
         </div>
-    <div className="self-stretch -m-6 flex flex-row items-center justify-center pt-4 px-[100px] pb-6 text-base bg-[#1A1A1A] ">
+    <div className="self-stretch -my-6 flex flex-row items-center justify-center pt-4 px-[100px] pb-6 text-base bg-[#1A1A1A]  ">
         <div className="relative tracking-[0.02em] font-medium">© Copyright 2025 by Terracode. All Rights Reserved.</div>
     </div>
 </div>

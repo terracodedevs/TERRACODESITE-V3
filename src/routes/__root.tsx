@@ -42,7 +42,7 @@ export const Route = createRootRoute({
     }
 
     return (
-      <div className="container mx-auto px-4 static">
+      <div className="container mx-auto  static">
         <AnimatePresence mode="wait">
           <motion.div
             key="content"
