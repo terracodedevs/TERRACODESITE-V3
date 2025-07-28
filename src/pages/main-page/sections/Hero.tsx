@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
 
   return (
     
-    <div className="relative w-full  overflow-hidden font-lufga">
+    <div className="relative w-screen  left-1/2 right-1/2 -ml-[51vw] -mr-[50vw] overflow-hidden font-lufga px-[12%]">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -84,11 +84,11 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/75 z-10" />
-      <div className="relative inset-0  z-30  mt-5 lg:mt-10">
+      <div className="relative inset-0  z-30  mt-5 lg:mt-10 container mx-auto">
        <Navbar/> 
        </div>
       {/* Content */}
-      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
+      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8 container mx-auto">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
