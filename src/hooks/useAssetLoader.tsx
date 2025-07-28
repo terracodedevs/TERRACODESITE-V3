@@ -19,18 +19,27 @@ export const useAssetLoader = (assets: string[]) => {
       }
     }
 
+    // Detect iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+
     assets.forEach((url) => {
-      if (url.match(/\.(jpg|jpeg|png|webp|gif)$/)) {
+      if (url.match(/\.(jpg|jpeg|png|webp|gif|svg)$/)) {
         const img = new Image()
         img.src = url
         img.onload = handleLoad
         img.onerror = handleLoad
       } else if (url.match(/\.(mp4|webm)$/)) {
-        const video = document.createElement('video')
-        video.src = url
-        video.preload = 'auto'
-        video.oncanplaythrough = handleLoad
-        video.onerror = handleLoad
+        if (isIOS) {
+          // Skip video preloading on iOS and just mark as loaded
+          handleLoad()
+        } else {
+          const video = document.createElement('video')
+          video.src = url
+          video.preload = 'metadata' // Changed from 'auto' to 'metadata'
+          video.muted = true // Required for autoplay on mobile
+          video.onloadedmetadata = handleLoad
+          video.onerror = handleLoad
+        }
       } else {
         handleLoad()
       }

@@ -207,9 +207,9 @@ const HeroSection: React.FC = () => {
       </div>
        <div className=" relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
         <div className=" flex flex-col  gap-4 ">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
-                <Rocket className="w-8 h-8 text-[#FDA10A] mr-4" />
-                <h1 className="text-lg text-nowrap ">AI-first digital experiences.</h1>
+            <div className=" backdrop-blur-md bg-white/10  rounded-full max-w-md p-4 w-fit text-white shadow-lg flex justify-start items-start flex-row">
+                <Rocket className="w-4 h-4 text-[#fd630a] mr-4" />
+                <h1 className="text-sm text-nowrap ">AI-first digital experiences.</h1>
             </div>
             <div className="flex flex-col gap-4   mt-">
                 <h1 className="text-4xl font-extralight mb- text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
@@ -221,8 +221,10 @@ const HeroSection: React.FC = () => {
                 Talk to us
                 <ArrowRightCircle className="w-7 h-7" />
                 </button> */}
-                <TerraButton className="mt-4"/>
-                <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-ful text-white shadow-lg flex justify-center items-center flex-row gap-4">
+                <div className="">
+                  <TerraButton className="mt-4 " padding="pl-4 pr-2 py-2 rounded-4xl text-sm"/>
+                </div>
+                <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-2xl font-extrabold text-amber-600">5+</div>
                 <h1 className="text-2xl text-nowrap ">Number of Years</h1>
