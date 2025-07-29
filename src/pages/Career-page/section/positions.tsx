@@ -163,7 +163,7 @@ export default function Positions() {
                 <h2 className="text-6xl font-extralight mb-4 text-[#FDA10A]">All Open Positions</h2>
             </div>      
             
-            <div className="flex flex-col">
+            <div className="flex flex-col px-4">
                 <input 
                     type="text" 
                     placeholder="Search positions..." 
@@ -173,7 +173,7 @@ export default function Positions() {
                 />
                 
                 {/* Filter Buttons */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2 ">
                     {Object.entries(categoryStats).map(([category, count]) => (
                         <button 
                             key={category}
@@ -192,7 +192,7 @@ export default function Positions() {
             </div>
 
             {/* Display filtered positions */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 px-4">
                 {filteredPositions.map((position, index) => (
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
