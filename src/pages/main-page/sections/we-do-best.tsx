@@ -1,5 +1,3 @@
-import { Lightbulb } from "lucide-react";
-
 const services = [
   {
     title: 'Custom Software Development',

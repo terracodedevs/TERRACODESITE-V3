@@ -35,7 +35,7 @@ const Articles = () => {
       id: '3',
       date: 'July 25, 2025',
       title: 'Embracing Diversity in Design',
-      description: 'Diversity of thought and background in design teams fosters creativity and innovation, leading to better user experiences.',
+      description: 'Diversity of thought in design teams fosters creativity and innovation, leading to better user experiences.',
       likes: 220,
       comments: 4,
       image: '/Mask group (2).png'
@@ -63,10 +63,10 @@ const Articles = () => {
 
 
   return (
-    <div className=" bg-black text-white py-2 font-lufga mt-10 xl:mt-20">
-      <div className="max-w-8xl mx-auto">
+    <div className=" bg-black text-white py-2 font-lufga mt-10 xl:mt-20 ">
+      <div className="max-w-8xl mx-auto ">
         {/* Header 1*/}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light">
             Latest Articles & News
           </h2>
@@ -75,7 +75,7 @@ const Articles = () => {
           </p>
         </div>
         {/* Articles Grid */}
-        <div className="space-y-8">
+        <div className="space-y-8  ">
           {/* First Row - 2 Articles (1 spans 2 cols, 1 spans 1 col) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* First Article - spans 2 columns */}
@@ -84,7 +84,7 @@ const Articles = () => {
               {/* Date Badge */}
               <div className="absolute top-6 left-6">
                 <span className="bg-white text-black px-8 py-2 rounded-full text-xl font-medium flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                   {articles[0].date}
 
                 </span>
@@ -107,9 +107,9 @@ const Articles = () => {
                   </div>
                   {/* Read More Arrow */}
                   <div className="ml-auto">
-                    <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                      <ArrowRight className="w-5 h-5 text-[#f56d04]" />
-                    </div>
+                    <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                    <img src="public/Property 23.png" alt="Read More" />
+                  </div>
                   </div>
                 </div>
               </div>
@@ -120,20 +120,20 @@ const Articles = () => {
               <img src={articles[1].image} alt={articles[1].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
               {/* Date Badge */}
               <div className="absolute top-4 left-4">
-                <span className="bg-white text-black px-6 py-1.5 rounded-full  font-medium flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                <span className="bg-white text-black px-6 py-1.5 rounded-full lg:text-xl  font-medium flex items-center gap-1.5">
+                  <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                   {articles[1].date}
                 </span>
               </div>
               
               {/* Content */}
               <div className="z-10">
-                <h3 className="text-2xl md:text-4xl font-light mb-4">{articles[1].title}</h3>
-                <p className=" md:text-xl mb-6">{articles[1].description}</p>
+                <h3 className="text-2xl lg:text-4xl font-light mb-4">{articles[1].title}</h3>
+                <p className=" lg:text-xl mb-6">{articles[1].description}</p>
                 
                 {/* Stats */}
                 <div className="flex  items-center justify-between">
-                  <div className="flex flex-col lg:flex-row items-center gap-4  text-sm">
+                  <div className="flex flex-col lg:flex-row items-center gap-4">
                     <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full ">
                       <Heart className="w-4 h-4" />
                       <span>{articles[1].likes}</span>
@@ -144,8 +144,8 @@ const Articles = () => {
                     </div>
                   </div>
                   {/* Read More Arrow */}
-                  <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
+                  <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                    <img src="public/Property 23.png" alt="Read More" />
                   </div>
                 </div>
               </div>
@@ -159,20 +159,20 @@ const Articles = () => {
                 <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white text-black px-6 py-1.5 rounded-full font-medium flex items-center gap-1.5">
-                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                  <span className="bg-white text-black px-6 py-1.5 rounded-full lg:text-xl font-medium flex items-center gap-1.5">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                     {article.date}
                   </span>
                 </div>
                 
                 {/* Content */}
                 <div className="z-10">
-                  <h3 className="text-2xl md:text-4xl font-light mb-4">{article.title}</h3>
-                  <p className=" md:text-xl mb-6">{article.description}</p>
+                  <h3 className="text-2xl lg:text-4xl font-light mb-4">{article.title}</h3>
+                  <p className=" lg:text-xl mb-6">{article.description}</p>
                   
                   {/* Stats */}
                   <div className="flex items-center justify-between ">
-                    <div className="flex flex-col lg:flex-row  items-center gap-4  text-sm">
+                    <div className="flex flex-col lg:flex-row  items-center gap-4  ">
                       <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
                         <Heart className="w-4 h-4" />
                         <span>{article.likes}</span>
@@ -183,8 +183,8 @@ const Articles = () => {
                       </div>
                     </div>
                     {/* Read More Arrow */}
-                    <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
+                   <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                    <img src="public/Property 23.png" alt="Read More" />
                   </div>
                   </div>
                 </div>
