@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar'
+import Page from '@/pages/team-page/page'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/about')({
@@ -10,8 +11,7 @@ function RouteComponent() {
     <div className='mt-10'>
 
       <Navbar/>
-      <h1>About Us</h1>
-      <p>We are a company that values innovation and creativity.</p>
+     <Page />
     </div>
   )
 }
