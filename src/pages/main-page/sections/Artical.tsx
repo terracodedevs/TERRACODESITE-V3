@@ -1,5 +1,5 @@
 import TerraButton from '@/components/button';
-import { Heart, MessageCircle, ArrowRight } from 'lucide-react';
+import { Heart, MessageCircle } from 'lucide-react';
 
 interface Article {
   id: string;
