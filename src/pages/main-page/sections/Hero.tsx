@@ -31,7 +31,11 @@ const stack = [
   },
   {
     name: "Item 3",
-    image: "/logo/angular.svg"
+    image: "/logo/go.png"
+  },
+  {
+    name: "Item 4",
+    image: "/logo/flutter.png"
   }
 ]
 
@@ -54,7 +58,7 @@ const HeroSection: React.FC = () => {
 
   return (
     
-    <div className="relative w-full  overflow-hidden font-lufga">
+    <div className="relative w-screen  left-1/2 right-1/2 -ml-[51vw] -mr-[50vw] overflow-hidden font-lufga px-[12%]">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -80,11 +84,11 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/75 z-10" />
-      <div className="relative inset-0  z-30  mt-5 lg:mt-10">
+      <div className="relative inset-0  z-30  mt-5 lg:mt-10 container mx-auto">
        <Navbar/> 
        </div>
       {/* Content */}
-      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8">
+      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 px-4 py-8 container mx-auto">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
@@ -205,14 +209,14 @@ const HeroSection: React.FC = () => {
             </ScrollingEffect>
         </div>
       </div>
-       <div className=" relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
+       <div className="px-6 relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
         <div className=" flex flex-col  gap-4 ">
             <div className=" backdrop-blur-md bg-white/10  rounded-full max-w-md p-4 w-fit text-white shadow-lg flex justify-start items-start flex-row">
                 <Rocket className="w-4 h-4 text-[#fd630a] mr-4" />
                 <h1 className="text-sm text-nowrap ">AI-first digital experiences.</h1>
             </div>
-            <div className="flex flex-col gap-4   mt-">
-                <h1 className="text-4xl font-extralight mb- text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
+            <div className="flex flex-col gap-4">
+                <h1 className="text-5xl font-extralight  text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
                 <p className="text-lg text-gray-400">We craft scalable, user-driven digital solutions that empower startups and enterprises to move faster, smarter, and better.</p>
                 {/* <button
                 
@@ -222,17 +226,17 @@ const HeroSection: React.FC = () => {
                 <ArrowRightCircle className="w-7 h-7" />
                 </button> */}
                 <div className="">
-                  <TerraButton className="mt-4 " padding="pl-4 pr-2 py-2 rounded-4xl text-sm"/>
+                  <TerraButton className=" " padding="pl-6 pr-2 py-2 rounded-4xl text-sm gap-6 " img="w-3"/>
                 </div>
-                <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+                <div className=" backdrop-blur-md bg-white/10 mt-4 rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
-                <div className="text-2xl font-extrabold text-amber-600">5+</div>
-                <h1 className="text-2xl text-nowrap ">Number of Years</h1>
+                <div className="text-xl font-extrabold text-amber-600">5+</div>
+                <h1 className="text-xl text-nowrap ">Number of Years</h1>
             </div>
-            <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
+            <div className=" backdrop-blur-md bg-white/10  rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
-                <div className="text-2xl font-extrabold text-amber-600">3k</div>
-                <h1 className="text-2xl text-nowrap ">Projects Completed</h1>
+                <div className="text-xl font-extrabold text-amber-600">3k</div>
+                <h1 className="text-xl text-nowrap ">Projects Completed</h1>
             </div>
              <div className="">
           <div className=" text-white  flex flex-col justify-center items-center text-center mt-2">
@@ -247,13 +251,13 @@ const HeroSection: React.FC = () => {
               scrollSpeed={3000}
               showControls={false}
               pauseOnHover={false}
-              gap={6}>
-                <div className="flex flex-row gap-2 opacity-60">
+              gap={0}>
+                <div className="flex flex-row  opacity-60">
               {stack.map((item, index) => (
-                <div key={index} className="group relative items-center justify-center min-w-[200px] h-[120px] rounded-2xl overflow-hidden ">
+                <div key={index} className="group relative items-center justify-center min-w-[120px] h-[100px] rounded-2xl overflow-hidden ">
                   <div className="w-full h-full flex items-center justify-center p-4">
                     <img 
-                      className="w-24 h-24 object-contai" 
+                      className="w-24 h-24 object-contain" 
                       src={item.image} 
                       alt={item.name} 
                     />

@@ -61,7 +61,9 @@ const Articles = () => {
   ];
 
   return (
-    <div className="bg-black text-white py-2 font-lufga mt-10 xl:mt-20">
+
+    <div className="px-4 md:px-0 bg-black text-white py-2 font-lufga mt-10 xl:mt-20 ">
+
       <div className="max-w-8xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 px-4 md:px-0">
