@@ -3,7 +3,7 @@ import { Rocket } from "lucide-react"
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white font-lufga mt-6">
+    <div className="bg-black text-white font-lufga mt-20">
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">
@@ -13,7 +13,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-col mt-8 px-24 items-center gap-6 ">
                 <h1 className="text-6xl font-extralight mb-4 text-[#FDA10A]">Build the Future With Us</h1>
-                <p className="text-2xl text-gray-400 text-center">We’re on a mission to craft powerful digital experiences using code, creativity, and AI. Join a team where innovation thrives, learning never stops, and every project is a new opportunity to level up.</p>
+                <p className="text-2xl text-neutral-400 text-center">We’re on a mission to craft powerful digital experiences using code, creativity, and AI. Join a team where innovation thrives, learning never stops, and every project is a new opportunity to level up.</p>
                 <TerraButton className="mt-6" label="View Openings"/>
             </div>
         </div>
