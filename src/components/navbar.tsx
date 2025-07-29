@@ -6,10 +6,11 @@ import { Menu, X } from 'lucide-react'
 const navbar = {
   links: [
     { name: 'Home', path: '/home' },
-    { name: 'Services', path: '/about' },
-    { name: 'Contact', path: '/test' },
-    { name: 'Career', path: '/test' },
-    { name: 'Pricing', path: '/test' },
+    { name: 'Services', path: '/service' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'About', path: '/about' },
+    { name: 'Career', path: '/career' },
+    { name: 'Pricing', path: '/pricing' },
   ],
 }
 

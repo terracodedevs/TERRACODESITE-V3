@@ -10,7 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as ServiceRouteImport } from './routes/service'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareerRouteImport } from './routes/career'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -19,9 +23,29 @@ const TestRoute = TestRouteImport.update({
   path: '/test',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceRoute = ServiceRouteImport.update({
+  id: '/service',
+  path: '/service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -38,34 +62,75 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/pricing': typeof PricingRoute
+  '/service': typeof ServiceRoute
   '/test': typeof TestRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/pricing': typeof PricingRoute
+  '/service': typeof ServiceRoute
   '/test': typeof TestRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/career': typeof CareerRoute
+  '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/pricing': typeof PricingRoute
+  '/service': typeof ServiceRoute
   '/test': typeof TestRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/home' | '/test'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/career'
+    | '/contact'
+    | '/home'
+    | '/pricing'
+    | '/service'
+    | '/test'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/home' | '/test'
-  id: '__root__' | '/' | '/about' | '/home' | '/test'
+  to:
+    | '/'
+    | '/about'
+    | '/career'
+    | '/contact'
+    | '/home'
+    | '/pricing'
+    | '/service'
+    | '/test'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/career'
+    | '/contact'
+    | '/home'
+    | '/pricing'
+    | '/service'
+    | '/test'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CareerRoute: typeof CareerRoute
+  ContactRoute: typeof ContactRoute
   HomeRoute: typeof HomeRoute
+  PricingRoute: typeof PricingRoute
+  ServiceRoute: typeof ServiceRoute
   TestRoute: typeof TestRoute
 }
 
@@ -78,11 +143,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service': {
+      id: '/service'
+      path: '/service'
+      fullPath: '/service'
+      preLoaderRoute: typeof ServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
       fullPath: '/home'
       preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -105,7 +198,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CareerRoute: CareerRoute,
+  ContactRoute: ContactRoute,
   HomeRoute: HomeRoute,
+  PricingRoute: PricingRoute,
+  ServiceRoute: ServiceRoute,
   TestRoute: TestRoute,
 }
 export const routeTree = rootRouteImport
