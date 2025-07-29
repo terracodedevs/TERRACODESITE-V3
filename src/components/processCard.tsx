@@ -82,9 +82,10 @@ interface ProcessCardItemProps {
   description: string;
   imageSrc: string;
   imageClass?: string; // Optional class for the image container
+  footer?:string
 }
 
-export default function ProcessCardItem({ icon, title, description, imageSrc, imageClass }: ProcessCardItemProps) {
+export default function ProcessCardItem({ icon, title, description, imageSrc, imageClass,footer }: ProcessCardItemProps) {
   return (
     <div className="group w-full relative rounded-3xl bg-[#1B1B1B] max-w-[364px] h-[408px] overflow-hidden text-center text-2xl text-neutral-500 hover:text-white font-lufga duration-800">
       {/* Bottom gradient line on hover */}
@@ -110,6 +111,12 @@ export default function ProcessCardItem({ icon, title, description, imageSrc, im
         <div className="self-stretch text-xl font-extralight tracking-[0.04px] leading-6 text-left">
           <p className="m-0">{description}</p>
         </div>
+        {footer && (
+          <div className="self-stretch flex flex-row mt-2 gap-2 items-center w-fit px-4 py-2 text-sm bg-white rounded-3xl text-black tracking-[0.04px] leading-5 text-left">
+            <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
+            {footer}
+          </div>
+        )}
       </div>
     </div>
   )
