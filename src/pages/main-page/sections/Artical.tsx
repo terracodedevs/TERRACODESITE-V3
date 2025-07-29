@@ -1,5 +1,5 @@
 import TerraButton from '@/components/button';
-import { Heart, MessageCircle, ArrowRight } from 'lucide-react';
+import { Heart, MessageCircle } from 'lucide-react';
 
 interface Article {
   id: string;
@@ -35,7 +35,7 @@ const Articles = () => {
       id: '3',
       date: 'July 25, 2025',
       title: 'Embracing Diversity in Design',
-      description: 'Diversity of thought and background in design teams fosters creativity and innovation, leading to better user experiences.',
+      description: 'Diversity of thought in design teams fosters creativity and innovation, leading to better user experiences.',
       likes: 220,
       comments: 4,
       image: '/Mask group (2).png'
@@ -60,13 +60,13 @@ const Articles = () => {
     }
   ];
 
-
-
   return (
+
     <div className="px-4 md:px-0 bg-black text-white py-2 font-lufga mt-10 xl:mt-20 ">
+
       <div className="max-w-8xl mx-auto">
-        {/* Header 1*/}
-        <div className="text-center mb-12 lg:mb-16">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16 px-4 md:px-0">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light">
             Latest Articles & News
           </h2>
@@ -74,118 +74,57 @@ const Articles = () => {
             Thoughts, tips, and tech deep-dives from the minds building with AI, code, and creativity.
           </p>
         </div>
-        {/* Articles Grid */}
-        <div className="space-y-8">
-          {/* First Row - 2 Articles (1 spans 2 cols, 1 spans 1 col) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* First Article - spans 2 columns */}
-            <div className="md:col-span-2 bg-[#1A1A1A] rounded-xl p-8 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
-              <img src={articles[0].image} alt={articles[0].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
-              {/* Date Badge */}
-              <div className="absolute top-6 left-6">
-                <span className="bg-white text-black px-8 py-2 rounded-full text-xl font-medium flex items-center gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  {articles[0].date}
 
-                </span>
-              </div>
-              
-              {/* Content */}
-              <div className="z-10">
-                <h3 className="text-2xl md:text-4xl font-light mb-4 leading-tight">{articles[0].title}</h3>
-                <p className=" md:text-xl mb-6">{articles[0].description}</p>
+        {/* Mobile View - Horizontal Scroll */}
+        <div className="block md:hidden">
+          <div className="flex overflow-x-auto gap-4 px-4 pb-4 scrollbar-hide">
+            {articles.map((article, index) => (
+              <div 
+                key={article.id} 
+                className={`
+                  flex-shrink-0 bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden flex flex-col justify-end
+                  ${index === 0 ? 'w-80 min-h-[500px]' : 'w-72 min-h-[450px]'}
+                `}
+              >
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="absolute inset-0 w-full h-full object-cover rounded-xl" 
+                />
                 
-                {/* Stats */}
-                <div className="flex  items-center gap-6 ">
-                  <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
-                    <Heart className="w-5 h-5" />
-                    <span className="font-medium">{articles[0].likes}</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
-                    <MessageCircle className="w-5 h-5" />
-                    <span className="font-medium">{articles[0].comments}k</span>
-                  </div>
-                  {/* Read More Arrow */}
-                  <div className="ml-auto">
-                    <div className="w-10 h-10 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                      <ArrowRight className="w-5 h-5 text-[#f56d04]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Second Article - spans 1 column */}
-            <div className="bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
-              <img src={articles[1].image} alt={articles[1].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
-              {/* Date Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="bg-white text-black px-6 py-1.5 rounded-full  font-medium flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                  {articles[1].date}
-                </span>
-              </div>
-              
-              {/* Content */}
-              <div className="z-10">
-                <h3 className="text-2xl md:text-4xl font-light mb-4">{articles[1].title}</h3>
-                <p className=" md:text-xl mb-6">{articles[1].description}</p>
-                
-                {/* Stats */}
-                <div className="flex  items-center justify-between">
-                  <div className="flex flex-col lg:flex-row items-center gap-4  text-sm">
-                    <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full ">
-                      <Heart className="w-4 h-4" />
-                      <span>{articles[1].likes}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
-                      <MessageCircle className="w-4 h-4" />
-                      <span>{articles[1].comments}k</span>
-                    </div>
-                  </div>
-                  {/* Read More Arrow */}
-                  <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Second Row - 3 Articles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-            {articles.slice(2, 5).map((article) => (
-              <div key={article.id} className="bg-[#1A1A1A] h-1/2 rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
-                <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white text-black px-6 py-1.5 rounded-full font-medium flex items-center gap-1.5">
-                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                  <span className="bg-white text-black px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-1.5">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                     {article.date}
                   </span>
                 </div>
                 
                 {/* Content */}
                 <div className="z-10">
-                  <h3 className="text-2xl md:text-4xl font-light mb-4">{article.title}</h3>
-                  <p className=" md:text-xl mb-6">{article.description}</p>
+                  <h3 className={`font-light mb-3 leading-tight ${index === 0 ? 'text-2xl' : 'text-xl'}`}>
+                    {article.title}
+                  </h3>
+                  <p className={`mb-4 ${index === 0 ? 'text-base' : 'text-sm'}`}>
+                    {article.description}
+                  </p>
                   
                   {/* Stats */}
-                  <div className="flex items-center justify-between ">
-                    <div className="flex flex-col lg:flex-row  items-center gap-4  text-sm">
-                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
-                        <Heart className="w-4 h-4" />
-                        <span>{article.likes}</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-2.5 py-1 rounded-full">
+                        <Heart className="w-3 h-3" />
+                        <span className="text-sm">{article.likes}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
-                        <MessageCircle className="w-4 h-4" />
-                        <span>{article.comments}k</span>
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-2.5 py-1 rounded-full">
+                        <MessageCircle className="w-3 h-3" />
+                        <span className="text-sm">{article.comments}k</span>
                       </div>
                     </div>
                     {/* Read More Arrow */}
-                    <div className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center hover:bg-white transition-colors border-2 border-white">
-                    <ArrowRight className="w-4 h-4 text-[#f56d04]" />
-                  </div>
+                    <div className="flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                      <img src="public/Property 23.png" alt="Read More" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -193,11 +132,142 @@ const Articles = () => {
           </div>
         </div>
 
+        {/* Desktop/Tablet View - Original Grid Layout */}
+        <div className="hidden md:block">
+          <div className="space-y-8">
+            {/* First Row - 2 Articles (1 spans 2 cols, 1 spans 1 col) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* First Article - spans 2 columns */}
+              <div className="md:col-span-2 bg-[#1A1A1A] rounded-xl p-8 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+                <img src={articles[0].image} alt={articles[0].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
+                {/* Date Badge */}
+                <div className="absolute top-6 left-6">
+                  <span className="bg-white text-black px-8 py-2 rounded-full text-xl font-medium flex items-center gap-2">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                    {articles[0].date}
+                  </span>
+                </div>
+                
+                {/* Content */}
+                <div className="z-10">
+                  <h3 className="text-2xl md:text-4xl font-light mb-4 leading-tight">{articles[0].title}</h3>
+                  <p className=" md:text-xl mb-6">{articles[0].description}</p>
+                  
+                  {/* Stats */}
+                  <div className="flex  items-center gap-6 ">
+                    <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
+                      <Heart className="w-5 h-5" />
+                      <span className="font-medium">{articles[0].likes}</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-[#141414] px-3 py-1 rounded-full">
+                      <MessageCircle className="w-5 h-5" />
+                      <span className="font-medium">{articles[0].comments}k</span>
+                    </div>
+                    {/* Read More Arrow */}
+                    <div className="ml-auto">
+                      <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                      <img src="public/Property 23.png" alt="Read More" />
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Second Article - spans 1 column */}
+              <div className="bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+                <img src={articles[1].image} alt={articles[1].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
+                {/* Date Badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white text-black px-6 py-1.5 rounded-full lg:text-xl  font-medium flex items-center gap-1.5">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                    {articles[1].date}
+                  </span>
+                </div>
+                
+                {/* Content */}
+                <div className="z-10">
+                  <h3 className="text-2xl lg:text-4xl font-light mb-4">{articles[1].title}</h3>
+                  <p className=" lg:text-xl mb-6">{articles[1].description}</p>
+                  
+                  {/* Stats */}
+                  <div className="flex  items-center justify-between">
+                    <div className="flex flex-col lg:flex-row items-center gap-4">
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full ">
+                        <Heart className="w-4 h-4" />
+                        <span>{articles[1].likes}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
+                        <MessageCircle className="w-4 h-4" />
+                        <span>{articles[1].comments}k</span>
+                      </div>
+                    </div>
+                    {/* Read More Arrow */}
+                    <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                      <img src="public/Property 23.png" alt="Read More" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Row - 3 Articles */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+              {articles.slice(2, 5).map((article) => (
+                <div key={article.id} className="bg-[#1A1A1A] h-1/2 rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+                  <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
+                  {/* Date Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white text-black px-6 py-1.5 rounded-full lg:text-xl font-medium flex items-center gap-1.5">
+                      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                      {article.date}
+                    </span>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="z-10">
+                    <h3 className="text-2xl lg:text-4xl font-light mb-4">{article.title}</h3>
+                    <p className=" lg:text-xl mb-6">{article.description}</p>
+                    
+                    {/* Stats */}
+                    <div className="flex items-center justify-between ">
+                      <div className="flex flex-col lg:flex-row  items-center gap-4  ">
+                        <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
+                          <Heart className="w-4 h-4" />
+                          <span>{article.likes}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 bg-[#141414] px-3 py-1 rounded-full">
+                          <MessageCircle className="w-4 h-4" />
+                          <span>{article.comments}k</span>
+                        </div>
+                      </div>
+                      {/* Read More Arrow */}
+                     <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
+                      <img src="public/Property 23.png" alt="Read More" />
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* View All Button */}
         <div className='flex justify-center mt-12'>
-        <TerraButton label="View All Articles" />
+          <TerraButton label="View All Articles" />
         </div>
       </div>
+
+      {/* Custom scrollbar hide styles */}
+      <style>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 };

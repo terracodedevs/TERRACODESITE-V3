@@ -27,7 +27,7 @@ export default function Navbar() {
         <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="Frame 9.png" />
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex bg-[#141414] backdrop-filter backdrop-blur-lg rounded-[40px] py-2 px-6 gap-6">
+        <div className="hidden xl:flex bg-[#141414] backdrop-filter backdrop-blur-lg rounded-[40px] py-2 px-6 gap-6">
           {navbar.links.map((link) => (
             <Link
               key={link.path + link.name}
@@ -41,18 +41,18 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex w-48 rounded-[32px] bg-gradient-to-r from-[#f56d04] to-[#fb9709] h-16 items-center justify-center text-white cursor-pointer hover:shadow-lg transition-shadow">
+        <div className="hidden xl:flex w-48 rounded-[32px] bg-gradient-to-r from-[#f56d04] to-[#fb9709] h-16 items-center justify-center text-white cursor-pointer hover:shadow-lg transition-shadow">
           <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
         </div>
 
         {/* Mobile Hamburger */}
-        <button onClick={toggleMenu} className="lg:hidden p-2 rounded-full bg-[#141414] text-white hover:bg-black transition-colors">
+        <button onClick={toggleMenu} className="xl:hidden p-2 rounded-full bg-[#141414] text-white hover:bg-black transition-colors">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`xl:hidden fixed inset-0 z-50 transition-opacity duration-500 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={toggleMenu} />
 
         <div className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[#141414] shadow-xl transform transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>

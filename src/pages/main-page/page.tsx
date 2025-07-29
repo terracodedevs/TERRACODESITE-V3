@@ -8,9 +8,6 @@ import WorkWithUs from "./sections/Work-with-us"
 import OurClients from "./sections/ourClients"
 import HeroSection from "./sections/Hero"
 
-
-
-
 const Page = () => {
   return (
     <>

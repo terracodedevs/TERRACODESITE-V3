@@ -1,5 +1,3 @@
-import { Lightbulb } from "lucide-react";
-
 const services = [
   {
     title: 'Custom Software Development',
@@ -45,21 +43,21 @@ export default function WhatWeDoBest() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-800 group gap-6 border-transparent hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden"
+            className="flex flex-col items-center text-center bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-800 group gap-6 border-transparent hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden  xl:h-[450px] justify-between"
           >
             {/* Top gradient line on hover */}
             {/* <div className="absolute top-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" /> */}
             
             {/* Bottom gradient line on hover */}
-            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none " />
 
-            <div className="flex justify-center">
-              <span className="text-[#f56d04]"><Lightbulb size={40} strokeWidth={1} /></span>
+            <div className="flex justify-center ">
+              <span ><img src="public/hugeicons_idea-01.png" alt="Service Icon"  /></span>
             </div>
-            <h3 className="text-3xl text-white">
+            <h3 className="text-4xl text-white">
               {service.title}
             </h3>
-            <p className="text-[#8E8E8E] group-hover:text-[#ffff] mb-4 transition-colors duration-800 text-xl font-light">
+            <p className="text-[#8E8E8E] group-hover:text-[#ffff] mb-4 transition-colors duration-800 text-2xl font-light">
               {service.description}
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
