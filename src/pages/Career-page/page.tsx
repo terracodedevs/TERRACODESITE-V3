@@ -1,5 +1,6 @@
 import Hero from "./section/hero"
 import InterviewProcess from "./section/interviewPro"
+import Positions from "./section/positions"
 
 
 const Page = () => {
@@ -7,6 +8,7 @@ const Page = () => {
     <div>
       <Hero/>
       <InterviewProcess/>
+      <Positions/>
     </div>
   )
 }
