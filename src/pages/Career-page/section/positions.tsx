@@ -192,7 +192,7 @@ export default function Positions() {
             </div>
 
             {/* Display filtered positions */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
                 {filteredPositions.map((position, index) => (
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
