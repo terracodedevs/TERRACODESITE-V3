@@ -122,6 +122,30 @@ const FandQ = () => {
               </div>
               </div>
               </div>
+              <style>{`
+        @keyframes bounce-gentle {
+          0%, 100% {
+            transform: translateY(0);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+          }
+          25% {
+            transform: translateY(-8px);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+          50% {
+            transform: translateY(-4px);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+          }
+          75% {
+            transform: translateY(-2px);
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+        
+        .animate-bounce-gentle {
+          animation: bounce-gentle 0.8s ease-in-out;
+        }
+      `}</style>
               </div>
 
   )

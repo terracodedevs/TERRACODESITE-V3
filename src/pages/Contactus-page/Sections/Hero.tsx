@@ -41,21 +41,22 @@ const Hero = () => {
       };
 
   return (
-    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 ">
+    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-0">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8  items-center'>
+        {/* Left Side - Intro Text */}
         <div className="flex flex-col  gap-4">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full lg:p-4 lg:w-fit xl:p-4 max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
+            <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 lg:w-fit max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className="xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
-                <h1 className="xl:text-2xl text-nowrap ">We’d love to hear from you.</h1>
+                <h1 className=" text-xl xl:text-2xl text-nowrap ">We’d love to hear from you.</h1>
             </div>
             <div className="flex flex-col mt-8">
-                <h1 className="lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Let’s Build Something<br />Brilliant.</h1>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Let’s Build Something<br />Brilliant.</h1>
                 <p className="text-2xl text-gray-300 mt-4">Drop Us a Message</p>
                 <p className="text-lg text-gray-400 mt-2">We’ll get back to you within 24 hours.</p>
             </div>
         </div>
+        {/* Right Side - Contact Form */}
         <div>
-            {/* Right Side - Contact Form */}
           <div className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
@@ -142,6 +143,7 @@ const Hero = () => {
         </div>
         </div>
         </div>
+
   )
 }
 
