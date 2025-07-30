@@ -138,7 +138,7 @@ const Articles = () => {
             {/* First Row - 2 Articles (1 spans 2 cols, 1 spans 1 col) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* First Article - spans 2 columns */}
-              <div className="md:col-span-2 bg-[#1A1A1A] rounded-xl p-8 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+              <div className="md:col-span-2 bg-[#1A1A1A] rounded-xl p-8 text-white  hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end hover:scale-105 transition-transform duration-300">
                 <img src={articles[0].image} alt={articles[0].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                 {/* Date Badge */}
                 <div className="absolute top-6 left-6">
@@ -164,7 +164,7 @@ const Articles = () => {
                       <span className="font-medium">{articles[0].comments}k</span>
                     </div>
                     {/* Read More Arrow */}
-                    <div className="ml-auto">
+                    <div className="ml-auto ">
                       <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
                       <img src="public/Property 23.png" alt="Read More" />
                     </div>
@@ -174,7 +174,7 @@ const Articles = () => {
               </div>
 
               {/* Second Article - spans 1 column */}
-              <div className="bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+              <div className="bg-[#1A1A1A] rounded-xl p-6 text-white  hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end hover:scale-105 transition-transform duration-300">
                 <img src={articles[1].image} alt={articles[1].title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4">
@@ -213,7 +213,7 @@ const Articles = () => {
             {/* Second Row - 3 Articles */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
               {articles.slice(2, 5).map((article) => (
-                <div key={article.id} className="bg-[#1A1A1A] h-1/2 rounded-xl p-6 text-white transition-colors duration-300 hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end">
+                <div key={article.id} className="bg-[#1A1A1A] h-1/2 rounded-xl p-6 text-white  hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden min-h-[450px] flex flex-col justify-end hover:scale-105 transition-transform duration-300">
                   <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                   {/* Date Badge */}
                   <div className="absolute top-4 left-4">
