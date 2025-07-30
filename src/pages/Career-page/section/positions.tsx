@@ -197,16 +197,18 @@ export default function Positions() {
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
                         <p className="text-neutral-300 mb-3">{position.description}</p>
-                        <div className="flex gap-4 text-sm w-fit px-4 py-2 rounded-3xl bg-neutral-600 text-white">
-                            <div className='flex flex-row gap-2 items-center'>
-                                <span>{position.location}</span>
-                                <span>|</span>
-                                <span>{position.type}</span>
-                                <span>|</span>
-                                <span>{position.department}</span>
+                        <div className='flex flex-row justify-between items-center mb-4'>
+                            <div className="flex gap-4 text-sm w-fit px-4 py-2 rounded-3xl bg-neutral-600 text-white">
+                                <div className='flex flex-row gap-2 items-center'>
+                                    <span>{position.location}</span>
+                                    <span>|</span>
+                                    <span>{position.type}</span>
+                                    <span>|</span>
+                                    <span>{position.department}</span>
+                                </div>
                             </div>
                             <div >
-                                <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2'/>
+                                    <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2'/>
                             </div>
                         </div>
                     </div>
