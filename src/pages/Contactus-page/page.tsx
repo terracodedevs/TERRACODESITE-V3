@@ -1,10 +1,17 @@
+import DirectContact from "./Sections/DirectContact"
+import FandQ from "./Sections/FandQ"
+import Hero from "./Sections/Hero"
 
 
 const Page = () => {
+  
   return (
-    <div>
+    <>
+      <Hero />
+      <DirectContact />
+      <FandQ />
       
-    </div>
+    </>
   )
 }
 
