@@ -213,7 +213,7 @@ const HeroSection: React.FC = () => {
             </ScrollingEffect>
         </div>
       </div>
-       <div className="px-6 relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
+       <div className=" relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
         <div className=" flex flex-col  gap-4 ">
             <div className=" backdrop-blur-md bg-white/10  rounded-full max-w-md p-4 w-fit text-white shadow-lg flex justify-start items-start flex-row">
                 <Rocket className="w-4 h-4 text-[#fd630a] mr-4" />
