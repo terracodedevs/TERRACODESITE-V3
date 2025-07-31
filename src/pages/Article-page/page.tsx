@@ -1,6 +1,10 @@
+import UnderMaintenance from "@/components/undermaintain"
+
 const Page = () => {
   return (
-    <div>P</div>
+    <div>
+      <UnderMaintenance/>
+    </div>
   )
 }
 

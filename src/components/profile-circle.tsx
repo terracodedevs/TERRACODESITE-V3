@@ -111,7 +111,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
       >
         {/* Background Circle with Color Animation */}
         <motion.div
-          className={`absolute inset-0 rounded-full border-4 border-gray-300 overflow-hidden`}
+          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden`}
           animate={{
             background: isActive 
                 ? profile.lightColor 
@@ -145,7 +145,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
             duration: 0.6
           }}
         >
-          <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-3 border-white shadow-lg">
+          <div className="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-3 border-white  shadow-lg">
             <img
               src={profile.image}
               alt={profile.name}
