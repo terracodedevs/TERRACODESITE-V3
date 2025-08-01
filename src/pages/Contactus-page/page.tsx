@@ -1,11 +1,20 @@
-import UnderMaintenance from "@/components/undermaintain"
+
+import DirectContact from "./Sections/DirectContact"
+import FandQ from "./Sections/FandQ"
+import Hero from "./Sections/Hero"
+
 
 
 const Page = () => {
+  
   return (
-    <div>
-      <UnderMaintenance/>
-    </div>
+
+    <>
+      <Hero />
+      <DirectContact />
+      <FandQ />
+      
+    </>
   )
 }
 
