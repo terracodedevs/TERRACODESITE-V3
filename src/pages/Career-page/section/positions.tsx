@@ -3,22 +3,22 @@ import { useState, useMemo } from 'react'
 
 const positions = [
     {
-        title: "Software Engineer",
-        description: "Join our team to build innovative software solutions that make a difference.",
+        title: "Frontend Developer",
+        description: "Frontend Developer with a passion for building user-friendly web applications.",
         location: "Remote",
         type: "Full-time",
-        department: "Engineering",
+        department: "Development",
         id: "1",
-        category: "Engineering"
+        category: "Development"
     },
     {
-        title: "Product Manager",
-        description: "Lead product development and strategy to deliver exceptional user experiences.",
+        title: "Flutter Developer",
+        description: "Flutter Developer with expertise in building cross-platform mobile applications.",
         location: "Remote",
         type: "Full-time",
-        department: "Product",
+        department: "Development",
         id: "2",
-        category: "Product"
+        category: "Development"
     },
     {
         title: "UX Designer",
@@ -29,24 +29,7 @@ const positions = [
         id: "3",
         category: "Design"
     },
-    {
-        title: "Data Scientist",
-        description: "Analyze data to drive insights and inform business decisions.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Data",
-        id: "4",
-        category: "Data"
-    },
-    {
-        title: "DevOps Engineer",
-        description: "Automate and optimize our infrastructure for scalability and reliability.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Engineering",
-        id: "5",
-        category: "Engineering"
-    },
+    
     {
         title: "Marketing Specialist",
         description: "Develop and execute marketing strategies to grow our brand.",
@@ -56,78 +39,7 @@ const positions = [
         id: "6",
         category: "Marketing"
     },
-    {
-        title: "Sales Executive",
-        description: "Drive sales growth by building relationships with clients.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Sales",
-        id: "7",
-        category: "Sales"
-    },
-    {
-        title: "Customer Support Representative",
-        description: "Provide exceptional support to our customers and resolve their issues.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Support",
-        id: "8",
-        category: "Support"
-    },
-    {
-        title: "Content Writer",
-        description: "Create engaging content that informs and inspires our audience.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Content",
-        id: "9",
-        category: "Content"
-    },
-    {
-      title:"QA Engineer", 
-      description:"Ensure the quality of our software through rigorous testing.", 
-      location:"Remote", 
-      type:"Full-time", 
-      department:"Quality Assurance", 
-      id:"10", 
-      category:"Quality Assurance"
-    },
-    {
-        title: "Software Engineer",
-        description: "Join our team to build innovative software solutions that make a difference.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Engineering",
-        id: "1",
-        category: "Engineering"
-    },
-    {
-        title: "Product Manager",
-        description: "Lead product development and strategy to deliver exceptional user experiences.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Product",
-        id: "2",
-        category: "Product"
-    },
-    {
-        title: "Software Engineer",
-        description: "Join our team to build innovative software solutions that make a difference.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Engineering",
-        id: "1",
-        category: "Engineering"
-    },
-    {
-        title: "Product Manager",
-        description: "Lead product development and strategy to deliver exceptional user experiences.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Product",
-        id: "2",
-        category: "Product"
-    }
+    
 ]
 
 export default function Positions() {
@@ -197,16 +109,18 @@ export default function Positions() {
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
                         <p className="text-neutral-300 mb-3">{position.description}</p>
-                        <div className="flex gap-4 text-sm w-fit px-4 py-2 rounded-3xl bg-neutral-600 text-white">
-                            <div className='flex flex-row gap-2 items-center'>
-                                <span>{position.location}</span>
-                                <span>|</span>
-                                <span>{position.type}</span>
-                                <span>|</span>
-                                <span>{position.department}</span>
+                        <div className='flex flex-row justify-between items-center mb-4'>
+                            <div className="flex gap-4 text-sm w-fit px-4 py-2 rounded-3xl bg-neutral-600 text-white">
+                                <div className='flex flex-row gap-2 items-center'>
+                                    <span>{position.location}</span>
+                                    <span>|</span>
+                                    <span>{position.type}</span>
+                                    <span>|</span>
+                                    <span>{position.department}</span>
+                                </div>
                             </div>
                             <div >
-                                <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2'/>
+                                    <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2'/>
                             </div>
                         </div>
                     </div>
