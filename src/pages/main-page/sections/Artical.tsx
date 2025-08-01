@@ -123,7 +123,7 @@ const Articles = () => {
                     </div>
                     {/* Read More Arrow */}
                     <div className="flex items-center justify-center hover:bg-white transition-colors rounded-full">
-                      <img src="public/Property 23.png" alt="Read More" />
+                      <img src="/Property 23.png" alt="Read More" />
                     </div>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const Articles = () => {
                     {/* Read More Arrow */}
                     <div className="ml-auto ">
                       <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
-                      <img src="public/Property 23.png" alt="Read More" />
+                      <img src="/Property 23.png" alt="Read More" />
                     </div>
                     </div>
                   </div>
@@ -203,7 +203,7 @@ const Articles = () => {
                     </div>
                     {/* Read More Arrow */}
                     <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
-                      <img src="public/Property 23.png" alt="Read More" />
+                      <img src="/Property 23.png" alt="Read More" />
                     </div>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ const Articles = () => {
                       </div>
                       {/* Read More Arrow */}
                      <div className=" flex items-center justify-center hover:bg-white transition-colors rounded-full">
-                      <img src="public/Property 23.png" alt="Read More" />
+                      <img src="/Property 23.png" alt="Read More" />
                     </div>
                     </div>
                   </div>
