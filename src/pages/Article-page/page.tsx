@@ -1,9 +1,23 @@
-import UnderMaintenance from "@/components/undermaintain"
+
+import Article from "./article"
+import Hero from "./hero"
+import Navbar from "@/components/navbar"
+import { motion } from "framer-motion"
 
 const Page = () => {
   return (
-    <div>
-      <UnderMaintenance/>
+    <div className="mt-10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className=" px-6"
+      >
+      {/* <UnderMaintenance/> */}
+      <Navbar/>
+      <Hero/>
+      <Article/>
+      </motion.div>
     </div>
   )
 }

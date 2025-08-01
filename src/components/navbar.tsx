@@ -42,10 +42,11 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
+        <Link to="/contact" >
         <div className="hidden xl:flex w-48 rounded-[32px] bg-gradient-to-r from-[#f56d04] to-[#fb9709] h-16 items-center justify-center text-white cursor-pointer hover:shadow-lg transition-shadow">
           <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
         </div>
-
+        </Link>
         {/* Mobile Hamburger */}
         <button onClick={toggleMenu} className="xl:hidden p-2 rounded-full bg-[#141414] text-white hover:bg-black transition-colors">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,6 +84,7 @@ export default function Navbar() {
             ))}
 
             {/* Mobile CTA Button */}
+            <Link to="/contact">
             <div
               className={`mt-6 transform transition-all duration-300 ease-out ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
               style={{ transitionDelay: isMenuOpen ? `${navbar.links.length * 200}ms` : '0ms' }}
@@ -91,7 +93,7 @@ export default function Navbar() {
                 <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
               </div>
             </div>
-
+            </Link>
           </div>
         </div>
       </div>

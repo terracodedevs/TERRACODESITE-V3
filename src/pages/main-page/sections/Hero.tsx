@@ -1,6 +1,7 @@
 import TerraButton from "@/components/button";
 import Navbar from "@/components/navbar";
 import { ScrollingEffect,  type ScrollingEffectRef } from "@/components/scrollEffect";
+import { Link,  useNavigate } from "@tanstack/react-router";
 import { ArrowRightCircle, Heart,  LucideLightbulb, Rocket, Send } from "lucide-react";
 import React, { useRef, useEffect } from "react";
 
@@ -42,6 +43,11 @@ const stack = [
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollRef = useRef<ScrollingEffectRef>(null);
+  const navigate =useNavigate();
+
+  const handleClick = () => {
+  navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
+}
 
   useEffect(() => {
     const video = videoRef.current;
@@ -99,25 +105,27 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-lg xl:text-2xl text-nowrap">Build Your Ideas!</h1>
               </div>
             </div>
+            <Link to="/articles" className="text-white">
             <div className=" backdrop-blur-sm bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
                 <h1 className="text-3xl  mb-4">Latest Articles & News</h1>
                 <img className="object-cover w-full h-full mb-4 rounded-md" src="/Mask group (1).png" alt="Vector" />
                 <h1 className="text-lg">
-                    Tech Giants Unveil Cutting-Edge AI Innovations
+                    Fueled by Passion. Built for Impact.
                 </h1>
                 <p className="text-sm text-neutral-400">
                     12 June 2025
                 </p>
                 <div className="flex flex-row gap-4">
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 mt-4 flex items-center gap-4">
-                       <Send className="w-4 h-4"/> 99
+                       <Send className="w-4 h-4"/> 10
                     </div>
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 mt-4 flex items-center gap-4">
-                       <Heart className="w-4 h-4"/> 99
+                       <Heart className="w-4 h-4"/> 10
                     </div>
                 </div>
 
             </div>
+            </Link>
         </div>
         <div className="col-span-2 flex flex-col  gap-4 lg:px-10 xl:px-28">
             <div className=" backdrop-blur-md bg-white/10  rounded-full lg:p-4 lg:w-fit xl:p-6 max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
@@ -134,7 +142,7 @@ const HeroSection: React.FC = () => {
                 Talk to us
                 <ArrowRightCircle className="w-7 h-7" />
                 </button> */}
-                <TerraButton className="mt-4"/>
+                <TerraButton className="mt-4" onClick={handleClick}/>
             </div>
         </div>
         <div className="col-span-1 flex flex-col gap-4">
