@@ -87,7 +87,7 @@ interface ProcessCardItemProps {
 
 export default function ProcessCardItem({ icon, title, description, imageSrc, imageClass,footer }: ProcessCardItemProps) {
   return (
-    <div className="group w-full relative rounded-3xl bg-[#1B1B1B] max-w-[364px] h-[408px] overflow-hidden text-center text-2xl text-neutral-500 hover:text-white font-lufga duration-800">
+    <div className="group w-full relative rounded-3xl bg-[#1B1B1B] min-w-[340px] max-w-[364px] h-[408px] overflow-hidden text-center text-2xl text-neutral-500 hover:text-white font-lufga duration-800">
       {/* Bottom gradient line on hover */}
       <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
 

@@ -5,6 +5,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { useAssetLoader } from '@/hooks/useAssetLoader'
 import { AnimatePresence, motion } from 'framer-motion'
 
+
 export const Route = createRootRoute({
   component: () => {
     const assets = [
