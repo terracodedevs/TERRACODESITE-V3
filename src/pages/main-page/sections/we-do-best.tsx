@@ -33,7 +33,7 @@ const services = [
 
 export default function WhatWeDoBest() {
   return (
-    <section className=" px-4 md:px-0 bg-[#000] font-lufga mt-10 xl:mt-20 ">
+    <section className=" px-4 md:px-4 bg-[#000] font-lufga mt-10 xl:mt-20 ">
       <div className="text-center mb-12">
         <h2 className="text-[#FDA10A] text-6xl font-light mb-2">What We Do Best</h2>
         <p className="text-gray-400 text-2xl">Scalable tech. Smart experiences. Delivered with precision.</p>
@@ -52,7 +52,7 @@ export default function WhatWeDoBest() {
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none " />
 
             <div className="flex justify-center ">
-              <span ><img src="public/hugeicons_idea-01.png" alt="Service Icon"  /></span>
+              <span ><img src="hugeicons_idea-01.png" alt="Service Icon"  /></span>
             </div>
             <h3 className="text-4xl text-white">
               {service.title}

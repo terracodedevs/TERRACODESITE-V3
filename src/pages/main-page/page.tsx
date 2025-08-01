@@ -10,13 +10,15 @@ import HeroSection from "./sections/Hero"
 
 const Page = () => {
   return (
-    <>
+    <div className="">
     <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>
     <WorkWithUs/>
     <OurProcess/>
+    <div className="hidden">
     <OurClients/>
+    </div>
     <div className="hidden">
     <Articles />
     </div>
@@ -24,7 +26,7 @@ const Page = () => {
     <Awards/>
     </div>
     <FandQ />
-    </>
+    </div>
    
   )
 }

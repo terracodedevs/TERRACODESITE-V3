@@ -89,7 +89,7 @@ const FandQ = () => {
   };
 
   return (
-    <div className="px-4 md:px-0 bg-black text-white py-4 font-lufga my-10 xl:my-20 ">
+    <div className="px-4 md:px-4 bg-black text-white py-4 font-lufga my-10 xl:my-20 ">
       <div className="max-w-8xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Side - FAQ */}
