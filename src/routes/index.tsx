@@ -1,16 +1,12 @@
-import { createFileRoute, redirect } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
+import Page from '@/pages/main-page/page'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
-  beforeLoad:()=>{
-    throw redirect({ to: '/home' })
-  }
 })
 
 function RouteComponent() {
   return (
-    <div className="p-2">
-      <h3>Welcome /</h3>
-    </div>
+    <Page />
   )
 }
