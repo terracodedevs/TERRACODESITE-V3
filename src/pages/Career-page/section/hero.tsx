@@ -18,9 +18,15 @@ const Hero = () => {
             </div>
         </div>
         {/* team members Images */}
-        <div className=" rounded-3xl py-10">
-          <img src="/team.png" alt="" className="object-cover w-full"/>
-        </div>
+        
+        <div className="relative rounded-3xl h-[60vh] w-full overflow-hidden mt-10">
+        {/* Image */}
+        <img src="/career.jpg" alt="" className="object-cover w-full h-full" />
+
+        {/* Black bottom-to-top gradient overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+      </div>
+        
       </div>
     </div>
     

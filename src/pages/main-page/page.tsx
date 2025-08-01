@@ -17,8 +17,12 @@ const Page = () => {
     <WorkWithUs/>
     <OurProcess/>
     <OurClients/>
+    <div className="hidden">
     <Articles />
+    </div>
+    <div className="hidden">
     <Awards/>
+    </div>
     <FandQ />
     </>
    
