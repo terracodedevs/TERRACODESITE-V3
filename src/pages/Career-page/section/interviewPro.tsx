@@ -50,10 +50,10 @@ const WorkCardData = [
 
 const InterviewProcess = () => {
   return (
-     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20">
-                <div className="flex flex-col items-center justify-center text-center mb-10">
-                    <h2 className="text-6xl font-extralight mb-4 text-[#FDA10A] ">Our Interview Process</h2>
-                    <p className="text-2xl font-extralight text-neutral-400 ">
+     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20 px-4">
+                <div className="flex flex-col items-start md:items-center justify-center text-left mb-10">
+                    <h2 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ">Our Interview Process</h2>
+                    <p className="text-lg md:text-2xl font-extralight text-neutral-400 ">
                     We value your time - that’s why our hiring process is fast, friendly, and focused on finding a great mutual fit.
                     </p>
                 </div>

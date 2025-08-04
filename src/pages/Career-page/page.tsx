@@ -8,7 +8,9 @@ const Page = () => {
     <div>
       <Hero/>
       <InterviewProcess/>
+      <div className="mb-32">
       <Positions/>
+      </div>
     </div>
   )
 }

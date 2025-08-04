@@ -71,8 +71,8 @@ export default function Positions() {
 
     return (
         <div className="flex flex-col gap-5 font-lufga mt-10 xl:mt-20">
-            <div className="flex flex-col items-center justify-center text-center mb-10">
-                <h2 className="text-6xl font-extralight mb-4 text-[#FDA10A]">All Open Positions</h2>
+            <div className="flex flex-col items-center justify-center text-start md:text-center mb-10">
+                <h2 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">All Open Positions</h2>
             </div>      
             
             <div className="flex flex-col px-4">
@@ -109,7 +109,7 @@ export default function Positions() {
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
                         <p className="text-neutral-300 mb-3">{position.description}</p>
-                        <div className='flex flex-row justify-between items-center mb-4'>
+                        <div className='flex flex-col justify-start items-start gap-2 md:gap-0 md:flex-row md:justify-between md:items-center mb-4'>
                             <div className="flex gap-4 text-sm w-fit px-4 py-2 rounded-3xl bg-neutral-600 text-white">
                                 <div className='flex flex-row gap-2 items-center'>
                                     <span>{position.location}</span>
