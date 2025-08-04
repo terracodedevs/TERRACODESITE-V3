@@ -121,6 +121,8 @@ interface ProfileCircleProps {
 
 const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInteraction }) => {
   return (
+    <div className="relative w-[360px] h-[380px] ">
+      {/* Fixed footprint wrapper prevents layout shift */}
     <motion.div
       className="relative cursor-pointer select-none "
       onClick={onInteraction}
@@ -144,7 +146,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
       >
         {/* Background Circle with Color Animation */}
         <motion.div
-          className={`absolute inset-0 rounded-full border-4 bg-amber-500 overflow-hidden`}
+          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden`}
           animate={{
             background: isActive 
                 ? profile.lightColor 
@@ -189,7 +191,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
 
         {/* Text Content */}
         <motion.div
-          className="absolute top-2/12 left-6/12 transform -translate-x-1/2 text-black text-nowrap"
+          className="absolute top-1/8 left-6/12 transform -translate-x-1/2 text-black text-nowrap"
           initial={{ opacity: 0, y: -20 }}
           animate={{
             opacity: isActive ? 1 : 0,
@@ -200,7 +202,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
             delay: isActive ? 0.2 : 0,
           }}
         >
-          <h3 className="text-lg md:text-xl font-bold mb-1">{profile.name}</h3>
+          <h3 className="text-lg md:text-2xl text-[#FDA10A] font-bold mb-1">{profile.name}</h3>
           <p className="text-sm md:text-base  font-bold">{profile.role}</p>
         </motion.div>
 
@@ -221,6 +223,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
         )}
       </motion.div>
     </motion.div>
+    </div>
   );
 };
 
