@@ -180,11 +180,11 @@ const HeroSection: React.FC = () => {
             
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
-                <div className="xl:text-3xl font-extrabold text-amber-600">1 +</div>
+                <div className="xl:text-3xl font-extrabold text-amber-600">2 +</div>
                 <h1 className="xl:text-2xl text-nowrap ">Number of Years</h1>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
-            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none px-1" />
                 <div className="xl:text-3xl font-extrabold text-amber-600 text-nowrap">15+</div>
                 <h1 className="xl:text-2xl text-nowrap ">Projects Completed</h1>
             </div>
@@ -242,11 +242,11 @@ const HeroSection: React.FC = () => {
                 </div>
                 <div className=" backdrop-blur-md bg-white/10 mt-4 rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
-                <div className="text-xl font-extrabold text-amber-600">1 +</div>
+                <div className="text-xl font-extrabold text-amber-600">2 +</div>
                 <h1 className="text-xl text-nowrap ">Number of Years</h1>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
-            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none px-1" />
                 <div className="text-xl font-extrabold text-amber-600 text-nowrap">15+</div>
                 <h1 className="text-xl text-nowrap ">Projects Completed</h1>
             </div>
