@@ -41,7 +41,7 @@ const Hero = () => {
       };
 
   return (
-    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-0">
+    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-4">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8  items-center'>
         {/* Left Side - Intro Text */}
         <div className="flex flex-col  gap-4">

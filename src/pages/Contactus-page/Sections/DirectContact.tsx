@@ -1,6 +1,6 @@
 const DirectContact = () => {
   return (
-    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-0">
+    <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-4">
       <div className="flex flex-col gap-8 items-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Direct Contact Details</h1>

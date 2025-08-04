@@ -10,10 +10,7 @@ function RouteComponent() {
   return(
       <div className='mt-10'>
         <Navbar/>
-
         <Page />
-
-
       </div>
     )
 }
