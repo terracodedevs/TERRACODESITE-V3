@@ -85,7 +85,7 @@ const ProfileCircles: React.FC = () => {
   };
 
   return (
-    <div className=" bg-black items-center justify-center p-4 ">
+    <div className=" bg-black items-center justify-center p-4">
       {/* Mobile/Tablet Layout - Vertical Stack */}
       <div className="block md:hidden space-y-8 ">
         {profiles.map((profile) => (
@@ -99,7 +99,7 @@ const ProfileCircles: React.FC = () => {
       </div>
 
       {/* Desktop Layout - Horizontal Row */}
-      <div className="hidden md:grid grid-cols-4 space-x-8 lg:space-x-12 space-y-32 ">
+      <div className="hidden md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 space-x-8 lg:space-x-12 space-y-32 ">
         {profiles.map((profile) => (
           <ProfileCircle
             key={profile.id}
@@ -121,7 +121,7 @@ interface ProfileCircleProps {
 
 const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInteraction }) => {
   return (
-    <div className="relative w-[360px] h-[380px] ">
+    <div className="relative md:w-[360px] md:h-[380px]">
       {/* Fixed footprint wrapper prevents layout shift */}
     <motion.div
       className="relative cursor-pointer select-none "
@@ -146,7 +146,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
       >
         {/* Background Circle with Color Animation */}
         <motion.div
-          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden`}
+          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden w-72 h-72 md:w-auto md:h-auto  ${profile.bgColor}  `}
           animate={{
             background: isActive 
                 ? profile.lightColor 
@@ -156,7 +156,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
           transition={{ duration: 0.4 }}
         >
           {/* Glowing Effect */}
-          <motion.div
+          {/* <motion.div
             className="absolute inset-0 rounded-full"
             animate={{
               boxShadow: isActive 
@@ -164,7 +164,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
                 : "0 0 0px rgba(0, 0, 0, 0)",
             }}
             transition={{ duration: 0.4 }}
-          />
+          /> */}
         </motion.div>
 
         {/* Profile Image Container */}
@@ -180,7 +180,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
             duration: 0.6
           }}
         >
-          <div className="w-32 h-32 md:w-80 md:h-80 rounded-full overflow-hidden border-3 border-white  shadow-lg ">
+          <div className="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-3 border-white  shadow-lg">
             <img
               src={profile.image}
               alt={profile.name}
