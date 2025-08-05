@@ -10,6 +10,12 @@ interface ProfileData {
   lightColor: string;
 }
 
+// Helper to detect if device is mobile
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth < 768;
+};
+
 const ProfileCircles: React.FC = () => {
   const [activeProfile, setActiveProfile] = useState<number | null>(null);
 
@@ -80,9 +86,9 @@ const ProfileCircles: React.FC = () => {
     }
   ];
 
-  const handleInteraction = (profileId: number) => {
-    setActiveProfile(activeProfile === profileId ? null : profileId);
-  };
+  // const handleInteraction = (profileId: number) => {
+  //   setActiveProfile(activeProfile === profileId ? null : profileId);
+  // };
 
   return (
     <div className=" bg-black items-center justify-center p-4">
@@ -93,7 +99,7 @@ const ProfileCircles: React.FC = () => {
             key={profile.id}
             profile={profile}
             isActive={activeProfile === profile.id}
-            onInteraction={() => handleInteraction(profile.id)}
+            onSetActive={setActiveProfile}
           />
         ))}
       </div>
@@ -105,7 +111,7 @@ const ProfileCircles: React.FC = () => {
             key={profile.id}
             profile={profile}
             isActive={activeProfile === profile.id}
-            onInteraction={() => handleInteraction(profile.id)}
+            onSetActive={setActiveProfile}
           />
         ))}
       </div>
@@ -116,19 +122,38 @@ const ProfileCircles: React.FC = () => {
 interface ProfileCircleProps {
   profile: ProfileData;
   isActive: boolean;
-  onInteraction: () => void;
+  onSetActive: (id: number | null) => void;
 }
 
-const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInteraction }) => {
+const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive,  onSetActive }) => {
+   const handleMouseEnter = () => {
+    if (!isMobile()) {
+      onSetActive(profile.id);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile()) {
+      onSetActive(null);
+    }
+  };
+
+  const handleClick = () => {
+    if (isMobile()) {
+      onSetActive(isActive ? null : profile.id);
+    }
+  };
+
   return (
     <div className="relative md:w-[360px] md:h-[380px]">
       {/* Fixed footprint wrapper prevents layout shift */}
     <motion.div
-      className="relative cursor-pointer select-none "
-      onClick={onInteraction}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-    >
+       onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
       {/* Outer Container */}
       <motion.div
         className="relative"
@@ -146,7 +171,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
       >
         {/* Background Circle with Color Animation */}
         <motion.div
-          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden w-72 h-72 md:w-auto md:h-auto  ${profile.bgColor}  `}
+          className={`absolute inset-0 rounded-full border-4 bg-white overflow-hidden w-72 h-72 md:w-auto md:h-auto ${profile.bgColor}  `}
           animate={{
             background: isActive 
                 ? profile.lightColor 
@@ -169,7 +194,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive, onInte
 
         {/* Profile Image Container */}
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute top-1/2 left-1/2 md:top-1/2 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           animate={{
             y: isActive ? 60 : 0,
           }}
