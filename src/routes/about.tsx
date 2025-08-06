@@ -11,9 +11,9 @@ function RouteComponent() {
   return(
     <div className='mt-10'>
 
-      <Navbar/>
-     <Page />
-     {/* <UnderMaintenance/> */}
+      <Navbar />
+      <Page />
+      {/* <UnderMaintenance/> */}
     </div>
   )
 }

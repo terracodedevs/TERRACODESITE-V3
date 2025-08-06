@@ -22,64 +22,64 @@ const ProfileCircles: React.FC = () => {
   const profiles: ProfileData[] = [
     {
       id: 1,
-      name: "Shehani Dias",
-      role: "Product Designer",
+      name: "Nomin Sendinu",
+      role: "CEO",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
       id: 2,
-      name: "Sarah Johnson",
-      role: "UX Designer",
+      name: "K N piyumina",
+      role: "CTO",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
     {
       id: 3,
-      name: "Mike Chen",
-      role: "Frontend Developer",
+      name: "Manuka Rathnayake",
+      role: "COO",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
     {
       id: 4,
-      name: "Alex Rivera",
-      role: "Creative Director",
+      name: "Chamod Fernando",
+      role: "Head of Marketing",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     },
      {
       id: 5,
-      name: "Shehani Dias",
-      role: "Product Designer",
+      name: "Ishira Namadith",
+      role: "full Stack Developer",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
       id: 6,
-      name: "Sarah Johnson",
-      role: "UX Designer",
+      name: "Yasith Theekshana",
+      role: "operations Manager",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
     {
       id: 7,
-      name: "Mike Chen",
-      role: "Frontend Developer",
+      name: "Panindu Vithanage",
+      role: "full Stack Developer",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
     {
       id: 8,
-      name: "Alex Rivera",
-      role: "Creative Director",
+      name: "AHLI Umayanga",
+      role: "Mobile app Developer",
       image: "public/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
@@ -93,7 +93,7 @@ const ProfileCircles: React.FC = () => {
   return (
     <div className=" bg-black items-center justify-center p-4">
       {/* Mobile/Tablet Layout - Vertical Stack */}
-      <div className="block md:hidden space-y-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-8 w-full place-items-center ">
         {profiles.map((profile) => (
           <ProfileCircle
             key={profile.id}
@@ -105,7 +105,7 @@ const ProfileCircles: React.FC = () => {
       </div>
 
       {/* Desktop Layout - Horizontal Row */}
-      <div className="hidden md:grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 space-x-8 lg:space-x-12 space-y-32 ">
+      <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-32 ">
         {profiles.map((profile) => (
           <ProfileCircle
             key={profile.id}
@@ -145,7 +145,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive,  onSet
   };
 
   return (
-    <div className="relative md:w-[360px] md:h-[380px]">
+    <div className="relative w-full max-w-[360px] h-[380px]">
       {/* Fixed footprint wrapper prevents layout shift */}
     <motion.div
        onClick={handleClick}
@@ -194,7 +194,7 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive,  onSet
 
         {/* Profile Image Container */}
         <motion.div
-          className="absolute top-1/2 left-1/2 md:top-1/2 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="z-20 absolute top-1/2 left-1/2 md:top-1/2 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           animate={{
             y: isActive ? 60 : 0,
           }}
@@ -216,8 +216,8 @@ const ProfileCircle: React.FC<ProfileCircleProps> = ({ profile, isActive,  onSet
 
         {/* Text Content */}
         <motion.div
-          className="absolute top-1/8 left-6/12 transform -translate-x-1/2 text-black text-nowrap"
-          initial={{ opacity: 0, y: -20 }}
+          className="z-10 absolute top-1/8 left-6/12 transform -translate-x-1/2 text-black text-nowrap"
+          initial={{ opacity: 0, y: -10 }}
           animate={{
             opacity: isActive ? 1 : 0,
             y: isActive ? 0 : 20,
