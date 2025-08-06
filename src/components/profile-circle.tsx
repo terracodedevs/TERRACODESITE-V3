@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion ,AnimatePresence} from 'framer-motion';
 
 interface ProfileData {
   id: number;
@@ -16,6 +16,72 @@ const isMobile = () => {
   return window.innerWidth < 768;
 };
 
+const MobileProfileCarousel: React.FC<{ profiles: ProfileData[] }> = ({ profiles }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % profiles.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [profiles.length]);
+
+  const profile = profiles[current];
+
+  return (
+    <div className="w-full flex justify-center items-center py-8">
+      <div className="relative bg-white rounded-full  w-[320px] h-[400px] flex flex-col items-center shadow-xl overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={profile.id}
+            className="w-full flex flex-col items-center"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="absolute top-12 left-0 w-full flex flex-col items-center z-10">
+              <motion.h3
+                className="text-xl font-bold text-[#FDA10A] mb-1"
+                initial={{ x: -10,  }}
+                animate={{ x: 0, }}
+                exit={{ x: 0, }}
+                transition={{ duration: 0.5 }}
+              >
+                {profile.name}
+              </motion.h3>
+              <motion.p
+                className="text-base font-semibold text-gray-700"
+                initial={{ x: 10, }}
+                animate={{ x: 0}}
+                exit={{ x: 0}}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {profile.role}
+              </motion.p>
+            </div>
+            <div className="flex justify-center items-center h-full pt-28">
+              <motion.div
+                className="rounded-full overflow-hidden shadow-lg w-[260px] h-[260px] bg-white"
+                initial={{ x: 0, opacity: 0.5 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1}}
+              >
+                <img
+                  src={profile.image}
+                  alt={profile.name}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
 const ProfileCircles: React.FC = () => {
   const [activeProfile, setActiveProfile] = useState<number | null>(null);
 
@@ -24,7 +90,7 @@ const ProfileCircles: React.FC = () => {
       id: 1,
       name: "Nomin Sendinu",
       role: "CEO",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/WhatsApp Image 2025-08-06 at 15.27.46_99c7f42e.jpg",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
@@ -32,7 +98,7 @@ const ProfileCircles: React.FC = () => {
       id: 2,
       name: "K N piyumina",
       role: "CTO",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/IMG-20250806-WA0091.jpg",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
@@ -40,7 +106,7 @@ const ProfileCircles: React.FC = () => {
       id: 3,
       name: "Manuka Rathnayake",
       role: "COO",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/IMG-20250806-WA0092.jpg",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
@@ -55,16 +121,16 @@ const ProfileCircles: React.FC = () => {
      {
       id: 5,
       name: "Ishira Namadith",
-      role: "full Stack Developer",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      role: "Backend Developer",
+      image: "public/lufga/IMG-20250806-WA0093.jpg",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
       id: 6,
-      name: "Yasith Theekshana",
+      name: "Yasith Dingiribanda",
       role: "operations Manager",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/IMG-20250806-WA0090.jpg",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
@@ -72,7 +138,7 @@ const ProfileCircles: React.FC = () => {
       id: 7,
       name: "Panindu Vithanage",
       role: "full Stack Developer",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/IMG-20250806-WA0088.jpg",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
@@ -80,7 +146,7 @@ const ProfileCircles: React.FC = () => {
       id: 8,
       name: "AHLI Umayanga",
       role: "Mobile app Developer",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "public/lufga/IMG-20250806-WA0089.jpg",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     }
@@ -92,20 +158,14 @@ const ProfileCircles: React.FC = () => {
 
   return (
     <div className=" bg-black items-center justify-center p-4">
-      {/* Mobile/Tablet Layout - Vertical Stack */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-8 w-full place-items-center ">
-        {profiles.map((profile) => (
-          <ProfileCircle
-            key={profile.id}
-            profile={profile}
-            isActive={activeProfile === profile.id}
-            onSetActive={setActiveProfile}
-          />
-        ))}
+       {/* Mobile/Tablet Layout - Carousel */}
+      <div className="block xl:hidden">
+        <MobileProfileCarousel profiles={profiles} />
       </div>
 
+
       {/* Desktop Layout - Horizontal Row */}
-      <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-32 ">
+      <div className="hidden xl:grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-32 ">
         {profiles.map((profile) => (
           <ProfileCircle
             key={profile.id}
