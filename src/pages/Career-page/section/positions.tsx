@@ -9,7 +9,8 @@ const positions = [
         type: "Full-time",
         department: "Development",
         id: "1",
-        category: "Development"
+        category: "Development",
+        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
     },
     {
         title: "Flutter Developer",
@@ -18,7 +19,8 @@ const positions = [
         type: "Full-time",
         department: "Development",
         id: "2",
-        category: "Development"
+        category: "Development",
+        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
     },
     {
         title: "UX Designer",
@@ -27,7 +29,8 @@ const positions = [
         type: "Full-time",
         department: "Design",
         id: "3",
-        category: "Design"
+        category: "Design",
+        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
     },
     
     {
@@ -37,7 +40,8 @@ const positions = [
         type: "Full-time",
         department: "Marketing",
         id: "6",
-        category: "Marketing"
+        category: "Marketing",
+        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
     },
     
 ]
@@ -70,7 +74,7 @@ export default function Positions() {
     }, [selectedCategory, searchTerm])
 
     return (
-        <div className="flex flex-col gap-5 font-lufga mt-10 xl:mt-20">
+        <div className="flex flex-col gap-5 font-lufga mt-10 xl:mt-20 container mx-auto">
             <div className="flex flex-col items-center justify-center text-start md:text-center mb-10">
                 <h2 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">All Open Positions</h2>
             </div>      
@@ -104,7 +108,7 @@ export default function Positions() {
             </div>
 
             {/* Display filtered positions */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 px-4 ">
                 {filteredPositions.map((position, index) => (
                     <div key={`${position.id}-${index}`} className="bg-neutral-800 p-6 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-2">{position.title}</h3>
@@ -120,7 +124,7 @@ export default function Positions() {
                                 </div>
                             </div>
                             <div >
-                                    <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2'/>
+                                    <TerraButton label="Overview" padding='pl-2 pr-1 py-1 rounded-4xl text-sm gap-2' img = 'w-3' imgpadding='p-2' onClick={() => window.open(position.link, "_blank")}/>
                             </div>
                         </div>
                     </div>

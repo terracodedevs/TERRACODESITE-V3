@@ -1,4 +1,5 @@
 
+import Footer from '@/components/nfooter'
 import UnderMaintenance from '@/components/undermaintain'
 // import Page from '@/pages/Article-page/page'
 import { createFileRoute } from '@tanstack/react-router'
@@ -12,6 +13,7 @@ function RouteComponent() {
   <div className='mt-10'>
     <UnderMaintenance/>
     {/* <Page/> */}
+    <Footer/>
   </div>
   )
 }

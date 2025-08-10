@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop & Mobile Navbar */} 
-      <div className="w-full relative flex items-center justify-between px-4 sm:px-8 lg:px-[60px] text-xl font-lufga">
+      <div className="w-full relative flex items-center justify-between px-4 sm:px-8 lg:px-[60px] text-xl font-lufga container mx-auto">
         <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="Frame 9.png" />
 
         {/* Desktop Menu */}

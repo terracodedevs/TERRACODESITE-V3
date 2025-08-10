@@ -1,9 +1,10 @@
 // import Navbar from '@/components/navbar'
-import Footer from '@/pages/main-page/sections/footer'
+
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { useAssetLoader } from '@/hooks/useAssetLoader'
 import { AnimatePresence, motion } from 'framer-motion'
+import Footer from '@/components/nfooter'
 
 
 export const Route = createRootRoute({
@@ -43,7 +44,7 @@ export const Route = createRootRoute({
     }
 
     return (
-      <div className="container mx-auto  static">
+      <div className=" ">
         <AnimatePresence mode="wait">
           <motion.div
             key="content"

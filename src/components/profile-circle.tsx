@@ -90,7 +90,7 @@ const ProfileCircles: React.FC = () => {
       id: 1,
       name: "Nomin Sendinu",
       role: "CEO",
-      image: "public/lufga/WhatsApp Image 2025-08-06 at 15.27.46_99c7f42e.jpg",
+      image: "/lufga/WhatsApp Image 2025-08-06 at 15.27.46_99c7f42e.jpg",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
@@ -98,7 +98,7 @@ const ProfileCircles: React.FC = () => {
       id: 2,
       name: "K N piyumina",
       role: "CTO",
-      image: "public/lufga/IMG-20250806-WA0091.jpg",
+      image: "/lufga/IMG-20250806-WA0091.jpg",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
@@ -106,7 +106,7 @@ const ProfileCircles: React.FC = () => {
       id: 3,
       name: "Manuka Rathnayake",
       role: "COO",
-      image: "public/lufga/IMG-20250806-WA0092.jpg",
+      image: "/lufga/IMG-20250806-WA0092.jpg",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
@@ -114,7 +114,7 @@ const ProfileCircles: React.FC = () => {
       id: 4,
       name: "Chamod Fernando",
       role: "Head of Marketing",
-      image: "public/Screenshot 2025-08-04 110822.png",
+      image: "/Screenshot 2025-08-04 110822.png",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     },
@@ -122,23 +122,23 @@ const ProfileCircles: React.FC = () => {
       id: 5,
       name: "Ishira Namadith",
       role: "Backend Developer",
-      image: "public/lufga/IMG-20250806-WA0093.jpg",
+      image: "/lufga/IMG-20250806-WA0093.jpg",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
       id: 6,
-      name: "Yasith Dingiribanda",
+      name: "Yasith Munasinghe",
       role: "operations Manager",
-      image: "public/lufga/IMG-20250806-WA0090.jpg",
+      image: "/lufga/IMG-20250806-WA0090.jpg",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
     {
       id: 7,
-      name: "Panindu Vithanage",
+      name: "Pasindu Vithanage",
       role: "full Stack Developer",
-      image: "public/lufga/IMG-20250806-WA0088.jpg",
+      image: "/lufga/IMG-20250806-WA0088.jpg",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
@@ -146,7 +146,7 @@ const ProfileCircles: React.FC = () => {
       id: 8,
       name: "AHLI Umayanga",
       role: "Mobile app Developer",
-      image: "public/lufga/IMG-20250806-WA0089.jpg",
+      image: "/lufga/IMG-20250806-WA0089.jpg",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     }

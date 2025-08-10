@@ -1,11 +1,11 @@
 import TerraButton from "@/components/button"
-import ProfileGrid from "@/components/image-circle"
+
 import ProfileCircles from "@/components/profile-circle"
 import { Rocket } from "lucide-react"
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white font-lufga mt-6">
+    <div className="bg-black text-white font-lufga mt-10 container mx-auto">
       <div className="max-w-8xl mx-auto">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center">
