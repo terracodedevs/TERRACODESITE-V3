@@ -5,6 +5,7 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { useAssetLoader } from '@/hooks/useAssetLoader'
 import { AnimatePresence, motion } from 'framer-motion'
 import Footer from '@/components/nfooter'
+import { CookieBanner } from '@/components/CookieFile'
 
 
 export const Route = createRootRoute({
@@ -53,6 +54,7 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <CookieBanner/>
             {/* <Navbar /> */}
             <Outlet />
             <Footer />
