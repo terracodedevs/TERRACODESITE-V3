@@ -42,7 +42,7 @@ export default function Footer() {
                 </div>
                 <div className=" relative text-base leading-6 inline-block">
                     <a href="https://maps.app.goo.gl/QKy9ety7Cet7NC4JA" target="_blank">
-                        <p className="m-0">274 3/1 (3rd floor), Highlevel Rd,</p>
+                        <p className="m-0">3rd Floor, No. 274, High Level Road,</p>
                         <p className="m-0">Maharagama, Sri Lanka</p>
                     </a>
                 </div>
