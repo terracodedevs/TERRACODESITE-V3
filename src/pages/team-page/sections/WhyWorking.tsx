@@ -45,7 +45,7 @@ const WorkCardData = [
 
 const WhyWorking = () => {
   return (
-     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20">
+     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20 container mx-auto">
                 <div className="flex flex-col items-center justify-center text-center mb-10">
                     <h2 className="text-6xl font-extralight mb-4 text-[#FDA10A] ">Why You’ll Love Working Here</h2>
                     <p className="text-2xl font-extralight text-neutral-400 ">
