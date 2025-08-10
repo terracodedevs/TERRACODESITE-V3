@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+/* body {
+  background-color: #141414;
+  color: white;
+} */
+/* @media (min-width: 640px) {
+  
+} */
 body {
   @apply bg-[#000000] text-amber-50 ;
 }
+
 
 @font-face {
   font-family: 'Lufga';
@@ -40,3 +48,4 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+

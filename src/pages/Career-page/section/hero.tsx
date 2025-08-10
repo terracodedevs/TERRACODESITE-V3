@@ -3,7 +3,7 @@ import { Rocket } from "lucide-react"
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white font-lufga mt-20 px-4 container mx-auto">
+    <div className=" text-white font-lufga mt-20 px-4 container mx-auto">
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">

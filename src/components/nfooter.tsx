@@ -63,7 +63,7 @@ export default function Footer() {
     </div>
 
     {/* Mobile View */}
-    <div className="flex flex-col md:hidden px-4 gap-4 items-center justify-center font-lufga">
+    <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga">
         <div className="flex flex-col items-center justify-center gap-4">
             <img className="w-[130px] object-cover" alt="" src="Frame 9.png" />
             <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <a href="https://instagram.com/terracodedev" target="_blank" rel="noopener noreferrer"><Instagram/></a>
             </div> 
         </div>
-        <div className="col-span-4 flex flex-col items-center justify-center gap-4 px-4 py-4 bg-neutral-800 mt-4">
+        <div className=" flex  items-center justify-center gap-4 px-4 py-4 bg-neutral-800 mt-4">
             <p className="text-center"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
         </div>
     </div>
