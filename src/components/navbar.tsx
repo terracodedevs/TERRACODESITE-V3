@@ -25,7 +25,9 @@ export default function Navbar() {
     <>
       {/* Desktop & Mobile Navbar */} 
       <div className="w-full relative flex items-center justify-between px-4 sm:px-8 lg:px-[60px] text-xl font-lufga container mx-auto">
-        <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="Frame 9.png" />
+        <Link to="/">
+          <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="Frame 9.png" />
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden xl:flex bg-[#141414] backdrop-filter backdrop-blur-lg rounded-[40px] py-2 px-6 gap-6">

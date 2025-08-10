@@ -11,10 +11,27 @@ const DirectContact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-8xl ">
             <div className="flex bg-neutral-900  rounded-3xl shadow-lg justify-center items-center p-5 md:px-6 hover:scale-105 transition-transform duration-300">
                 <ul className=" space-y-4 md:space-y-6 mt-4 flex flex-col gap-2 ">
-                    <a href="mailto:contact@terracodedev.com"><li className="text-lg md:text-xl flex flex-row gap-4 items-center"><Mail/> contact@terracodedev.com</li></a>
-                    <li className="text-lg md:text-xl flex flex-row gap-4 items-center"><Phone/><a href="tel:+94112838640"> +94 11 283 86 40 |</a> <a href="tel:+94701908095"> +94 70 190 80 95 |</a> <a href="tel:+94770086857"> +94 77 008 68 57</a></li>
-                    <a href="https://maps.app.goo.gl/YVNHYWkyXWK9wY9H8"><li className="text-lg md:text-xl flex flex-row gap-4 items-center"><MapPin size={30}/> Terracode (PVT) LTD , 3rd Floor, No. 274, High Level Rd, Maharagama, Sri Lanka </li></a>
-                    <li className="text-lg md:text-xl flex flex-row gap-4 items-center"><TimerIcon/> Hours: Monday – Friday | 9:00 AM – 6:00 PM (GMT+5:30)</li>
+                    <a href="mailto:contact@terracodedev.com">
+                      <li className="text-lg md:text-xl flex flex-row gap-4 items-center"><Mail/> contact@terracodedev.com</li>
+                    </a>
+                    <li className="text-md md:text-xl flex flex-row justify-start gap-4 items-center">
+                      <Phone/>
+                      <div className="flex flex-col md:flex-row gap-2">
+                        <a href="tel:+94112838640"> +94 11 283 86 40 </a> 
+                        <span className="hidden md:block">|</span>
+                        <a href="tel:+94701908095"> +94 70 190 80 95 </a> 
+                        <span className="hidden md:block">|</span>
+                        <a href="tel:+94770086857"> +94 77 008 68 57</a>
+                      </div>
+                    </li>
+                    <a href="https://maps.app.goo.gl/YVNHYWkyXWK9wY9H8">
+                      <li className="text-md md:text-xl flex flex-row gap-4 items-center">
+                        <MapPin size={30}/> Terracode (PVT) LTD , 3rd Floor, No. 274, High Level Rd, Maharagama, Sri Lanka 
+                      </li>
+                    </a>
+                    <li className="text-md md:text-xl flex flex-row gap-4 items-center">
+                      <TimerIcon/> Hours: Monday – Friday | 9:00 AM – 6:00 PM (GMT+5:30)
+                    </li>
                 </ul>
             </div>
             <div className="hover:scale-105 transition-transform duration-300 rounded-3xl">
