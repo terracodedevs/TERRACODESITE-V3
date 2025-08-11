@@ -7,7 +7,7 @@ export const Route = createFileRoute('/portfolio')({
 })
 
 function RouteComponent() {
-  return <div>
+  return <div className='mt-10'>
     <Navbar/>
     <PFPage />
   </div>

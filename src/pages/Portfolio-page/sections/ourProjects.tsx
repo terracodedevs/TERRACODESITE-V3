@@ -36,7 +36,7 @@ const projects = [
         description: "Anaconda Logo Redesign Project",
         id: "5",
         category: "Design",
-        img: "public/inpro Mockup.png"
+        img: "public/polls.png"
     },
     {
         title: "Mobile App Design & Development",
@@ -76,10 +76,10 @@ const OurProjects = () => {
   return (
     <> 
     <div className=" text-white font-lufga my-20 container mx-auto">
-      <div className="container mx-auto flex flex-col justify-center items-center">
-        <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
-            <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">Our Projects</h1>
-            <p className="md:text-2xl text-neutral-400 text-left md:text-center">Stay ahead with expert takes on AI, engineering, design, and startup strategy.</p>
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col mt-8 items-start md:items-center gap-6 ">
+            <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ml-4 sm:ml-0">Our Projects</h1>
+            <p className="md:text-2xl text-neutral-400  md:text-center ml-4 sm:ml-0">Stay ahead with expert takes on AI, engineering, design, and startup strategy.</p>
         </div>
         <div>
               {/* Filter Buttons */}
@@ -88,25 +88,25 @@ const OurProjects = () => {
                         <button 
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`rounded-full p-4 flex flex-row gap-2 transition-colors ${
+                            className={`rounded-full p-2 md:p-4 flex flex-row gap-2 transition-colors ${
                                 selectedCategory === category 
-                                    ? 'bg-white text-black font-bold text-xl' 
-                                    : 'bg-neutral-500 text-white hover:bg-neutral-400 text-xl'
+                                    ? 'bg-white text-black font-bold lg:text-xl' 
+                                    : 'bg-neutral-500 text-white hover:bg-neutral-400 lg:text-xl'
                             }`}
                         >
                             <div className="w-3 h-3 rounded-full mt-1" style={{ backgroundColor: category === selectedCategory ? '#F56D04' : 'transparent' }}></div>
-                            <span>{category === 'All' ? 'All Projects' : category}</span>
+                            <span>{category === 'All' ? 'All' : category}</span>
                             <span>({count})</span>
                         </button>
                     ))}
                 </div>
                  {/* Display filtered positions */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6 px-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  mt-6 px-4">
                 {filteredPositions.map((position, index) => (
                     <div key={`${position.id}-${index}`} className="p-6 rounded-3xl sm:rounded-lg">
                         <img src={position.img} alt={position.title} className="w-full object-cover rounded-lg mb-4" />
-                        <h3 className="text-2xl font-semibold text-[#F56D04] mb-2">{position.title}</h3>
-                        <p className="text-white mb-3 text-3xl">{position.description}</p>
+                        <h3 className="text-xl lg:text-2xl font-semibold text-[#F56D04] mb-2">{position.title}</h3>
+                        <p className="text-white mb-3 text-2xl lg:text-3xl">{position.description}</p>
                     </div>
                 ))}
             </div>
