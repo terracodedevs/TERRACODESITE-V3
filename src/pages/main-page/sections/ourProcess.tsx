@@ -24,22 +24,22 @@ const ProcessCardData = [
   {
     title: "Discover",
     description: "We kick things off by understanding your business goals, target users, and challenges. Through stakeholder calls, market research, and technical discovery, we lay the foundation for a successful build.",
-    icon: SearchIcon,
+    img: "/icons8-discover-96.png",
   },
   {
     title: "Design",
     description: "We bring ideas to life through user flows, wireframes, and high-fidelity UI designs. Expect collaborative feedback loops, modern design systems, and pixel-perfect prototypes.",
-    icon: SearchIcon,
+    img: "/icons8-drawing-96.png",
   },
   {
     title: "Develop",
     description: "Our engineers write scalable, secure code using the latest tech stacks and integrate AI tools where needed — all following agile sprints and weekly demos.",
-    icon: SearchIcon,
+    img: "/icons8-source-code-96.png",
   },
   {
     title: "Deliver & Support",
     description: "After rigorous QA and user testing, we deploy to production. We stay with you post-launch — for monitoring, iteration, and growth support.",
-    icon: SearchIcon,
+    img: "/icons8-handshake-96.png",
   },
 ]
 
@@ -56,7 +56,7 @@ export default function OurProcess() {
             {ProcessCardData.map((item, index) => (
                 <ProcessCardItem
                 key={index}
-                icon={item.icon}
+                icon={item.img}
                 title={item.title}
                 description={item.description}
                 imageSrc={imageData[index].imageSrc}
