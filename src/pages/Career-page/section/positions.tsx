@@ -5,9 +5,9 @@ const positions = [
     {
         title: "Frontend Developer",
         description: "Frontend Developer with a passion for building user-friendly web applications.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Development",
+        location: "📍 Colombo",
+        type: " 🌐 Remote",
+        department: "🕒 Full-Time",
         id: "1",
         category: "Development",
         link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
@@ -15,9 +15,9 @@ const positions = [
     {
         title: "Flutter Developer",
         description: "Flutter Developer with expertise in building cross-platform mobile applications.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Development",
+        location: "📍 Colombo",
+        type: " 🌐 Remote",
+        department: "🕒 Full-Time",
         id: "2",
         category: "Development",
         link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
@@ -25,9 +25,9 @@ const positions = [
     {
         title: "UX Designer",
         description: "Design user-centered experiences that delight and engage.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Design",
+        location: "📍 Colombo",
+        type: " 🌐 Remote",
+        department: "🕒 Full-Time",
         id: "3",
         category: "Design",
         link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
@@ -36,9 +36,9 @@ const positions = [
     {
         title: "Marketing Specialist",
         description: "Develop and execute marketing strategies to grow our brand.",
-        location: "Remote",
-        type: "Full-time",
-        department: "Marketing",
+        location: "📍 Colombo",
+        type: " 🌐 Remote",
+        department: "🕒 Full-Time",
         id: "6",
         category: "Marketing",
         link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
