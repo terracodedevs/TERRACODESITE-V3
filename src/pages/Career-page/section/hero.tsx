@@ -7,19 +7,19 @@ const Hero = () => {
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full py-4 px-10  text-white shadow-lg flex justify-center items-center flex-row">
-                <Rocket className=" text-[#FDA10A] mr-4" />
-                <h1 className="text-sm md:text-2xl ">Code with purpose. Design with impact. Grow with people who care.</h1>
+            <div className=" backdrop-blur-md bg-white/10  rounded-full py-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
+                <Rocket className=" text-[#FDA10A] md:mr-4 w-20 h-8 " />
+                <h1 className="text-md md:text-2xl ">Code with purpose. Design with impact. Grow with people who care.</h1>
             </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
-                <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">Build the Future With Us</h1>
-                <p className="md:text-2xl text-neutral-400 text-left md:text-center">We’re on a mission to craft powerful digital experiences using code, creativity, and AI. Join a team where innovation thrives, learning never stops, and every project is a new opportunity to level up.</p>
-                <TerraButton className="mt-6" padding='pl-2 pr-1 py-1 rounded-4xl text-sm md:text-lg gap-2' label="View Openings"/>
+                <h1 className="text-5xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">Build the Future With Us</h1>
+                <p className="text-2xl text-neutral-400 text-left md:text-center">We’re on a mission to craft powerful digital experiences using code, creativity, and AI. Join a team where innovation thrives, learning never stops, and every project is a new opportunity to level up.</p>
+                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label="View Openings"/>
             </div>
         </div>
         {/* team members Images */}
         
-        <div className="relative rounded-3xl h-[60vh] w-full overflow-hidden mt-10">
+        <div className="relative rounded-3xl h-[31vh] md:h-[70vh] w-full overflow-hidden mt-10">
         {/* Image */}
         <img src="/career.jpg" alt="" className="object-cover w-full h-full" />
 

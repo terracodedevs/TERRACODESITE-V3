@@ -10,7 +10,8 @@ const navbar = {
     { name: 'Contact', path: '/contact' },
     { name: 'About', path: '/about' },
     { name: 'Career', path: '/career' },
-    { name: 'Pricing', path: '/pricing' },
+    { name: 'Portfolio', path: '/portfolio' },
+    // { name: 'Pricing', path: '/pricing' },
   ],
 }
 

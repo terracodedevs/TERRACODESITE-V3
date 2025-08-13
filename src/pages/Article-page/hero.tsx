@@ -2,7 +2,7 @@
 export default function Hero() {
   return (
     <div>
-      <section className="relative w-full h-[20vh] md:h-[40vh] rounded-4xl flex items-center justify-center overflow-hidden font-lufga mt-10">
+      <section className="container mx-auto relative w-full h-[20vh] md:h-[40vh] rounded-4xl flex items-center justify-center overflow-hidden font-lufga mt-10">
       {/* Background Image */}
       <img
         src="/Mask group.png"
