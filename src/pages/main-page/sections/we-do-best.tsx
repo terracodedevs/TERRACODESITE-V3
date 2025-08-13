@@ -2,32 +2,38 @@ const services = [
   {
     title: 'Custom Software Development',
     description: 'We build tailored software solutions that solve real business problems - from scratch to scale.',
-    tags: ['SaaS', 'Enterprise', 'Product Engineering']
+    tags: ['SaaS', 'Enterprise', 'Product Engineering'],
+    img: '/icons8-software-development-96.png'
   },
   {
     title: 'Mobile App Development',
     description: 'We create engaging mobile applications that resonate with users and enhance brand visibility.',
-    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions']
+    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
+    img: '/icons8-phonelink-setup-96.png'
   },
   {
     title: 'AI & Machine Learning Solutions',
     description: 'Supercharge your product with intelligent features that adapt, learn, and evolve.',
-    tags: ['Predictive Models', 'NLP', 'Generative AI']
+    tags: ['Predictive Models', 'NLP', 'Generative AI'],
+    img: '/icons8-artificial-intelligence-96.png'
   },
   {
     title: 'UI/UX Design',
     description: 'Human-first design with aesthetics that convert and experiences that stick.',
-    tags: ['Wireframes', 'Design', 'User Research']
+    tags: ['Wireframes', 'Design', 'User Research'],
+    img: '/icons8-wacom-tablet-96.png'
   },
   {
     title: 'Web Application Development',
     description: 'Clean code meets exceptional UX in lightning-fast web experiences.',
-    tags: ['React.js', 'Next.js', 'API integrations']
+    tags: ['React.js', 'Next.js', 'API integrations'],
+    img: '/icons8-laptop-coding-96.png'
   },
   {
     title: 'Cloud & DevOps Engineering',
     description: 'Infrastructure that scales, automates, and keeps you running 24/7.',
-    tags: ['AWS', 'Docker', 'Kubernetes']
+    tags: ['AWS', 'Docker', 'Kubernetes'],
+    img: '/icons8-cloud-sync-96.png'
   },
 ];
 
@@ -52,7 +58,7 @@ export default function WhatWeDoBest() {
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none " />
 
             <div className="flex justify-center ">
-              <span ><img src="hugeicons_idea-01.png" alt="Service Icon"  /></span>
+              <span ><img src={service.img} alt="Service Icon" className="w-10 h-10" /></span>
             </div>
             <h3 className="text-4xl text-white">
               {service.title}
