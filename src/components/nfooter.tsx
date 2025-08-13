@@ -59,9 +59,9 @@ export default function Footer() {
         </div>
         
     </div>
-    <div className="col-span-4 flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mt-4">
+    <div className="hidden md:flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
-        </div>
+    </div>
 
     {/* Mobile View */}
     <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga">
