@@ -23,9 +23,12 @@ export function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 z-50 inset-x-0 bg-white text-black p-4 md:px-8 md:py-4">
-      <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className=" flex flex-col md:flex-row items-center justify-between gap-4 container mx-auto px-4">
         <p className="text-sm md:text-base">
-          We use cookies to improve your experience. By clicking Accept you agree to our use of cookies.
+          We use cookies to improve your experience. By clicking Accept you agree to our use of cookies.{' '}
+          <Link to="/" className="underline text-nowrap text-sm hover:text-orange-400">
+            Learn more
+          </Link>
         </p>
         <div className="flex gap-2">
           <button
@@ -40,9 +43,7 @@ export function CookieBanner() {
           >
             Decline
           </button>
-          <Link to="/" className="underline text-nowrap text-sm hover:text-orange-400">
-            Learn more
-          </Link>
+          
         </div>
       </div>
     </div>
