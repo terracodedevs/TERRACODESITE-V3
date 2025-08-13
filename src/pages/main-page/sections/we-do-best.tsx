@@ -33,7 +33,7 @@ const services = [
     title: 'Cloud & DevOps Engineering',
     description: 'Infrastructure that scales, automates, and keeps you running 24/7.',
     tags: ['AWS', 'Docker', 'Kubernetes'],
-    img: '/icons8-cloud-sync-96.png'
+    img: '/icons8-cloud-connection-97.png'
   },
 ];
 
