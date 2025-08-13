@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareerRouteImport } from './routes/career'
@@ -32,6 +33,11 @@ const ServiceRoute = ServiceRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeRoute = HomeRouteImport.update({
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/career': typeof CareerRoute
   '/contact': typeof ContactRoute
   '/home': typeof HomeRoute
+  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/contact'
     | '/home'
+    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/contact'
     | '/home'
+    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/contact'
     | '/home'
+    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   CareerRoute: typeof CareerRoute
   ContactRoute: typeof ContactRoute
   HomeRoute: typeof HomeRoute
+  PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   TestRoute: typeof TestRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/home': {
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareerRoute: CareerRoute,
   ContactRoute: ContactRoute,
   HomeRoute: HomeRoute,
+  PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   TestRoute: TestRoute,

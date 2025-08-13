@@ -1,12 +1,15 @@
-import UnderMaintenance from "@/components/undermaintain"
+import PHero from "./sections/hero"
+import OurProjects from "./sections/ourProjects"
 
 
-const Page = () => {
+const PFPage = () => {
   return (
     <div>
-      <UnderMaintenance/>
+      {/* <UnderMaintenance/> */}
+      <PHero />
+      <OurProjects />
     </div>
   )
 }
 
-export default Page
+export default PFPage
