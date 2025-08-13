@@ -11,7 +11,7 @@ const navbar = {
     { name: 'About', path: '/about' },
     { name: 'Career', path: '/career' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Pricing', path: '/pricing' },
+    // { name: 'Pricing', path: '/pricing' },
   ],
 }
 

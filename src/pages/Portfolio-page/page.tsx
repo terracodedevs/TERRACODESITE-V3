@@ -1,4 +1,3 @@
-import UnderMaintenance from "@/components/undermaintain"
 import PHero from "./sections/hero"
 import OurProjects from "./sections/ourProjects"
 

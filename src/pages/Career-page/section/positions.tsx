@@ -94,13 +94,14 @@ export default function Positions() {
                         <button 
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`rounded-full px-4 py-2 flex flex-row gap-2 transition-colors ${
+                            className={`rounded-full p-2 md:p-4 flex justify-center items-center flex-row gap-2 transition-colors ${
                                 selectedCategory === category 
-                                    ? 'bg-[#FDA10A] text-black' 
-                                    : 'bg-neutral-500 text-white hover:bg-neutral-400'
+                                    ? 'bg-white text-black font-bold lg:text-xl' 
+                                    : 'bg-neutral-500 text-white hover:bg-neutral-400 lg:text-xl'
                             }`}
                         >
-                            <span>{category === 'All' ? 'All Openings' : category}</span>
+                            <div className="w-3 h-3 rounded-full " style={{ backgroundColor: category === selectedCategory ? '#F56D04' : 'transparent' }}></div>
+                            <span>{category === 'All' ? 'All openings' : category}</span>
                             <span>({count})</span>
                         </button>
                     ))}

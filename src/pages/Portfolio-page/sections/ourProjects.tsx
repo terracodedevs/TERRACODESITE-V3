@@ -1,4 +1,3 @@
-import { img } from "framer-motion/client"
 import { useMemo, useState } from "react"
 
 const projects = [
@@ -7,21 +6,21 @@ const projects = [
         description: "AirCalling Landing Page Design ",
         id: "1",
         category: "Development",
-        img: "public/HOV Mockup.png"
+        img: "/HOV Mockup.png"
     },
     {
         title: "Web Design & Development",
         description: "Business Landing Page Design ",
         id: "2",
         category: "Development",
-        img: "public/inpro Mockup.png"
+        img: "/inpro Mockup.png"
     },
     {
         title: "Web Design & Development",
         description: "Ecom Web Page Design ",
         id: "3",
         category: "Design",
-        img: "public/transit.png"
+        img: "/transit.png"
     },
     
     {
@@ -29,21 +28,21 @@ const projects = [
         description: "AI Trading Platform",
         id: "4",
         category: "Design",
-        img: "public/CMS.png"
+        img: "/CMS.png"
     },
     {
         title: "Branding & Identity",
         description: "Anaconda Logo Redesign Project",
         id: "5",
         category: "Design",
-        img: "public/polls.png"
+        img: "/polls.png"
     },
     {
         title: "Mobile App Design & Development",
         description: "Work From Home Tracking App",
         id: "6",
         category: "AI",
-        img: "public/inpro Mockup.png"
+        img: "/inpro Mockup.png"
     },
     
 ]
@@ -88,13 +87,13 @@ const OurProjects = () => {
                         <button 
                             key={category}
                             onClick={() => setSelectedCategory(category)}
-                            className={`rounded-full p-2 md:p-4 flex flex-row gap-2 transition-colors ${
+                            className={`rounded-full p-2 md:p-4 flex justify-center items-center flex-row gap-2 transition-colors ${
                                 selectedCategory === category 
                                     ? 'bg-white text-black font-bold lg:text-xl' 
                                     : 'bg-neutral-500 text-white hover:bg-neutral-400 lg:text-xl'
                             }`}
                         >
-                            <div className="w-3 h-3 rounded-full mt-1" style={{ backgroundColor: category === selectedCategory ? '#F56D04' : 'transparent' }}></div>
+                            <div className="w-3 h-3 rounded-full " style={{ backgroundColor: category === selectedCategory ? '#F56D04' : 'transparent' }}></div>
                             <span>{category === 'All' ? 'All' : category}</span>
                             <span>({count})</span>
                         </button>
@@ -103,7 +102,7 @@ const OurProjects = () => {
                  {/* Display filtered positions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  mt-6 px-4">
                 {filteredPositions.map((position, index) => (
-                    <div key={`${position.id}-${index}`} className="p-6 rounded-3xl sm:rounded-lg">
+                    <div key={`${position.id}-${index}`} className="p-6 rounded-3xl sm:rounded-lg  hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden">
                         <img src={position.img} alt={position.title} className="w-full object-cover rounded-lg mb-4" />
                         <h3 className="text-xl lg:text-2xl font-semibold text-[#F56D04] mb-2">{position.title}</h3>
                         <p className="text-white mb-3 text-2xl lg:text-3xl">{position.description}</p>
