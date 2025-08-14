@@ -36,7 +36,7 @@ const stack = [
   },
   {
     name: "Item 4",
-    image: "/logo/flutter.png"
+    image: "/logo/flutter.svg"
   }
 ]
 
