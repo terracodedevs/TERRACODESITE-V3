@@ -26,7 +26,7 @@ export default function ProcessCardItem({ icon, title, description, imageSrc, im
       <div className="absolute top-[32px] left-[24px] w-[264px] flex flex-col items-start justify-start gap-4">
         <div className="bg-white rounded-full p-2 text-orange-400">
           {typeof icon === 'string' ? (
-            <img src={icon} alt="" className="w-6 h-6" />
+            <img src={icon} alt="" className="w-8 h-8" />
           ) : (
             React.createElement(icon as React.ComponentType)
           )}

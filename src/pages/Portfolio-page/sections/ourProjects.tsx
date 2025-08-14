@@ -2,6 +2,7 @@ import { useMemo, useState } from "react"
 
 const projects = [
     {
+
         title: "Web Design & Development",
         description: "A modern website for House Of Vision (Pvt) Ltd. ",
         id: "1",
@@ -9,13 +10,15 @@ const projects = [
         img: "/HOV Mockup.png"
     },
     {
-        title: "Web Design & Development",
+
+        title: "Business Website Solution",
         description: "A modern website for Inpro Industries (Pvt) Ltd. ",
         id: "2",
         category: "Development",
         img: "/inpro Mockup.png"
     },
     {
+
         title: "Web Design & Development",
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
@@ -25,7 +28,7 @@ const projects = [
     
     {
         title: "Content Management System",
-        description: "Content Management System for a Cleaning Service Provider.",
+        description: "CMS for a Cleaning Service Provider",
         id: "4",
         category: "System",
         img: "/CMS.png"
