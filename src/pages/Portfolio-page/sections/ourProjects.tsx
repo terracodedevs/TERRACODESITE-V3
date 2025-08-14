@@ -2,44 +2,44 @@ import { useMemo, useState } from "react"
 
 const projects = [
     {
-        title: "Web Design",
-        description: "AirCalling Landing Page Design ",
+        title: "Inventory Management System",
+        description: "IMS for House Of Vision (Pvt) Ltd. ",
         id: "1",
         category: "Development",
         img: "/HOV Mockup.png"
     },
     {
-        title: "Web Design & Development",
-        description: "Business Landing Page Design ",
+        title: "Business Website Solution",
+        description: "A modern website for Inpro Industries (Pvt) Ltd. ",
         id: "2",
         category: "Development",
         img: "/inpro Mockup.png"
     },
     {
-        title: "Web Design & Development",
-        description: "Ecom Web Page Design ",
+        title: "Web Development ",
+        description: "Ecom Web Page Design for Transit",
         id: "3",
         category: "Design",
         img: "/transit.png"
     },
     
     {
-        title: "AI Platform ",
-        description: "AI Trading Platform",
+        title: "Content Management System",
+        description: "CMS for a Cleaning Service Provider",
         id: "4",
         category: "Design",
         img: "/CMS.png"
     },
     {
-        title: "Branding & Identity",
-        description: "Anaconda Logo Redesign Project",
+        title: "Data Management System",
+        description: "Data Management System for Polling Application",
         id: "5",
         category: "Design",
         img: "/polls.png"
     },
     {
         title: "Mobile App Design & Development",
-        description: "Work From Home Tracking App",
+        description: "Work From Home Tracking App for Inpro Industries (Pvt) Ltd",
         id: "6",
         category: "AI",
         img: "/inpro Mockup.png"

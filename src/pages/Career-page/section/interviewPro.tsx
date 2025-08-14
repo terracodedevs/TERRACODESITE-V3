@@ -1,4 +1,3 @@
-import { SearchIcon } from "lucide-react"
 import ProcessCardItem from "@/components/processCard"
 
 
@@ -57,7 +56,7 @@ const InterviewProcess = () => {
                     We value your time - that’s why our hiring process is fast, friendly, and focused on finding a great mutual fit.
                     </p>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap"> 
+                <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap">
                 {WorkCardData.map((item, index) => (
                     <ProcessCardItem
                     key={index}
