@@ -1,4 +1,3 @@
-import { SearchIcon } from "lucide-react"
 import ProcessCardItem from "@/components/processCard"
 
 const imageData = [
@@ -24,22 +23,22 @@ const ProcessCardData = [
   {
     title: "Discover",
     description: "We kick things off by understanding your business goals, target users, and challenges. Through stakeholder calls, market research, and technical discovery, we lay the foundation for a successful build.",
-    img: "/icons8-discover-96.png",
+    img: "/compass-96.png",
   },
   {
     title: "Design",
-    description: "We bring ideas to life through user flows, wireframes, and high-fidelity UI designs. Expect collaborative feedback loops, modern design systems, and pixel-perfect prototypes.",
-    img: "/icons8-drawing-96.png",
+    description: "We bring ideas to life through user flows, wireframes, and high fidelity UI designs. Expect collaborative feedback loops, modern design systems, and pixel perfect prototypes.",
+    img: "/icon-drawing-96.png",
   },
   {
     title: "Develop",
-    description: "Our engineers write scalable, secure code using the latest tech stacks and integrate AI tools where needed — all following agile sprints and weekly demos.",
-    img: "/icons8-source-code-96.png",
+    description: "Our engineers write scalable, secure code using the latest tech stacks and integrate AI tools where needed all following agile sprints and weekly demos.",
+    img: "/source-code-96.png",
   },
   {
     title: "Deliver & Support",
-    description: "After rigorous QA and user testing, we deploy to production. We stay with you post-launch — for monitoring, iteration, and growth support.",
-    img: "/icons8-handshake-96.png",
+    description: "After rigorous QA and user testing, we deploy to production. We stay with you post-launch for monitoring, iteration, and growth support.",
+    img: "/handshake-96.png",
   },
 ]
 
