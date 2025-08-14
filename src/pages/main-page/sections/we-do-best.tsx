@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: 'Web Application Development',
-    description: 'Clean code meets exceptional UX in lightning-fast web experiences.',
+    description: 'Clean code meets exceptional UX in lightning fast web experiences.',
     tags: ['React.js', 'Next.js', 'API integrations'],
     img: '/icons8-laptop-coding-96.png'
   },

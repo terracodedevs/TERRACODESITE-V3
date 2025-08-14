@@ -1,4 +1,3 @@
-import { SearchIcon } from "lucide-react"
 import ProcessCardItem from "@/components/processCard"
 
 
@@ -25,25 +24,25 @@ const WorkCardData = [
   {
     title: "Application Review",
     description: "Once you apply, our hiring team carefully reviews your profile, portfolio, and alignment with the role.",
-    icon: SearchIcon,
+    img: "/icons8-survey-96.png",
     footer: "Within 3–5 working days",
   },
   {
     title: "Initial Screening Call",
     description: "A friendly chat to understand your background, expectations, and answer your questions about TerraCodeDev.",
-    icon: SearchIcon,
+    img: "/icons8-call-male-96.png",
     footer: "Week 1 – 15 mins",
   },
   {
     title: "Skill Assessment",
     description: "Depending on the role, you may complete a short task or walk us through previous work. We want to see how you think, not just what you know.",
-    icon: SearchIcon,
+    img: "/icons8-to-do-list-96.png",
     footer: "Week 2 (Time varies by role)",
   },
   {
     title: "Final Interview",
     description: "Meet your potential team lead and talk deeper about your process, goals, and how you’d work with us day-to-day.",
-    icon: SearchIcon,
+    img: "/icons8-video-chat-96.png",
     footer: "Week 2–3 (30–60 mins)",
   },
 ]
@@ -57,11 +56,11 @@ const InterviewProcess = () => {
                     We value your time - that’s why our hiring process is fast, friendly, and focused on finding a great mutual fit.
                     </p>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap"> 
+                <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap">
                 {WorkCardData.map((item, index) => (
                     <ProcessCardItem
                     key={index}
-                    icon={item.icon}
+                    icon={item.img}
                     title={item.title}
                     description={item.description}
                     imageSrc={imageData[index].imageSrc}
