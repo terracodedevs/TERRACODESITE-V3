@@ -90,7 +90,7 @@ const ProfileCircles: React.FC = () => {
       id: 1,
       name: "Nomin Sendinu",
       role: "CEO",
-      image: "/lufga/WhatsApp Image 2025-08-06 at 15.27.46_99c7f42e.jpg",
+      image: "/IMG_1158.PNG",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
@@ -106,7 +106,7 @@ const ProfileCircles: React.FC = () => {
       id: 3,
       name: "Manuka Rathnayake",
       role: "COO",
-      image: "/lufga/IMG-20250806-WA0092.jpg",
+      image: "/IMG_3032 (1).JPG",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },

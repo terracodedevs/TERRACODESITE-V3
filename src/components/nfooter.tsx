@@ -47,7 +47,7 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="self-stretch relative tracking-[0.04px] leading-6 font-semibold" >
-                    <a href="tel:+9477 582 4406">+9477 582 4406</a>
+                    <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
                 </div>
             </div>
             <div className=" h-8 flex flex-row items-center justify-start gap-6">
@@ -57,9 +57,10 @@ export default function Footer() {
                 <a href="https://instagram.com/terracodedev" target="_blank" rel="noopener noreferrer"><Instagram/></a>
             </div>
         </div>
-        <div className="col-span-4 flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mt-4">
+        
+    </div>
+    <div className="hidden md:flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
-        </div>
     </div>
 
     {/* Mobile View */}
@@ -101,14 +102,14 @@ export default function Footer() {
                     <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" />
                     <div className=" relative font-semibold ">`Terracode Private Limited, </div>
                 </div>
-                <div className=" relative text-base leading-6 inline-block">
+                <div className=" relative text-base leading-6 inline-block text-center">
                     <a href="https://maps.app.goo.gl/QKy9ety7Cet7NC4JA" target="_blank">
                         <p className="m-0">274 3/1 (3rd floor), Highlevel Rd,</p>
                         <p className="m-0">Maharagama, Sri Lanka</p>
                     </a>
                 </div>
                 <div className=" font-semibold" >
-                    <a href="tel:+9477 582 4406">+9477 582 4406</a>
+                    <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
                 </div>
             </div>
             <div className=" h-8 flex flex-row items-center justify-center gap-6">

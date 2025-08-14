@@ -2,13 +2,15 @@ import { useMemo, useState } from "react"
 
 const projects = [
     {
-        title: "Inventory Management System",
-        description: "IMS for House Of Vision (Pvt) Ltd. ",
+
+        title: "Web Design & Development",
+        description: "A modern website for House Of Vision (Pvt) Ltd. ",
         id: "1",
         category: "Development",
         img: "/HOV Mockup.png"
     },
     {
+
         title: "Business Website Solution",
         description: "A modern website for Inpro Industries (Pvt) Ltd. ",
         id: "2",
@@ -16,10 +18,11 @@ const projects = [
         img: "/inpro Mockup.png"
     },
     {
-        title: "Web Development ",
-        description: "Ecom Web Page Design for Transit",
+
+        title: "Web Design & Development",
+        description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
-        category: "Design",
+        category: "Development",
         img: "/transit.png"
     },
     
@@ -27,22 +30,29 @@ const projects = [
         title: "Content Management System",
         description: "CMS for a Cleaning Service Provider",
         id: "4",
-        category: "Design",
+        category: "System",
         img: "/CMS.png"
     },
     {
         title: "Data Management System",
-        description: "Data Management System for Polling Application",
+        description: "Intelligent DMS for city-wide data with advanced storage, analytics, and user management.",
         id: "5",
-        category: "Design",
+        category: "System",
         img: "/polls.png"
     },
     {
         title: "Mobile App Design & Development",
-        description: "Work From Home Tracking App for Inpro Industries (Pvt) Ltd",
+        description: "Mobile application for searching for lawyers and attorneys.",
         id: "6",
-        category: "AI",
-        img: "/inpro Mockup.png"
+        category: "Mobile",
+        img: "/mobileapp.png"
+    },
+    {
+        title: "Inventory Management System",
+        description: "Inventory management system for House Of Vision (Pvt) Ltd.",
+        id: "7",
+        category: "System",
+        img: "/hovims.png"
     },
     
 ]

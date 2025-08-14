@@ -6,6 +6,8 @@ import { useAssetLoader } from '@/hooks/useAssetLoader'
 import { AnimatePresence, motion } from 'framer-motion'
 import Footer from '@/components/nfooter'
 import { CookieBanner } from '@/components/CookieFile'
+import NotFound from '@/components/NotFound'
+import Navbar from '@/components/navbar'
 
 
 export const Route = createRootRoute({
@@ -16,11 +18,10 @@ export const Route = createRootRoute({
       '/Frame 9.png',
       '/sl.png',
       '/vector.svg',
-      '/image 1.svg', // Add your loading SVG here
+      '/image 1.svg',
       '2.svg',
       '3.svg',
       '4.svg',
-      // ✅ Add all your static public assets here
     ]
 
     const loaded = useAssetLoader(assets)
@@ -29,23 +30,29 @@ export const Route = createRootRoute({
       return (
         <div className="flex justify-center items-center h-screen w-full bg-black">
           <div className="flex flex-col items-center">
-            <img 
-              src="/image 1.svg" 
-              alt="Loading..." 
+            <img
+              src="/image 1.svg"
+              alt="Loading..."
               className="w-40 h-40 animate-pulse mb-8"
             />
             <div className="flex space-x-2">
               <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce"></div>
-              <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-              <div className="w-3 h-3 bg-orange-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div
+                className="w-3 h-3 bg-orange-500 rounded-full animate-bounce"
+                style={{ animationDelay: '0.1s' }}
+              ></div>
+              <div
+                className="w-3 h-3 bg-orange-500 rounded-full animate-bounce"
+                style={{ animationDelay: '0.2s' }}
+              ></div>
             </div>
           </div>
-      </div>
+        </div>
       )
     }
 
     return (
-      <div className=" ">
+      <div>
         <AnimatePresence mode="wait">
           <motion.div
             key="content"
@@ -54,7 +61,7 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <CookieBanner/>
+            <CookieBanner />
             {/* <Navbar /> */}
             <Outlet />
             <Footer />
@@ -64,4 +71,11 @@ export const Route = createRootRoute({
       </div>
     )
   },
+
+  notFoundComponent: () => (
+    <div className='mt-10'>
+      <Navbar />
+      <NotFound />
+    </div>
+  ),
 })
