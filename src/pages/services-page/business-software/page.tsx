@@ -1,6 +1,7 @@
 import React from "react";
 import ServicePage from "../template";
 import ServiceAbout from "../about-template";
+import Questions from "@/pages/team-page/sections/Questions";
 
 const Page2: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const Page2: React.FC = () => {
     <ServicePage
       badge="Transform your business operations"
       title="Business Software Systems"
-      image="/images/page1.jpg"
+      image="/IMG_0705 1.png"
     />
     <ServiceAbout
       paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
@@ -22,6 +23,7 @@ const Page2: React.FC = () => {
         { id: 5, text: "Post-launch support and scaling" },
       ]}
     />
+    <Questions />
     </>
     
   );

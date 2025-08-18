@@ -1,6 +1,7 @@
 import React from "react";
 import ServicePage from "../template";
 import ServiceAbout from "../about-template";
+import Questions from "@/pages/team-page/sections/Questions";
 
 const Page3: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Page3: React.FC = () => {
     <ServicePage
       badge="Transform your business operations"
       title="Business Software Systems"
-      image="/images/page1.jpg"
+      image="/Mask 1.png"
     />
 
     <ServiceAbout
@@ -24,6 +25,7 @@ const Page3: React.FC = () => {
         { id: 5, text: "Ongoing support" },
       ]}
     />
+    <Questions />
     </>
   );
 };

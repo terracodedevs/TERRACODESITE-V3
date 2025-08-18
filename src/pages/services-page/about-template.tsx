@@ -20,7 +20,7 @@ const ServiceAbout: React.FC<ServiceAboutProps> = ({
 }) => {
   return (
     <>
-    <div className="  bg-[#1A1A1A] font-lufga ">
+    <div className="  bg-[#1A1A1A] font-lufga mt-20 ">
          <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto ">
            <div className="flex flex-col  items-start justify-start p-4 md:space-y-5">
                <p className="text-white mt-2 text-xl md:text-2xl">
