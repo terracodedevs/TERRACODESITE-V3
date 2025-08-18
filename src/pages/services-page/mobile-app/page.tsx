@@ -11,7 +11,9 @@ const Page4: React.FC = () => {
       image="/images/page1.jpg"
     />
     <ServiceAbout
-      paragraph="Terracode specializes in building powerful and scalable software systems such as ERP, CRM, IMS, and more. Our AI-powered systems help you automate processes and make data-driven decisions."
+    paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
+      paragraph2="We don’t just stop at functionality - our systems are enhanced with modern AI capabilities that automate processes, provide intelligent insights, and help you make data-driven decisions."
+      paragraph3="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems),"
       highlights={[
         { id: 1, text: "Custom ERP, CRM, IMS, and operational systems" },
         { id: 2, text: "AI-driven insights & automation" },

@@ -13,7 +13,9 @@ const Page3: React.FC = () => {
     />
 
     <ServiceAbout
-      paragraph="Terracode is dedicated to delivering innovative software solutions that drive business success."
+      paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
+      paragraph2="We don’t just stop at functionality - our systems are enhanced with modern AI capabilities that automate processes, provide intelligent insights, and help you make data-driven decisions."
+      paragraph3="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems),"
       highlights={[
         { id: 1, text: "User-centric design" },
         { id: 2, text: "Agile development" },
