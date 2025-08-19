@@ -72,8 +72,8 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 top-full mt-2 bg-[#1f1f1f] shadow-lg rounded-lg overflow-hidden border border-gray-700 w-48"
+                      transition={{ duration: 0.4 }}
+                      className="absolute z-10 left-0 top-full mt-2 bg-[#1f1f1f] shadow-lg rounded-lg overflow-hidden w-48"
                     >
                       {navbar.serviceLinks.map((s) => (
                         <Link
