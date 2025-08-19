@@ -1,5 +1,3 @@
-import Navbar from '@/components/navbar'
-import Page2 from '@/pages/services-page/business-software/page'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/service')({
@@ -9,8 +7,6 @@ export const Route = createFileRoute('/service')({
 function RouteComponent() {
   return(
       <div className='my-10'>
-        <Navbar/>
-        <Page2 />     
       </div>
     )
 }

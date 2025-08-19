@@ -13,11 +13,11 @@ const navbar = {
     { name: 'Pricing', path: '/pricing' },
   ],
   serviceLinks: [
-    { name: 'AI', path: '/service' },
-    { name: 'Business', path: '/services/business' },
-    { name: 'Cloud', path: '/services/cloud' },
-    { name: 'Mobile', path: '/services/mobile' },
-    { name: 'Web', path: '/services/web' },
+    { name: 'AI', path: '/ai-solutions' },
+    { name: 'Business', path: '/business-softwares' },
+    { name: 'Cloud', path: '/cloud-solutions' },
+    { name: 'Mobile', path: '/mobile-apps' },
+    { name: 'Web', path: '/website-solutions' },
   ],
 }
 
