@@ -8,21 +8,21 @@ const Page3: React.FC = () => {
     <>
     
     <ServicePage
-      badge="Transform your business operations"
-      title="Business Software Systems"
+      badge="Empower your systems with speed, flexibility, and automation"
+      title="Cloud Solutions"
       image="/Mask 1.png"
     />
 
     <ServiceAbout
-      paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
-      paragraph2="We don’t just stop at functionality - our systems are enhanced with modern AI capabilities that automate processes, provide intelligent insights, and help you make data-driven decisions."
-      paragraph3="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems),"
+      paragraph1="Whether you want to move to the cloud, automate manual processes, or modernize existing systems, our cloud services cover it all. We help you reduce operational costs, boost performance, and increase reliability by leveraging the best cloud platforms (AWS, GCP, Azure)."
+      paragraph2="Our team also helps businesses optimize their architecture for better resource usage, scalability, and future growth."
+      paragraph3=""
       highlights={[
-        { id: 1, text: "User-centric design" },
-        { id: 2, text: "Agile development" },
-        { id: 3, text: "Robust security" },
-        { id: 4, text: "Seamless integration" },
-        { id: 5, text: "Ongoing support" },
+        { id: 1, text: "Cloud migrations & modernizations" },
+        { id: 2, text: "CI/CD pipelines and DevOps workflows" },
+        { id: 3, text: "Cloud storage, compute, and serverless setups" },
+        { id: 4, text: "System monitoring and auto-recovery" },
+        { id: 5, text: "Budget-aware infrastructure design" },
       ]}
     />
     <Questions />

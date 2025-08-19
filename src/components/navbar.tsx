@@ -132,7 +132,7 @@ export default function Navbar() {
           }`}
         >
           <div className="flex items-center justify-between p-6 border-b border-gray-700">
-            <img className="w-20 h-12" alt="Logo" src="Frame 9.png" />
+            <img className="w-20 h-12" alt="Logo" src="/hero/Frame 9.png" />
             <button onClick={toggleMenu} className="p-2 rounded-lg text-white hover:bg-black">
               <X size={24} />
             </button>

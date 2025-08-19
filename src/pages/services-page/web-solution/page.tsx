@@ -7,14 +7,14 @@ const Page5: React.FC = () => {
   return (
     <>
     <ServicePage
-      badge="Transform your business operations"
-      title="Business Software Systems"
+      badge="Web experiences that reflect your business and drive results"
+      title="Website Solutions"
       image="/Mask group.png"
     />
     <ServiceAbout
-      paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
-      paragraph2="We don’t just stop at functionality - our systems are enhanced with modern AI capabilities that automate processes, provide intelligent insights, and help you make data-driven decisions."
-      paragraph3="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems),"
+      paragraph1="We craft stunning, fast-loading, and responsive websites tailored specifically for your brand. Each site is built with a flexible content management system (CMS) that empowers you to control your content easily."
+      paragraph2="Our business websites are not just aesthetically pleasing—they’re optimized for SEO, performance, and scalability. Whether you’re launching a startup or rebranding an enterprise, we deliver a digital presence that grows with you."
+      paragraph3=""
       highlights={[
         { id: 1, text: "Custom ERP, CRM, IMS, and operational systems" },
         { id: 2, text: "AI-driven insights & automation" },

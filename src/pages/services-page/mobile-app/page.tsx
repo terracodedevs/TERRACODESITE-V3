@@ -7,20 +7,20 @@ const Page4: React.FC = () => {
   return (
     <>
     <ServicePage
-      badge="Transform your business operations"
-      title="Business Software Systems"
+      badge="End-to-end mobile app development - from concept to store launch"
+      title="Mobile App Development"
       image="/Mask.png"
     />
     <ServiceAbout
-    paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
-      paragraph2="We don’t just stop at functionality - our systems are enhanced with modern AI capabilities that automate processes, provide intelligent insights, and help you make data-driven decisions."
-      paragraph3="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems),"
+    paragraph1="Have an idea for a mobile app? Terracode turns your vision into a high-performance mobile product. We build iOS and Android applications with smooth performance, modern UI/UX, and secure architecture."
+      paragraph2="From the first brainstorming session to final deployment, we consult with you to ensure your app solves real problems and creates value. Whether it’s a business tool, startup MVP, or customer-facing product, we build apps that scale."
+      paragraph3=""
       highlights={[
-        { id: 1, text: "Custom ERP, CRM, IMS, and operational systems" },
-        { id: 2, text: "AI-driven insights & automation" },
-        { id: 3, text: "Integration with third-party tools" },
-        { id: 4, text: "Secure, cloud-ready architecture" },
-        { id: 5, text: "Post-launch support and scaling" },
+        { id: 1, text: "Native & cross-platform app development" },
+        { id: 2, text: "Flutter, Swift, Kotlin expertise" },
+        { id: 3, text: "In-depth consultation to refine your idea" },
+        { id: 4, text: "App Store & Google Play launch support" },
+        { id: 5, text: "Post-launch analytics and updates" },
       ]}
     />
     <Questions />
