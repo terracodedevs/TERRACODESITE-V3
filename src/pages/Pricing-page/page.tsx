@@ -1,4 +1,3 @@
-import React from 'react'
 import PricingHero from './sections/hero'
 import FandQ from '../Contactus-page/Sections/FandQ'
 
