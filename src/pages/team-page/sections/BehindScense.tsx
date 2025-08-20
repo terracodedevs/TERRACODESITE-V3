@@ -1,22 +1,22 @@
 const images = [
-  { src: 'team/IMG_5893 1.png', className: 'col-start-1 col-span-4 row-start-1 row-span-4' },
-  { src: 'team/WhatsApp Image 2025-05-06 at 9.46.58 AM 1.png', className: 'col-start-5 col-span-4 row-start-1 row-span-4' },
-  { src: 'team/IMG_0412 1.png', className: 'col-start-9 col-span-4 row-start-1 row-span-4' },
-  { src: 'team/IMG_0999.png', className: 'col-start-1 col-span-3 row-start-5 row-span-3' },
-  { src: 'team/IMG_4695 1.png', className: 'col-start-4 col-span-6 row-start-5 row-span-5' },
-  { src: 'team/IMG_1373 1.png', className: 'col-start-10 col-span-3 row-start-5 row-span-5' },
-  { src: 'team/IMG_6499 1.png', className: 'col-start-1 col-span-3 row-start-8 row-span-5' },
-  { src: 'team/IMG_2808 1.png', className: 'col-start-4 col-span-3 row-start-10 row-span-3' },
-  { src: 'team/IMG_0705 1.png', className: 'col-start-7 col-span-3 row-start-10 row-span-3' },
-  { src: 'team/IMG_6416 1.png', className: 'col-start-10 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/6.JPG', className: 'col-start-1 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/8.JPEG', className: 'col-start-5 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/7.JPEG', className: 'col-start-9 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/5.JPEG', className: 'col-start-1 col-span-3 row-start-5 row-span-3' },
+  { src: 'team/2.jpg', className: 'col-start-4 col-span-6 row-start-5 row-span-5' },
+  { src: 'team/3.JPEG', className: 'col-start-10 col-span-3 row-start-5 row-span-5' },
+  { src: 'team/4.JPEG', className: 'col-start-1 col-span-3 row-start-8 row-span-5' },
+  { src: 'team/9.jpeg', className: 'col-start-4 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/10.JPEG', className: 'col-start-7 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/5.JPEG', className: 'col-start-10 col-span-3 row-start-10 row-span-3' },
 ];
 
 export const BehindTheScenes = () => {
   return (
     <div className="bg-black text-white py-12 container mx-auto font-lufga">
       <div className="text-center mb-10">
-        <h2 className="text-[#FDA10A] text-6xl font-light mb-2">Behind the Scenes</h2>
-        <p className="text-2xl font-extralight text-neutral-400 ">Want to see the real us?</p>
+        <h2 className="text-[#FDA10A] text-4xl md:text-6xl font-light mb-2">Behind the Scenes</h2>
+        <p className="md:text-2xl font-extralight text-neutral-400 ">Want to see the real us?</p>
       </div>
 
       {/* Desktop Layout */}
@@ -36,7 +36,7 @@ export const BehindTheScenes = () => {
       </div>
 
       {/* Mobile Layout */}
-      <div className="grid md:hidden grid-cols-2 gap-3 max-w-xl mx-auto">
+      <div className="grid md:hidden grid-cols-2 gap-3 max-w-xl mx-auto px-4">
         {images.map((img, index) => (
           <div key={index} className="rounded-lg overflow-hidden aspect-square">
             <img 

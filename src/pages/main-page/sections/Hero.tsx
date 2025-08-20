@@ -25,7 +25,7 @@ const stack = [
   },
   {
     name: "Item 3",
-    image: "/logo/nest.svg"
+    image: "/logo/nest.png"
   },
   {
     name: "Item 3",
