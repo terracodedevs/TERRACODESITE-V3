@@ -39,8 +39,8 @@ const Questions = () => {
     alert('Thank you! Your message has been submitted successfully.');
   };
   return (
-    <div className="flex justify-center container mx-auto">
-    <div className="w-2/3 mx-auto px-4 py-12">
+    <div className="flex justify-center container mx-auto font-lufga">
+    <div className="md:w-2/3 mx-auto px-4 py-12">
     <div className="space-y-6">
             <div className="space-y-12">
               <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light">Still Have Questions?</h2>
@@ -100,7 +100,7 @@ const Questions = () => {
               </div>
 
               {/* Terms Checkbox */}
-              <div className="flex md:flex-row items-center gap-3 justify-between">
+              <div className="flex flex-col md:flex-row items-center gap-3 justify-between">
                 <div>
                 <input
                   type="checkbox"

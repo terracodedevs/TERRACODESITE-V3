@@ -7,6 +7,7 @@ import WhatWeDoBest from "./sections/we-do-best"
 import WorkWithUs from "./sections/Work-with-us"
 import OurClients from "./sections/ourClients"
 import HeroSection from "./sections/Hero"
+import SaaS from "./sections/saas"
 
 const Page = () => {
   return (
@@ -14,6 +15,9 @@ const Page = () => {
     <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>
+    <div className="hidden">
+    <SaaS/>
+    </div>
     <WorkWithUs/>
     <OurProcess/>
     <div className="hidden">

@@ -54,16 +54,12 @@ const HeroSection: React.FC = () => {
     if (video) {
       video.addEventListener('loadstart', () => console.log('Video load started'));
       video.addEventListener('canplay', () => console.log('Video can play'));
-      video.addEventListener('error', (e) => console.error('Video error:', e));
-      
+      video.addEventListener('error', (e) => console.error('Video error:', e)); 
       // Force play after component mounts
       video.play().catch(console.error);
     }
   }, []);
-
-
-  return (
-    
+  return ( 
     <div className="relative   overflow-hidden font-lufga  ">
       {/* Background Video */}
       <video

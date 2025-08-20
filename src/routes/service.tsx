@@ -1,5 +1,3 @@
-import Navbar from '@/components/navbar'
-import UnderMaintenance from '@/components/undermaintain'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/service')({
@@ -8,9 +6,7 @@ export const Route = createFileRoute('/service')({
 
 function RouteComponent() {
   return(
-      <div className='mt-10'>
-        <Navbar/>
-        <UnderMaintenance/>
+      <div className='my-10'>
       </div>
     )
 }
