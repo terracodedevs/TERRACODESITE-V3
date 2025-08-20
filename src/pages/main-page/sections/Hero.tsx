@@ -4,6 +4,7 @@ import { ScrollingEffect,  type ScrollingEffectRef } from "@/components/scrollEf
 import { Link,  useNavigate } from "@tanstack/react-router";
 import { ArrowRightCircle, Heart,  LucideLightbulb, Rocket, Send } from "lucide-react";
 import React, { useRef, useEffect } from "react";
+import { motion } from 'framer-motion'
 
 const stack = [
   {
@@ -18,10 +19,14 @@ const stack = [
     name: "Item 3",
     image: "/logo/node.svg"
   },
-  // {
-  //   name: "Item 3",
-  //   image: "/logo/java.svg"
-  // },
+  {
+    name: "Item 3",
+    image: "/logo/rust.png"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/nest.svg"
+  },
   {
     name: "Item 3",
     image: "/logo/tailwind.svg"
@@ -90,16 +95,25 @@ const HeroSection: React.FC = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/75 z-10" />
-      <div className="relative inset-0  z-30  mt-5 lg:mt-10 xl:container mx-auto">
+      <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay:0 , ease: "easeInOut" }}
+      className="relative inset-0  z-30  mt-5 lg:mt-10 xl:container mx-auto" >
        <Navbar/> 
-       </div>
+       </motion.div>
       {/* Content */}
       <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 xl:px-4 py-8 xl:container mx-auto px-4">
-        <div className="col-span-1 flex flex-col justify-start items-start gap-4">
-            <div className="relative max-w-md w-full text-white">
-              <div className="backdrop-blur-md bg-white/10 rounded-full p-6 shadow-lg flex justify-center items-center flex-row overflow-hidden relative">
-                {/* Gradient line inside this rounded box */}
-                <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, delay: 0.5 , ease: "easeInOut" }}
+          className="col-span-1 flex flex-col justify-start items-start gap-4"
+        >
+          <div className="relative max-w-md w-full text-white">
+            <div className="backdrop-blur-md bg-white/10 rounded-full p-6 shadow-lg flex justify-center items-center flex-row overflow-hidden relative">
+              {/* Gradient line inside this rounded box */}
+              <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 
                 <LucideLightbulb className="w-6 h-6 xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
                 <h1 className="text-lg xl:text-2xl text-nowrap">Build Your Ideas!</h1>
@@ -126,8 +140,12 @@ const HeroSection: React.FC = () => {
 
             </div>
             </Link>
-        </div>
-        <div className="col-span-2 flex flex-col  gap-4 lg:px-10 xl:px-28">
+        </motion.div>
+        <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+        className="col-span-2 flex flex-col  gap-4 lg:px-10 xl:px-28">
             <div className=" backdrop-blur-md bg-white/10  rounded-full lg:p-4 lg:w-fit xl:p-6 max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className="xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
                 <h1 className="xl:text-2xl text-nowrap ">AI-first digital experiences.</h1>
@@ -144,8 +162,12 @@ const HeroSection: React.FC = () => {
                 </button> */}
                 <TerraButton className="mt-4" onClick={handleClick}/>
             </div>
-        </div>
-        <div className="col-span-1 flex flex-col gap-4">
+        </motion.div>
+        <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, delay:0.5, ease: "easeInOut" }}
+         className="col-span-1 flex flex-col gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
                 <h1 className="xl:text-3xl  mb-4">Services Overview</h1>
                 <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
@@ -189,7 +211,7 @@ const HeroSection: React.FC = () => {
                 <h1 className="xl:text-xl text-nowrap ">Projects Completed</h1>
             </div>
             
-        </div>
+        </motion.div>
         <div className="col-span-1">
           <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />     
@@ -207,9 +229,9 @@ const HeroSection: React.FC = () => {
                 <div className="flex flex-row gap-2 opacity-60">
               {stack.map((item, index) => (
                 <div key={index} className="group relative items-center justify-center min-w-[200px] h-[120px] rounded-2xl overflow-hidden ">
-                  <div className="w-full h-full flex items-center justify-center p-4">
+                  <div className="w-full h-full flex items-center justify-center p-4 text-white">
                     <img 
-                      className="w-24 h-24 object-contai" 
+                      className="w-24 h-24 object-contain " 
                       src={item.image} 
                       alt={item.name} 
                     />

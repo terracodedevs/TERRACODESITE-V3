@@ -10,7 +10,7 @@ import HeroSection from "./sections/Hero"
 
 const Page = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
     <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>
