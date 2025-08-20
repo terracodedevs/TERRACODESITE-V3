@@ -11,6 +11,7 @@ const navbar = {
     { name: 'Contact', path: '/contact' },
     { name: 'Career', path: '/career' },
     { name: 'Pricing', path: '/pricing' },
+    { name: 'Team', path: '/about' }
   ],
   serviceLinks: [
     { name: 'AI', path: '/ai-solutions' },

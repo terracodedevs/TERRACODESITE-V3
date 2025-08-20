@@ -13,7 +13,7 @@ const images = [
 
 export const BehindTheScenes = () => {
   return (
-    <div className="bg-black text-white py-12 container mx-auto">
+    <div className="bg-black text-white py-12 container mx-auto font-lufga">
       <div className="text-center mb-10">
         <h2 className="text-[#FDA10A] text-6xl font-light mb-2">Behind the Scenes</h2>
         <p className="text-2xl font-extralight text-neutral-400 ">Want to see the real us?</p>
