@@ -7,7 +7,7 @@ const PHero = () => {
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full py-4 px-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
+            <div className="z-0 backdrop-blur-md bg-white/10  rounded-full py-4 px-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className=" text-[#FDA10A] mr-4" />
                 <h1 className="text-sm md:text-2xl ">If our portfolio sparked ideas or matched your vision.</h1>
             </div>

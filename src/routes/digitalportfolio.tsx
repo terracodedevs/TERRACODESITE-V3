@@ -3,7 +3,7 @@ import { useAssetLoader } from '@/hooks/useAssetLoader'
 import PFPage from '@/pages/Portfolio-page/page'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/portfolio')({
+export const Route = createFileRoute('/digitalportfolio')({
   component: () => {
     const assets = [
       '/HOV Mockup.png',
