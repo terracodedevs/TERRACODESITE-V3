@@ -1,5 +1,4 @@
 import Navbar from '@/components/navbar'
-import UnderMaintenance from '@/components/undermaintain'
 import Page from '@/pages/team-page/page'
 import { createFileRoute } from '@tanstack/react-router'
 
