@@ -3,19 +3,19 @@ import ProcessCardItem from "@/components/processCard"
 
 const imageData = [
   {
-    imageSrc: "Vector.svg",
+    imageSrc: "processcard/Vector.svg",
     cl: "absolute top-[0px] left-[195px] w-[170px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "2.svg",
+    imageSrc: "processcard/2.svg",
     cl: "absolute top-[0px] left-[185px] w-[280px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "3.svg",
+    imageSrc: "processcard/3.svg",
     cl: "absolute top-[0px] left-[130px] w-[295px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "4.svg",
+    imageSrc: "processcard/4.svg",
     cl: "absolute top-[0px] left-[120px] w-[320px] opacity-[0.4] mix-blend-overlay"
   },
 ]
@@ -45,10 +45,10 @@ const WorkCardData = [
 
 const WhyWorking = () => {
   return (
-     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20 container mx-auto">
+     <div className="flex flex-col gap-5  font-lufga mt-10 xl:mt-20 container mx-auto px-4">
                 <div className="flex flex-col items-center justify-center text-center mb-10">
-                    <h2 className="text-6xl font-extralight mb-4 text-[#FDA10A] ">Why You’ll Love Working Here</h2>
-                    <p className="text-2xl font-extralight text-neutral-400 ">
+                    <h2 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ">Why You’ll Love Working Here</h2>
+                    <p className="md:text-2xl font-extralight text-neutral-400 ">
                     Why Work at TerraCodeDev.
                     </p>
                 </div>

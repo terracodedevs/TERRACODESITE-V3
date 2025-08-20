@@ -89,64 +89,73 @@ const ProfileCircles: React.FC = () => {
     {
       id: 1,
       name: "Nomin Sendinu",
-      role: "CEO",
-      image: "/IMG_1158.PNG",
+      role: "Chief Executive Officer",
+      image: "employee/IMG_1158.PNG",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
       id: 2,
       name: "K N piyumina",
-      role: "CTO",
-      image: "/lufga/IMG-20250806-WA0091.jpg",
+      role: "Chief Technology Officer",
+      image: "/employee/navoda.png",
       bgColor: "bg-amber-200",
       lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
     },
     {
       id: 3,
       name: "Manuka Rathnayake",
-      role: "COO",
-      image: "/IMG_3032 (1).JPG",
+      role: "Chief Operations Officer",
+      image: "employee/manuka.png",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
     {
       id: 4,
-      name: "Chamod Fernando",
-      role: "Head of Marketing",
-      image: "/Screenshot 2025-08-04 110822.png",
-      bgColor: "bg-green-200",
-      lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
-    },
-     {
-      id: 5,
       name: "Ishira Namadith",
-      role: "Backend Developer",
-      image: "/lufga/IMG-20250806-WA0093.jpg",
+      role: "Software Engineer",
+      image: "/employee/ishira.png",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
     {
-      id: 6,
-      name: "Yasith Munasinghe",
-      role: "operations Manager",
-      image: "/lufga/IMG-20250806-WA0090.jpg",
-      bgColor: "bg-amber-200",
-      lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
-    },
-    {
-      id: 7,
+      id: 5,
       name: "Pasindu Vithanage",
-      role: "full Stack Developer",
-      image: "/lufga/IMG-20250806-WA0088.jpg",
+      role: "Software Engineer",
+      image: "/employee/pasindu.png",
       bgColor: "bg-blue-200",
       lightColor: "bg-gradient-to-br from-blue-300 to-blue-500"
     },
     {
+      id: 6,
+      name: "Yasith Munasinghe",
+      role: "Software Engineer",
+      image: "/employee/yasith.png",
+      bgColor: "bg-amber-200",
+      lightColor: "bg-gradient-to-br from-amber-300 to-orange-500"
+    },
+    
+    {
+      id: 7,
+      name: "Chamod Fernando",
+      role: "Software Engineer",
+      image: "employee/chamod.png",
+      bgColor: "bg-green-200",
+      lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
+    },
+    {
       id: 8,
-      name: "AHLI Umayanga",
-      role: "Mobile app Developer",
-      image: "/lufga/IMG-20250806-WA0089.jpg",
+      name: "A H L I Umayanga",
+      role: "Software Engineer",
+      image: "/employee/umaya.png",
+      bgColor: "bg-green-200",
+      lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
+    },
+    {
+      id: 9,
+      name: "Aveen Fernando",
+      role: "Software Engineer",
+      image: "/employee/aveen.png",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     }
@@ -165,7 +174,7 @@ const ProfileCircles: React.FC = () => {
 
 
       {/* Desktop Layout - Horizontal Row */}
-      <div className="hidden xl:grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-32 ">
+      <div className="hidden xl:grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-32 items-center justify-center ">
         {profiles.map((profile) => (
           <ProfileCircle
             key={profile.id}

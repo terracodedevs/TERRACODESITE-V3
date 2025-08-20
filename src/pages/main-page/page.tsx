@@ -11,7 +11,7 @@ import SaaS from "./sections/saas"
 
 const Page = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
     <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>

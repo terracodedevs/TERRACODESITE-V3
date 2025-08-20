@@ -1,10 +1,16 @@
 import { Link } from '@tanstack/react-router'
+import { motion } from 'framer-motion'
 
 const Aboutus = () => {
   return (
      <div className="  bg-[#1A1A1A] font-lufga ">
       <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto ">
-        <div className="flex flex-col  items-start justify-start p-4 md:space-y-5">
+        <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }} 
+        className="flex flex-col  items-start justify-start p-4 md:space-y-5">
             <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>
             <p className="text-[#A4A4A4] text-lg md:text-xl">
               We’re Your AI-Powered Innovation Partners.
@@ -17,8 +23,13 @@ const Aboutus = () => {
                 Learn More →
               </h1>
             </Link>
-        </div>
-        <div className=" text-white flex flex-wrap ">
+        </motion.div>
+        <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }} 
+        transition={{ duration: 1 }}
+        className=" text-white flex flex-wrap ">
           <div className='bg-[#303030] rounded-4xl md:p-2 m-2 '>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
@@ -79,7 +90,7 @@ const Aboutus = () => {
                     <p className='p-2 text-sm md:text-xl'>Committed to excellence.</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
