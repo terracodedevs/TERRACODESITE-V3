@@ -15,7 +15,7 @@ const Page = () => {
     <HeroSection/>
     <Aboutus/>
     <WhatWeDoBest/>
-    <div className="">
+    <div className="hidden">
     <SaaS/>
     </div>
     <WorkWithUs/>

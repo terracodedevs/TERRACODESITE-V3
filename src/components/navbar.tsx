@@ -7,11 +7,11 @@ const navbar = {
   links: [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/service' }, // parent dropdown
-    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Portfolio', path: '/digitalportfolio' },
     { name: 'Contact', path: '/contact' },
     { name: 'Career', path: '/career' },
     { name: 'Pricing', path: '/pricing' },
-    { name: 'Team', path: '/about' }
+    // { name: 'Team', path: '/about' }
   ],
   serviceLinks: [
     { name: 'AI', path: '/ai-solutions' },

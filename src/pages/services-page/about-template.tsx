@@ -35,7 +35,7 @@ const ServiceAbout: React.FC<ServiceAboutProps> = ({
            </div>
            <div className=" text-white flex flex-wrap py-5 ">
                <div className='flex flex-col md:gap-2 px-4 '>
-                <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>
+                <h1 className="text-4xl md:text-6xl text-[#FDA10A]">Highlights</h1>
                   <ul className="space-y-3 flex flex-wrap">
                     {highlights.map((item) => (
                         <div className=' bg-[#303030] rounded-4xl md:p-2 m-2 flex-wrap'>

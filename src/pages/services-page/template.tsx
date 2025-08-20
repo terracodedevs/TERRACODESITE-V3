@@ -19,8 +19,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
-                <Rocket className=" text-[#FDA10A] md:mr-4 w-12 h-8 md:w-20 " />
+            <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row gap-4 lg:gap-0">
+                <Rocket className=" text-[#FDA10A] md:mr-4 w-12 h-8 md:w-12 " />
                 <h1 className="text-md md:text-2xl ">{badge}</h1>
             </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">

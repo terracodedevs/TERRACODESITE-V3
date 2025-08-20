@@ -13,9 +13,9 @@ import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions
 import { Route as TestRouteImport } from './routes/test'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as DigitalportfolioRouteImport } from './routes/digitalportfolio'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CloudSolutionsRouteImport } from './routes/cloud-solutions'
 import { Route as CareerRouteImport } from './routes/career'
@@ -45,11 +45,6 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MobileAppsRoute = MobileAppsRouteImport.update({
   id: '/mobile-apps',
   path: '/mobile-apps',
@@ -58,6 +53,11 @@ const MobileAppsRoute = MobileAppsRouteImport.update({
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalportfolioRoute = DigitalportfolioRouteImport.update({
+  id: '/digitalportfolio',
+  path: '/digitalportfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -110,9 +110,9 @@ export interface FileRoutesByFullPath {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
-  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -127,9 +127,9 @@ export interface FileRoutesByTo {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
-  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -145,9 +145,9 @@ export interface FileRoutesById {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
-  '/portfolio': typeof PortfolioRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
@@ -164,9 +164,9 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
-    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -181,9 +181,9 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
-    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -198,9 +198,9 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
-    | '/portfolio'
     | '/pricing'
     | '/service'
     | '/test'
@@ -216,9 +216,9 @@ export interface RootRouteChildren {
   CareerRoute: typeof CareerRoute
   CloudSolutionsRoute: typeof CloudSolutionsRoute
   ContactRoute: typeof ContactRoute
+  DigitalportfolioRoute: typeof DigitalportfolioRoute
   HomeRoute: typeof HomeRoute
   MobileAppsRoute: typeof MobileAppsRoute
-  PortfolioRoute: typeof PortfolioRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   TestRoute: typeof TestRoute
@@ -255,13 +255,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/mobile-apps': {
       id: '/mobile-apps'
       path: '/mobile-apps'
@@ -274,6 +267,13 @@ declare module '@tanstack/react-router' {
       path: '/home'
       fullPath: '/home'
       preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digitalportfolio': {
+      id: '/digitalportfolio'
+      path: '/digitalportfolio'
+      fullPath: '/digitalportfolio'
+      preLoaderRoute: typeof DigitalportfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -344,9 +344,9 @@ const rootRouteChildren: RootRouteChildren = {
   CareerRoute: CareerRoute,
   CloudSolutionsRoute: CloudSolutionsRoute,
   ContactRoute: ContactRoute,
+  DigitalportfolioRoute: DigitalportfolioRoute,
   HomeRoute: HomeRoute,
   MobileAppsRoute: MobileAppsRoute,
-  PortfolioRoute: PortfolioRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   TestRoute: TestRoute,
