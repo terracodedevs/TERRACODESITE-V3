@@ -169,23 +169,27 @@ const HeroSection: React.FC = () => {
                 <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
                   <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
                     <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
+                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Business Software</div>
+                  </div>
+                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
                     <div className="relative tracking-[0.04px] leading-[30px] font-light">AI Solutions</div>
                   </div>
                   <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
                     <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Design</div>
+                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Web Applications</div>
                   </div>
                   <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
                     <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Mobile App</div>
+                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Mobile Applications</div>
                   </div>
                   <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
                     <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Web App</div>
+                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Cloud Operations</div>
                   </div>
                   <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
                     <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Data Analysis</div>
+                    <div className="relative tracking-[0.04px] leading-[30px] font-light">UX Design</div>
                   </div>
                 </div>
                 <div className="text-amber-600 mt-10">
@@ -260,7 +264,7 @@ const HeroSection: React.FC = () => {
                 <ArrowRightCircle className="w-7 h-7" />
                 </button> */}
                 <div className="">
-                  <TerraButton className=" " padding="pl-6 pr-2 py-2 rounded-4xl text-sm gap-6 " img="w-3"/>
+                  <TerraButton className=" " padding="pl-6 pr-2 py-2 rounded-4xl text-sm gap-6 " img="w-3" onClick={handleClick}/>
                 </div>
                 <div className=" backdrop-blur-md bg-white/10 mt-4 rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />

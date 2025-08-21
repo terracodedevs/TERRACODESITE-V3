@@ -1,8 +1,14 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import TerraButton from "./button";
+import { useNavigate } from "@tanstack/react-router";
 
 
 export default function Footer() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+  navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
+}
   return (
     <div>
     {/* Dextop View     */}
@@ -10,7 +16,7 @@ export default function Footer() {
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
             <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" />
              <a className=" [text-decoration:underline]  font-semibold text-wrap " href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
-             <TerraButton/>
+             <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
             <h1 className="font-bold">Company</h1>
@@ -94,7 +100,7 @@ export default function Footer() {
             </div>  
         </div>
         <div>
-            <TerraButton/>
+            <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
            <div className="flex flex-col items-center justify-center gap-4">
