@@ -6,9 +6,9 @@ const Aboutus = () => {
      <div className="  bg-[#1A1A1A] font-lufga ">
       <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto ">
         <motion.div
-        initial={{ opacity: 0, x: -20 }}
+        initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 1 }} 
         className="flex flex-col  items-start justify-start p-4 md:space-y-5">
             <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>
@@ -25,9 +25,9 @@ const Aboutus = () => {
             </Link>
         </motion.div>
         <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }} 
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 50 }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 1 }}
         className=" text-white flex flex-wrap ">
           <div className='bg-[#303030] rounded-4xl md:p-2 m-2 '>
