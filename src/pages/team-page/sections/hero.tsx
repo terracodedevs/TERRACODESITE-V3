@@ -21,7 +21,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-col mt-8 md:px-24 items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">People Who Power the Code.</h1>
-                <p className="md:text-2xl text-gray-400 md:text-center">At TerraCodeDev, our strength lies in our people - a passionate team of engineers, designers, thinkers, and innovators dedicated to delivering world-class digital solutions. We blend technical excellence with creative energy to help brands thrive in a connected world.</p>
+                <p className="md:text-2xl text-gray-400 md:text-center">At Terracode, our strength lies in our people - a passionate team of engineers, designers, thinkers, and innovators dedicated to delivering world-class digital solutions. We blend technical excellence with creative energy to help brands thrive in a connected world.</p>
                 <TerraButton className="mt-6 md:mb-36" onClick={handleClick}/>
             </div>
         </div>
