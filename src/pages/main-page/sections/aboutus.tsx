@@ -9,7 +9,7 @@ const Aboutus = () => {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 1 }} 
+        transition={{ duration: 1 , ease:'easeInOut' }} 
         className="flex flex-col  items-start justify-start p-4 md:space-y-5">
             <h1 className="text-4xl md:text-6xl text-[#FDA10A]">About us</h1>
             <p className="text-[#A4A4A4] text-lg md:text-xl">
@@ -28,7 +28,7 @@ const Aboutus = () => {
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, ease:'easeInOut' }}
         className=" text-white flex flex-wrap ">
           <div className='bg-[#303030] rounded-4xl md:p-2 m-2 '>
             <div className='flex items-center md:gap-2 px-4'>
