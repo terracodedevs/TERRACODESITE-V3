@@ -6,7 +6,7 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/career')({
   component: ()=>{
     const assets = [
-      '/career.jpg'
+      'career/career.jpg'
     ]
 
     const loaded = useAssetLoader(assets)
