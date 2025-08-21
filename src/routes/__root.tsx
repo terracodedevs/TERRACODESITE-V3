@@ -8,11 +8,14 @@ import Footer from '@/components/nfooter'
 import { CookieBanner } from '@/components/CookieFile'
 import NotFound from '@/components/NotFound'
 import Navbar from '@/components/navbar'
+import { ScrollToTop } from '@/components/scrolltop'
+
 
 
 export const Route = createRootRoute({
+  
   component: () => {
-
+    
 
     return (
       <div>
@@ -24,6 +27,7 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <ScrollToTop/>
             <CookieBanner />
             {/* <Navbar /> */}
             <Outlet />
