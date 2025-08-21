@@ -6,13 +6,13 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/digitalportfolio')({
   component: () => {
     const assets = [
-      '/HOV Mockup.png',
-      '/inpro Mockup.png',
-      '/transit.png',
-      '/CMS.png',
-      '/polls.png',
-      '/mobileapp.png',
-      '/hovims.png',
+      'portfolio/HOV Mockup.png',
+      'portfolio/inpro Mockup.png',
+      'portfolio/transit.png',
+      'portfolio/CMS.png',
+      'portfolio/polls.png',
+      'portfolio/mobileapp.png',
+      'portfolio/hovims.png',
     ]
 
     const loaded = useAssetLoader(assets)
