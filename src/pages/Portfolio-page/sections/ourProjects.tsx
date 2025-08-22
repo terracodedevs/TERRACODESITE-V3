@@ -6,7 +6,7 @@ const projects = [
         title: "Web Design & Development",
         description: "A modern website for House Of Vision (Pvt) Ltd. ",
         id: "1",
-        category: "Development",
+        category: "Website",
         img: "/portfolio/HOV Mockup.png"
     },
     {
@@ -14,7 +14,7 @@ const projects = [
         title: "Business Website Solution",
         description: "A modern website for Inpro Industries (Pvt) Ltd. ",
         id: "2",
-        category: "Development",
+        category: "Website",
         img: "/portfolio/inpro Mockup.png"
     },
     {
@@ -22,7 +22,7 @@ const projects = [
         title: "Web Design & Development",
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
-        category: "Development",
+        category: "Website",
         img: "/portfolio/transit.png"
     },
     
