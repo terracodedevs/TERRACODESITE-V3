@@ -54,6 +54,13 @@ const HeroSection: React.FC = () => {
   navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
 }
 
+  const scrollToWhatWeDoBest = () => {
+    const whatWeDoBestSection = document.getElementById('what-we-do-best');
+    if (whatWeDoBestSection) {
+      whatWeDoBestSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -193,10 +200,13 @@ const HeroSection: React.FC = () => {
                   </div>
                 </div>
                 <div className="text-amber-600 mt-10">
-                  <button className="flex items-center xl:text-3xl gap-2">
-                    Learn More
-                    <ArrowRightCircle className="w-7 h-7" />
-                  </button>
+                 <button 
+                  className="flex items-center xl:text-3xl gap-2"
+                  onClick={scrollToWhatWeDoBest}
+                >
+                  Learn More
+                  <ArrowRightCircle className="w-7 h-7" />
+                </button>
               </div>
             </div>
             
