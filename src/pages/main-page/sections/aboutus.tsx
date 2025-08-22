@@ -10,7 +10,7 @@ const Aboutus = () => {
               We’re Your AI-Powered Innovation Partners.
             </p>
             <p className="text-white mt-2 text-2xl md:text-3xl">
-              We are TerraCode, a future-focused development partner crafting intelligent digital products. Specializing in AI-integrated software, we help startups and enterprises build scalable, user-first solutions that drive impact.
+              We are Terracode, a future-focused development partner crafting intelligent digital products. Specializing in AI-integrated software, we help startups and enterprises build scalable, user-first solutions that drive impact.
             </p>
             <Link to="/about">
               <h1 className="text-lg md:text-2xl text-[#f56d04] mt-4 hover:text-[#FDA10A]">

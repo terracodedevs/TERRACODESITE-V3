@@ -64,7 +64,7 @@ const WorkWithUs: React.FC = () => {
         <div className="flex flex-col items-start justify-start p-4 space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light">
             Why Work With <br/>
-            <span className="text-[#FDA10A]">TerraCode</span>
+            <span className="text-[#FDA10A]">Terracode</span>
           </h1>
           
           <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-xl font-light">
@@ -72,7 +72,7 @@ const WorkWithUs: React.FC = () => {
           </p>
           
           <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-light ">
-            At TerraCode, we don't just write code; we cultivate enduring partnerships that prioritize innovation, excellence, and your sustainable success. Our team is dedicated to understanding your unique challenges and aspirations, ensuring that every solution we deliver is tailored to drive measurable impact. With a focus on cutting edge technology and a commitment to collaboration, we empower you to navigate the complexities of the digital landscape with confidence.
+            At Terracode, we don't just write code; we cultivate enduring partnerships that prioritize innovation, excellence, and your sustainable success. Our team is dedicated to understanding your unique challenges and aspirations, ensuring that every solution we deliver is tailored to drive measurable impact. With a focus on cutting edge technology and a commitment to collaboration, we empower you to navigate the complexities of the digital landscape with confidence.
           </p>
           
           <Link to="/about">
