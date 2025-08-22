@@ -90,7 +90,7 @@ const ProfileCircles: React.FC = () => {
       id: 1,
       name: "Nomin Sendinu",
       role: "Chief Executive Officer",
-      image: "employee/IMG_1158.PNG",
+      image: "employee/nomin.png",
       bgColor: "bg-pink-200",
       lightColor: "bg-gradient-to-br from-pink-300 to-pink-500"
     },
