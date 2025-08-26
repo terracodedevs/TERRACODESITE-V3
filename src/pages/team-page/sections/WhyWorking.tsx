@@ -49,7 +49,7 @@ const WhyWorking = () => {
                 <div className="flex flex-col items-center justify-center text-center mb-10">
                     <h2 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ">Why You’ll Love Working Here</h2>
                     <p className="md:text-2xl font-extralight text-neutral-400 ">
-                    Why Work at TerraCodeDev.
+                    Why Work at Terracode
                     </p>
                 </div>
                 <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap"> 

@@ -4,7 +4,7 @@ import { Facebook, Instagram,  Linkedin} from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="w-full relative flex flex-col flex-wrap gap-4 items-center justify-start  text-left text-xl text-white font-lufga px-4 md:px-4">
+    <div className="w-full relative flex flex-col flex-wrap gap-4 items-center justify-start  text-left text-xl text-white font-lufga px-4 md:px-4 mt-20">
         <div className="self-stretch flex flex-col gap-4 sm:flex-row items-center justify-between py-8  ">
             <div className="flex-1 flex flex-col md:flex-row  md:items-start md:justify-between ">
                 <div className="flex flex-col items-start justify-end gap-8">
@@ -40,7 +40,7 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-                     <div className="hidden  md:flex flex-col items-start justify-start gap-6">
+                     <div className="hidden  md:flex flex-col items-start justify-start gap-6 mt-20">
                             <div className="relative font-semibold">Company</div>
                             <div className="flex flex-col items-start justify-start gap-3 text-base">
                                 <div className="relative leading-6">Contact Us</div>

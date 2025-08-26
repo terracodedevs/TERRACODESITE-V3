@@ -70,7 +70,7 @@ export default function Footer() {
     </div>
 
     {/* Mobile View */}
-    <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga">
+    <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga mt-6">
         <div className="flex flex-col items-center justify-center gap-4">
             <img className="w-[130px] object-cover" alt="" src="hero/Frame 9.png" />
             <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
