@@ -1,6 +1,7 @@
 import TerraButton from "@/components/button";
 import { Rocket } from "lucide-react";
 import React from "react";
+import { useNavigate } from "@tanstack/react-router";
 
 
 interface ServicePageProps {
@@ -14,6 +15,12 @@ const ServicePage: React.FC<ServicePageProps> = ({
   title,
   image,
 }) => {
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate({ to: '/career' });
+  };
+
   return (
     <div className=" text-white font-lufga mt-5 lg:mt-20 px-4 container mx-auto">
       <div className="container mx-auto flex flex-col justify-center items-center">
@@ -25,7 +32,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
             </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">{title}</h1>
-                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label="View Openings"/>
+                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label="View Openings" onClick={handleClick} />
             </div>
         </div>
         {/* team members Images */}

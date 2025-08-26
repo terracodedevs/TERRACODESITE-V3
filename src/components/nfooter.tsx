@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         
     </div>
-    <div className="hidden md:flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mt-4">
+    <div className="hidden md:flex flex-col items-center justify-center gap-4 py-4 bg-neutral-800 mx-4 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
     </div>
 
@@ -125,7 +125,7 @@ export default function Footer() {
                 <a href="https://instagram.com/terracodedev" target="_blank" rel="noopener noreferrer"><Instagram/></a>
             </div> 
         </div>
-        <div className=" flex  items-center justify-center gap-4 px-4 py-4 bg-neutral-800 mt-4">
+        <div className=" flex  items-center justify-center gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">
             <p className="text-center"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
         </div>
     </div>
