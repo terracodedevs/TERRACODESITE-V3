@@ -311,7 +311,7 @@ const HeroSection: React.FC = () => {
                 <div key={index} className="group relative items-center justify-center min-w-[120px] h-[100px] rounded-2xl overflow-hidden ">
                   <div className="w-full h-full flex items-center justify-center p-4">
                     <img 
-                      className="w-24 h-24 object-contain" 
+                      className="w-20 h-20 object-contain" 
                       src={item.image} 
                       alt={item.name} 
                     />
