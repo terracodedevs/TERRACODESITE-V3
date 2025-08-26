@@ -1,6 +1,6 @@
 import TerraButton from "@/components/button"
 import { Rocket } from "lucide-react"
-import { Link,  useNavigate } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 const PHero = () => {
    const navigate =useNavigate();
   
