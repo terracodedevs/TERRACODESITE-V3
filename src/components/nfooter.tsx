@@ -56,12 +56,39 @@ export default function Footer() {
                     <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
                 </div>
             </div>
-            <div className=" h-8 flex flex-row items-center justify-start gap-6">
-                <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer" className="hover:bg-blue-500 rounded-md p-2"><Facebook/></a>
-                {/* <a href="https://twitter.com/terracodedev" target="_blank" rel="noopener noreferrer"><Twitter/></a> */}
-                 <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer " className="hover:bg-pink-400 rounded-md p-2"><Instagram/></a>
-                <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer" className="hover:bg-blue-500 rounded-md p-2"><Linkedin/></a>
-               
+           {/* Social Links */}
+                <div className="flex w-full gap-2 mt-2 sm:justify-start">
+                <div className="w-1/3">
+                  <a 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.facebook.com/terracodedev?mibextid=LQQJ4d"
+                  className="flex items-center justify-center gap-2 px-4 py-2 transition-colors border-1 text-white rounded-md hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300">
+                  <Facebook className="w-auto h-6 " />
+                  <button className='hidden sm:block'>Facebook</button></a>
+                </div>
+                <div className="w-1/3">
+                <a 
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/terracodedev"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-white border-1 transition-colors rounded-md  hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
+                  <Instagram className="w-auto h-6 " />
+                  <button className='hidden sm:block'>Instagram</button>
+                </a>
+                </div>
+                <div className="w-1/3">
+                <a
+                target="_blank"
+                rel="noopener noreferrer"
+                  href="https://www.linkedin.com/company/terracodedev/⁣
+"
+                  className="flex items-center justify-center gap-2 px-4 py-2 text-white border-1 transition-colors rounded-md  hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
+                >
+                  <Linkedin className="w-auto h-6" />
+                  <button className='hidden sm:block'>LinkedIn</button>
+                </a>
+              </div>
             </div>
         </div>
         
