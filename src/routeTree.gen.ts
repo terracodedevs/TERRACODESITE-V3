@@ -16,6 +16,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as DigitalportfolioRouteImport } from './routes/digitalportfolio'
+import { Route as DGVycmFjb2RlCgRouteImport } from './routes/dGVycmFjb2RlCg'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CloudSolutionsRouteImport } from './routes/cloud-solutions'
 import { Route as CareerRouteImport } from './routes/career'
@@ -58,6 +59,11 @@ const HomeRoute = HomeRouteImport.update({
 const DigitalportfolioRoute = DigitalportfolioRouteImport.update({
   id: '/digitalportfolio',
   path: '/digitalportfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DGVycmFjb2RlCgRoute = DGVycmFjb2RlCgRouteImport.update({
+  id: '/dGVycmFjb2RlCg',
+  path: '/dGVycmFjb2RlCg',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -110,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
@@ -127,6 +134,7 @@ export interface FileRoutesByTo {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
@@ -145,6 +153,7 @@ export interface FileRoutesById {
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/contact': typeof ContactRoute
+  '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
@@ -164,6 +173,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
@@ -181,6 +191,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
@@ -198,6 +209,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/cloud-solutions'
     | '/contact'
+    | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
@@ -216,6 +228,7 @@ export interface RootRouteChildren {
   CareerRoute: typeof CareerRoute
   CloudSolutionsRoute: typeof CloudSolutionsRoute
   ContactRoute: typeof ContactRoute
+  DGVycmFjb2RlCgRoute: typeof DGVycmFjb2RlCgRoute
   DigitalportfolioRoute: typeof DigitalportfolioRoute
   HomeRoute: typeof HomeRoute
   MobileAppsRoute: typeof MobileAppsRoute
@@ -274,6 +287,13 @@ declare module '@tanstack/react-router' {
       path: '/digitalportfolio'
       fullPath: '/digitalportfolio'
       preLoaderRoute: typeof DigitalportfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dGVycmFjb2RlCg': {
+      id: '/dGVycmFjb2RlCg'
+      path: '/dGVycmFjb2RlCg'
+      fullPath: '/dGVycmFjb2RlCg'
+      preLoaderRoute: typeof DGVycmFjb2RlCgRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -344,6 +364,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareerRoute: CareerRoute,
   CloudSolutionsRoute: CloudSolutionsRoute,
   ContactRoute: ContactRoute,
+  DGVycmFjb2RlCgRoute: DGVycmFjb2RlCgRoute,
   DigitalportfolioRoute: DigitalportfolioRoute,
   HomeRoute: HomeRoute,
   MobileAppsRoute: MobileAppsRoute,

@@ -26,10 +26,12 @@ const navbar = {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => setIsMenuOpen((o) => !o)
   const toggleDropdown = () => setIsDropdownOpen((o) => !o)
+  const toggleMobileDropdown = () => setIsMobileDropdownOpen((o) => !o)
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -40,6 +42,14 @@ export default function Navbar() {
     }
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Close mobile menu when navigating
+  useEffect(() => {
+    return () => {
+      setIsMenuOpen(false)
+      setIsMobileDropdownOpen(false)
+    }
   }, [])
 
   const linkBase =
@@ -145,14 +155,14 @@ export default function Navbar() {
               link.name === "Services" ? (
                 <div key={link.name} className="flex flex-col">
                   <button
-                    onClick={toggleDropdown}
+                    onClick={toggleMobileDropdown} // Use the mobile-specific toggle
                     className="rounded-[16px] px-4 py-2 text-gray-300 text-left flex items-center justify-between hover:text-amber-500"
                   >
                     {link.name}
-                    <ChevronDown size={18} className={`transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown size={18} className={`transition-transform ${isMobileDropdownOpen ? "rotate-180" : ""}`} />
                   </button>
                   <AnimatePresence>
-                    {isDropdownOpen && (
+                    {isMobileDropdownOpen && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
@@ -165,7 +175,7 @@ export default function Navbar() {
                             key={s.path}
                             to={s.path}
                             onClick={() => {
-                              setIsDropdownOpen(false)
+                              setIsMobileDropdownOpen(false)
                               setIsMenuOpen(false)
                             }}
                             className="px-2 py-2 text-gray-300 hover:text-amber-500 border-b border-gray-700 last:border-none"

@@ -11,7 +11,7 @@ const Hero = () => {
     navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
   }
   return (
-    <div className="bg-black text-white font-lufga mt-10 container mx-auto px-4">
+    <div className="bg-black text-white font-lufga mt-6 lg:mt-20 container mx-auto px-4">
       <div className="max-w-8xl mx-auto">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center">

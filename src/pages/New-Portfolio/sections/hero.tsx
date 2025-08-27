@@ -5,7 +5,7 @@ const PHero = () => {
    const navigate =useNavigate();
   
     const handleClick = () => {
-    navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
+    navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', et
   }
   return (
     <div className=" text-white font-lufga mt-6 md:mt-20 px-4 container mx-auto">
