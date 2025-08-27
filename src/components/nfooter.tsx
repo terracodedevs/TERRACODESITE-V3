@@ -21,23 +21,23 @@ export default function Footer() {
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
             <h1 className="font-bold">Company</h1>
             <div className="flex flex-col gap-2">
-                <Link to="/contact">Contact Us</Link>
-                <Link to="/career">Careers</Link>
-                <Link to="/digitalportfolio">Portfolio</Link>
-                <Link to="/about">Team</Link>
-                <Link to="/articles">Article Page</Link>
-                <Link to="/pricing">Pricing Packages</Link>
+                <Link to="/contact" className="hover:text-amber-500">Contact Us</Link>
+                <Link to="/career" className="hover:text-amber-500">Careers</Link>
+                <Link to="/digitalportfolio" className="hover:text-amber-500">Portfolio</Link>
+                <Link to="/about" className="hover:text-amber-500">Team</Link>
+                <Link to="/articles" className="hover:text-amber-500">Article Page</Link>
+                <Link to="/pricing" className="hover:text-amber-500">Pricing Packages</Link>
             </div>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
             <h1 className="font-bold">Services</h1>
             <div className="flex flex-col gap-2">
-                <Link to="/">UI/UX Design</Link>
-                <Link to="/website-solutions">Web Application</Link>
-                <Link to="/mobile-apps">Mobile Application</Link>
-                <Link to="/ai-solutions">Artificial Intelligence</Link>
-                <Link to="/business-softwares">Business Software</Link>
-                <Link to="/cloud-solutions">Cloude Services</Link>
+                <Link to="/" className="hover:text-amber-500">UI/UX Design</Link>
+                <Link to="/website-solutions" className="hover:text-amber-500">Web Application</Link>
+                <Link to="/mobile-apps" className="hover:text-amber-500">Mobile Application</Link>
+                <Link to="/ai-solutions" className="hover:text-amber-500">Artificial Intelligence</Link>
+                <Link to="/business-softwares" className="hover:text-amber-500">Business Software</Link>
+                <Link to="/cloud-solutions" className="hover:text-amber-500">Cloude Services</Link>
             </div>
         </div>
         <div className="flex flex-col px-4  items-start justify-between">
@@ -57,10 +57,11 @@ export default function Footer() {
                 </div>
             </div>
             <div className=" h-8 flex flex-row items-center justify-start gap-6">
-                <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer"><Facebook/></a>
+                <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer" className="hover:bg-blue-500 rounded-md p-2"><Facebook/></a>
                 {/* <a href="https://twitter.com/terracodedev" target="_blank" rel="noopener noreferrer"><Twitter/></a> */}
-                <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer"><Linkedin/></a>
-                <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer"><Instagram/></a>
+                 <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer " className="hover:bg-pink-400 rounded-md p-2"><Instagram/></a>
+                <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer" className="hover:bg-blue-500 rounded-md p-2"><Linkedin/></a>
+               
             </div>
         </div>
         
@@ -79,23 +80,23 @@ export default function Footer() {
           <div className="flex flex-col px-4 gap-4 items-start justify-start">
             <h1 className="font-bold">Company</h1>
             <div className="flex flex-col gap-2">
-                <p>Contact Us</p>
-                <p>Careers</p>
-                <p>Portfolio</p>
-                <p>Team</p>
-                <p>Article Page</p>
-                <p>Pricing Packages</p>
+               <Link to="/contact">Contact Us</Link>
+                <Link to="/career">Careers</Link>
+                <Link to="/digitalportfolio">Portfolio</Link>
+                <Link to="/about">Team</Link>
+                <Link to="/articles">Article Page</Link>
+                <Link to="/pricing">Pricing Packages</Link>
             </div>
             </div>
             <div className="flex flex-col px-4 gap-4 items-start justify-start">
                 <h1 className="font-bold">Services</h1>
                 <div className="flex flex-col gap-2">
-                    <p>UI/UX Design</p>
-                    <p>Web Application</p>
-                    <p>Mobile Application</p>
-                    <p>Artificial Intelligence</p>
-                    <p>Quality Assurance</p>
-                    <p>Support Services</p>
+                   <Link to="/">UI/UX Design</Link>
+                <Link to="/website-solutions">Web Application</Link>
+                <Link to="/mobile-apps">Mobile Application</Link>
+                <Link to="/ai-solutions">Artificial Intelligence</Link>
+                <Link to="/business-softwares">Business Software</Link>
+                <Link to="/cloud-solutions">Cloude Services</Link>
                 </div>
             </div>  
         </div>
@@ -122,7 +123,7 @@ export default function Footer() {
                 <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer"><Facebook/></a>
                 {/* <a href="https://twitter.com/terracodedev" target="_blank" rel="noopener noreferrer"><Twitter/></a> */}
                 <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer"><Linkedin/></a>
-                <a href="https://instagram.com/terracodedev" target="_blank" rel="noopener noreferrer"><Instagram/></a>
+                <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer"><Instagram/></a>
             </div> 
         </div>
         <div className=" flex  items-center justify-center gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">
