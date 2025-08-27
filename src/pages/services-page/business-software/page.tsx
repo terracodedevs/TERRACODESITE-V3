@@ -9,7 +9,7 @@ const Page2: React.FC = () => {
     <ServicePage
       badge="Transform your business operations with tailor-made systems"
       title="Business Software Systems"
-      image="/IMG_0705 1.png"
+      image="/mainicons/IMG_4620.PNG"
     />
     <ServiceAbout
       paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."
