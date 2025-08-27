@@ -290,7 +290,7 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-xl text-nowrap ">Projects Completed</h1>
             </div>
              <div className="">
-          <div className=" text-white  flex flex-col justify-center items-center text-center mt-2">
+          <div className=" text-white  flex flex-col justify-center items-center text-center mt-8">
                 <h1 className="text-xl ">The Stack That Powers Innovation.</h1>
                 <div className=" bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
           </div>
@@ -298,7 +298,7 @@ const HeroSection: React.FC = () => {
         
             </div>
         </div>
-        <div className="col-span-3 flex flex-row">
+        <div className="col-span-3 flex flex-row ">
             <ScrollingEffect
               ref={scrollRef}
               autoScroll={true}
