@@ -20,7 +20,7 @@ const projects: Project[] = [
         id: "1",
         category: "Website",
         img: "/portfolio/HOV Mockup.png",
-        videoUrl: "/portfolio/videos/hov-demo.mp4", // Add your video path here
+        videoUrl: "public/hero/Hero.mp4", // Add your video path here
         detailedDescription: "A comprehensive modern website solution for House Of Vision (Pvt) Ltd, featuring responsive design, user-friendly interface, and robust functionality. The website showcases the company's services and provides an excellent user experience across all devices.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },

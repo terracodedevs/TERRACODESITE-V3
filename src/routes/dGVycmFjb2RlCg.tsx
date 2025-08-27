@@ -1,7 +1,7 @@
 import NPFPage from '@/pages/New-Portfolio/page'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/portfolio')({
+export const Route = createFileRoute('/dGVycmFjb2RlCg')({
   component: RouteComponent,
 })
 
