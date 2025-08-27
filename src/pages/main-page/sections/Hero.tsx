@@ -54,6 +54,13 @@ const HeroSection: React.FC = () => {
   navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
 }
 
+  const scrollToWhatWeDoBest = () => {
+    const whatWeDoBestSection = document.getElementById('what-we-do-best');
+    if (whatWeDoBestSection) {
+      whatWeDoBestSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -164,41 +171,47 @@ const HeroSection: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay:0.5, ease: "easeInOut" }}
          className="col-span-1 flex flex-col gap-4">
-            <div className=" backdrop-blur-md bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
-                <h1 className="xl:text-3xl  mb-4">Services Overview</h1>
-                <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Business Software</div>
-                  </div>
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">AI Solutions</div>
-                  </div>
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Web Applications</div>
-                  </div>
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Mobile Applications</div>
-                  </div>
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">Cloud Operations</div>
-                  </div>
-                  <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
-                    <div className="w-[15px] relative rounded-[50%] bg-amber-600 h-[15px]" />
-                    <div className="relative tracking-[0.04px] leading-[30px] font-light">UX Design</div>
-                  </div>
-                </div>
-                <div className="text-amber-600 mt-10">
-                  <button className="flex items-center xl:text-3xl gap-2">
-                    Learn More
-                    <ArrowRightCircle className="w-7 h-7" />
-                  </button>
-              </div>
-            </div>
+            <div className="backdrop-blur-md bg-white/10 rounded-2xl p-8 max-w-md w-full text-white shadow-lg transition-colors duration-800 group hover:bg-[#2C2C2C] relative">
+    <h1 className="xl:text-3xl mb-4">Services Overview</h1>
+    <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Business Software</div>
+      </div>
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">AI Solutions</div>
+      </div>
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Web Applications</div>
+      </div>
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Mobile Applications</div>
+      </div>
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Cloud Operations</div>
+      </div>
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+        <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
+        <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">UX Design</div>
+      </div>
+    </div>
+    <div className="text-amber-600 mt-10">
+     <button 
+      className="flex items-center xl:text-3xl gap-2 group-hover:text-[#f56d04] transition-colors duration-800"
+      onClick={scrollToWhatWeDoBest}
+    >
+      Learn More
+      <ArrowRightCircle className="w-7 h-7" />
+    </button>
+    </div>
+    
+    {/* Bottom gradient line on hover */}
+    <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
+</div>
             
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
@@ -277,7 +290,7 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-xl text-nowrap ">Projects Completed</h1>
             </div>
              <div className="">
-          <div className=" text-white  flex flex-col justify-center items-center text-center mt-2">
+          <div className=" text-white  flex flex-col justify-center items-center text-center mt-8">
                 <h1 className="text-xl ">The Stack That Powers Innovation.</h1>
                 <div className=" bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
           </div>
@@ -285,7 +298,7 @@ const HeroSection: React.FC = () => {
         
             </div>
         </div>
-        <div className="col-span-3 flex flex-row">
+        <div className="col-span-3 flex flex-row ">
             <ScrollingEffect
               ref={scrollRef}
               autoScroll={true}
@@ -298,7 +311,7 @@ const HeroSection: React.FC = () => {
                 <div key={index} className="group relative items-center justify-center min-w-[120px] h-[100px] rounded-2xl overflow-hidden ">
                   <div className="w-full h-full flex items-center justify-center p-4">
                     <img 
-                      className="w-24 h-24 object-contain" 
+                      className="w-20 h-20 object-contain" 
                       src={item.image} 
                       alt={item.name} 
                     />

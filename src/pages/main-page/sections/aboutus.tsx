@@ -16,7 +16,7 @@ const Aboutus = () => {
               We’re Your AI-Powered Innovation Partners.
             </p>
             <p className="text-white mt-2 text-2xl md:text-3xl">
-              We are TerraCode, a future-focused development partner crafting intelligent digital products. Specializing in AI-integrated software, we help startups and enterprises build scalable, user-first solutions that drive impact.
+              We are Terracode, a future-focused development partner crafting intelligent digital products. Specializing in AI-integrated software, we help startups and enterprises build scalable, user-first solutions that drive impact.
             </p>
             <Link to="/about">
               <h1 className="text-lg md:text-2xl text-[#f56d04] mt-4 hover:text-[#FDA10A]">
@@ -30,61 +30,61 @@ const Aboutus = () => {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 1, ease:'easeInOut' }}
         className=" text-white flex flex-wrap ">
-          <div className='bg-[#303030] rounded-4xl md:p-2 m-2 '>
+          <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2 '>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>Guided by data.</p>
             </div>
           </div>
-          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+          <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>Driven by curiosity.</p>
             </div>
           </div>
-          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+          <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>Obsessed with impact.</p>
             </div>
           </div>
-            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+            <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center md:gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                     <p className='p-2 text-sm md:text-xl'>Empowered</p>
                 </div>
             </div>
-             <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+             <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center md:gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                     <p className='p-2 text-sm md:text-xl'>Collaboration.</p>
                 </div>
             </div>
-            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'> 
+            <div className=' flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'> 
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>Innovative solutions.</p>
             </div>
           </div>
-          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+          <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>Focused on user experience.</p>
             </div>
           </div>
-          <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+          <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
             <div className='flex items-center md:gap-2 px-4'>
                 <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                 <p className='p-2 text-sm md:text-xl'>User experience.</p>
             </div>
           </div>
-            <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+            <div className=' flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center md:gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                     <p className='p-2 text-sm md:text-xl'>Inspired by creativity.</p>
                 </div>
             </div>
-             <div className='bg-[#303030] rounded-4xl md:p-2 m-2'>
+             <div className='flex items-center justify-center bg-[#303030] rounded-4xl md:p-2 m-2'>
                 <div className='flex items-center md:gap-2 px-4'>
                     <div className='rounded-full bg-[#FDA10A] h-3 w-3 md:h-4 md:w-4'></div>
                     <p className='p-2 text-sm md:text-xl'>Committed to excellence.</p>

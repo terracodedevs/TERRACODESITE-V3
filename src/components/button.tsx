@@ -27,7 +27,7 @@ const TerraButton: React.FC<TerraButtonProps> = ({
     <button
       type={type}
       onClick={onClick}
-      className={`relative  ${gradient} flex flex-row items-center justify-center ${padding} w-fit box-border  text-left  text-white font-lufga ${className}`}
+      className={`relative cursor-pointer hover:shadow-lg transition-shadow ${gradient} flex flex-row items-center justify-center ${padding} w-fit box-border text-left text-white font-lufga ${className}`}
     >
       <span className="tracking-[0.04px]  leading-6 font-semibold">{label}</span>
       <span className={`bg-white rounded-full ${imgpadding}`}>

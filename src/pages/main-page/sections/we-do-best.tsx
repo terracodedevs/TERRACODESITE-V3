@@ -39,7 +39,7 @@ const services = [
 
 export default function WhatWeDoBest() {
   return (
-    <section className=" px-4 md:px-4 bg-[#000] font-lufga mt-10 xl:mt-20 container mx-auto">
+    <section id="what-we-do-best" className=" px-4 md:px-4 bg-[#000] font-lufga mt-10 xl:mt-20 container mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-[#FDA10A] text-6xl font-light mb-2">What We Do Best</h2>
         <p className="text-gray-400 text-2xl">Scalable tech. Smart experiences. Delivered with precision.</p>
