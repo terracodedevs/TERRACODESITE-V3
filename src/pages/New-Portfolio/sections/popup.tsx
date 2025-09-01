@@ -46,16 +46,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           {/* Left Side - Video */}
           <div className="lg:w-3/5  flex items-center justify-center p-4">
             {project.videoUrl ? (
-              <video
-                className="w-full h-full max-h-[400px] lg:max-h-[500px] object-contain rounded-lg"
-                controls
-                autoPlay
-                muted
-                loop
-              >
-                <source src={project.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+              width="720"
+              height="405"
+              src={project.videoUrl}
+              title="Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
             ) : (
               <div className="w-full h-full max-h-[400px] lg:max-h-[500px] flex items-center justify-center bg-neutral-800 rounded-lg">
                 <img
