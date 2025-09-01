@@ -151,14 +151,32 @@ const OurProjects = () => {
                             ))}
                         </div>
                         {/* Display filtered positions */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 px-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 px-4 gap-4">
                             {filteredPositions.map((project, index) => (
                                 <div
                                     key={`${project.id}-${index}`}
-                                    className="p-6 rounded-3xl sm:rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden"
-                                    onClick={() => handleProjectClick(project)}
+                                    className="p-6 rounded-3xl sm:rounded-lg transition-transform duration-300 relative group overflow-hidden "
                                 >
-                                    <img src={project.img} alt={project.title} className="w-full object-cover rounded-lg mb-4" />
+                                    {/* Project Image with Hover Overlay */}
+                                    <div className="relative overflow-hidden rounded-lg mb-4">
+                                        <img 
+                                            src={project.img} 
+                                            alt={project.title} 
+                                            className="w-full object-cover rounded-lg" 
+                                        />
+                                        
+                                        {/* Hover Overlay - now only on the image */}
+                                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-center items-center ">
+                                            <button 
+                                                onClick={() => handleProjectClick(project)}
+                                                className=" text-white px-6 py-3 rounded-full hover:shadow-lg transition-all transform hover:scale-105 border-2 border-amber-500 font-bold"
+                                            >
+                                                Preview
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Project Title and Description - outside of overlay */}
                                     <h3 className="text-xl lg:text-2xl font-semibold text-[#F56D04] mb-2">{project.title}</h3>
                                     <p className="text-white mb-3 text-2xl lg:text-3xl">{project.description}</p>
                                 </div>

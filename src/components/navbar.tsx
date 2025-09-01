@@ -15,11 +15,11 @@ const navbar = {
     
   ],
   serviceLinks: [
-    { name: 'AI', path: '/ai-solutions' },
-    { name: 'Business', path: '/business-softwares' },
-    { name: 'Cloud', path: '/cloud-solutions' },
-    { name: 'Mobile', path: '/mobile-apps' },
-    { name: 'Web', path: '/website-solutions' },
+    { name: 'AI Solutions', path: '/ai-solutions' },
+    { name: 'Business Softwares', path: '/business-softwares' },
+    { name: 'Cloud Solutions', path: '/cloud-solutions' },
+    { name: 'Mobile Apps', path: '/mobile-apps' },
+    { name: 'Website Solutions', path: '/website-solutions' },
   ],
 }
 
@@ -85,16 +85,18 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.4 }}
-                      className="absolute z-10 left-0 top-full mt-2 bg-[#1f1f1f] shadow-lg rounded-lg overflow-hidden w-48"
+                      className="absolute z-10 left-0 top-full mt-2  shadow-lg rounded-3xl overflow-hidden w-96 backdrop-blur-xl border border-zinc-600 p-3"
                     >
                       {navbar.serviceLinks.map((s) => (
                         <Link
                           key={s.path}
                           to={s.path}
-                          className="block px-4 py-2 text-gray-300 hover:bg-black hover:text-amber-500 border-b border-gray-700 last:border-none"
+                          className="block px-4 py-2 text-gray-300  hover:text-amber-500 "
                           onClick={() => setIsDropdownOpen(false)}
                         >
+                          <img src="/mainicons/hugeicons_idea-01.png" className="inline-block mr-4 size-6" />
                           {s.name}
+                          
                         </Link>
                       ))}
                     </motion.div>
