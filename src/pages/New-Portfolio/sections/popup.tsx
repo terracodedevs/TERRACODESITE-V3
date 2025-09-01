@@ -1,3 +1,5 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight } from 'lucide-react';
 import React from 'react';
 
 interface Project {
@@ -5,6 +7,7 @@ interface Project {
   description: string;
   id: string;
   category: string;
+  link?: string;
   img: string;
   videoUrl?: string;
   detailedDescription?: string;
@@ -48,7 +51,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             {project.videoUrl ? (
               <iframe
               width="720"
-              height="405"
+              height="455"
               src={project.videoUrl}
               title="Video"
               frameBorder="0"
@@ -74,7 +77,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               <div className="inline-block bg-[#F56D04] text-white px-3 py-1 rounded-full text-sm font-medium">
                 {project.category}
               </div>
-
               {/* Title */}
               <h2 className="text-3xl lg:text-5xl font-bold text-[#FDA10A]">
                 {project.title}
@@ -83,10 +85,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               {/* Description */}
               <div>
                 <h3 className="text-2xl font-semibold mb-3 text-[#F56D04]">Description</h3>
-                <p className="text-neutral-300 leading-relaxed">
+                <p className="text-neutral-300 leading-relaxed mb-2">
                   {project.detailedDescription || project.description}
                 </p>
-              </div>
+                  {/* Conditionally render the Visit Project button only if link exists */}
+                  {project.link && (
+                    <div className='flex w-1/3 bg-white/30 backdrop-blur-lg border-2 border-gray-200 text-white pl-4 py-1 rounded-full text-sm font-medium hover:border-amber-500'>
+                      <Link to={project.link} className='hover:text-amber-500'>
+                        Visit Project
+                      </Link>
+                      <ArrowUpRight className='w-4 h-4 ml-1' />
+                    </div>
+                  )}
+                </div>
 
         
               {/* Technologies */}

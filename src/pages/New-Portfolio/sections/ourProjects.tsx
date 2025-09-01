@@ -7,6 +7,7 @@ interface Project {
     description: string;
     id: string;
     category: string;
+    link?: string;
     img: string;
     videoUrl?: string;
     detailedDescription?: string;
@@ -19,6 +20,7 @@ const projects: Project[] = [
         description: "A modern website for House Of Vision (Pvt) Ltd.",
         id: "1",
         category: "Website",
+        link: "/projects/1",
         img: "/portfolio/HOV Mockup.png",
         videoUrl: "https://www.youtube.com/embed/ushqU1C0_ew?si=2SMLxcT2Di3tdHKc&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
         detailedDescription: "A comprehensive modern website solution for House Of Vision (Pvt) Ltd, featuring responsive design, user-friendly interface, and robust functionality. The website showcases the company's services and provides an excellent user experience across all devices.",
