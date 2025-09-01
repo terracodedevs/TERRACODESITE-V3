@@ -192,7 +192,7 @@ const FandQ = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    First Name
+                    Tell us your name
                   </label>
                   <input
                     type="text"
@@ -207,7 +207,8 @@ const FandQ = () => {
                 </div>
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="email" className="text-white text-xl font-medium">
-                    Email
+                    Where can we reach you?
+
                   </label>
                   <input
                     type="email"
@@ -215,7 +216,7 @@ const FandQ = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Enter your Email"
+                    placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
@@ -225,14 +226,15 @@ const FandQ = () => {
               {/* Message */}
               <div className="flex flex-col space-y-4">
                 <label htmlFor="message" className="text-white text-lg font-medium">
-                  Message
+                  Tell us your idea and our team will reach out to you soon.
+
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Enter your Message"
+                  placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
                   className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"

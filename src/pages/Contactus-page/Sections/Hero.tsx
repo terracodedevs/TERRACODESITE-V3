@@ -1,6 +1,7 @@
 import TerraButton from '@/components/button'
 import { Rocket } from 'lucide-react'
-import React, { useState } from 'react';
+import React, { useState, useRef} from 'react';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   firstName: string;
@@ -10,6 +11,7 @@ interface FormData {
 }
 
 const Hero = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         email: '',
@@ -25,20 +27,41 @@ const Hero = () => {
         }));
       };
     
-      const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Form Data Submitted:', formData);
-        
-        // Reset form after submission
-        setFormData({
-          firstName: '',
-          email: '',
-          message: '',
-          agreeToTerms: false
-        });
-        
-        alert('Thank you! Your message has been submitted successfully.');
-      };
+      const handleSubmit =async (e: React.FormEvent) => {
+    e.preventDefault();
+   if (!formRef.current) return;
+
+    if (!formData.agreeToTerms) {
+      alert("Please agree with Terms and Privacy Policy.");
+      return;
+    }
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      await emailjs.sendForm(
+        String(serviceId),
+        String(templateId),
+        formRef.current,
+        { publicKey: String(publicKey) }
+      );
+
+      alert('Thank you! Your message has been sent successfully.');
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        email: '',
+        message: '',
+        agreeToTerms: false
+      });
+    } catch (error) {
+      console.error(error);
+      alert('Oops! Something went wrong. Please try again later.');
+    }
+  };
 
   return (
     <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-4 container mx-auto">
@@ -58,12 +81,12 @@ const Hero = () => {
         {/* Right Side - Contact Form */}
         <div>
           <div className="space-y-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
               <div className="grid gap-4">
                 <div className="flex flex-col  space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    First Name
+                    Tell us your name
                   </label>
                   <input
                     type="text"
@@ -71,14 +94,14 @@ const Hero = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputsChange}
-                    placeholder="Enter First Name"
+                    placeholder="your full name"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="email" className="text-white text-xl font-medium">
-                    Email
+                    Where can we reach you?
                   </label>
                   <input
                     type="email"
@@ -86,7 +109,7 @@ const Hero = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputsChange}
-                    placeholder="Enter your Email"
+                    placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
@@ -96,14 +119,14 @@ const Hero = () => {
               {/* Message */}
               <div className="flex flex-col space-y-4">
                 <label htmlFor="message" className="text-white text-lg font-medium">
-                  Message
+                  Tell us your idea and our team will reach out to you soon.
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputsChange}
-                  placeholder="Enter your Message"
+                  placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
                   className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"
