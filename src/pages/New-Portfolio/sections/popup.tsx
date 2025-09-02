@@ -31,7 +31,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
   return (
     <div 
-      className="fixed inset-0  bg-white/30 backdrop-blur-lg flex items-center justify-center z-50 p-4  font-lufga"
+      className="fixed inset-0  bg-white/30 backdrop-blur-lg flex items-center justify-center z-50 p-4  font-lufga "
       onClick={handleBackdropClick}
     >
       <div className="bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative">
@@ -45,7 +45,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </svg>
         </button>
 
-        <div className="flex flex-col lg:flex-row h-full ">
+        <div className="flex flex-col lg:flex-row h-full max-h-[90vh] ">
           {/* Left Side - Video */}
           <div className="lg:w-3/5  flex items-center justify-center p-4">
             {project.videoUrl ? (
@@ -70,8 +70,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             )}
           </div>
 
-          {/* Right Side - Project Details */}
-          <div className="lg:w-2/5 p-6 text-white overflow-y-auto">
+          {/* Right Side - Project Details - Added scrolling capability */}
+          <div className="lg:w-2/5 p-6 text-white overflow-y-auto max-h-[70vh] lg:max-h-[90vh] scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-neutral-800">
             <div className="space-y-6">
               {/* Category Badge */}
               <div className="inline-block bg-[#F56D04] text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -88,18 +88,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 <p className="text-neutral-300 leading-relaxed mb-2">
                   {project.detailedDescription || project.description}
                 </p>
-                  {/* Conditionally render the Visit Project button only if link exists */}
-                  {project.link && (
-                    <div className='flex w-1/3 bg-white/30 backdrop-blur-lg border-2 border-gray-200 text-white pl-4 py-1 rounded-full text-sm font-medium hover:border-amber-500'>
-                      <Link to={project.link} className='hover:text-amber-500'>
-                        Visit Project
-                      </Link>
-                      <ArrowUpRight className='w-4 h-4 ml-1' />
-                    </div>
-                  )}
-                </div>
+                {/* Conditionally render the Visit Project button only if link exists */}
+                {project.link && (
+                  <div className='flex w-1/2 md:w-1/3 bg-white/30 backdrop-blur-lg border-2 border-gray-200 text-white pl-4 py-1 rounded-full text-sm font-medium hover:border-amber-500'>
+                    <Link to={project.link} className='hover:text-amber-500'>
+                      Visit Project
+                    </Link>
+                    <ArrowUpRight className='w-4 h-4 ml-1' />
+                  </div>
+                )}
+              </div>
 
-        
               {/* Technologies */}
               {project.technologies && project.technologies.length > 0 && (
                 <div>

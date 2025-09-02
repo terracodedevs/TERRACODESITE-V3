@@ -22,8 +22,8 @@ const projects: Project[] = [
         category: "Website",
         link: "/projects/1",
         img: "/portfolio/HOV Mockup.png",
-        videoUrl: "https://www.youtube.com/embed/ushqU1C0_ew?si=2SMLxcT2Di3tdHKc&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
-        detailedDescription: "A comprehensive modern website solution for House Of Vision (Pvt) Ltd, featuring responsive design, user-friendly interface, and robust functionality. The website showcases the company's services and provides an excellent user experience across all devices.",
+        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=APCtbNdqbzl5YEA9&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
+        detailedDescription: "We developed a modern website for a cleaning service company, designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
