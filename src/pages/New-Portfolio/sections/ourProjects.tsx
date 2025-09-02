@@ -22,8 +22,8 @@ const projects: Project[] = [
         category: "Website",
         link: "/projects/1",
         img: "/portfolio/HOV Mockup.png",
-        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=APCtbNdqbzl5YEA9&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
-        detailedDescription: "We developed a modern website for a cleaning service company, designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust",
+        videoUrl: "https://www.youtube.com/embed/L8QG0XBO_Rg?si=qlr6-jMGHiU6u0Hg&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
+        detailedDescription: "We created a sleek, user-friendly website for House Of Vision, a leading optical retailer. The site features an intuitive design that highlights their extensive range of eyewear products, making it easy for customers to browse and shop online. With a focus on aesthetics and functionality, the website enhances the brand's online presence and provides a seamless shopping experience.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
@@ -31,9 +31,10 @@ const projects: Project[] = [
         description: "A modern website for Inpro Industries (Pvt) Ltd.",
         id: "2",
         category: "Website",
+        link: "/projects/2",
         img: "/portfolio/inpro Mockup.png",
-        videoUrl: "/portfolio/videos/inpro-demo.mp4",
-        detailedDescription: "Professional business website for Inpro Industries featuring product catalogs, company information, and customer engagement tools. Built with modern web technologies to ensure optimal performance and user experience.",
+        videoUrl: "https://www.youtube.com/embed/mKQWDR7YILw?si=vYg-T57IKcIJBw1n&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "For a printing company, we designed a website that showcases their wide range of printing services and solutions. The site highlights their capabilities, provides detailed service information, and ensures potential customers can reach out easily for inquiries and orders.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
@@ -52,8 +53,8 @@ const projects: Project[] = [
         id: "4",
         category: "System",
         img: "/portfolio/CMS.png",
-        videoUrl: "/portfolio/videos/cms-demo.mp4",
-        detailedDescription: "A comprehensive content management system specifically designed for cleaning service providers. The system allows easy management of services, bookings, staff, and customer relationships.",
+        videoUrl: "https://www.youtube.com/embed/oMF84t_iLmg?si=ANHdGSPiLwXbcVc5&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We developed a flexible content management system tailored for website management. The platform allows administrators to manage content, upload and update content, and maintain full control over their website in an organized and efficient manner.",
         technologies: ["Next js","ShadCn"],
     },
     {
@@ -72,7 +73,7 @@ const projects: Project[] = [
         id: "6",
         category: "Mobile",
         img: "/portfolio/mobileapp.png",
-        videoUrl: "/portfolio/videos/mobile-demo.mp4",
+        videoUrl: "https://youtube.com/shorts/vcVK5zwmnc4?si=s5w7KN4Ns6mVUSV0",
         detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
         technologies: ["Flutter","Express"],
     },
@@ -83,7 +84,7 @@ const projects: Project[] = [
         category: "System",
         img: "/portfolio/hovims.png",
         videoUrl: "/portfolio/videos/ims-demo.mp4",
-        detailedDescription: "A robust inventory management system tailored for House Of Vision (Pvt) Ltd. The system provides comprehensive inventory tracking, stock management, supplier management, and detailed reporting capabilities.",
+        detailedDescription: "We built a custom inventory management system for a retail business to help manage stock levels, products, and customer records. The system streamlines day-to-day operations by tracking items like spectacles and accessories, managing orders, and keeping customer information organized in one place.",
         technologies: ["Next js", "Shadcn", "MetaBase"],
        
     }
