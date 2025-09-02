@@ -91,10 +91,10 @@ export default function Navbar() {
                         <Link
                           key={s.path}
                           to={s.path}
-                          className="block px-4 py-2 text-gray-300  hover:text-amber-500 "
+                          className="block px-4 py-2 text-white/90  hover:text-amber-500 md:flex items-center justify-start"
                           onClick={() => setIsDropdownOpen(false)}
                         >
-                          <img src="/mainicons/hugeicons_idea-01.png" className="inline-block mr-4 size-6" />
+                          <img src="/mainicons/hugeicons_idea-01.png" className="inline-block mr-4 size-6 "/>
                           {s.name}
                           
                         </Link>
