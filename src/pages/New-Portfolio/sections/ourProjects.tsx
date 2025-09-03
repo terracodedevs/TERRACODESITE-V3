@@ -7,6 +7,7 @@ interface Project {
     description: string;
     id: string;
     category: string;
+    link?: string;
     img: string;
     videoUrl?: string;
     detailedDescription?: string;
@@ -19,9 +20,10 @@ const projects: Project[] = [
         description: "A modern website for House Of Vision (Pvt) Ltd.",
         id: "1",
         category: "Website",
+        link: "https://www.houseofvision.lk/",
         img: "/portfolio/HOV Mockup.png",
-        videoUrl: "public/hero/Hero.mp4", // Add your video path here
-        detailedDescription: "A comprehensive modern website solution for House Of Vision (Pvt) Ltd, featuring responsive design, user-friendly interface, and robust functionality. The website showcases the company's services and provides an excellent user experience across all devices.",
+        videoUrl: "https://www.youtube.com/embed/L8QG0XBO_Rg?si=qlr6-jMGHiU6u0Hg&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
+        detailedDescription: "We created a sleek, user-friendly website for House Of Vision, a leading optical retailer. The site features an intuitive design that highlights their extensive range of eyewear products, making it easy for customers to browse and shop online. With a focus on aesthetics and functionality, the website enhances the brand's online presence and provides a seamless shopping experience.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
@@ -29,18 +31,30 @@ const projects: Project[] = [
         description: "A modern website for Inpro Industries (Pvt) Ltd.",
         id: "2",
         category: "Website",
+        link: "https://www.inproindustries.lk/",
         img: "/portfolio/inpro Mockup.png",
-        videoUrl: "/portfolio/videos/inpro-demo.mp4",
-        detailedDescription: "Professional business website for Inpro Industries featuring product catalogs, company information, and customer engagement tools. Built with modern web technologies to ensure optimal performance and user experience.",
+        videoUrl: "https://www.youtube.com/embed/mKQWDR7YILw?si=vYg-T57IKcIJBw1n&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "For a printing company, we designed a website that showcases their wide range of printing services and solutions. The site highlights their capabilities, provides detailed service information, and ensures potential customers can reach out easily for inquiries and orders.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
-        title: "Web Design & Development",
+        title: "Business Website Solution",
+        description: "A modern website for cleaning services provider.",
+        id: "8",
+        category: "Website",
+        link: "https://www.purehopefm.com.au/",
+        img: "/portfolio/pure.png",
+        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
+        technologies: ["React", "TypeScript", "Tailwind CSS"],
+    },
+    {
+        title: "Tickets Booking System",
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
-        category: "Website",
+        category: "System",
         img: "/portfolio/transit.png",
-        videoUrl: "/portfolio/videos/transit-demo.mp4",
+        videoUrl: "https://www.youtube.com/embed/kfKmabSla-o?si=bwg5VCq6LuPGg-5a&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "An innovative transport booking platform that allows users to book single tickets for entire journeys across multiple transport services. The platform integrates various transport providers and offers a seamless booking experience.",
         technologies: ["React", "Node.js", "MongoDB", "Express.js", "Payment Gateway API"],
     },
@@ -50,8 +64,8 @@ const projects: Project[] = [
         id: "4",
         category: "System",
         img: "/portfolio/CMS.png",
-        videoUrl: "/portfolio/videos/cms-demo.mp4",
-        detailedDescription: "A comprehensive content management system specifically designed for cleaning service providers. The system allows easy management of services, bookings, staff, and customer relationships.",
+        videoUrl: "https://www.youtube.com/embed/oMF84t_iLmg?si=ANHdGSPiLwXbcVc5&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We developed a flexible content management system tailored for website management. The platform allows administrators to manage content, upload and update content, and maintain full control over their website in an organized and efficient manner.",
         technologies: ["Next js","ShadCn"],
     },
     {
@@ -60,7 +74,7 @@ const projects: Project[] = [
         id: "5",
         category: "System",
         img: "/portfolio/polls.png",
-        videoUrl: "/portfolio/videos/dms-demo.mp4",
+        videoUrl: "https://www.youtube.com/embed/RPXH4NsfqZA?si=LGgyLASfTRwuE1JT&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "An intelligent data management system designed for city-wide data collection, storage, and analysis. Features advanced analytics capabilities, user management, and comprehensive reporting tools for municipal data handling.",
         technologies: ["React", "Golang"],
     },
@@ -70,7 +84,7 @@ const projects: Project[] = [
         id: "6",
         category: "Mobile",
         img: "/portfolio/mobileapp.png",
-        videoUrl: "/portfolio/videos/mobile-demo.mp4",
+        videoUrl: "https://www.youtube.com/embed/vcVK5zwmnc4?si=kBAZYLG5YiAsk47c&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
         technologies: ["Flutter","Express"],
     },
@@ -80,11 +94,31 @@ const projects: Project[] = [
         id: "7",
         category: "System",
         img: "/portfolio/hovims.png",
-        videoUrl: "/portfolio/videos/ims-demo.mp4",
-        detailedDescription: "A robust inventory management system tailored for House Of Vision (Pvt) Ltd. The system provides comprehensive inventory tracking, stock management, supplier management, and detailed reporting capabilities.",
+        videoUrl: "https://www.youtube.com/embed/msLsIlBS1SQ?si=bKtLClkXZ7mIbSGP&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We built a custom inventory management system for a retail business to help manage stock levels, products, and customer records. The system streamlines day-to-day operations by tracking items like spectacles and accessories, managing orders, and keeping customer information organized in one place.",
         technologies: ["Next js", "Shadcn", "MetaBase"],
        
-    }
+    },
+    {
+        title: "Smart Access & Manager Dashboard System",
+        description: "IoT solution for gym door lock system.",
+        id: "9",
+        category: "System",
+        img: "/portfolio/floor.png",
+        videoUrl: "https://www.youtube.com/embed/xwusFcFqk9M?si=YuWwq4MM0bT7BcbO&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We designed a secure IoT-powered door access system integrated with a manager application. Users can scan a unique QR code from their mobile app to unlock the door, while the system automatically records their entry and exit times. Managers can monitor real-time access logs, view analytics on attendance, and maintain full control over premises security. This solution combines convenience for users with powerful oversight tools for administrators.",
+        technologies: ["react","Golang","c++"],
+    },
+    {
+        title: "HR & Employee Management System",
+        description: "A HR Management system designed to employee management processes.",
+        id: "10",
+        category: "System",
+        img: "/portfolio/hrrr.png",
+        videoUrl: "https://www.youtube.com/embed/MimYkRKlpXk?si=p7uDaKwILy3ZTpih&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "Our HR management system enables businesses to handle employee-related operations with ease. Features include adding and managing employees, handling payroll, scheduling shifts, tracking attendance, and managing leave requests. This solution reduces manual work while improving accuracy and efficiency.",
+        technologies: ["react","Golang","c++"],
+    },
 ]
 
 const OurProjects = () => {
@@ -151,14 +185,42 @@ const OurProjects = () => {
                             ))}
                         </div>
                         {/* Display filtered positions */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 px-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 px-4 gap-4">
                             {filteredPositions.map((project, index) => (
                                 <div
                                     key={`${project.id}-${index}`}
-                                    className="p-6 rounded-3xl sm:rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer relative overflow-hidden"
-                                    onClick={() => handleProjectClick(project)}
+                                    className="p-6 rounded-3xl sm:rounded-lg transition-transform duration-300 relative group overflow-hidden "
                                 >
-                                    <img src={project.img} alt={project.title} className="w-full object-cover rounded-lg mb-4" />
+                                    {/* Project Image with Hover Overlay */}
+                                    <div className="relative overflow-hidden rounded-lg mb-4">
+                                        <img 
+                                            src={project.img} 
+                                            alt={project.title} 
+                                            className="w-full object-cover rounded-lg" 
+                                            onClick={() => handleProjectClick(project)}
+                                        />
+                                        
+                                        {/* Hover Overlay - now only on the image */}
+                                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex-col justify-center items-center hidden md:flex ">
+                                            <button 
+                                                onClick={() => handleProjectClick(project)}
+                                                className=" text-white px-6 py-3 rounded-full hover:shadow-lg transition-all transform hover:scale-105 border-2 border-amber-500 font-bold"
+                                            >
+                                                Preview
+                                            </button>
+                                        </div>
+                                         {/* mobile version preview button */}
+                                        <div className="absolute inset-0 bg-black/30 rounded-3xl flex flex-col justify-center items-center md:hidden">
+                                            <button 
+                                                onClick={() => handleProjectClick(project)}
+                                                className=" text-white px-6 py-3 rounded-full bg-orange-400 transition-all transform  border-2 border-white font-bold"
+                                            >
+                                                Preview
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Project Title and Description - outside of overlay */}
                                     <h3 className="text-xl lg:text-2xl font-semibold text-[#F56D04] mb-2">{project.title}</h3>
                                     <p className="text-white mb-3 text-2xl lg:text-3xl">{project.description}</p>
                                 </div>

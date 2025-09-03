@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
 import TerraButton from '@/components/button';
+import emailjs from '@emailjs/browser';
 
 interface Section {
   id: string;
@@ -16,6 +17,7 @@ interface FormData {
 }
 
 const FandQ = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
   const expandedRef = useRef<HTMLDivElement | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [formData, setFormData] = useState<FormData>({
@@ -73,19 +75,40 @@ const FandQ = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    
-    // Reset form after submission
-    setFormData({
-      firstName: '',
-      email: '',
-      message: '',
-      agreeToTerms: false
-    });
-    
-    alert('Thank you! Your message has been submitted successfully.');
+   if (!formRef.current) return;
+
+    if (!formData.agreeToTerms) {
+      alert("Please agree with Terms and Privacy Policy.");
+      return;
+    }
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      await emailjs.sendForm(
+        String(serviceId),
+        String(templateId),
+        formRef.current,
+        { publicKey: String(publicKey) }
+      );
+
+      alert('Thank you! Your message has been sent successfully.');
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        email: '',
+        message: '',
+        agreeToTerms: false
+      });
+    } catch (error) {
+      console.error(error);
+      alert('Oops! Something went wrong. Please try again later.');
+    }
   };
 
   return (
@@ -164,12 +187,12 @@ const FandQ = () => {
               <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light">We're Here to Help.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    First Name
+                    Tell us your name
                   </label>
                   <input
                     type="text"
@@ -184,7 +207,8 @@ const FandQ = () => {
                 </div>
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="email" className="text-white text-xl font-medium">
-                    Email
+                    Where can we reach you?
+
                   </label>
                   <input
                     type="email"
@@ -192,7 +216,7 @@ const FandQ = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Enter your Email"
+                    placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
@@ -202,14 +226,15 @@ const FandQ = () => {
               {/* Message */}
               <div className="flex flex-col space-y-4">
                 <label htmlFor="message" className="text-white text-lg font-medium">
-                  Message
+                  Tell us your idea and our team will reach out to you soon.
+
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Enter your Message"
+                  placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
                   className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"

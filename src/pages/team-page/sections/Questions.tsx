@@ -1,5 +1,6 @@
 import TerraButton from "@/components/button"
-import React, { useState} from 'react';
+import React, { useState, useRef} from 'react';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   firstName: string;
@@ -9,7 +10,8 @@ interface FormData {
 }
 
 const Questions = () => {
-     const [formdata, setData] = useState<FormData>({
+  const formRef = useRef<HTMLFormElement | null>(null);
+     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         email: '',
         message: '',
@@ -18,25 +20,46 @@ const Questions = () => {
 
        const handleInputChanges = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
-    setData(prev => ({
+    setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
   };
 
-  const handleSubmits = (e: React.FormEvent) => {
+    const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formdata);
-    
-    // Reset form after submission
-    setData({
-      firstName: '',
-      email: '',
-      message: '',
-      agreeToTerms: false
-    });
-    
-    alert('Thank you! Your message has been submitted successfully.');
+   if (!formRef.current) return;
+
+    if (!formData.agreeToTerms) {
+      alert("Please agree with Terms and Privacy Policy.");
+      return;
+    }
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      await emailjs.sendForm(
+        String(serviceId),
+        String(templateId),
+        formRef.current,
+        { publicKey: String(publicKey) }
+      );
+
+      alert('Thank you! Your message has been sent successfully.');
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        email: '',
+        message: '',
+        agreeToTerms: false
+      });
+    } catch (error) {
+      console.error(error);
+      alert('Oops! Something went wrong. Please try again later.');
+    }
   };
   return (
     <div className="flex  justify-center container mx-auto font-lufga">
@@ -47,35 +70,38 @@ const Questions = () => {
               <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light">We're Here to Help.</p>
             </div>
 
-            <form onSubmit={handleSubmits} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    First Name
+                    Tell us your name
+
                   </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
-                    value={formdata.firstName}
+                    value={formData.firstName}
                     onChange={handleInputChanges}
-                    placeholder="Enter First Name"
+                    placeholder="your name"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="email" className="text-white text-xl font-medium">
-                    Email
+                    
+Where can we reach you?
+
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    value={formdata.email}
+                    value={formData.email}
                     onChange={handleInputChanges}
-                    placeholder="Enter your Email"
+                    placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
@@ -85,14 +111,15 @@ const Questions = () => {
               {/* Message */}
               <div className="flex flex-col space-y-4">
                 <label htmlFor="message" className="text-white text-lg font-medium">
-                  Message
+                  Tell us your idea and our team will reach out to you soon.
+
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  value={formdata.message}
+                  value={formData.message}
                   onChange={handleInputChanges}
-                  placeholder="Enter your Message"
+                  placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
                   className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"
@@ -106,7 +133,7 @@ const Questions = () => {
                   type="checkbox"
                   id="agreeToTerms"
                   name="agreeToTerms"
-                  checked={formdata.agreeToTerms}
+                  checked={formData.agreeToTerms}
                   onChange={handleInputChanges}
                   required
                   className="mt-1 w-4 h-4 text-[#f56d04] bg-neutral-800 border-neutral-600 rounded focus:ring-[#f56d04] focus:ring-2"

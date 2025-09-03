@@ -15,11 +15,11 @@ const navbar = {
     
   ],
   serviceLinks: [
-    { name: 'AI', path: '/ai-solutions' },
-    { name: 'Business', path: '/business-softwares' },
-    { name: 'Cloud', path: '/cloud-solutions' },
-    { name: 'Mobile', path: '/mobile-apps' },
-    { name: 'Web', path: '/website-solutions' },
+    { name: 'AI Solutions', path: '/ai-solutions' },
+    { name: 'Business Softwares', path: '/business-softwares' },
+    { name: 'Cloud Solutions', path: '/cloud-solutions' },
+    { name: 'Mobile Apps', path: '/mobile-apps' },
+    { name: 'Website Solutions', path: '/website-solutions' },
   ],
 }
 
@@ -27,6 +27,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
+  const [isQuoteButtonHovered, setIsQuoteButtonHovered] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => setIsMenuOpen((o) => !o)
@@ -85,16 +86,18 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.4 }}
-                      className="absolute z-10 left-0 top-full mt-2 bg-[#1f1f1f] shadow-lg rounded-lg overflow-hidden w-48"
+                      className="absolute z-10 left-0 top-full mt-2  shadow-lg rounded-3xl overflow-hidden w-96 backdrop-blur-xl border border-zinc-600 p-3"
                     >
                       {navbar.serviceLinks.map((s) => (
                         <Link
                           key={s.path}
                           to={s.path}
-                          className="block px-4 py-2 text-gray-300 hover:bg-black hover:text-amber-500 border-b border-gray-700 last:border-none"
+                          className="block px-4 py-2 text-white/90  hover:text-amber-500 md:flex items-center justify-start"
                           onClick={() => setIsDropdownOpen(false)}
                         >
+                          <img src="/mainicons/hugeicons_idea-01.png" className="inline-block mr-4 size-6 "/>
                           {s.name}
+                          
                         </Link>
                       ))}
                     </motion.div>
@@ -115,9 +118,36 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <Link to="/contact">
-          <div className="hidden xl:flex w-48 rounded-[32px] bg-gradient-to-r from-[#f56d04] to-[#fb9709] h-16 items-center justify-center text-white cursor-pointer hover:shadow-lg transition-shadow">
-            <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
+         <Link to="/contact">
+          <div 
+            className={`
+              hidden xl:flex relative cursor-pointer
+              overflow-hidden
+               hover:shadow-lg hover:shadow-[#EF3D00]/50
+              rounded-[32px]
+              hover:scale-105
+        transition-transform duration-500
+              p-[2px] 
+             w-48 h-16
+            `}
+            onMouseEnter={() => setIsQuoteButtonHovered(true)}
+            onMouseLeave={() => setIsQuoteButtonHovered(false)}
+          >
+            <div 
+              className={`
+                transition-all duration-[3000ms] ease-in-out
+                flex items-center justify-center 
+                w-full h-full 
+                rounded-[32px] text-white
+              `}
+              style={{
+                background: isQuoteButtonHovered 
+                  ? 'linear-gradient(to left, #f56d04, #fb9709)' 
+                  : 'linear-gradient(to right, #f56d04, #fb9709)'
+              }}
+            >
+              <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
+            </div>
           </div>
         </Link>
 
