@@ -1,3 +1,5 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight } from 'lucide-react';
 import React from 'react';
 
 interface Project {
@@ -5,6 +7,7 @@ interface Project {
   description: string;
   id: string;
   category: string;
+  link?: string;
   img: string;
   videoUrl?: string;
   detailedDescription?: string;
@@ -28,7 +31,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
   return (
     <div 
-      className="fixed inset-0  bg-white/30 backdrop-blur-lg flex items-center justify-center z-50 p-4  font-lufga"
+      className="fixed inset-0  bg-white/30 backdrop-blur-lg flex items-center justify-center z-50 p-4  font-lufga "
       onClick={handleBackdropClick}
     >
       <div className="bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative">
@@ -42,20 +45,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           </svg>
         </button>
 
-        <div className="flex flex-col lg:flex-row h-full ">
+        <div className="flex flex-col lg:flex-row h-full max-h-[90vh] ">
           {/* Left Side - Video */}
           <div className="lg:w-3/5  flex items-center justify-center p-4">
             {project.videoUrl ? (
-              <video
-                className="w-full h-full max-h-[400px] lg:max-h-[500px] object-contain rounded-lg"
-                controls
-                autoPlay
-                muted
-                loop
-              >
-                <source src={project.videoUrl} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <iframe
+              width="720"
+              height="455"
+              src={project.videoUrl}
+              title="Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
             ) : (
               <div className="w-full h-full max-h-[400px] lg:max-h-[500px] flex items-center justify-center bg-neutral-800 rounded-lg">
                 <img
@@ -67,14 +70,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             )}
           </div>
 
-          {/* Right Side - Project Details */}
-          <div className="lg:w-2/5 p-6 text-white overflow-y-auto">
+          {/* Right Side - Project Details - Added scrolling capability */}
+          <div className="lg:w-2/5 p-6 text-white overflow-y-auto max-h-[70vh] lg:max-h-[90vh] scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-neutral-800">
             <div className="space-y-6">
               {/* Category Badge */}
               <div className="inline-block bg-[#F56D04] text-white px-3 py-1 rounded-full text-sm font-medium">
                 {project.category}
               </div>
-
               {/* Title */}
               <h2 className="text-3xl lg:text-5xl font-bold text-[#FDA10A]">
                 {project.title}
@@ -83,12 +85,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               {/* Description */}
               <div>
                 <h3 className="text-2xl font-semibold mb-3 text-[#F56D04]">Description</h3>
-                <p className="text-neutral-300 leading-relaxed">
+                <p className="text-neutral-300 leading-relaxed mb-2">
                   {project.detailedDescription || project.description}
                 </p>
+                {/* Conditionally render the Visit Project button only if link exists */}
+                {project.link && (
+                  <div className='flex w-1/2 md:w-1/3 bg-white/30 backdrop-blur-lg border-2 border-gray-200 text-white pl-4 py-1 rounded-full text-sm font-medium hover:border-amber-500'>
+                    <Link to={project.link} className='hover:text-amber-500'>
+                      Visit Project
+                    </Link>
+                    <ArrowUpRight className='w-4 h-4 ml-1' />
+                  </div>
+                )}
               </div>
 
-        
               {/* Technologies */}
               {project.technologies && project.technologies.length > 0 && (
                 <div>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { HelmetProvider } from 'react-helmet-async'
+import { ToastProvider } from './components/Toast';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
@@ -24,7 +25,9 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <HelmetProvider>
-        <RouterProvider router={router} />
+        <ToastProvider>
+          <RouterProvider router={router} />
+        </ToastProvider>
       </HelmetProvider>
     </StrictMode>
   )

@@ -1,6 +1,8 @@
 import TerraButton from '@/components/button'
 import { Rocket } from 'lucide-react'
-import React, { useState } from 'react';
+import React, { useState, useRef} from 'react';
+import emailjs from '@emailjs/browser';
+import { useToast } from '../../../components/Toast';
 
 interface FormData {
   firstName: string;
@@ -10,6 +12,8 @@ interface FormData {
 }
 
 const Hero = () => {
+  const { showToast } = useToast();
+  const formRef = useRef<HTMLFormElement | null>(null);
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         email: '',
@@ -25,20 +29,41 @@ const Hero = () => {
         }));
       };
     
-      const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Form Data Submitted:', formData);
-        
-        // Reset form after submission
-        setFormData({
-          firstName: '',
-          email: '',
-          message: '',
-          agreeToTerms: false
-        });
-        
-        alert('Thank you! Your message has been submitted successfully.');
-      };
+      const handleSubmit =async (e: React.FormEvent) => {
+    e.preventDefault();
+   if (!formRef.current) return;
+
+    if (!formData.agreeToTerms) {
+      alert("Please agree with Terms and Privacy Policy.");
+      return;
+    }
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      await emailjs.sendForm(
+        String(serviceId),
+        String(templateId),
+        formRef.current,
+        { publicKey: String(publicKey) }
+      );
+
+      showToast('Thank you! Your message has been sent successfully.', 'success');
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        email: '',
+        message: '',
+        agreeToTerms: false
+      });
+    } catch (error) {
+      console.error(error);
+      showToast('Oops! Something went wrong. Please try again later.', 'error');
+    }
+  };
 
   return (
     <div className="bg-black text-white font-lufga mt-10 xl:mt-20 px-4 md:px-4 container mx-auto">
@@ -58,12 +83,12 @@ const Hero = () => {
         {/* Right Side - Contact Form */}
         <div>
           <div className="space-y-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
               <div className="grid gap-4">
                 <div className="flex flex-col  space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    First Name
+                    Tell us your name
                   </label>
                   <input
                     type="text"
@@ -71,14 +96,14 @@ const Hero = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputsChange}
-                    placeholder="Enter First Name"
+                    placeholder="your full name"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="email" className="text-white text-xl font-medium">
-                    Email
+                    Where can we reach you?
                   </label>
                   <input
                     type="email"
@@ -86,7 +111,7 @@ const Hero = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputsChange}
-                    placeholder="Enter your Email"
+                    placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
                   />
@@ -96,14 +121,14 @@ const Hero = () => {
               {/* Message */}
               <div className="flex flex-col space-y-4">
                 <label htmlFor="message" className="text-white text-lg font-medium">
-                  Message
+                  Tell us your idea and our team will reach out to you soon.
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputsChange}
-                  placeholder="Enter your Message"
+                  placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
                   className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"
@@ -112,7 +137,7 @@ const Hero = () => {
 
               {/* Terms Checkbox */}
               <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
-                <div>
+                <div className='flex flex-row items-center'>
                 <input
                   type="checkbox"
                   id="agreeToTerms"
@@ -120,8 +145,18 @@ const Hero = () => {
                   checked={formData.agreeToTerms}
                   onChange={handleInputsChange}
                   required
-                  className="mt-1 w-4 h-4 text-[#f56d04] bg-neutral-800 border-neutral-600 rounded focus:ring-[#f56d04] focus:ring-2"
-                />
+                 className="sr-only" // Hide the actual checkbox but keep it accessible
+                  />
+                  <div 
+                    className={`w-5 h-5 flex items-center justify-center border ${formData.agreeToTerms ? 'bg-[#FDA10A] border-[#FDA10A]' : 'bg-transparent border-gray-400'} rounded cursor-pointer`}
+                    onClick={() => setFormData(prev => ({...prev, agreeToTerms: !prev.agreeToTerms}))}
+                  >
+                    {formData.agreeToTerms && (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </div>
                 <label htmlFor="agreeToTerms" className="text-gray-300 text-xl mx-2">
                   I agree with Terms and Privacy Policy
                 </label>
