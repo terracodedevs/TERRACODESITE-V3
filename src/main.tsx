@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { HelmetProvider } from 'react-helmet-async'
-import { ToastProvider } from './components/Toast';
+import { ToastProvider } from '@/components/toast';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'

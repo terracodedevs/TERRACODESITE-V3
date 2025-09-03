@@ -37,17 +37,17 @@ const ToastComponent: React.FC<ToastProps> = ({ message, type, isVisible, onClos
   if (!isVisible) return null;
 
   return (
-    <div 
+    <div
       className="fixed bottom-4 right-4 z-50 flex items-center justify-between w-full max-w-xs p-4 rounded-lg shadow-lg transition-all duration-300 animate-fade-in"
       style={{
-         backgroundColor: type === 'success' ? '#FDA10A' : '#FDA10A',
+        backgroundColor: type === 'success' ? '#FDA10A' : '#DC2626', // ✅ fixed
       }}
     >
       <div className="flex items-center">
         {type === 'success' ? (
           <CheckCircle className="w-6 h-6 mr-2 text-white" />
         ) : (
-          <XCircle className="w-6 h-6 mr-2 text-red-300" />
+          <XCircle className="w-6 h-6 mr-2 text-white" />
         )}
         <p className="text-white font-medium">{message}</p>
       </div>
@@ -99,10 +99,4 @@ export const useToast = (): ToastContextProps => {
     throw new Error('useToast must be used within a ToastProvider');
   }
   return context;
-};
-
-// Export all needed parts
-export default {
-  ToastProvider,
-  useToast
 };
