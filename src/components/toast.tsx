@@ -40,12 +40,12 @@ const ToastComponent: React.FC<ToastProps> = ({ message, type, isVisible, onClos
     <div 
       className="fixed bottom-4 right-4 z-50 flex items-center justify-between w-full max-w-xs p-4 rounded-lg shadow-lg transition-all duration-300 animate-fade-in"
       style={{
-        backgroundColor: type === 'success' ? 'rgba(22, 101, 52, 0.95)' : 'rgba(153, 27, 27, 0.95)',
+         backgroundColor: type === 'success' ? '#FDA10A' : '#FDA10A',
       }}
     >
       <div className="flex items-center">
         {type === 'success' ? (
-          <CheckCircle className="w-6 h-6 mr-2 text-green-300" />
+          <CheckCircle className="w-6 h-6 mr-2 text-white" />
         ) : (
           <XCircle className="w-6 h-6 mr-2 text-red-300" />
         )}

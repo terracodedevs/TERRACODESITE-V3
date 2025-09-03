@@ -132,12 +132,18 @@ const HeroSection: React.FC = () => {
                 <p className="text-sm text-neutral-400">
                     12 June 2025
                 </p>
-                <div className="flex flex-row gap-4">
-                    <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 mt-4 flex items-center gap-4">
+                <div className="flex flex-row gap-4 items-center justify-between mt-4">
+                  <div className="flex flex-row gap-4 items-center justify-center ">
+                    <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1  flex items-center gap-4">
                        <Send className="w-4 h-4"/> 10
                     </div>
-                    <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 mt-4 flex items-center gap-4">
+                    <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
                        <Heart className="w-4 h-4"/> 10
+                    </div>
+                    </div>
+                    {/* Read More Arrow */}
+                    <div className=" hover:bg-white transition-colors rounded-full">
+                      <img src="/Property 23.png" alt="Read More" />
                     </div>
                 </div>
 

@@ -49,7 +49,7 @@ const projects: Project[] = [
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
-        title: "transport management system",
+        title: "Transport management system",
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
         category: "Website",
@@ -105,7 +105,7 @@ const projects: Project[] = [
         id: "6",
         category: "Mobile",
         img: "/portfolio/floor.png",
-        videoUrl: "https://www.youtube.com/embed/vcVK5zwmnc4?si=kBAZYLG5YiAsk47c&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        videoUrl: "https://www.youtube.com/embed/xwusFcFqk9M?si=YuWwq4MM0bT7BcbO&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
         technologies: ["Flutter","Express"],
     },
