@@ -20,7 +20,7 @@ const projects: Project[] = [
         description: "A modern website for House Of Vision (Pvt) Ltd.",
         id: "1",
         category: "Website",
-        link: "/projects/1",
+        link: "https://www.houseofvision.lk/",
         img: "/portfolio/HOV Mockup.png",
         videoUrl: "https://www.youtube.com/embed/L8QG0XBO_Rg?si=qlr6-jMGHiU6u0Hg&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3", // Add your video path here
         detailedDescription: "We created a sleek, user-friendly website for House Of Vision, a leading optical retailer. The site features an intuitive design that highlights their extensive range of eyewear products, making it easy for customers to browse and shop online. With a focus on aesthetics and functionality, the website enhances the brand's online presence and provides a seamless shopping experience.",
@@ -31,10 +31,21 @@ const projects: Project[] = [
         description: "A modern website for Inpro Industries (Pvt) Ltd.",
         id: "2",
         category: "Website",
-        link: "/projects/2",
+        link: "https://www.inproindustries.lk/",
         img: "/portfolio/inpro Mockup.png",
         videoUrl: "https://www.youtube.com/embed/mKQWDR7YILw?si=vYg-T57IKcIJBw1n&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "For a printing company, we designed a website that showcases their wide range of printing services and solutions. The site highlights their capabilities, provides detailed service information, and ensures potential customers can reach out easily for inquiries and orders.",
+        technologies: ["React", "TypeScript", "Tailwind CSS"],
+    },
+    {
+        title: "Business Website Solution",
+        description: "A modern website for pure hope (Pvt) Ltd.",
+        id: "8",
+        category: "Website",
+        link: "",
+        img: "/portfolio/pure.png",
+        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
@@ -63,7 +74,7 @@ const projects: Project[] = [
         id: "5",
         category: "System",
         img: "/portfolio/polls.png",
-        videoUrl: "/portfolio/videos/dms-demo.mp4",
+        videoUrl: "https://www.youtube.com/embed/RPXH4NsfqZA?si=LGgyLASfTRwuE1JT&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "An intelligent data management system designed for city-wide data collection, storage, and analysis. Features advanced analytics capabilities, user management, and comprehensive reporting tools for municipal data handling.",
         technologies: ["React", "Golang"],
     },
@@ -73,7 +84,7 @@ const projects: Project[] = [
         id: "6",
         category: "Mobile",
         img: "/portfolio/mobileapp.png",
-        videoUrl: "https://youtube.com/shorts/vcVK5zwmnc4?si=s5w7KN4Ns6mVUSV0",
+        videoUrl: "https://www.youtube.com/embed/vcVK5zwmnc4?si=kBAZYLG5YiAsk47c&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
         technologies: ["Flutter","Express"],
     },
@@ -83,11 +94,21 @@ const projects: Project[] = [
         id: "7",
         category: "System",
         img: "/portfolio/hovims.png",
-        videoUrl: "/portfolio/videos/ims-demo.mp4",
+        videoUrl: "https://www.youtube.com/embed/msLsIlBS1SQ?si=bKtLClkXZ7mIbSGP&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "We built a custom inventory management system for a retail business to help manage stock levels, products, and customer records. The system streamlines day-to-day operations by tracking items like spectacles and accessories, managing orders, and keeping customer information organized in one place.",
         technologies: ["Next js", "Shadcn", "MetaBase"],
        
-    }
+    },
+    {
+        title: "IOT Development",
+        description: "IoT solution for smart home automation.",
+        id: "6",
+        category: "Mobile",
+        img: "/portfolio/mobileapp.png",
+        videoUrl: "https://www.youtube.com/embed/vcVK5zwmnc4?si=kBAZYLG5YiAsk47c&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
+        technologies: ["Flutter","Express"],
+    },
 ]
 
 const OurProjects = () => {
