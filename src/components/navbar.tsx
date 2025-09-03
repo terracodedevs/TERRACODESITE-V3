@@ -27,6 +27,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
+  const [isQuoteButtonHovered, setIsQuoteButtonHovered] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => setIsMenuOpen((o) => !o)
@@ -117,9 +118,35 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <Link to="/contact">
-          <div className="hidden xl:flex w-48 rounded-[32px] bg-gradient-to-r from-[#f56d04] to-[#fb9709] h-16 items-center justify-center text-white cursor-pointer hover:shadow-lg transition-shadow">
-            <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
+         <Link to="/contact">
+          <div 
+            className={`
+              hidden xl:flex relative cursor-pointer
+              overflow-hidden
+              hover:shadow-lg 
+              rounded-[32px]
+              p-[2px] 
+              ${isQuoteButtonHovered ? 'bg-gradient-to-l from-white to-transparent' : 'bg-transparent'}
+              transition-colors duration-1000 ease-in-out w-48 h-16
+            `}
+            onMouseEnter={() => setIsQuoteButtonHovered(true)}
+            onMouseLeave={() => setIsQuoteButtonHovered(false)}
+          >
+            <div 
+              className={`
+                transition-all duration-[3000ms] ease-in-out
+                flex items-center justify-center 
+                w-full h-full 
+                rounded-[32px] text-white
+              `}
+              style={{
+                background: isQuoteButtonHovered 
+                  ? 'linear-gradient(to left, #f56d04, #fb9709)' 
+                  : 'linear-gradient(to right, #f56d04, #fb9709)'
+              }}
+            >
+              <div className="tracking-[0.04px] leading-6 font-semibold">Get a Quote</div>
+            </div>
           </div>
         </Link>
 
