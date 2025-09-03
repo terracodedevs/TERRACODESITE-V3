@@ -39,7 +39,7 @@ const projects: Project[] = [
     },
     {
         title: "Business Website Solution",
-        description: "A modern website for pure hope (Pvt) Ltd.",
+        description: "A modern website for cleaning services provider.",
         id: "8",
         category: "Website",
         link: "https://www.purehopefm.com.au/",
@@ -49,10 +49,10 @@ const projects: Project[] = [
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
     {
-        title: "Transport management system",
+        title: "Tickets Booking System",
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
-        category: "Website",
+        category: "System",
         img: "/portfolio/transit.png",
         videoUrl: "https://www.youtube.com/embed/kfKmabSla-o?si=bwg5VCq6LuPGg-5a&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
         detailedDescription: "An innovative transport booking platform that allows users to book single tickets for entire journeys across multiple transport services. The platform integrates various transport providers and offers a seamless booking experience.",
@@ -100,14 +100,24 @@ const projects: Project[] = [
        
     },
     {
-        title: "IOT Development",
+        title: "Smart Access & Manager Dashboard System",
         description: "IoT solution for gym door lock system.",
-        id: "6",
-        category: "Mobile",
+        id: "9",
+        category: "System",
         img: "/portfolio/floor.png",
         videoUrl: "https://www.youtube.com/embed/xwusFcFqk9M?si=YuWwq4MM0bT7BcbO&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
-        detailedDescription: "A comprehensive mobile application that connects clients with qualified lawyers and attorneys. The app features advanced search capabilities, lawyer profiles, appointment booking, and secure communication tools.",
-        technologies: ["Flutter","Express"],
+        detailedDescription: "We designed a secure IoT-powered door access system integrated with a manager application. Users can scan a unique QR code from their mobile app to unlock the door, while the system automatically records their entry and exit times. Managers can monitor real-time access logs, view analytics on attendance, and maintain full control over premises security. This solution combines convenience for users with powerful oversight tools for administrators.",
+        technologies: ["react","Golang","c++"],
+    },
+    {
+        title: "HR & Employee Management System",
+        description: "A HR Management system designed to employee management processes.",
+        id: "10",
+        category: "System",
+        img: "/portfolio/hrrr.png",
+        videoUrl: "https://www.youtube.com/embed/MimYkRKlpXk?si=p7uDaKwILy3ZTpih&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+        detailedDescription: "Our HR management system enables businesses to handle employee-related operations with ease. Features include adding and managing employees, handling payroll, scheduling shifts, tracking attendance, and managing leave requests. This solution reduces manual work while improving accuracy and efficiency.",
+        technologies: ["react","Golang","c++"],
     },
 ]
 
