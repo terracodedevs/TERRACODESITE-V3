@@ -123,11 +123,12 @@ export default function Navbar() {
             className={`
               hidden xl:flex relative cursor-pointer
               overflow-hidden
-              hover:shadow-lg 
+               hover:shadow-lg hover:shadow-[#EF3D00]/50
               rounded-[32px]
+              hover:scale-105
+        transition-transform duration-500
               p-[2px] 
-              ${isQuoteButtonHovered ? 'bg-gradient-to-l from-white to-transparent' : 'bg-transparent'}
-              transition-colors duration-1000 ease-in-out w-48 h-16
+             w-48 h-16
             `}
             onMouseEnter={() => setIsQuoteButtonHovered(true)}
             onMouseLeave={() => setIsQuoteButtonHovered(false)}

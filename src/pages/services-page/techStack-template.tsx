@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef,} from "react";
 import { ScrollingEffect,  type ScrollingEffectRef } from "@/components/scrollEffect";
 
 interface tech {
