@@ -163,7 +163,7 @@ const HeroSection: React.FC = () => {
                 Talk to us
                 <ArrowRightCircle className="w-7 h-7" />
                 </button> */}
-                <TerraButton className="mt-4" onClick={handleClick}/>
+                <TerraButton className="mt-4 " onClick={handleClick}/>
             </div>
         </motion.div>
         <motion.div
