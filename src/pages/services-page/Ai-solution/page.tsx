@@ -2,6 +2,7 @@ import React from "react";
 import ServicePage from "../template";
 import ServiceAbout from "../about-template";
 import Questions from "@/pages/team-page/sections/Questions";
+import TechStacktemplate from "../techStack-template";
 
 const Page1: React.FC = () => {
   return (
@@ -27,6 +28,46 @@ const Page1: React.FC = () => {
     />
 
     <Questions />
+    <TechStacktemplate
+      stacks ={[
+  {
+    name: "Item 1",
+    image: "/logo/react.svg"
+  },
+  {
+    name: "Item 2",
+    image: "/logo/next.svg"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/node.svg"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/rust.png"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/nest.png"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/tailwind.svg"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/aws.svg"
+  },
+  {
+    name: "Item 3",
+    image: "/logo/go.png"
+  },
+  {
+    name: "Item 4",
+    image: "/logo/flutter.svg"
+  }
+]}
+    />
     </>
   );
 };
