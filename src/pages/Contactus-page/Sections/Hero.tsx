@@ -2,6 +2,7 @@ import TerraButton from '@/components/button'
 import { Rocket } from 'lucide-react'
 import React, { useState, useRef} from 'react';
 import emailjs from '@emailjs/browser';
+import { useToast } from '../../../components/Toast';
 
 interface FormData {
   firstName: string;
@@ -11,6 +12,7 @@ interface FormData {
 }
 
 const Hero = () => {
+  const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
@@ -48,7 +50,7 @@ const Hero = () => {
         { publicKey: String(publicKey) }
       );
 
-      alert('Thank you! Your message has been sent successfully.');
+      showToast('Thank you! Your message has been sent successfully.', 'success');
 
       // Reset form
       setFormData({
@@ -59,7 +61,7 @@ const Hero = () => {
       });
     } catch (error) {
       console.error(error);
-      alert('Oops! Something went wrong. Please try again later.');
+      showToast('Oops! Something went wrong. Please try again later.', 'error');
     }
   };
 
