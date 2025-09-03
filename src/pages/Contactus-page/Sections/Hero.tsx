@@ -2,7 +2,7 @@ import TerraButton from '@/components/button'
 import { Rocket } from 'lucide-react'
 import React, { useState, useRef} from 'react';
 import emailjs from '@emailjs/browser';
-import { useToast } from '../../../components/Toast';
+import { useToast } from '@/components/toast';
 
 interface FormData {
   firstName: string;
