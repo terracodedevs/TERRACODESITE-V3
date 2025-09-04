@@ -3,6 +3,7 @@ import Article from "./article"
 import Hero from "./hero"
 import Navbar from "@/components/navbar"
 import { motion } from "framer-motion"
+// import NArticle from "./NewArticle"
 
 const Page = () => {
   return (
@@ -17,6 +18,7 @@ const Page = () => {
       <Navbar/>
       <Hero/>
       <Article/>
+      {/* <NArticle /> */}
       </motion.div>
     </div>
   )
