@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
 import TerraButton from '@/components/button';
 import emailjs from '@emailjs/browser';
+import { useToast } from '@/components/toast';
 
 interface Section {
   id: string;
@@ -17,6 +18,7 @@ interface FormData {
 }
 
 const FandQ = () => {
+  const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
   const expandedRef = useRef<HTMLDivElement | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -67,13 +69,13 @@ const FandQ = () => {
     setExpandedSection(expandedSection === sectionId ? null : sectionId);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-    }));
-  };
+  const handleInputsChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+          const { name, value, type } = e.target;
+          setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+          }));
+        };
 
   const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,7 +98,7 @@ const FandQ = () => {
         { publicKey: String(publicKey) }
       );
 
-      alert('Thank you! Your message has been sent successfully.');
+      showToast('Thank you! Your message has been sent successfully.', 'success');
 
       // Reset form
       setFormData({
@@ -107,7 +109,7 @@ const FandQ = () => {
       });
     } catch (error) {
       console.error(error);
-      alert('Oops! Something went wrong. Please try again later.');
+     showToast('Oops! Something went wrong. Please try again later.', 'error');
     }
   };
 
@@ -199,7 +201,7 @@ const FandQ = () => {
                     id="firstName"
                     name="firstName"
                     value={formData.firstName}
-                    onChange={handleInputChange}
+                    onChange={handleInputsChange}
                     placeholder="Enter First Name"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
@@ -215,7 +217,7 @@ const FandQ = () => {
                     id="email"
                     name="email"
                     value={formData.email}
-                    onChange={handleInputChange}
+                    onChange={handleInputsChange}
                     placeholder="your email or contact number"
                     required
                     className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
@@ -233,7 +235,7 @@ const FandQ = () => {
                   id="message"
                   name="message"
                   value={formData.message}
-                  onChange={handleInputChange}
+                  onChange={handleInputsChange}
                   placeholder="We’re listening , what’s on your mind?"
                   required
                   rows={8}
@@ -241,18 +243,28 @@ const FandQ = () => {
                 />
               </div>
 
-              {/* Terms Checkbox */}
+               {/* Terms Checkbox */}
               <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
-                <div>
+                <div className='flex flex-row items-center'>
                 <input
                   type="checkbox"
                   id="agreeToTerms"
                   name="agreeToTerms"
                   checked={formData.agreeToTerms}
-                  onChange={handleInputChange}
+                  onChange={handleInputsChange}
                   required
-                  className="mt-1 w-4 h-4 text-[#f56d04] bg-neutral-800 border-neutral-600 rounded focus:ring-[#f56d04] focus:ring-2"
-                />
+                 className="sr-only" // Hide the actual checkbox but keep it accessible
+                  />
+                  <div 
+                    className={`w-5 h-5 flex items-center justify-center border ${formData.agreeToTerms ? 'bg-[#FDA10A] border-[#FDA10A]' : 'bg-transparent border-gray-400'} rounded cursor-pointer`}
+                    onClick={() => setFormData(prev => ({...prev, agreeToTerms: !prev.agreeToTerms}))}
+                  >
+                    {formData.agreeToTerms && (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </div>
                 <label htmlFor="agreeToTerms" className="text-gray-300 text-xl mx-2">
                   I agree with Terms and Privacy Policy
                 </label>
