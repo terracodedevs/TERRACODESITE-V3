@@ -65,7 +65,7 @@ export default function Footer() {
                     <div className="self-stretch flex flex-col items-start justify-between gap-0">
                         <div className=" flex flex-col items-start justify-start gap-4">
                             <div className="self-stretch flex flex-row items-center justify-start gap-4">
-                                <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" />
+                                {/* <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" /> */}
                                 <div className="text-wrap relative tracking-[0.04px] leading-6 font-semibold inline-block ">`Terracode Private Limited, </div>
                             </div>
                             <div className=" relative text-base leading-6 inline-block"><a href="https://maps.app.goo.gl/QKy9ety7Cet7NC4JA" target="_blank">
