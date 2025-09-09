@@ -64,7 +64,7 @@ const Questions = () => {
     }
   };
   return (
-    <div className="flex  justify-center container mx-auto font-lufga">
+    <div className="flex  justify-center container mx-auto font-lufga my-10 xl:my-20">
     <div className="md:w-2/3 mx-auto px-4 py-12">
     <div className="space-y-6">
             <div className="space-y-12">
