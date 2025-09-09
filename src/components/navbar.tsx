@@ -123,7 +123,6 @@ export default function Navbar() {
             className={`
               hidden xl:flex relative cursor-pointer
               overflow-hidden
-               hover:shadow-lg hover:shadow-[#EF3D00]/50
               rounded-[32px]
               hover:scale-105
         transition-transform duration-500

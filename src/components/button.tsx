@@ -42,8 +42,6 @@ const TerraButton: React.FC<TerraButtonProps> = ({
         transition-transform duration-500
         p-[2px] 
         w-fit
-        ${isHovered ? 'bg-gradient-to-l from-white to-transparent' : 'bg-transparent'}
-        transition-colors duration-1000  w-fit ease-in-out 
         ${className}
       `}
     >
