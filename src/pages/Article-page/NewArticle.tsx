@@ -52,34 +52,7 @@ const sections: Section[] = [
 ];
 
 const sidebarItems: SidebarItem[] = [
-  {
-    title: "Designing for Humans in an AI World",
-    description:
-      "As automation rises, human-centered design matters more than ever. Here’s how we balance AI logic with user empathy.",
-    comments: 192,
-    views: "4k"
-  },
-  {
-    title: "The Future of Accessibility in Design",
-    description:
-      "As we innovate, it’s crucial to ensure that our designs are inclusive and accessible to all users, regardless of ability.",
-    comments: 192,
-    views: "4k"
-  },
-  {
-    title: "Sustainable Design Practices",
-    description:
-      "Exploring eco-friendly materials and methods in design to create a more sustainable future for industry and planet.",
-    comments: 192,
-    views: "4k"
-  },
-  {
-    title: "Embracing Diversity in Design",
-    description:
-      "Diversity of thought and background in design teams fosters creativity and innovation, leading to better user experiences.",
-    comments: 192,
-    views: "4k"
-  }
+
 ];
 
 export default function NArticle() {
