@@ -26,7 +26,7 @@ const articlesData: SidebarItem[] = [
     id: 0, 
     title: "Our Story So Far",
     date: "2 August 2025",
-    time: "20 min ago",
+    time: "10 mins read",
     image: "article/Mask group.png",
     author_image: "employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
