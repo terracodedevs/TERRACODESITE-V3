@@ -1,9 +1,9 @@
 
-import Article from "./article"
-import Hero from "./hero"
+// import Article from "./article"
+// import Hero from "./hero"
 import Navbar from "@/components/navbar"
 import { motion } from "framer-motion"
-// import NArticle from "./NewArticle"
+import NArticle from "./NewArticle"
 
 const Page = () => {
   return (
@@ -16,9 +16,9 @@ const Page = () => {
       >
       {/* <UnderMaintenance/> */}
       <Navbar/>
-      <Hero/>
-      <Article/>
-      {/* <NArticle /> */}
+      {/* <Hero/> */}
+      {/* <Article/> */}
+      <NArticle />
       </motion.div>
     </div>
   )

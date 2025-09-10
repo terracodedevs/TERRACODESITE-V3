@@ -15,11 +15,11 @@ const navbar = {
     
   ],
   serviceLinks: [
-    { name: 'AI Solutions', path: '/ai-solutions' },
-    { name: 'Business Softwares', path: '/business-softwares' },
-    { name: 'Cloud Solutions', path: '/cloud-solutions' },
-    { name: 'Mobile Apps', path: '/mobile-apps' },
-    { name: 'Website Solutions', path: '/website-solutions' },
+    { name: 'AI Solutions', img: "/mainicons/icons8-artificial-intelligence-96.png", path: '/ai-solutions' },
+    { name: 'Business Softwares', img: "/mainicons/icons8-laptop-coding-96.png", path: '/business-softwares' },
+    { name: 'Cloud Solutions', img: "/mainicons/icons8-cloud-connection-97.png", path: '/cloud-solutions' },
+    { name: 'Mobile Apps', img: "/mainicons/icons8-phonelink-setup-96.png", path: '/mobile-apps' },
+    { name: 'Website Solutions', img: "/mainicons/icons8-software-development-96.png", path: '/website-solutions' },
   ],
 }
 
@@ -95,7 +95,7 @@ export default function Navbar() {
                           className="block px-4 py-2 text-white/90  hover:text-amber-500 md:flex items-center justify-start"
                           onClick={() => setIsDropdownOpen(false)}
                         >
-                          <img src="/mainicons/hugeicons_idea-01.png" className="inline-block mr-4 size-6 "/>
+                          <img src={s.img} className="inline-block mr-4 size-6 "/>
                           {s.name}
                           
                         </Link>
@@ -123,7 +123,6 @@ export default function Navbar() {
             className={`
               hidden xl:flex relative cursor-pointer
               overflow-hidden
-               hover:shadow-lg hover:shadow-[#EF3D00]/50
               rounded-[32px]
               hover:scale-105
         transition-transform duration-500

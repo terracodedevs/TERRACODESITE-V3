@@ -2,7 +2,7 @@ import React from "react";
 import ServicePage from "../template";
 import ServiceAbout from "../about-template";
 import Questions from "@/pages/team-page/sections/Questions";
-import TechStacktemplate from "../techStack-template";
+// import TechStacktemplate from "../techStack-template";
 
 const Page1: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const Page1: React.FC = () => {
     />
 
     <Questions />
-    <TechStacktemplate
+    {/* <TechStacktemplate
       stacks ={[
   {
     name: "Item 1",
@@ -67,7 +67,7 @@ const Page1: React.FC = () => {
     image: "/logo/flutter.svg"
   }
 ]}
-    />
+    /> */}
     </>
   );
 };

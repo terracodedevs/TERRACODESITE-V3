@@ -21,6 +21,7 @@ const FandQ = () => {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
   const expandedRef = useRef<HTMLDivElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -86,6 +87,8 @@ const FandQ = () => {
       return;
     }
 
+    setIsSubmitting(true); 
+
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -110,6 +113,8 @@ const FandQ = () => {
     } catch (error) {
       console.error(error);
      showToast('Oops! Something went wrong. Please try again later.', 'error');
+     } finally {
+      setIsSubmitting(false); // End loading state
     }
   };
 
@@ -134,7 +139,7 @@ const FandQ = () => {
                   onMouseLeave={handleMouseLeave}    
                 >
                   <div 
-                    className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-500 cursor-pointer border-2 relative overflow-hidden group ${
+                    className={`bg-neutral-900 rounded-2xl lg:rounded-3xl transition-all duration-700 cursor-pointer border-2 relative overflow-hidden group ${
                       expandedSection === section.id 
                          ? 'border-transparent pb-6 animate-bounce-gentle ' 
                     : 'border-transparent'
@@ -154,7 +159,7 @@ const FandQ = () => {
                         </p>
                       </div>
                       <ChevronRight 
-                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#F56D04] transition-all duration-500 flex-shrink-0 ${
+                        className={`w-5 h-5 lg:w-6 lg:h-6 text-[#F56D04] transition-all duration-700 flex-shrink-0 ${
                           expandedSection === section.id ? 'rotate-90 scale-110' : 'hover:scale-110'
                         }`}
                       />
@@ -162,13 +167,13 @@ const FandQ = () => {
                     
                     {/* Expandable Content */}
                     <div 
-                      className={`overflow-hidden transition-all duration-500 ease-out ${
+                      className={`overflow-hidden transition-all duration-1000 ease-in-out ${
                         expandedSection === section.id 
                           ? 'max-h-96 opacity-100' 
                           : 'max-h-0 opacity-0'
                       }`}
                     >
-                      <div className={`px-4 lg:px-6 pb-4 transition-all duration-500 ${
+                      <div className={`px-4 lg:px-6 pb-4 transition-all duration-1000 ${
                         expandedSection === section.id ? 'transform translate-y-0' : 'transform -translate-y-4'
                       }`}>
                         <p className="text-gray-300 text-base md:text-lg leading-relaxed ml-6">
@@ -279,7 +284,13 @@ const FandQ = () => {
                 Submit
                 <Send className="w-5 h-5" />
               </button> */}
-              <TerraButton type='submit' label='Submit'    />
+               {/* Submit Button with loader */}
+                <TerraButton 
+                  type='submit' 
+                  label={isSubmitting ? 'Sending...' : 'Submit'}
+                  iconSrc={isSubmitting ? '' : '/button/Arrow.svg'}
+                  isLoading={isSubmitting}
+                />
               </div>
             </form>
           </div>

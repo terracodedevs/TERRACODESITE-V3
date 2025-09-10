@@ -14,6 +14,7 @@ interface FormData {
 const Hero = () => {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         email: '',
@@ -37,6 +38,8 @@ const Hero = () => {
       alert("Please agree with Terms and Privacy Policy.");
       return;
     }
+
+    setIsSubmitting(true); 
 
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -62,6 +65,8 @@ const Hero = () => {
     } catch (error) {
       console.error(error);
       showToast('Oops! Something went wrong. Please try again later.', 'error');
+     } finally {
+      setIsSubmitting(false); // End loading state
     }
   };
 
@@ -71,8 +76,8 @@ const Hero = () => {
         {/* Left Side - Intro Text */}
         <div className="flex flex-col  gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 lg:w-fit max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
-                <Rocket className="xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
-                <h1 className=" text-xl xl:text-2xl text-nowrap ">We’d love to hear from you.</h1>
+                <Rocket className=" text-[#FDA10A] mr-4" />
+                <h1 className="md:text-2xl">We’d love to hear from you.</h1>
             </div>
             <div className="flex flex-col mt-8">
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Let’s Build Something<br />Brilliant.</h1>
@@ -162,7 +167,6 @@ const Hero = () => {
                 </label>
                 </div>
                 {/* Submit Button */}
-                
               {/* <button
                 type="submit"
                 disabled={!formData.agreeToTerms}
@@ -171,7 +175,13 @@ const Hero = () => {
                 Submit
                 <Send className="w-5 h-5" />
               </button> */}
-              <TerraButton type='submit' label='Submit'    />
+              {/* Submit Button with loader */}
+                <TerraButton 
+                  type='submit' 
+                  label={isSubmitting ? 'Sending...' : 'Submit'}
+                  iconSrc={isSubmitting ? '' : '/button/Arrow.svg'}
+                  isLoading={isSubmitting}
+                />
               </div>
             </form>
           </div>

@@ -2,12 +2,18 @@ import { Calendar, Clock, Heart, Send } from "lucide-react";
 
 
 interface Section {
-  title: string;
+  title?: string;
   content: string;
 }
 
 interface SidebarItem {
   title: string;
+  date?: string;
+  time?: string;
+  image?: string;
+  author_image?: string;
+  author_name?: string;
+  position?: string;
   description: string;
   comments: number;
   views: string;
@@ -15,25 +21,34 @@ interface SidebarItem {
 
 const sections: Section[] = [
   {
-    title: "A New Era of Code Creation",
     content:
-      "Artificial Intelligence, particularly generative AI and large language models (LLMs), is reshaping the software development lifecycle. Tasks once handled manually—like writing, debugging, testing, and documentation—are now increasingly automated, allowing developers to focus on high-level design and innovation."
+      "On April 18, 2024, we began our journey as a passionate tech startup with just 7 members. Day and night, we poured our efforts into developing a SaaS product tailored for medical professionals our very first milestone. Simultaneously, we delivered outstanding software development services for over 15 businesses within just one year of operations."
   },
   {
-    title: "Speed, Efficiency, and Innovation",
     content:
-      "According to McKinsey, embedding AI across the full software product development lifecycle accelerates delivery, improves quality, strengthens customer feedback loops, and fosters innovation. Similarly, at Salesforce, AI-native practices adopted by 94% of its engineering teams have transformed onboarding, knowledge sharing, and mentoring processes."
+      "As time progressed, so did our expertise and vision. We gradually evolved to build high-performance, next-generation ERP and CRM-like business tools developed entirely using powerful languages such as Go (Golang) and Rust, alongside our own custom-built performance and security tools. These internal tools were crafted to ensure unmatched efficiency, speed, security, and scalability for our clients. While much of the industry remained reliant on traditional development infrastructures, we embraced innovation head-on. Integrating these advanced technologies into our development teams posed significant challenges, but our relentless commitment and adaptability made it possible."
   },
   {
-    title: "AI as an Intelligent Assistant - not a Replacement",
     content:
-      "AI tools, like GitHub Copilot, Tabnine, and others, have revolutionized coding. Rather than replacing developers, AI assists them—offering auto-completion, testing suggestions, code refactoring, and documentation generation. Developers now allocate more time to architecture, UX, and system thinking."
+      "Midway through our journey, we expanded our service offerings to include AI integrations and custom AI solution development, especially for clients who had already built products with us. We took pride in upgrading their infrastructure with the latest technologies, helping them unlock new business capabilities and achieve even greater impact."
   },
   {
-    title: "Copilots and Vibe Coding: Experiments in AI-led Development",
     content:
-      "“Vibe coding,” coined by Andrej Karpathy in early 2025, refers to an approach where developers guide software creation through natural language prompts. The LLM generates and iteratively refines the code—developers shift from writing code to guiding, reviewing, and experimenting."
+      "On November 2024, we officially registered our company as a private limited company. Today, Terracode operates from our own office premises in Colombo, Sri Lanka, housing several incredible teams of developers, engineers, and innovators. Each team specializes in critical, in-demand technologies, working together to build robust software products that exceed our customers’ expectations and provide true value for their investments."
+  },
+  {
+    content:
+      "Today, we’re also actively working on a suite of new software as a service products spanning diverse domains and industries prominently Logistics and retail industries. These upcoming solutions are being built with the same high standards of quality and performance that define us, and will soon be available to our beloved users at affordable, accessible pricing ensuring that excellence in software is never out of reach."
+  },
+  {
+    content:
+      "What sets us apart is not just our technology but our people. Every individual in our Terracode family has played an equal part in shaping who we are today. There is no “more” or “less” credit here only collective dedication, shared values, and a united vision. That unity has empowered us to stand strong as a trusted name in software development, known for quality, performance, and client-first solutions."
+  },
+  {
+    content:
+      "As the CEO of Terracode, I write this with heartfelt pride and gratitude. I am immensely thankful for the exceptional team that drives this company forward and for the amazing clients who trust us with their digital transformation. We remain committed to innovation and service excellence and we’re only just getting started.Here’s to what we’ve built, and to the future we’re building next."
   }
+
 ];
 
 const sidebarItems: SidebarItem[] = [
@@ -69,11 +84,12 @@ const sidebarItems: SidebarItem[] = [
 
 export default function NArticle() {
   return (
-    <div className="bg-black text-white font-lufga my-10">
+    <div className="bg-black text-white font-lufga my-10 mb-20">
       {/* Main Container */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 py-12">
         
         {/* Left Content */}
+        
         <div className="lg:col-span-2 space-y-8">
           <h1 className="text-3xl md:text-[45px] mb-4 text-[#FDA10A]">
             How AI is Redefining Software Development
@@ -92,6 +108,20 @@ export default function NArticle() {
             alt="AI Illustration"
             className="rounded-xl w-full"
           />
+
+          {/* Author Info */}
+      <div className="flex items-center space-x-4 mb-8">
+        <img
+          src="employee/IMG_1158.PNG"
+          alt="Author"
+          className="w-14 h-14 rounded-full object-cover"
+        />
+        <div>
+          <h3 className="text-lg font-semibold">Nomin Sendinu</h3>
+          <p className="text-sm text-gray-400">CEO & Co-founder, Terracode Private Limited</p>
+          {/* <p className="text-sm text-gray-400">01 Jan 2024</p> */}
+        </div>
+      </div>
 
           {sections.map((section, idx) => (
             <div key={idx}>
