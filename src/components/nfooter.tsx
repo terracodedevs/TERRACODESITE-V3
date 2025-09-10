@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="flex flex-col px-4  items-start gap-4 justify">
             <div className="flex flex-col gap-4">
                 <div className="self-stretch flex flex-row items-center justify-start gap-4">
-                    <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" />
+                    {/* <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" /> */}
                     <div className=" relative font-semibold ">`Terracode Private Limited, </div>
                 </div>
                 <div className=" relative text-base leading-6 inline-block">
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-4">
            <div className="flex flex-col items-center justify-center gap-4">
                 <div className="self-stretch flex flex-row items-center justify-start gap-4">
-                    <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" />
+                    {/* <img className="w-9 relative h-9 overflow-hidden shrink-0" alt="" src="sl.png" /> */}
                     <div className=" relative font-semibold ">`Terracode Private Limited, </div>
                 </div>
                 <div className=" relative text-base leading-6 inline-block text-center">

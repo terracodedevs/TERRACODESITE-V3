@@ -11,6 +11,7 @@ type TerraButtonProps = {
   padding?: string // Tailwind-compatible padding string
   img?: string // Tailwind-compatible image size string
   imgpadding?: string // Tailwind-compatible padding for the image
+  isLoading?: boolean // Add this new prop for loading state
 }
 
 const TerraButton: React.FC<TerraButtonProps> = ({
@@ -23,7 +24,8 @@ const TerraButton: React.FC<TerraButtonProps> = ({
   hoverGradient = 'bg-gradient-to-l from-[#f56d04] to-[#fb9709]',
   padding ='pl-4 pr-2 py-2 rounded-4xl text-xl gap-2',
   img = 'w-4',
-  imgpadding = 'p-4'
+  imgpadding = 'p-4',
+  isLoading = false
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -33,35 +35,44 @@ const TerraButton: React.FC<TerraButtonProps> = ({
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      disabled={isLoading}
       className={`
         relative cursor-pointer
         overflow-hidden
         hover:shadow-lg 
         rounded-full
-        hover:scale-105
+        ${!isLoading && 'hover:scale-105'}
         transition-transform duration-500
         p-[2px] 
         w-fit
-        ${isHovered ? 'bg-gradient-to-l from-white to-transparent' : 'bg-transparent'}
-        transition-colors duration-1000  w-fit ease-in-out 
+        ${isLoading ? 'opacity-90' : ''}
         ${className}
       `}
     >
       <div className={`
-        ${isHovered ? hoverGradient : gradient}
+        ${isHovered && !isLoading ? hoverGradient : gradient}
         transition-colors duration-700 ease-in-out
         flex flex-row items-center justify-center 
         ${padding} w-full h-full 
         rounded-full text-left text-white font-lufga
       `}>
         <span className="tracking-[0.04px] leading-6 font-semibold">{label}</span>
-        <span className={`bg-white rounded-full ${imgpadding}`}>
-          <img className={`${img}`} src={iconSrc} alt="icon" />
-        </span>
+        
+        {isLoading ? (
+          <span className={`bg-white rounded-full ${imgpadding} flex items-center justify-center`}>
+            <svg className="animate-spin h-4 w-4 text-[#f56d04]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </span>
+        ) : iconSrc ? (
+          <span className={`bg-white rounded-full ${imgpadding}`}>
+            <img className={`${img}`} src={iconSrc} alt="icon" />
+          </span>
+        ) : null}
       </div>
     </button>
   )
 }
 
 export default TerraButton
-

@@ -56,7 +56,7 @@ const FandQ = () => {
     <div className="px-4 md:px-4 bg-black text-white py-4 font-lufga my-10 xl:my-20 container mx-auto">
           <div className="max-w-8xl mx-auto">
             <div className="flex gap-8 lg:gap-16">
-              {/* Left Side - FAQ */}
+              {/* Left Side - FA*/}
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light text-center">FAQ</h2>
@@ -101,13 +101,13 @@ const FandQ = () => {
                         
                         {/* Expandable Content */}
                         <div 
-                          className={`overflow-hidden transition-all duration-500 ease-out ${
+                          className={`overflow-hidden transition-all duration-1000 ease-in-out ${
                             expandedSection === section.id 
                               ? 'max-h-96 opacity-100' 
                               : 'max-h-0 opacity-0'
                           }`}
                         >
-                          <div className={`px-4 lg:px-6 pb-4 transition-all duration-500 ${
+                          <div className={`px-4 lg:px-6 pb-4 transition-all duration-1000 ${
                             expandedSection === section.id ? 'transform translate-y-0' : 'transform -translate-y-4'
                           }`}>
                             <p className="text-gray-300 text-base md:text-lg leading-relaxed ml-6">
