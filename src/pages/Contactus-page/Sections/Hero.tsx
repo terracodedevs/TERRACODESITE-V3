@@ -71,8 +71,8 @@ const Hero = () => {
         {/* Left Side - Intro Text */}
         <div className="flex flex-col  gap-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 lg:w-fit max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
-                <Rocket className="xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
-                <h1 className=" text-xl xl:text-2xl text-nowrap ">We’d love to hear from you.</h1>
+                <Rocket className=" text-[#FDA10A] mr-4" />
+                <h1 className="md:text-2xl">We’d love to hear from you.</h1>
             </div>
             <div className="flex flex-col mt-8">
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Let’s Build Something<br />Brilliant.</h1>
