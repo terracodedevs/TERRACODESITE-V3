@@ -13,6 +13,7 @@ interface FormData {
 const Questions = () => {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
      const [formData, setFormData] = useState<FormData>({
         firstName: '',
         email: '',
@@ -36,6 +37,8 @@ const Questions = () => {
       alert("Please agree with Terms and Privacy Policy.");
       return;
     }
+
+    setIsSubmitting(true); 
 
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
@@ -61,8 +64,11 @@ const Questions = () => {
     } catch (error) {
       console.error(error);
       showToast('Oops! Something went wrong. Please try again later.', 'error');
+    } finally {
+      setIsSubmitting(false); // End loading state
     }
   };
+
   return (
     <div className="flex  justify-center container mx-auto font-lufga my-10 xl:my-20">
     <div className="md:w-2/3 mx-auto px-4 py-12">
@@ -154,17 +160,13 @@ Where can we reach you?
                   I agree with Terms and Privacy Policy
                 </label>
                 </div>
-                {/* Submit Button */}
-                
-              {/* <button
-                type="submit"
-                disabled={!formData.agreeToTerms}
-                className="flex w-1/3 items-center justify-between bg-amber-600 rounded-4xl p-6 text-2xl "
-              >
-                Submit
-                <Send className="w-5 h-5" />
-              </button> */}
-              <TerraButton type='submit' label='Submit'    />
+                 {/* Submit Button with loader */}
+                <TerraButton 
+                  type='submit' 
+                  label={isSubmitting ? 'Sending...' : 'Submit'}
+                  iconSrc={isSubmitting ? '' : '/button/Arrow.svg'}
+                  isLoading={isSubmitting}
+                />
               </div>
             </form>
           </div>
