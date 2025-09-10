@@ -28,7 +28,7 @@ const Page1: React.FC = () => {
     />
 
     <Questions />
-    <TechStacktemplate
+    {/* <TechStacktemplate
       stacks ={[
   {
     name: "Item 1",
@@ -67,7 +67,7 @@ const Page1: React.FC = () => {
     image: "/logo/flutter.svg"
   }
 ]}
-    />
+    /> */}
     </>
   );
 };
