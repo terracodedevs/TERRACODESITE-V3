@@ -101,13 +101,13 @@ const FandQ = () => {
                         
                         {/* Expandable Content */}
                         <div 
-                          className={`overflow-hidden transition-all duration-500 ease-out ${
+                          className={`overflow-hidden transition-all duration-1000 ease-in-out ${
                             expandedSection === section.id 
                               ? 'max-h-96 opacity-100' 
                               : 'max-h-0 opacity-0'
                           }`}
                         >
-                          <div className={`px-4 lg:px-6 pb-4 transition-all duration-500 ${
+                          <div className={`px-4 lg:px-6 pb-4 transition-all duration-1000 ${
                             expandedSection === section.id ? 'transform translate-y-0' : 'transform -translate-y-4'
                           }`}>
                             <p className="text-gray-300 text-base md:text-lg leading-relaxed ml-6">
