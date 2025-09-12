@@ -7,7 +7,7 @@ const Page6: React.FC = () => {
   return (
     <>
     <ServicePage
-      badge="End-to-end mobile app development - from concept to store launch"
+      badge="Designing software experiences that delight users and drive results."
       title="User Experience Design (UX)"
       image="/Mask.png"
     />
