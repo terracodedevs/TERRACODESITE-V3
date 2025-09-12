@@ -11,6 +11,7 @@ const Page2: React.FC = () => {
       title="Business Software Systems"
       image="/mainicons/IMG_4620.PNG"
       name="View Business Softwares"
+      selectedCategory="System"
     />
     <ServiceAbout
       paragraph1="Terracode specializes in building  powerful and scalable software systems such as ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), IMS (Inventory Management Systems), and other business-critical platforms."

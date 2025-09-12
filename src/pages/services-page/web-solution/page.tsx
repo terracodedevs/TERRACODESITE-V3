@@ -11,6 +11,7 @@ const Page5: React.FC = () => {
       title="Website Solutions"
       image="/Mask group.png"
       name="View Web Solutions"
+      selectedCategory="Website"
     />
     <ServiceAbout
       paragraph1="We craft stunning, fast-loading, and responsive websites tailored specifically for your brand. Each site is built with a flexible content management system (CMS) that empowers you to control your content easily."

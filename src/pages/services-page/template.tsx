@@ -1,6 +1,7 @@
 import TerraButton from "@/components/button";
 import { Rocket } from "lucide-react";
 import React from "react";
+
 import { useNavigate } from "@tanstack/react-router";
 
 
@@ -9,6 +10,7 @@ interface ServicePageProps {
   title: string;
   image: string;
   name?: string;
+  selectedCategory?: string;
 }
 
 const ServicePage: React.FC<ServicePageProps> = ({
@@ -16,11 +18,13 @@ const ServicePage: React.FC<ServicePageProps> = ({
   title,
   image,
   name,
+  selectedCategory
 }) => {
   const navigate = useNavigate();
   
   const handleClick = () => {
-    navigate({ to: '/digitalportfolio', hash: 'our-projects' }) // e.g., '/about', '/dashboard', etc.
+    const query = selectedCategory ? `?category=${encodeURIComponent(selectedCategory)}` : '';
+    navigate({ to: `/digitalportfolio${query}`, hash: 'our-projects' });
   };
 
   return (

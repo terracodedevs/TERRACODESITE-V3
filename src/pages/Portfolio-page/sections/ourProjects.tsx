@@ -1,8 +1,7 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 
 const projects = [
     {
-
         title: "Web Design & Development",
         description: "A modern website for House Of Vision (Pvt) Ltd. ",
         id: "1",
@@ -59,6 +58,19 @@ const projects = [
 
 const OurProjects = () => {
     const [selectedCategory, setSelectedCategory] = useState('All')
+
+     const allowedCategories = useMemo(
+        () => ['All', ...Array.from(new Set(projects.map(p => p.category)))],
+        []
+    )
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search)
+        const cat = params.get('category')
+        if (cat && allowedCategories.includes(cat)) {
+            setSelectedCategory(cat)
+        }
+    }, [allowedCategories])
 
     // Get unique categories and their counts
         const categoryStats = useMemo(() => {
