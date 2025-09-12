@@ -10,6 +10,7 @@ const Page4: React.FC = () => {
       badge="End-to-end mobile app development - from concept to store launch"
       title="Mobile App Development"
       image="/Mask.png"
+      name="View Mobile Apps"
     />
     <ServiceAbout
     paragraph1="Have an idea for a mobile app? Terracode turns your vision into a high-performance mobile product. We build iOS and Android applications with smooth performance, modern UI/UX, and secure architecture."

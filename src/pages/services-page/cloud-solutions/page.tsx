@@ -11,6 +11,7 @@ const Page3: React.FC = () => {
       badge="Empower your systems with speed, flexibility, and automation"
       title="Cloud Solutions"
       image="/Mask 1.png"
+      name="View Cloud Solutions"
     />
 
     <ServiceAbout

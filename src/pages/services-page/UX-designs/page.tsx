@@ -10,6 +10,7 @@ const Page6: React.FC = () => {
       badge="Designing software experiences that delight users and drive results."
       title="User Experience Design (UX)"
       image="/Mask.png"
+      name="View UX Designs"
     />
     <ServiceAbout
     paragraph1="Delivering seamless, intuitive, and enjoyable experiences is at the core of our process. Our dedicated UX research and engineering team ensures your software is designed with real users in mind."

@@ -8,17 +8,19 @@ interface ServicePageProps {
   badge: string;
   title: string;
   image: string;
+  name?: string;
 }
 
 const ServicePage: React.FC<ServicePageProps> = ({
   badge,
   title,
   image,
+  name,
 }) => {
   const navigate = useNavigate();
   
   const handleClick = () => {
-    navigate({ to: '/career' });
+    navigate({ to: '/digitalportfolio' });
   };
 
   return (
@@ -32,7 +34,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                         </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">{title}</h1>
-                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label="View Openings" onClick={handleClick} />
+                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label={name} onClick={handleClick} />
             </div>
         </div>
         {/* team members Images */}

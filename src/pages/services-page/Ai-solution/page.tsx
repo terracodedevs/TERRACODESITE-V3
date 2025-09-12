@@ -11,6 +11,7 @@ const Page1: React.FC = () => {
       badge="Bring intelligence to your software with custom AI."
       title="AI Solutions"
       image="/Mask 2.png"
+      name="View AI Solutions"
     />
     <ServiceAbout
       paragraph1="Terracode develops intelligent AI models tailored to your business goals. From computer vision and NLP to predictive analytics, we help you turn your data into powerful business tools."
