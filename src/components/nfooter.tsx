@@ -52,8 +52,9 @@ export default function Footer() {
                         <p className="m-0">Maharagama, Sri Lanka</p>
                     </a>
                 </div>
-                <div className="self-stretch relative tracking-[0.04px] leading-6 font-semibold" >
+                <div className="flex flex-col space-y-3 self-stretch relative tracking-[0.04px] leading-6 font-semibold" >
                     <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
+                    <a href="tel:+9411 283 8640">(+94) 112 838 640</a>
                 </div>
             </div>
            {/* Social Links */}
@@ -125,7 +126,7 @@ export default function Footer() {
                 </div>
             </div>  
         </div>
-        <div>
+        <div className="my-4">
             <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
@@ -140,8 +141,9 @@ export default function Footer() {
                         <p className="m-0">Maharagama, Sri Lanka</p>
                     </a>
                 </div>
-                <div className=" font-semibold" >
+                <div className="flex flex-col space-y-2 font-semibold" >
                     <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
+                    <a href="tel:+9411 283 8640">(+94) 112 838 640</a>
                 </div>
             </div>
             <div className=" h-8 flex flex-row items-center justify-center gap-6">

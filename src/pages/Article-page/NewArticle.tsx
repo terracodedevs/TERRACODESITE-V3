@@ -1,4 +1,4 @@
-import { Calendar, Clock, Heart, Send } from "lucide-react";
+import { Calendar, Clock, Heart, Send, Share } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface Section {
@@ -206,6 +206,7 @@ export default function NArticle() {
           <h1 className="text-3xl md:text-[45px] mb-4 text-[#FDA10A]">
             {currentArticle.title}
           </h1>
+          <div className="flex justify-between">
           <div className="flex items-center text-[#A4A4A4] space-x-6 ">
             <span className="flex items-center gap-3 xl:text-2xl">
               <Calendar size={22} /> {currentArticle.date}
@@ -214,7 +215,10 @@ export default function NArticle() {
               <Clock size={22} /> {currentArticle.time}
             </span>
           </div>
-
+          <span className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A]">
+              <Share size={22} /> Share
+          </span>
+          </div>
           <img
             src={currentArticle.image}
             alt={currentArticle.title}

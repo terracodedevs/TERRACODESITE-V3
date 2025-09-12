@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
     }
   }, []);
   return ( 
-    <div className="relative   overflow-hidden font-lufga  ">
+    <div className="relative overflow-hidden font-lufga   ">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -177,30 +177,30 @@ const HeroSection: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay:0.5, ease: "easeInOut" }}
          className="col-span-1 flex flex-col gap-4">
-            <div className="backdrop-blur-md bg-white/10 rounded-2xl p-8 max-w-md w-full text-white shadow-lg transition-colors duration-800 group hover:bg-[#2C2C2C] relative">
+            <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 2xl:p-8 max-w-xl w-full text-white shadow-lg transition-colors duration-800 group hover:bg-[#2C2C2C] relative">
     <h1 className="xl:text-3xl mb-4">Services Overview</h1>
     <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Business Software</div>
       </div>
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">AI Solutions</div>
       </div>
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Web Applications</div>
       </div>
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Mobile Applications</div>
       </div>
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">Cloud Operations</div>
       </div>
-      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 px-6 gap-4">
+      <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
         <div className="relative tracking-[0.04px] leading-[30px] font-light group-hover:text-white transition-colors duration-800">UX Design</div>
       </div>
