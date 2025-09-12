@@ -15,11 +15,12 @@ const navbar = {
     
   ],
   serviceLinks: [
-    { name: 'AI Solutions', img: "/mainicons/icons8-artificial-intelligence-96.png", path: '/ai-solutions' },
+    { name: 'UX Design', img: "/mainicons/icons8-wacom-tablet-96.png", path: '/ux-design' },
     { name: 'Business Softwares', img: "/mainicons/icons8-laptop-coding-96.png", path: '/business-softwares' },
-    { name: 'Cloud Solutions', img: "/mainicons/icons8-cloud-connection-97.png", path: '/cloud-solutions' },
-    { name: 'Mobile Apps', img: "/mainicons/icons8-phonelink-setup-96.png", path: '/mobile-apps' },
     { name: 'Website Solutions', img: "/mainicons/icons8-software-development-96.png", path: '/website-solutions' },
+    { name: 'Mobile Apps', img: "/mainicons/icons8-phonelink-setup-96.png", path: '/mobile-apps' },
+    { name: 'AI Solutions', img: "/mainicons/icons8-artificial-intelligence-96.png", path: '/ai-solutions' }, 
+    { name: 'Cloud Solutions', img: "/mainicons/icons8-cloud-connection-97.png", path: '/cloud-solutions' },  
   ],
 }
 
