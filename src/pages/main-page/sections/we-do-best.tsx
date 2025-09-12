@@ -1,37 +1,37 @@
 const services = [
   {
-    title: 'Custom Software Development',
-    description: 'We build tailored software solutions that solve real business problems - from scratch to scale.',
-    tags: ['SaaS', 'Enterprise', 'Product Engineering'],
-    img: 'mainicons/icons8-software-development-96.png'
-  },
-  {
-    title: 'Mobile App Development',
-    description: 'We create engaging mobile applications that resonate with users and enhance brand visibility.',
-    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
-    img: 'mainicons/icons8-phonelink-setup-96.png'
-  },
-  {
-    title: 'AI & Machine Learning Solutions',
-    description: 'Supercharge your product with intelligent features that adapt, learn, and evolve.',
-    tags: ['Predictive Models', 'NLP', 'Generative AI'],
-    img: 'mainicons/icons8-artificial-intelligence-96.png'
-  },
-  {
-    title: 'UI/UX Design',
+    title: 'User Experience Design (UI/UX)',
     description: 'Human-first design with aesthetics that convert and experiences that stick.',
     tags: ['Wireframes', 'Design', 'User Research'],
     img: 'mainicons/icons8-wacom-tablet-96.png'
   },
   {
+    title: 'Custom Software Development',
+    description: 'ERP, CRM, IMS and custom systems crafted with AI integrations to streamline your operations.',
+    tags: ['SaaS', 'Enterprise', 'Product Engineering'],
+    img: 'mainicons/icons8-software-development-96.png'
+  },
+  {
     title: 'Web Application Development',
-    description: 'Clean code meets exceptional UX in lightning fast web experiences.',
+    description: 'Custom business websites with powerful content management, built for speed, security, and scalability.',
     tags: ['React.js', 'Next.js', 'API integrations'],
     img: 'mainicons/icons8-laptop-coding-96.png'
   },
   {
+    title: 'Mobile App Development',
+    description: 'iOS & Android apps shaped by your ideas and guided by our expert consulting.',
+    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
+    img: 'mainicons/icons8-phonelink-setup-96.png'
+  },
+  {
+    title: 'AI & Machine Learning Solutions',
+    description: 'Custom AI models and fine-tuned solutions built to automate, analyze, and enhance business decisions.',
+    tags: ['Predictive Models', 'NLP', 'Generative AI'],
+    img: 'mainicons/icons8-artificial-intelligence-96.png'
+  },
+  {
     title: 'Cloud & DevOps Engineering',
-    description: 'Infrastructure that scales, automates, and keeps you running 24/7.',
+    description: 'Migrate, optimize, or automate your systems with scalable and secure cloud technologies.',
     tags: ['AWS', 'Docker', 'Kubernetes'],
     img: 'mainicons/icons8-cloud-connection-97.png'
   },
