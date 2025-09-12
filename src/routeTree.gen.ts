@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions'
+import { Route as UxDesignRouteImport } from './routes/ux-design'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -29,6 +30,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WebsiteSolutionsRoute = WebsiteSolutionsRouteImport.update({
   id: '/website-solutions',
   path: '/website-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UxDesignRoute = UxDesignRouteImport.update({
+  id: '/ux-design',
+  path: '/ux-design',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TestRoute = TestRouteImport.update({
@@ -123,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
+  '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
 }
 export interface FileRoutesByTo {
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
+  '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
 }
 export interface FileRoutesById {
@@ -160,6 +168,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/test': typeof TestRoute
+  '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
 }
 export interface FileRouteTypes {
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/test'
+    | '/ux-design'
     | '/website-solutions'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/test'
+    | '/ux-design'
     | '/website-solutions'
   id:
     | '__root__'
@@ -216,6 +227,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/test'
+    | '/ux-design'
     | '/website-solutions'
   fileRoutesById: FileRoutesById
 }
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   TestRoute: typeof TestRoute
+  UxDesignRoute: typeof UxDesignRoute
   WebsiteSolutionsRoute: typeof WebsiteSolutionsRoute
 }
 
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       path: '/website-solutions'
       fullPath: '/website-solutions'
       preLoaderRoute: typeof WebsiteSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ux-design': {
+      id: '/ux-design'
+      path: '/ux-design'
+      fullPath: '/ux-design'
+      preLoaderRoute: typeof UxDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/test': {
@@ -371,6 +391,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   TestRoute: TestRoute,
+  UxDesignRoute: UxDesignRoute,
   WebsiteSolutionsRoute: WebsiteSolutionsRoute,
 }
 export const routeTree = rootRouteImport
