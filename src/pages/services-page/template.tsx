@@ -20,7 +20,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
   const navigate = useNavigate();
   
   const handleClick = () => {
-    navigate({ to: '/digitalportfolio' });
+    navigate({ to: '/digitalportfolio', hash: 'our-projects' }) // e.g., '/about', '/dashboard', etc.
   };
 
   return (

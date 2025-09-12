@@ -84,7 +84,7 @@ const OurProjects = () => {
 
   return (
     <> 
-    <div className=" text-white font-lufga my-20 container mx-auto">
+    <div id="our-projects" className=" text-white font-lufga my-20 container mx-auto">
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col mt-8 items-start md:items-center gap-6 ">
             <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ml-4 sm:ml-0">Our Projects</h1>
