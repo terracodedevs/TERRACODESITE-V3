@@ -1,39 +1,47 @@
+import { Link } from "@tanstack/react-router";
+
 const services = [
   {
-    title: 'User Experience Design (UI/UX)',
-    description: 'Human-first design with aesthetics that convert and experiences that stick.',
+    title: 'User Experience Design(UX) ',
+    description: 'Dedicated UX engineers actively, architect, and refine exceptional experiences tailored to your product.',
     tags: ['Wireframes', 'Design', 'User Research'],
-    img: 'mainicons/icons8-wacom-tablet-96.png'
+    img: 'mainicons/icons8-wacom-tablet-96.png',
+    link: '/ux-design'
   },
   {
     title: 'Custom Software Development',
     description: 'ERP, CRM, IMS and custom systems crafted with AI integrations to streamline your operations.',
     tags: ['SaaS', 'Enterprise', 'Product Engineering'],
-    img: 'mainicons/icons8-software-development-96.png'
+    img: 'mainicons/icons8-software-development-96.png',
+    link: '/business-softwares'
   },
   {
     title: 'Web Application Development',
     description: 'Custom business websites with powerful content management, built for speed, security, and scalability.',
     tags: ['React.js', 'Next.js', 'API integrations'],
-    img: 'mainicons/icons8-laptop-coding-96.png'
+    img: 'mainicons/icons8-laptop-coding-96.png',
+    link: '/website-solutions'
   },
   {
     title: 'Mobile App Development',
     description: 'iOS & Android apps shaped by your ideas and guided by our expert consulting.',
     tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
-    img: 'mainicons/icons8-phonelink-setup-96.png'
+    img: 'mainicons/icons8-phonelink-setup-96.png',
+    link: '/mobile-apps'
   },
   {
     title: 'AI & Machine Learning Solutions',
     description: 'Custom AI models and fine-tuned solutions built to automate, analyze, and enhance business decisions.',
     tags: ['Predictive Models', 'NLP', 'Generative AI'],
-    img: 'mainicons/icons8-artificial-intelligence-96.png'
+    img: 'mainicons/icons8-artificial-intelligence-96.png',
+    link: '/ai-solutions'
   },
   {
     title: 'Cloud & DevOps Engineering',
     description: 'Migrate, optimize, or automate your systems with scalable and secure cloud technologies.',
     tags: ['AWS', 'Docker', 'Kubernetes'],
-    img: 'mainicons/icons8-cloud-connection-97.png'
+    img: 'mainicons/icons8-cloud-connection-97.png',
+    link: '/cloud-solutions'
   },
 ];
 
@@ -49,8 +57,9 @@ export default function WhatWeDoBest() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-800 group gap-6 border-transparent hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden  xl:h-[450px] justify-between"
+            className="flex flex-col items-center text-center bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-800 group gap-6 border-transparent hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden  xl:h-[470px] justify-between"
           >
+            <Link to={service.link} className="absolute inset-0 z-10" />
             {/* Top gradient line on hover */}
             {/* <div className="absolute top-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" /> */}
             

@@ -12,10 +12,10 @@ interface PricingPlan {
 
 const pricingPlans: PricingPlan[] = [
   {
-    title: "Basic",
-    subtitle: "Best for personal use.",
-    price: "Free",
-    per: "",
+    title: "Starter",
+    subtitle: "Ideal for personal portfolios, landing pages, or small static websites.",
+    price: "$9.99",
+    per: " / per month",
     features: [
       "Employee directory",
       "Task management",
@@ -28,9 +28,9 @@ const pricingPlans: PricingPlan[] = [
     category: "Monthly",
   },
   {
-    title: "Enterprise",
-    subtitle: "For large teams & corporations.",
-    price: "$20",
+    title: "Professional",
+    subtitle: "Great for blogs, company websites, or content-driven platforms with an admin panel.",
+    price: "$14.99",
     per: "/ per month",
     features: [
       "Advanced employee directory",
@@ -45,8 +45,8 @@ const pricingPlans: PricingPlan[] = [
   },
   {
     title: "Business",
-    subtitle: "Best for business owners.",
-    price: "$120",
+    subtitle: "Perfect for online stores, payment gateways, advanced business features, and integrations.",
+    price: "$23.99",
     per: "/ per month",
     features: [
       "Customizable employee directory",
@@ -59,47 +59,19 @@ const pricingPlans: PricingPlan[] = [
     buttonText: "Get Started",
     category: "Monthly",
   },
-  {
-    title: "Enterprise Annual",
-    subtitle: "Annual plan for corporations.",
-    price: "$200",
-    per: "/ per year",
-    features: [
-      "Everything in Monthly",
-      "Priority support",
-      "Extended analytics",
-      "Free onboarding",
-    ],
-    buttonText: "Get Started",
-    category: "Annually",
-  },
-  {
-    title: "Business Annual",
-    subtitle: "Save more with annual billing.",
-    price: "$1200",
-    per: "/ per year",
-    features: [
-      "Everything in Monthly",
-      "Custom integrations",
-      "VIP support",
-      "Free onboarding",
-    ],
-    buttonText: "Get Started",
-    category: "Annually",
-  },
 ];
 
 const PricingSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<"Monthly" | "Annually">("Monthly");
+  const [selectedCategory, _setSelectedCategory] = useState<"Monthly" | "Annually">("Monthly");
 
   const filteredPlans = useMemo(() => {
     return pricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-12">
+    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:mt-20">
       {/* Toggle Button */}
-      <div className="flex space-x-2 mb-10 bg-neutral-900 rounded-full p-1">
+      {/* <div className="flex space-x-2 mb-10 bg-neutral-900 rounded-full p-1">
         {(["Monthly", "Annually"] as const).map((cycle) => (
           <button
             key={cycle}
@@ -113,10 +85,10 @@ const PricingSection: React.FC = () => {
             {cycle}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3 gap-8 w-full max-w-6xl">
+      <div className="grid md:grid-cols-3 gap-8 w-full max-w-7xl">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}

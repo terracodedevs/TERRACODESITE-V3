@@ -1,6 +1,7 @@
 import React from "react";
 import ServicePage from "../template";
 import ServiceAbout from "../about-template";
+
 import Questions from "@/pages/team-page/sections/Questions";
 
 const Page4: React.FC = () => {
@@ -10,6 +11,8 @@ const Page4: React.FC = () => {
       badge="End-to-end mobile app development - from concept to store launch"
       title="Mobile App Development"
       image="/Mask.png"
+      name="View Mobile Apps"
+      selectedCategory="Mobile"
     />
     <ServiceAbout
     paragraph1="Have an idea for a mobile app? Terracode turns your vision into a high-performance mobile product. We build iOS and Android applications with smooth performance, modern UI/UX, and secure architecture."

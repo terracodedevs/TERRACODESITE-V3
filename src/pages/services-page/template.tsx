@@ -1,6 +1,7 @@
 import TerraButton from "@/components/button";
 import { Rocket } from "lucide-react";
 import React from "react";
+
 import { useNavigate } from "@tanstack/react-router";
 
 
@@ -8,17 +9,22 @@ interface ServicePageProps {
   badge: string;
   title: string;
   image: string;
+  name?: string;
+  selectedCategory?: string;
 }
 
 const ServicePage: React.FC<ServicePageProps> = ({
   badge,
   title,
   image,
+  name,
+  selectedCategory
 }) => {
   const navigate = useNavigate();
   
   const handleClick = () => {
-    navigate({ to: '/career' });
+    const query = selectedCategory ? `?category=${encodeURIComponent(selectedCategory)}` : '';
+    navigate({ to: `/digitalportfolio${query}`, hash: 'our-projects' });
   };
 
   return (
@@ -26,13 +32,13 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <div className="container mx-auto flex flex-col justify-center items-center">
         {/* Hero Section */}
         <div className="flex flex-col  gap-4 items-center justify-center">
-            <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 max-w-3xl w-full text-white shadow-lg flex justify-center items-center flex-row">
+            <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 max-w-4xl w-full text-white shadow-lg flex justify-center items-center flex-row">
                             <Rocket className=" text-[#FDA10A] mx-4" />
                             <h1 className="md:text-2xl">{badge}</h1>
                         </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">{title}</h1>
-                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label="View Openings" onClick={handleClick} />
+                <TerraButton className="mt-6" padding='pl-4 pr-2 py-1 rounded-4xl text-lg gap-2' label={name} onClick={handleClick} />
             </div>
         </div>
         {/* team members Images */}
