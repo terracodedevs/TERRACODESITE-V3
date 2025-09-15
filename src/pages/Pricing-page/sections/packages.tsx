@@ -92,7 +92,7 @@ const PricingSection: React.FC = () => {
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-neutral-900 to-black text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between"
+            className="bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between"
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">

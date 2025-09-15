@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions'
 import { Route as UxDesignRouteImport } from './routes/ux-design'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
@@ -40,6 +41,11 @@ const UxDesignRoute = UxDesignRouteImport.update({
 const TestRoute = TestRouteImport.update({
   id: '/test',
   path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsConditionsRoute = TermsConditionsRouteImport.update({
+  id: '/terms-conditions',
+  path: '/terms-conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceRoute = ServiceRouteImport.update({
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -147,6 +154,7 @@ export interface FileRoutesByTo {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -167,6 +175,7 @@ export interface FileRoutesById {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -188,6 +197,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -207,6 +217,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -226,6 +237,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -246,6 +258,7 @@ export interface RootRouteChildren {
   MobileAppsRoute: typeof MobileAppsRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
+  TermsConditionsRoute: typeof TermsConditionsRoute
   TestRoute: typeof TestRoute
   UxDesignRoute: typeof UxDesignRoute
   WebsiteSolutionsRoute: typeof WebsiteSolutionsRoute
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/test'
       fullPath: '/test'
       preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-conditions': {
+      id: '/terms-conditions'
+      path: '/terms-conditions'
+      fullPath: '/terms-conditions'
+      preLoaderRoute: typeof TermsConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service': {
@@ -390,6 +410,7 @@ const rootRouteChildren: RootRouteChildren = {
   MobileAppsRoute: MobileAppsRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
+  TermsConditionsRoute: TermsConditionsRoute,
   TestRoute: TestRoute,
   UxDesignRoute: UxDesignRoute,
   WebsiteSolutionsRoute: WebsiteSolutionsRoute,
