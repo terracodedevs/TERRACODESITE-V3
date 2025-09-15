@@ -139,13 +139,20 @@ export const articlesData: SidebarItem[] = [
   },
   {
     id: 1,
-    title: "Designing for Humans in an AI World",
+    title: "Expanded Data Processing Agreement (DPA)",
     date: "2 November 2024",
     description:
-      "As automation rises, human-centered design matters more than ever. Here's how we balance AI logic with user empathy....",
+      "This Data Processing Agreement (“DPA”) forms part of the Master Agreement or Terms & Conditions between Terracode (“Processor”) and the customer (“Controller”) regarding the processing of personal data in connection with Terracode’s Services.",
     sections: [
       {
-        content: "Human-centered design has never been more crucial than it is today. As artificial intelligence and automation become increasingly integral to our software solutions, we face a fundamental challenge: maintaining the human touch."
+        title: "1. Definitions",
+        content: "",
+        subsections: [
+            {
+                subtopic: "",
+                subDescription: "Controller”: The entity that determines the purposes and means of processing personal data",
+            },
+          ]
       },
       {
         content: "At Terracode, we approach this by embedding empathy into every aspect of our AI implementations. We prioritize intuitive interfaces, clear communication, and meaningful interactions that complement AI's computational power with human understanding."
