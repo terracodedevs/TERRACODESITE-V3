@@ -17,12 +17,12 @@ const pricingPlans: PricingPlan[] = [
     price: "$9.99",
     per: " / per month",
     features: [
-      "Employee directory",
-      "Task management",
-      "Calendar integration",
-      "File storage",
-      "Communication tools",
-      "Reporting and analytics",
+      "Ongoing monthly maintenance and support",
+      "Free add-ons included in your plan",
+      "Customized solutions built for your needs",
+      "No upfront investment –start with monthly payment",
+      "Agreement cancellable only after 2 years",
+      "Regular design updates to keep your site professional",
     ],
     buttonText: "Get Started",
     category: "Monthly",
@@ -33,12 +33,12 @@ const pricingPlans: PricingPlan[] = [
     price: "$14.99",
     per: "/ per month",
     features: [
-      "Advanced employee directory",
-      "Project management",
-      "Resource scheduling",
-      "Version control",
-      "Team collaboration",
-      "Advanced analytics",
+      "Ongoing monthly maintenance and support",
+      "Free add-ons included in your plan",
+      "Customized solutions built for your needs",
+      "No upfront investment –start with monthly payment",
+      "Agreement cancellable only after 2 years",
+      "Regular design updates to keep your site professional",
     ],
     buttonText: "Get Started",
     category: "Monthly",
@@ -49,12 +49,12 @@ const pricingPlans: PricingPlan[] = [
     price: "$23.99",
     per: "/ per month",
     features: [
-      "Customizable employee directory",
-      "Client project management",
-      "Client meeting schedule",
-      "Compliance tracking",
-      "Client communication",
-      "Create custom reports tailored",
+      "Ongoing monthly maintenance and support",
+      "Free add-ons included in your plan",
+      "Customized solutions built for your needs",
+      "No upfront investment –start with monthly payment",
+      "Agreement cancellable only after 2 years",
+      "Regular design updates to keep your site professional",
     ],
     buttonText: "Get Started",
     category: "Monthly",
@@ -88,20 +88,22 @@ const PricingSection: React.FC = () => {
       </div> */}
 
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3 gap-8 w-full max-w-7xl">
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
             className="bg-gradient-to-b from-neutral-900 to-black text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between"
           >
             {/* Circle Icon */}
-            <div className="w-6 h-6 border-2 border-gray-400 rounded-full mb-4"></div>
+            <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
+              <div className="w-4 h-3 bg-gray-400 rounded-full m-1"></div>
+            </div>
 
             {/* Header */}
             <h3 className="text-xl font-semibold">{plan.title}</h3>
             <p className="text-sm text-gray-400 mb-4">{plan.subtitle}</p>
-            <h2 className="text-4xl font-bold">
-              {plan.price} <span className="text-lg">{plan.per}</span>
+            <h2 className="text-xl font-semibold">
+              {plan.price} <span className="text-xl font-semibold">{plan.per}</span>
             </h2>
 
             <hr className="my-6 border-gray-700" />
@@ -110,15 +112,17 @@ const PricingSection: React.FC = () => {
             <h4 className="mb-3 font-semibold">What you will get</h4>
             <ul className="space-y-2 text-gray-300 text-sm mb-6">
               {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-center space-x-2">
-                  <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
+                <li key={i} className="flex items-start space-x-2 ">
+                  <span className="w-2 h-2 bg-gray-400 rounded-full mt-1"></span>
                   <span>{feature}</span>
                 </li>
               ))}
             </ul>
 
             {/* Button */}
-            <button className="mt-auto py-3 rounded-xl border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white transition-all font-medium">
+            <button className="mt-auto py-3 rounded-3xl border-2 border-orange-500
+             hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
+              hover:text-white transition-all font-extrabold duration-700 cursor-pointer">
               {plan.buttonText}
             </button>
           </div>
