@@ -420,60 +420,60 @@ date: "2 December 2024",
 description: "At Terracode, we want every customer to have confidence in our software services and SaaS products. This Refund Policy sets out the circumstances in which refunds may be issued.",
 sections: [
 { title: "1. SaaS Subscriptions",   subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+   { subtopic:"(a) Free Trials",
+     subDescription: "Where a free trial is offered, subscription charges will only begin once the trial period has ended.",
+   },
+
+   { subtopic:"(b) Monthly Subscriptions",
+    subDescription: "Refunds are not generally issued for partial months of service.",
+  subDescription1: "If you cancel mid-cycle, you will retain access until the end of the billing period.",},
+
+   { subtopic:"(c) Annual Subscriptions", 
+    subDescription: "Refunds may be requested within 14 days of purchase (or longer if required by applicable consumer law, e.g., EU cooling-off rights)" ,
+    subDescription1: "Refunds may be requested within 14 days of purchase (or longer if required by applicable consumer law, e.g., EU cooling-off rights)",},
+
+
+    { subtopic:"(d) Billing Errors", 
+      subDescription: "If you are charged incorrectly (e.g., duplicate charges or processing errors), a full refund of the erroneous charge will be provided." },
 ]},
 { title: "2. Custom Services",  subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+    { subtopic:"(a) Upfront Deposits", 
+      subDescription: "Deposits paid to initiate a project are non-refundable, as they reserve developer resources." },
+
+    { subtopic:"(b) Milestone Payments", 
+      subDescription: "Once a milestone has been delivered and accepted, payments are final and non-refundable." },
+
+    { subtopic:"(c) Project Cancellations", 
+      subDescription: "If a project is canceled partway, Terracode will assess completed work and may issue a partial refund for unspent or unallocated hours, at its discretion." },
 ]},
-{ title: "3. Exceptions",   subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+{ title: "3. Exceptions",
+  content: "Refunds may also be issued in the following exceptional cases:",
+  subsections: [
+   { subDescription: "Proven fraudulent or unauthorized charges." },
+   { subDescription: "Inability of Terracode to deliver Services due to internal failures." },
+   { subDescription: "Severe, unresolved technical issues preventing reasonable use of SaaS products." },
 ]},
 { title: "4. Requesting Refunds",   subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+   { subDescription: "To request a refund, contact [Insert Billing Email] with transaction details." },
+   { subDescription: "Refund requests must be submitted within 30 days of the charge." },
+   { subDescription: "Refunds are processed within 7–14 business days, subject to your payment provider’s timelines." },
 ]},
-{ title: "5. Non-Refundable Items",   subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+{ title: "5. Non-Refundable Items", 
+  content: "The following items are non-refundable:",
+  subsections: [
+   { subDescription: "One-time setup or onboarding fees." },
+   { subDescription: "Third-party integration or licensing fees." },
+   { subDescription: "Services or SaaS products purchased via resellers or partners (their policies apply)." },
+    { subDescription: "Completed and delivered custom development work." },
 ]},
-{ title: "6. Dispute Resolution",   subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+{ title: "6. Dispute Resolution", 
+  content: "If you are dissatisfied with a refund decision:",
+  subsections: [
+   { subDescription: "You may escalate your request to Terracode’s Finance & Legal Department for independent review." },
+   { subDescription: "Disputes unresolved through internal review will be handled in accordance with our Terms & Conditions – Governing Law & Arbitration clause." },
 ]},
 { title: "7. Consumer Law Rights",  subsections: [
-   { subDescription: "Access, correct, or delete personal data." },
-   { subDescription: "Restrict or object to processing." },
-   { subDescription: "Request data portability." },
-    { subDescription: "Opt-out of marketing communications." },
-   { subDescription: "Withdraw consent at any time." },
-   { subDescription: "To exercise these rights, contact us at privacy@terracode.com." }
+   { subDescription: "Nothing in this policy affects statutory rights you may have under applicable consumer protection laws (e.g., EU Directive 2011/83/EU, UK Consumer Rights Act, or equivalent local laws)" },
 ]},
 ]
 },
@@ -481,38 +481,126 @@ sections: [
 id: 6,
 title: "Expanded Service Level Agreement (SLA)",
 date: "2 December 2024",
-description: "This SLA sets out service availability, support, and remedies.",
+description: "This Service Level Agreement (“SLA”) forms part of the Terms and Conditions between Terracode (“Provider”) and the customer (“Client”). It sets out service availability, performance commitments, support standards, and remedies in the event of service failures.",
 sections: [
-{ title: "1. Availability", subsections: [ { subDescription: "99.9% uptime target; maintenance exclusions." } ]},
-{ title: "2. Support", subsections: [ { subDescription: "Standard hours Mon–Fri; 24/7 for enterprise." } ]},
-{ title: "3. Escalation", subsections: [ { subDescription: "Support Engineer → Senior Engineer → Manager → CTO." } ]},
-{ title: "4. Responsibilities", subsections: [ { subDescription: "Clients must maintain connectivity and accurate info." } ]},
-{ title: "5. Exclusions", subsections: [ { subDescription: "Beta features, 3rd-party outages, misuse." } ]},
-{ title: "6. Monitoring", subsections: [ { subDescription: "Uptime monitored; reports available." } ]},
-{ title: "7. Governing Law", subsections: [ { subDescription: "SLA governed by [Insert Jurisdiction]." } ]}
+{ title: "1. Service Availability",  subsections: [
+   { subDescription: "Terracode guarantees 99.9% uptime per calendar month for SaaS Services." },
+   { subDescription: "Scheduled Maintenance: Planned maintenance will be communicated at least 48 hours in advance and is excluded from uptime calculations." },
+   { subDescription: "Emergency Maintenance: Terracode reserves the right to perform emergency maintenance if required for security or stability." },
+    { subDescription: "Exclusions: Downtime caused by force majeure, third-party failures (e.g., internet providers, payment gateways), or customer-side issues is excluded from SLA commitments." },
+]},
+{ title: "2. Support Commitments", subsections: [
+   { subDescription: "Support Hours: Standard support is available Monday–Friday, 9:00–18:00 [Insert Time Zone]." },
+   { subDescription: "Channels: Email, ticketing system, and dedicated account manager (enterprise clients only)." },
+   { subDescription: "Extended Support: 24/7 emergency support available for enterprise SLA clients." },
+]},
+{ title: "3. Escalation Path",
+  content: "If resolution targets are not met, issues will be escalated as follows:",
+  subsections: [
+   { subDescription: "Support Engineer →" },
+   { subDescription: "Senior Engineer →" },
+   { subDescription: "Engineering Manager →" },
+    { subDescription: "CTO / Executive Oversight" },
+]},
+{ title: "4. Customer Responsibilities", subsections: [
+   { subDescription: "Maintain reliable internet connectivity and updated browsers." },
+   { subDescription: "Use Services according to documented best practices." },
+   { subDescription: "Use Services according to documented best practices." },
+    { subDescription: "Ensure customer-side systems (e.g., integrations, firewalls) do not disrupt Services." },
+]},
+{ title: "5. SLA Exclusions",
+  content: "This SLA does not apply to:",
+  subsections: [
+   { subDescription: "Beta or trial features." },
+   { subDescription: "Third-party software or integrations not under Terracode’s control." },
+   { subDescription: "Issues arising from customer misuse, negligence, or unauthorized changes." },
+    { subDescription: "Outages due to force majeure events." },
+]},
+{ title: "6. Monitoring & Reporting", subsections: [
+   { subDescription: "Terracode monitors system uptime via industry-standard monitoring tools." },
+   { subDescription: "Uptime and performance data are available upon request for auditing purpose" },
+]},
+{ title: "7. Governing Law", subsections: [
+   { subDescription: "This SLA is governed by the laws of [Insert Jurisdiction] and follows the dispute resolution process outlined in Terracode’s Terms & Conditions" },
+]},
 ]
 },
 {
 id: 7,
 title: "Expanded Terms & Conditions",
 date: "2 December 2024",
-description: "These Terms govern use of Terracode’s software, SaaS, and services.",
+description: "These Terms and Conditions (“Terms”) govern your use of Terracode’s software services, SaaS products, websites, and applications (“Services”). By accessing or using our Services, you agree to these Terms. If you do not agree, you may not use the Services",
 sections: [
-{ title: "1. Definitions", subsections: [ { subDescription: "Services, User, Deliverables, Subscription." } ]},
-{ title: "2. Scope", subsections: [ { subDescription: "Covers custom software, SaaS, consulting." } ]},
-{ title: "3. User Responsibilities", subsections: [ { subDescription: "Lawful use, no misuse, maintain credentials." } ]},
-{ title: "4. Accounts", subsections: [ { subDescription: "Must provide accurate info; responsible for activity." } ]},
-{ title: "5. Payments", subsections: [ { subDescription: "Subscriptions recurring; services milestone-based." } ]},
-{ title: "6. IP", subsections: [ { subDescription: "Terracode retains IP; client has limited license." } ]},
-{ title: "7. Confidentiality", subsections: [ { subDescription: "Mutual confidentiality of disclosed info." } ]},
-{ title: "8. Availability", subsections: [ { subDescription: "99.9% uptime target; exclusions apply." } ]},
-{ title: "9. Warranties", subsections: [ { subDescription: "Services provided AS IS." } ]},
-{ title: "10. Liability", subsections: [ { subDescription: "Liability capped at fees paid in last 12 months." } ]},
-{ title: "11. Termination", subsections: [ { subDescription: "Termination for breach, non-payment, misuse." } ]},
-{ title: "12. Force Majeure", subsections: [ { subDescription: "Not liable for uncontrollable events." } ]},
-{ title: "13. Amendments", subsections: [ { subDescription: "Terms may be updated; continued use is consent." } ]},
-{ title: "14. Governing Law", subsections: [ { subDescription: "Disputes resolved under [Insert Jurisdiction]." } ]},
-{ title: "15. Entire Agreement", subsections: [ { subDescription: "Supersedes all prior agreements." } ]}
-]
-}
+{ title: "1. Definitions", subsections: [
+   { subDescription: "“Services” means all software solutions, SaaS products, consulting, support, and deliverables provided by Terracode." },
+   { subDescription: "“User,” “Client,” or “Customer” means any individual or entity using Terracode Services." },
+   { subDescription: "“Deliverables” means software, documentation, or materials provided as part of custom development projects." },
+    { subDescription: "“Subscription” means recurring access to SaaS products under a paid plan." },
+]},
+{ title: "2. Scope of Services", subsections: [
+   { subDescription: "Terracode provides custom software development, consulting, and SaaS subscription products. Services may include ERP, CRM, mobile apps, AI-driven platforms, and other digital solutions. Specific features, deliverables, or timelines may be governed by separate agreements." },
+]},
+{ title: "3. User Responsibilities", subsections: [
+   { subDescription: "Use Services only for lawful purposes." },
+   { subDescription: "Do not misuse Services by distributing malware, spamming, or violating third-party rights." },
+   { subDescription: "Maintain security of your login credentials and accounts." },
+    { subDescription: "Ensure compliance with applicable data protection, financial, and export control laws." },
+]},
+{ title: "4. Account Registration", subsections: [
+   { subDescription: "SaaS Services require an active account. You must provide accurate, complete, and updated information" },
+   { subDescription: "You are solely responsible for all activity under your account." },
+   { subDescription: "Terracode may suspend or terminate accounts suspected of misuse." },
+]},
+{ title: "5. Payments & Subscriptions", subsections: [
+   { subDescription: "SaaS subscriptions are billed recurringly via third-party payment gateways." },
+   { subDescription: "Custom software services are billed on milestones, retainers, or fixed agreements." },
+   { subDescription: "All fees are due as invoiced. Late payments may result in suspension of Services." },
+    { subDescription: "Fees are exclusive of taxes, which remain the Client’s responsibility." },
+]},
+{ title: "6. Intellectual Property", subsections: [
+   { subDescription: "All software, code, designs, and documentation created by Terracode remain our sole intellectual property, unless otherwise agreed in writing." },
+   { subDescription: "Clients are granted a limited license to use Deliverables for internal purposes only" },
+   { subDescription: "Reverse engineering, resale, or reproduction without consent is prohibited." },
+]},
+{ title: "7. Confidentiality", subsections: [
+   { subDescription: "Both parties agree to treat confidential information disclosed during engagements as strictly confidential." },
+   { subDescription: "Confidential data may not be shared with third parties without prior written consent, except as required by law." },
+]},
+{ title: "8. Service Availability",subsections: [
+   { subDescription: "Terracode targets 99.9% uptime for SaaS Services, excluding scheduled maintenance and unforeseen outages." },
+   { subDescription: "Scheduled maintenance will be communicated in advanc" },
+   { subDescription: "Downtime due to external providers (e.g., ISPs, cloud services) or misuse by the Client is excluded." },
+]},
+{ title: "9. Warranties & Disclaimers",subsections: [
+    { subDescription: "Services are provided “AS IS” without warranties of any kind." },
+   { subDescription: "Terracode disclaims implied warranties of merchantability, fitness for purpose, and non-infringement." },
+   { subDescription: "We do not guarantee uninterrupted, error-free, or secure Service" },
+]},
+{ title: "10. Limitation of Liability", subsections: [
+   { subDescription: "Terracode shall not be liable for indirect, incidental, consequential, or punitive damages." },
+   { subDescription: "Liability is capped at the total amount paid by the Client in the preceding 12 months." },
+]},
+{ title: "11. Termination",subsections: [
+   { subDescription: "Terracode may suspend or terminate Services for:" },
+   { subDescription: "Breach of these Terms." },
+   { subDescription: "Non-payment of fee" },
+    { subDescription: "Unlawful or harmful use." },
+    { subDescription: "Clients may terminate by written notice, subject to cancellation or refund policies." },
+]},
+{ title: "12. Force Majeure", subsections: [
+   { subDescription: "Terracode is not liable for delays or failures caused by events outside reasonable control, including natural disasters, internet outages, cyberattacks, or government actions." },
+
+]},
+{ title: "13. Amendments", subsections: [
+   { subDescription: "Terracode may update these Terms from time to time. Changes will be posted on our website with a revised “Last Updated” date. Continued use constitutes acceptance." },
+
+]},
+{ title: "14. Governing Law",subsections: [
+   { subDescription: "These Terms are governed by the laws of [Insert Jurisdiction]." },
+   { subDescription: "Disputes shall be resolved first through good-faith negotiation. If unresolved, disputes shall be settled through binding arbitration or courts in [Insert Jurisdiction]." },
+]},
+{ title: "15. Entire Agreement", subsections: [
+   { subDescription: "These Terms, together with related policies (Privacy, Refund, Cookie Policy, SLA, DPA, EULA, Disclaimer), constitute the entire agreement between you and Terracode, superseding all prior communications" },
+]},
+]}
 ];
