@@ -78,7 +78,7 @@ export default function TandC() {
         {/* Right content */}
         <div className="space-y-6 flex flex-col items-center">
           <h3 className="text-3xl text-center text-[#FDA10A]">
-            More Policies
+            Other Policies
           </h3>
            {hasMoreArticles ? (
             // Display the list of articles if there are any
@@ -92,9 +92,10 @@ export default function TandC() {
                 <div className="flex flex-row gap-4 items-center justify-between mt-4">
                   {/* Read More Arrow with Click Handler */}
                   <div 
-                    className="hover:bg-white transition-colors rounded-full cursor-pointer"
+                    className= "flex hover:bg-white transition-colors rounded-full cursor-pointer"
                     onClick={() => handleReadMore(item.id)}
                   >
+                    {/* <h1 className="text-[#FDA10A] px-4 py-2 rounded-full text-xl">Read More</h1> */}
                     <img src="/Property 23.png" alt="Read More" />
                   </div>
                 </div>
