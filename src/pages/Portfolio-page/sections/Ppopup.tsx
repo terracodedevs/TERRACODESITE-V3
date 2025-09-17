@@ -23,7 +23,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isOpen, onClose, title 
       aria-modal="true"
       aria-label={title}
     >
-      <div className="bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative">
+      <div className="bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] lg:max-h-1/2 overflow-hidden relative ">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -35,16 +35,16 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ isOpen, onClose, title 
           </svg>
         </button>
 
-        <div className="flex flex-col lg:flex-row h-full max-h-[90vh]">
+        <div className="flex flex-col lg:flex-row h-full max-h-1/2 ">
           {/* Left: content (Flipbook) */}
-          <div className="lg:w-3/5 flex items-center justify-center p-4">
-            <div className="w-full h-full max-h-[250px] lg:max-h-[30vh] xl:max-h-[34vh]">
+          <div className="lg:w-4/6  flex items-center justify-center p-4">
+            <div className="w-full h-full">
               {children}
             </div>
           </div>
 
           {/* Right: details */}
-          <div className="lg:w-2/5 p-6 text-white overflow-y-auto max-h-[70vh] lg:max-h-[90vh] scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-neutral-800">
+          <div className="lg:w-2/6 p-6 text-white overflow-y-auto max-h-[70vh] lg:max-h-[90vh] scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-neutral-800">
             <div className="space-y-6">
               <div className="inline-block bg-[#F56D04] text-white px-3 py-1 rounded-full text-sm font-medium">
                 Portfolio

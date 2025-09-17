@@ -11,7 +11,7 @@ type FlipBookProps = {
 
 export default function FlipBook({
   width = 420,
-  height = 600,
+  height = 220,
   showCover = true,
   pages,
   className,
@@ -23,9 +23,9 @@ export default function FlipBook({
         width={width}
         height={height}
         size="stretch"
-        minWidth={315}
-        maxWidth={600}
-        minHeight={420}
+        minWidth={615}
+        maxWidth={800}
+        minHeight={320}
         maxHeight={1350}
         maxShadowOpacity={0.5}
         showCover={showCover}
@@ -45,7 +45,7 @@ export default function FlipBook({
         disableFlipByClick={false}
       >
         {pages.map((page, idx) => (
-          <div key={idx} className="flipbook-page">
+          <div key={idx} className="flipbook-page overflow-hidden">
             {page}
           </div>
         ))}
