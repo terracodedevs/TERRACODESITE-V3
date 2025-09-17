@@ -18,4 +18,5 @@ export default function FlipbookDemo() {
       <FlipBook pages={pages} width={280} height={640} />
     </section>
   );
+  
 }

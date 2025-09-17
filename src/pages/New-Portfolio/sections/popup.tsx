@@ -14,6 +14,7 @@ interface Project {
   technologies?: string[];
 }
 
+
 interface ProjectModalProps {
   project: Project | null;
   isOpen: boolean;

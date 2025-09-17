@@ -15,6 +15,7 @@ export default function FlipBook({
   showCover = true,
   pages,
   className,
+  
 }: FlipBookProps) {
   return (
     <div className={className}>

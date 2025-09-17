@@ -91,6 +91,7 @@ const OurProjects = () => {
                 const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory
                 return matchesCategory
             })
+            
         }, [selectedCategory])
 
 

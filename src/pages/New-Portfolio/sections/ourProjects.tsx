@@ -141,6 +141,7 @@ const OurProjects = () => {
     }, [])
 
     // Filter positions based on selected category and search term
+    
     const filteredPositions = useMemo(() => {
         return projects.filter(project => {
             const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory
