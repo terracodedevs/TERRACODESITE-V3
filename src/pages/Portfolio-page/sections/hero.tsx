@@ -1,15 +1,12 @@
 import TerraButton from "@/components/button"
 import { Rocket } from "lucide-react"
-
-type PHeroProps = {
-  onViewPortfolio?: () => void;
-}
-
-const PHero = ({ onViewPortfolio }: PHeroProps) => {
+import { useNavigate } from "@tanstack/react-router";
+const PHero = () => {
+   const navigate =useNavigate();
   
     const handleClick = () => {
-      onViewPortfolio?.();
-    }
+    navigate({ to: '/company-portfolio' }) // e.g., '/about', '/dashboard', etc.
+  }
   return (
     <div className=" text-white font-lufga mt-6 md:mt-20 px-4 container mx-auto">
       <div className="container mx-auto flex flex-col justify-center items-center">

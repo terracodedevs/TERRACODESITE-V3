@@ -20,6 +20,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as DigitalportfolioRouteImport } from './routes/digitalportfolio'
 import { Route as DGVycmFjb2RlCgRouteImport } from './routes/dGVycmFjb2RlCg'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CompanyPortfolioRouteImport } from './routes/company-portfolio'
 import { Route as CloudSolutionsRouteImport } from './routes/cloud-solutions'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as BusinessSoftwaresRouteImport } from './routes/business-softwares'
@@ -83,6 +84,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CompanyPortfolioRoute = CompanyPortfolioRouteImport.update({
+  id: '/company-portfolio',
+  path: '/company-portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CloudSolutionsRoute = CloudSolutionsRouteImport.update({
   id: '/cloud-solutions',
   path: '/cloud-solutions',
@@ -127,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -147,6 +154,7 @@ export interface FileRoutesByTo {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -168,6 +176,7 @@ export interface FileRoutesById {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -210,6 +220,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -230,6 +241,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -251,6 +263,7 @@ export interface RootRouteChildren {
   BusinessSoftwaresRoute: typeof BusinessSoftwaresRoute
   CareerRoute: typeof CareerRoute
   CloudSolutionsRoute: typeof CloudSolutionsRoute
+  CompanyPortfolioRoute: typeof CompanyPortfolioRoute
   ContactRoute: typeof ContactRoute
   DGVycmFjb2RlCgRoute: typeof DGVycmFjb2RlCgRoute
   DigitalportfolioRoute: typeof DigitalportfolioRoute
@@ -343,6 +356,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/company-portfolio': {
+      id: '/company-portfolio'
+      path: '/company-portfolio'
+      fullPath: '/company-portfolio'
+      preLoaderRoute: typeof CompanyPortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cloud-solutions': {
       id: '/cloud-solutions'
       path: '/cloud-solutions'
@@ -403,6 +423,7 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessSoftwaresRoute: BusinessSoftwaresRoute,
   CareerRoute: CareerRoute,
   CloudSolutionsRoute: CloudSolutionsRoute,
+  CompanyPortfolioRoute: CompanyPortfolioRoute,
   ContactRoute: ContactRoute,
   DGVycmFjb2RlCgRoute: DGVycmFjb2RlCgRoute,
   DigitalportfolioRoute: DigitalportfolioRoute,
