@@ -14,9 +14,9 @@ export default function FlipbookDemo() {
   ];
 
   return (
-    <section style={{ padding: "24px 0" }}>
-      <FlipBook pages={pages} width={280} height={640} />
+    <section className="w-full h-full flex items-center justify-center p-2 sm:p-4">
+      <FlipBook pages={pages} width={480} height={480} className="w-full h-full" />
     </section>
   );
-  
+
 }
