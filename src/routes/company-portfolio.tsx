@@ -10,5 +10,6 @@ function RouteComponent() {
   return <div className='mt-10'>
     <Navbar />
     <FlipbookDemo />
+    
     </div>
 }

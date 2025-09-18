@@ -10,12 +10,11 @@ type FlipBookProps = {
 };
 
 export default function FlipBook({
-  width = 420,
-  height = 220,
+  width = 900,   // portrait baseline
+  height = 1100, // portrait baseline
   showCover = true,
   pages,
   className,
-  
 }: FlipBookProps) {
   return (
     <div className={className}>
@@ -23,10 +22,10 @@ export default function FlipBook({
         width={width}
         height={height}
         size="stretch"
-        minWidth={615}
-        maxWidth={800}
-        minHeight={320}
-        maxHeight={1350}
+        minWidth={320}
+        maxWidth={1400}
+        minHeight={400}
+        maxHeight={2000}
         maxShadowOpacity={0.5}
         showCover={showCover}
         mobileScrollSupport={true}
@@ -34,8 +33,8 @@ export default function FlipBook({
         style={{}}
         startPage={0}
         drawShadow={true}
-        flippingTime={1000}
-        usePortrait={true}
+        flippingTime={800}
+        usePortrait={true}         // prefer single-page portrait mode
         startZIndex={0}
         autoSize={true}
         clickEventForward={true}
