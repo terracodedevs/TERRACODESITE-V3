@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions'
 import { Route as UxDesignRouteImport } from './routes/ux-design'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
@@ -19,6 +20,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as DigitalportfolioRouteImport } from './routes/digitalportfolio'
 import { Route as DGVycmFjb2RlCgRouteImport } from './routes/dGVycmFjb2RlCg'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CompanyPortfolioRouteImport } from './routes/company-portfolio'
 import { Route as CloudSolutionsRouteImport } from './routes/cloud-solutions'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as BusinessSoftwaresRouteImport } from './routes/business-softwares'
@@ -40,6 +42,11 @@ const UxDesignRoute = UxDesignRouteImport.update({
 const TestRoute = TestRouteImport.update({
   id: '/test',
   path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsConditionsRoute = TermsConditionsRouteImport.update({
+  id: '/terms-conditions',
+  path: '/terms-conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceRoute = ServiceRouteImport.update({
@@ -75,6 +82,11 @@ const DGVycmFjb2RlCgRoute = DGVycmFjb2RlCgRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompanyPortfolioRoute = CompanyPortfolioRouteImport.update({
+  id: '/company-portfolio',
+  path: '/company-portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CloudSolutionsRoute = CloudSolutionsRouteImport.update({
@@ -121,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -128,6 +141,7 @@ export interface FileRoutesByFullPath {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -140,6 +154,7 @@ export interface FileRoutesByTo {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -147,6 +162,7 @@ export interface FileRoutesByTo {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -160,6 +176,7 @@ export interface FileRoutesById {
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
+  '/company-portfolio': typeof CompanyPortfolioRoute
   '/contact': typeof ContactRoute
   '/dGVycmFjb2RlCg': typeof DGVycmFjb2RlCgRoute
   '/digitalportfolio': typeof DigitalportfolioRoute
@@ -167,6 +184,7 @@ export interface FileRoutesById {
   '/mobile-apps': typeof MobileAppsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -181,6 +199,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -188,6 +207,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -200,6 +220,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -207,6 +228,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -219,6 +241,7 @@ export interface FileRouteTypes {
     | '/business-softwares'
     | '/career'
     | '/cloud-solutions'
+    | '/company-portfolio'
     | '/contact'
     | '/dGVycmFjb2RlCg'
     | '/digitalportfolio'
@@ -226,6 +249,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/pricing'
     | '/service'
+    | '/terms-conditions'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -239,6 +263,7 @@ export interface RootRouteChildren {
   BusinessSoftwaresRoute: typeof BusinessSoftwaresRoute
   CareerRoute: typeof CareerRoute
   CloudSolutionsRoute: typeof CloudSolutionsRoute
+  CompanyPortfolioRoute: typeof CompanyPortfolioRoute
   ContactRoute: typeof ContactRoute
   DGVycmFjb2RlCgRoute: typeof DGVycmFjb2RlCgRoute
   DigitalportfolioRoute: typeof DigitalportfolioRoute
@@ -246,6 +271,7 @@ export interface RootRouteChildren {
   MobileAppsRoute: typeof MobileAppsRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
+  TermsConditionsRoute: typeof TermsConditionsRoute
   TestRoute: typeof TestRoute
   UxDesignRoute: typeof UxDesignRoute
   WebsiteSolutionsRoute: typeof WebsiteSolutionsRoute
@@ -272,6 +298,13 @@ declare module '@tanstack/react-router' {
       path: '/test'
       fullPath: '/test'
       preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-conditions': {
+      id: '/terms-conditions'
+      path: '/terms-conditions'
+      fullPath: '/terms-conditions'
+      preLoaderRoute: typeof TermsConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service': {
@@ -321,6 +354,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/company-portfolio': {
+      id: '/company-portfolio'
+      path: '/company-portfolio'
+      fullPath: '/company-portfolio'
+      preLoaderRoute: typeof CompanyPortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cloud-solutions': {
@@ -383,6 +423,7 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessSoftwaresRoute: BusinessSoftwaresRoute,
   CareerRoute: CareerRoute,
   CloudSolutionsRoute: CloudSolutionsRoute,
+  CompanyPortfolioRoute: CompanyPortfolioRoute,
   ContactRoute: ContactRoute,
   DGVycmFjb2RlCgRoute: DGVycmFjb2RlCgRoute,
   DigitalportfolioRoute: DigitalportfolioRoute,
@@ -390,6 +431,7 @@ const rootRouteChildren: RootRouteChildren = {
   MobileAppsRoute: MobileAppsRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
+  TermsConditionsRoute: TermsConditionsRoute,
   TestRoute: TestRoute,
   UxDesignRoute: UxDesignRoute,
   WebsiteSolutionsRoute: WebsiteSolutionsRoute,

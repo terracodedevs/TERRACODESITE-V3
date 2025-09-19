@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import ProjectModal from "./popup";
 
 
@@ -36,17 +36,17 @@ const projects: Project[] = [
         detailedDescription: "We created a sleek, user-friendly website for House Of Vision, a leading optical retailer. The site features an intuitive design that highlights their extensive range of eyewear products, making it easy for customers to browse and shop online. With a focus on aesthetics and functionality, the website enhances the brand's online presence and provides a seamless shopping experience.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
-    {
-        title: "Business Website Solution",
-        description: "A modern website for cleaning services provider.",
-        id: "8",
-        category: "Website",
-        link: "https://www.purehopefm.com.au/",
-        img: "/portfolio/pure.png",
-        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
-        detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
-        technologies: ["React", "TypeScript", "Tailwind CSS"],
-    },
+    // {
+    //     title: "Business Website Solution",
+    //     description: "A modern website for cleaning services provider.",
+    //     id: "8",
+    //     category: "Website",
+    //     link: "https://www.purehopefm.com.au/",
+    //     img: "/portfolio/pure.png",
+    //     videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+    //     detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
+    //     technologies: ["React", "TypeScript", "Tailwind CSS"],
+    // },
     
      {
         title: "Smart Access & Manager Dashboard System",
@@ -127,6 +127,19 @@ const OurProjects = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
+    const allowedCategories = useMemo(
+            () => ['All', ...Array.from(new Set(projects.map(p => p.category)))],
+            []
+        )
+    
+        useEffect(() => {
+            const params = new URLSearchParams(window.location.search)
+            const cat = params.get('category')
+            if (cat && allowedCategories.includes(cat)) {
+                setSelectedCategory(cat)
+            }
+        }, [allowedCategories])
+
     // Get unique categories and their counts
     const categoryStats = useMemo(() => {
         const stats = projects.reduce((acc, project) => {
@@ -141,6 +154,7 @@ const OurProjects = () => {
     }, [])
 
     // Filter positions based on selected category and search term
+    
     const filteredPositions = useMemo(() => {
         return projects.filter(project => {
             const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory
@@ -160,7 +174,7 @@ const OurProjects = () => {
 
     return (
         <>
-            <div className="text-white font-lufga my-20 container mx-auto">
+            <div id="our-projects" className="text-white font-lufga my-20 container mx-auto">
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex flex-col mt-8 items-start md:items-center gap-6">
                         <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A] ml-4 sm:ml-0">Our Projects</h1>
