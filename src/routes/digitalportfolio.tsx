@@ -1,5 +1,5 @@
 import Navbar from '@/components/navbar'
-import { useAssetLoader } from '@/hooks/useAssetLoader'
+// import { useAssetLoader } from '@/hooks/useAssetLoader'
 import NPFPage from '@/pages/New-Portfolio/page'
 // import PFPage from '@/pages/Portfolio-page/page'
 import { createFileRoute } from '@tanstack/react-router'

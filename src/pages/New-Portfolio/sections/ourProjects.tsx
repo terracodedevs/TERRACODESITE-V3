@@ -36,17 +36,17 @@ const projects: Project[] = [
         detailedDescription: "We created a sleek, user-friendly website for House Of Vision, a leading optical retailer. The site features an intuitive design that highlights their extensive range of eyewear products, making it easy for customers to browse and shop online. With a focus on aesthetics and functionality, the website enhances the brand's online presence and provides a seamless shopping experience.",
         technologies: ["React", "TypeScript", "Tailwind CSS"],
     },
-    {
-        title: "Business Website Solution",
-        description: "A modern website for cleaning services provider.",
-        id: "8",
-        category: "Website",
-        link: "https://www.purehopefm.com.au/",
-        img: "/portfolio/pure.png",
-        videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
-        detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
-        technologies: ["React", "TypeScript", "Tailwind CSS"],
-    },
+    // {
+    //     title: "Business Website Solution",
+    //     description: "A modern website for cleaning services provider.",
+    //     id: "8",
+    //     category: "Website",
+    //     link: "https://www.purehopefm.com.au/",
+    //     img: "/portfolio/pure.png",
+    //     videoUrl: "https://www.youtube.com/embed/ILXFMVXBnAU?si=3fsGhOhR10yhfYFf&rel=0&modestbranding=1&controls=1&playsinline=1&iv_load_policy=3",
+    //     detailedDescription: "We developed a modern website for a cleaning service company(pure hope), designed to showcase their full range of services while making it simple for customers to learn more and schedule appointments online. The platform includes an easy booking system, service descriptions, and a clean layout that highlights professionalism and trust.",
+    //     technologies: ["React", "TypeScript", "Tailwind CSS"],
+    // },
     
      {
         title: "Smart Access & Manager Dashboard System",
