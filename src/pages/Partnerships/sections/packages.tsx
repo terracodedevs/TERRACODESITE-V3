@@ -26,7 +26,7 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
       "Priority support for urgent issues.",
     ],
     category: "Monthly",
-    className:"w-4 h-3 bg-gray-400 rounded-full m-1"
+    className:"bg-gray-400"
     
   },
   {
@@ -42,7 +42,7 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
       "Monthly performance reports and analytics.",
     ],
     category: "Monthly",
-    className:"w-4 h-3 bg-yellow-500 rounded-full m-1"
+    className:" bg-yellow-500"
   },
 ];
 
@@ -55,10 +55,10 @@ const PartnershipsSection: React.FC = () => {
     return PartnershipspricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
-    const handleProjectClick = (project: PartnershipsPricingPlan) => {
-        setSelectedProject(project)
-        setIsModalOpen(true)
-    }
+    // const handleProjectClick = (project: PartnershipsPricingPlan) => {
+    //     setSelectedProject(project)
+    //     setIsModalOpen(true)
+    // }
 
     const handleCloseModal = () => {
         setIsModalOpen(false)
@@ -77,7 +77,7 @@ const PartnershipsSection: React.FC = () => {
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
-              <div className={plan.className}></div>
+              <div className={`w-4 h-3 bg-gray-400 rounded-full m-1 ${plan.className}`}></div>
             </div>
 
             {/* Header */}
@@ -104,7 +104,7 @@ const PartnershipsSection: React.FC = () => {
             <button className="mt-auto py-3 rounded-3xl border-2 border-orange-500
              hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
               hover:text-white transition-all font-extrabold duration-700 cursor-pointer"
-              onClick={() => handleProjectClick(plan)}>
+              >
 
               Inquire Now
             </button>
@@ -118,6 +118,7 @@ const PartnershipsSection: React.FC = () => {
                 project={selectedProject}
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
+                defaultPackage={selectedProject?.title}
             />
 
     </>

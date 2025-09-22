@@ -1,5 +1,5 @@
-import Questions from '@/pages/team-page/sections/Questions';
 import React from 'react';
+import Inquire from './Inquire';
 
 interface Project {
   title: string;
@@ -18,9 +18,10 @@ interface ProjectModalProps {
   project: Project | null;
   isOpen: boolean;
   onClose: () => void;
+  defaultPackage?: string;
 }
 
-const PartPopup: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })=> {
+const PartPopup: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, defaultPackage })=> {
    if (!isOpen || !project) return null;
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -46,9 +47,7 @@ const PartPopup: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })=> 
         </button>
 
         <div className="flex flex-col lg:flex-row h-full max-h-[90vh] ">
-        <Questions /> 
-
-         
+        <Inquire defaultPackage={defaultPackage}/>
         </div>
       </div>
     </div>
