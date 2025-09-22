@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import PartPopup from "./Part-popup";
 
 interface PartnershipsPricingPlan {
   title: string;
@@ -7,9 +8,9 @@ interface PartnershipsPricingPlan {
   price: string;
   per: string;
   features: string[];
-  buttonText: string;
   category: "Monthly" | "Annually";
 }
+
 
 const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
@@ -24,7 +25,6 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
       "Performant terracode implements infrastructure.",
       "Priority support for urgent issues.",
     ],
-    buttonText: "Inquire Now",
     category: "Monthly",
     className:"w-4 h-3 bg-gray-400 rounded-full m-1"
     
@@ -41,7 +41,6 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
       "Software Craft on request.",
       "Monthly performance reports and analytics.",
     ],
-    buttonText: "Inquire Now",
     category: "Monthly",
     className:"w-4 h-3 bg-yellow-500 rounded-full m-1"
   },
@@ -49,12 +48,25 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
 
 const PartnershipsSection: React.FC = () => {
   const [selectedCategory, _setSelectedCategory] = useState<"Monthly" | "Annually">("Monthly");
+  const [selectedProject, setSelectedProject] = useState<PartnershipsPricingPlan | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const filteredPlans = useMemo(() => {
     return PartnershipspricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
+    const handleProjectClick = (project: PartnershipsPricingPlan) => {
+        setSelectedProject(project)
+        setIsModalOpen(true)
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false)
+        setSelectedProject(null)
+    }
+
   return (
+    <>
     <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:mt-20 ">
       {/* Pricing Cards */}
       <div className="grid md:grid-cols-2  gap-8 w-full max-w-5xl ">
@@ -91,13 +103,25 @@ const PartnershipsSection: React.FC = () => {
             {/* Button */}
             <button className="mt-auto py-3 rounded-3xl border-2 border-orange-500
              hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
-              hover:text-white transition-all font-extrabold duration-700 cursor-pointer">
-              {plan.buttonText}
+              hover:text-white transition-all font-extrabold duration-700 cursor-pointer"
+              onClick={() => handleProjectClick(plan)}>
+
+              Inquire Now
             </button>
           </div>
         ))}
       </div>
     </div>
+
+     {/* Project Modal */}
+            <PartPopup
+                project={selectedProject}
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+            />
+
+    </>
+    
   );
 };
 

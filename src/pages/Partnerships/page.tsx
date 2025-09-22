@@ -1,4 +1,3 @@
-import Questions from "../team-page/sections/Questions"
 import Hero from "./sections/hero"
 import PartnershipsSection from "./sections/packages"
 
@@ -7,7 +6,7 @@ const Partpage = () => {
      <>
      <Hero />
     <PartnershipsSection />
-    <Questions />
+    
     </>
   )
 }
