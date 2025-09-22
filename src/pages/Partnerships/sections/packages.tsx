@@ -55,10 +55,10 @@ const PartnershipsSection: React.FC = () => {
     return PartnershipspricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
-    // const handleProjectClick = (project: PartnershipsPricingPlan) => {
-    //     setSelectedProject(project)
-    //     setIsModalOpen(true)
-    // }
+    const handleProjectClick = (project: PartnershipsPricingPlan) => {
+        setSelectedProject(project)
+        setIsModalOpen(true)
+    }
 
     const handleCloseModal = () => {
         setIsModalOpen(false)
@@ -104,8 +104,9 @@ const PartnershipsSection: React.FC = () => {
             <button className="mt-auto py-3 rounded-3xl border-2 border-orange-500
              hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
               hover:text-white transition-all font-extrabold duration-700 cursor-pointer"
-              >
-
+              
+              onClick={() => handleProjectClick(plan)}
+            >
               Inquire Now
             </button>
           </div>

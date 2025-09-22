@@ -77,11 +77,11 @@ const Inquire = ({ defaultPackage = '' }: InquireProps) => {
   };
 
   return (
-    <div className="flex  justify-center container mx-auto font-lufga my-10 ">
-    <div className="md:w-4/5 mx-auto px-4 py-12 ">
+    <div className="flex justify-center container mx-auto font-lufga ">
+    <div className="md:w-10/12  px-4 py-9  overflow-y-auto max-h-[90vh] ">
     <div className="space-y-6">
-            <div className="space-y-12">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#FDA10A] font-light">Still Have Questions?</h2>
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">Still Have Questions?</h2>
               <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light">We're Here to Help.</p>
             </div>
 
@@ -124,21 +124,27 @@ const Inquire = ({ defaultPackage = '' }: InquireProps) => {
               </div>
 
                {/* Package Selection */}
-              <div className="flex flex-col space-y-4">
-                <label htmlFor="package" className="text-white text-xl font-medium">
-                  Partnership Package
-                </label>
-                <select
-                  id="package"
-                  name="package"
-                  value={formData.package}
-                  onChange={handleInputChanges}
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
-                >
-                  <option value="Silver Partnership">Silver Partnership</option>
-                  <option value="Gold Partnership">Gold Partnership</option>
-                </select>
-              </div>
+<div className="flex flex-col space-y-2 md:space-y-4">
+  <label htmlFor="package" className="text-white text-lg md:text-xl font-medium">
+    Partnership Package
+  </label>
+  <div className="relative">
+    <select
+      id="package"
+      name="package"
+      value={formData.package}
+      onChange={handleInputChanges}
+      className="w-full px-3 py-2 md:px-4 md:py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white appearance-none focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-[#FDA10A] transition-all duration-300"
+      style={{backgroundImage: 'url("public/hero/icons8-down-button-72.png")',
+        backgroundRepeat: 'no-repeat', 
+        backgroundPosition: 'right 1rem center',
+        backgroundSize: '2em'}}
+    >
+      <option value="Silver Partnership">Silver Partnership</option>
+      <option value="Gold Partnership">Gold Partnership</option>
+    </select>
+  </div>
+</div>
 
               {/* Message */}
               <div className="flex flex-col space-y-4">
