@@ -15,6 +15,7 @@ import { Route as TestRouteImport } from './routes/test'
 import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as DigitalportfolioRouteImport } from './routes/digitalportfolio'
@@ -57,6 +58,11 @@ const ServiceRoute = ServiceRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MobileAppsRoute = MobileAppsRouteImport.update({
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/digitalportfolio': typeof DigitalportfolioRoute
   '/home': typeof HomeRoute
   '/mobile-apps': typeof MobileAppsRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
+    | '/partnerships'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
+    | '/partnerships'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/digitalportfolio'
     | '/home'
     | '/mobile-apps'
+    | '/partnerships'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -269,6 +281,7 @@ export interface RootRouteChildren {
   DigitalportfolioRoute: typeof DigitalportfolioRoute
   HomeRoute: typeof HomeRoute
   MobileAppsRoute: typeof MobileAppsRoute
+  PartnershipsRoute: typeof PartnershipsRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   TermsConditionsRoute: typeof TermsConditionsRoute
@@ -319,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mobile-apps': {
@@ -429,6 +449,7 @@ const rootRouteChildren: RootRouteChildren = {
   DigitalportfolioRoute: DigitalportfolioRoute,
   HomeRoute: HomeRoute,
   MobileAppsRoute: MobileAppsRoute,
+  PartnershipsRoute: PartnershipsRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   TermsConditionsRoute: TermsConditionsRoute,
