@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 
 interface PartnershipsPricingPlan {
   title: string;
+  className: string;
   subtitle: string;
   price: string;
   per: string;
@@ -12,52 +13,37 @@ interface PartnershipsPricingPlan {
 
 const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
-    title: "Starter",
-    subtitle: "Ideal for personal portfolios, landing pages, or small static websites.",
-    price: "$9.99",
+    title: "Silver Partnership",
+    subtitle: "Ideal for startups and small businesses",
+    price: "85000 LKR",
     per: " / per month",
     features: [
-      "Ongoing monthly maintenance and support",
-      "Free add-ons included in your plan",
-      "Customized solutions built for your needs",
-      "No upfront investment –start with monthly payment",
-      "Agreement cancellable only after 2 years",
-      "Regular design updates to keep your site professional",
+      "A dedicated virtual expert team to assist you.",
+      "Proactive Software and Hardware monitoring.",
+      "Regular design updates to keep your site professional.",
+      "Performant terracode implements infrastructure.",
+      "Priority support for urgent issues.",
     ],
-    buttonText: "Get Started",
+    buttonText: "Inquire Now",
     category: "Monthly",
+    className:"w-4 h-3 bg-gray-400 rounded-full m-1"
+    
   },
   {
-    title: "Professional",
-    subtitle: "Great for blogs, company websites, or content-driven platforms with an admin panel.",
-    price: "$14.99",
+    title: "Gold Partnership",
+    subtitle: "Perfect for growing businesses",
+    price: "125000 LKR",
     per: "/ per month",
     features: [
-      "Ongoing monthly maintenance and support",
-      "Free add-ons included in your plan",
-      "Customized solutions built for your needs",
-      "No upfront investment –start with monthly payment",
-      "Agreement cancellable only after 2 years",
-      "Regular design updates to keep your site professional",
+      "Everything in Silver Partnership plan.",
+      "Redesigned UI/UX for better user engagement.",
+      "Redevelopment of core features to enhance functionality.",
+      "Software Craft on request.",
+      "Monthly performance reports and analytics.",
     ],
-    buttonText: "Get Started",
+    buttonText: "Inquire Now",
     category: "Monthly",
-  },
-  {
-    title: "Business",
-    subtitle: "Perfect for online stores, payment gateways, advanced business features, and integrations.",
-    price: "$23.99",
-    per: "/ per month",
-    features: [
-      "Ongoing monthly maintenance and support",
-      "Free add-ons included in your plan",
-      "Customized solutions built for your needs",
-      "No upfront investment –start with monthly payment",
-      "Agreement cancellable only after 2 years",
-      "Regular design updates to keep your site professional",
-    ],
-    buttonText: "Get Started",
-    category: "Monthly",
+    className:"w-4 h-3 bg-yellow-500 rounded-full m-1"
   },
 ];
 
@@ -69,9 +55,9 @@ const PartnershipsSection: React.FC = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:mt-20">
+    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:mt-20 ">
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
+      <div className="grid md:grid-cols-2  gap-8 w-full max-w-5xl ">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
@@ -79,7 +65,7 @@ const PartnershipsSection: React.FC = () => {
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
-              <div className="w-4 h-3 bg-gray-400 rounded-full m-1"></div>
+              <div className={plan.className}></div>
             </div>
 
             {/* Header */}
