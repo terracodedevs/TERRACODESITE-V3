@@ -7,6 +7,7 @@ const navbar = {
   links: [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/service' }, // parent dropdown
+    { name: 'Partnerships', path: '/partnerships' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
     { name: 'Career', path: '/career' },
