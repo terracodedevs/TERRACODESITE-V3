@@ -7,6 +7,18 @@
 /* @media (min-width: 640px) {
   
 } */
+
+/* Add in your global CSS (e.g. src/index.css) */
+@layer utilities {
+  .animate-horizontal-scroll { animation: horizontal-scroll 40s linear infinite; }
+  .animate-horizontal-scroll-2 { animation: horizontal-scroll 40s linear infinite; animation-delay: 20s; }
+  @keyframes horizontal-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+
 body {
   @apply bg-[#000000] text-amber-50 ;
 }
