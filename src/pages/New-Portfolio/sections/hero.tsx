@@ -1,11 +1,13 @@
 import TerraButton from "@/components/button"
 import { Rocket } from "lucide-react"
-import { useNavigate } from "@tanstack/react-router";
+
 const PHero = () => {
-   const navigate =useNavigate();
   
     const handleClick = () => {
-    navigate({ to: '/company-portfolio' }) // e.g., '/about', '/dashboard', et
+     // If you keep spaces in the filename:
+    const pdfPath = "/portfolio/teracode company profile.pdf"
+    // Open in new tab (encode spaces)
+    window.open((pdfPath), "_blank", "noopener,noreferrer")
   }
   return (
     <div className=" text-white font-lufga mt-6 md:mt-20 px-4 container mx-auto">

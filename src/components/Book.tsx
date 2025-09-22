@@ -15,6 +15,7 @@ import {
   SRGBColorSpace,
   Uint16BufferAttribute,
   Vector3,
+  Group,
 } from "three";
 import { degToRad } from "three/src/math/MathUtils.js";
 import { pageAtom, pages } from "../pages/New-Portfolio/sections/FilpBook";
@@ -110,13 +111,13 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }: PageP
       : []),
   ]);
   picture.colorSpace = picture2.colorSpace = SRGBColorSpace;
-  const group = useRef(0);
-  const turnedAt = useRef(0);
-  const lastOpened = useRef(opened);
+   const group = useRef<Group | null>(null);
+  const turnedAt = useRef<number>(0);
+  const lastOpened = useRef<boolean>(opened);
 
-  const skinnedMeshRef = useRef(0);
+  const skinnedMeshRef = useRef<SkinnedMesh | null>(null);
 
-  const manualSkinnedMesh = useMemo(() => {
+  const manualSkinnedMesh = useMemo<SkinnedMesh>(() => {
     const bones = [];
     for (let i = 0; i <= PAGE_SEGMENTS; i++) {
       let bone = new Bone();
@@ -168,22 +169,22 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }: PageP
     mesh.add(skeleton.bones[0]);
     mesh.bind(skeleton);
     return mesh;
-  }, []);
+  }, [picture, picture2, pictureRoughness, number]);
 
   // useHelper(skinnedMeshRef, SkeletonHelper, "red");
 
   useFrame((_, delta) => {
-    if (!skinnedMeshRef.current) {
+    if (!skinnedMeshRef.current || !group.current) {
       return;
     }
 
+    const materials = skinnedMeshRef.current.material as MeshStandardMaterial[];
     const emissiveIntensity = highlighted ? 0.22 : 0;
-    skinnedMeshRef.current.material[4].emissiveIntensity =
-      skinnedMeshRef.current.material[5].emissiveIntensity = MathUtils.lerp(
-        skinnedMeshRef.current.material[4].emissiveIntensity,
-        emissiveIntensity,
-        0.1
-      );
+    materials[4].emissiveIntensity = materials[5].emissiveIntensity = MathUtils.lerp(
+      materials[4].emissiveIntensity,
+      emissiveIntensity,
+      0.1
+    );
 
     if (lastOpened.current !== opened) {
       turnedAt.current = Date.now();
@@ -199,7 +200,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }: PageP
 
     const bones = skinnedMeshRef.current.skeleton.bones;
     for (let i = 0; i < bones.length; i++) {
-      const target = i === 0 ? group.current : bones[i];
+      const target: any = i === 0 ? group.current : bones[i];
 
       const insideCurveIntensity = i < 8 ? Math.sin(i * 0.2 + 0.25) : 0;
       const outsideCurveIntensity = i >= 8 ? Math.cos(i * 0.3 + 0.09) : 0;
@@ -277,35 +278,23 @@ export const Book = ({ ...props }) => {
   const [delayedPage, setDelayedPage] = useState(page);
 
   useEffect(() => {
-    let timeout:any;
-    const goToPage = () => {
-      setDelayedPage((delayedPage) => {
-        if (page === delayedPage) {
-          return delayedPage;
-        } else {
-          timeout = setTimeout(
-            () => {
-              goToPage();
-            },
-            Math.abs(page - delayedPage) > 2 ? 50 : 150
-          );
-          if (page > delayedPage) {
-            return delayedPage + 1;
-          }
-          if (page < delayedPage) {
-            return delayedPage - 1;
-          }
-        }
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+   const step = () => {
+      setDelayedPage(cur => {
+        if (cur === page) return cur;              // always returns number
+        timeout = setTimeout(step, Math.abs(page - cur) > 2 ? 50 : 150);
+        return cur + (page > cur ? 1 : -1);        // move one step toward target
       });
     };
-    goToPage();
+
+    step();
     return () => {
-      clearTimeout(timeout);
+      if (timeout) clearTimeout(timeout);
     };
   }, [page]);
 
   return (
-    <group {...props} rotation-y={-Math.PI / 2}>
+    <group {...props} rotation-y={-Math.PI / 2} >
       {[...pages].map((pageData, index) => (
         <Page
           key={index}
