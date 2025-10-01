@@ -4,6 +4,7 @@ import PartPopup from "./Part-popup";
 interface PartnershipsPricingPlan {
   title: string;
   className: string;
+  className2?: string;
   subtitle: string;
   price: string;
   per: string;
@@ -22,12 +23,10 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
       "A dedicated virtual expert team to assist you.",
       "Proactive Software and Hardware monitoring.",
       "Regular design updates to keep your site professional.",
-      "Performant terracode implements infrastructure.",
-      "Priority support for urgent issues.",
+      
     ],
     category: "Monthly",
-    className:"bg-gray-400"
-    
+    className:"bg-gray-400",
   },
   {
     title: "Gold Partnership",
@@ -36,13 +35,23 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     per: "/ per month",
     features: [
       "Everything in Silver Partnership plan.",
-      "Redesigned UI/UX for better user engagement.",
-      "Redevelopment of core features to enhance functionality.",
-      "Software Craft on request.",
-      "Monthly performance reports and analytics.",
+      "Performant terracode implemented infrastructure.",
+      "Extra development allowances per month.",
     ],
     category: "Monthly",
-    className:" bg-yellow-500"
+    className:" bg-yellow-500 ",
+    className2:"border-1 border-orange-400 scale-105 ",
+  },
+   {
+    title: "Elite Partnership",
+    subtitle: "Best for established businesses",
+    price: "200000 LKR",
+    per: "/ per month",
+    features: [
+      "On-site dev team on your your business premisses.",
+    ],
+    category: "Monthly",
+    className:"bg-sky-500",
   },
 ];
 
@@ -67,13 +76,13 @@ const PartnershipsSection: React.FC = () => {
 
   return (
     <>
-    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:mt-20 ">
+    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:my-28 ">
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-2  gap-8 w-full max-w-5xl ">
+      <div className="grid md:grid-cols-3  gap-8 w-full max-w-5xl ">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between"
+            className={`${plan.className2} bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between`}
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
