@@ -37,7 +37,7 @@ export default function Footer() {
                 <Link to="/mobile-apps" className="hover:text-amber-500">Mobile Application</Link>
                 <Link to="/ai-solutions" className="hover:text-amber-500">Artificial Intelligence</Link>
                 <Link to="/business-softwares" className="hover:text-amber-500">Business Software</Link>
-                <Link to="/cloud-solutions" className="hover:text-amber-500">Cloude Services</Link>
+                <Link to="/cloud-solutions" className="hover:text-amber-500">Cloud Services</Link>
             </div>
         </div>
         <div className="flex flex-col px-4  items-start gap-4 justify">
@@ -72,7 +72,7 @@ export default function Footer() {
                 <a 
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.instagram.com/terracodedev"
+                href="https://www.instagram.com/terracode.team"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-white  transition-colors rounded-md  hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
                   <Instagram className="w-auto h-6 " />
                 </a>
@@ -123,7 +123,7 @@ export default function Footer() {
                 <Link to="/mobile-apps">Mobile Application</Link>
                 <Link to="/ai-solutions">Artificial Intelligence</Link>
                 <Link to="/business-softwares">Business Software</Link>
-                <Link to="/cloud-solutions">Cloude Services</Link>
+                <Link to="/cloud-solutions">Cloud Services</Link>
                 </div>
             </div>  
         </div>
