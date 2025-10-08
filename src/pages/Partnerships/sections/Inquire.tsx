@@ -142,6 +142,8 @@ const Inquire = ({ defaultPackage = '' }: InquireProps) => {
     >
       <option value="Silver Partnership">Silver Partnership</option>
       <option value="Gold Partnership">Gold Partnership</option>
+      <option value="Elite Partnership">Elite Partnership</option>
+
     </select>
   </div>
 </div>
