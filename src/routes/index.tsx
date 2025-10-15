@@ -15,6 +15,7 @@ export const Route = createFileRoute('/')({
       'processcard/2.svg',
       'processcard/3.svg',
       'processcard/4.svg',
+      '/Property 23.png'
     ]
     const loaded = useAssetLoader(assets)
 
