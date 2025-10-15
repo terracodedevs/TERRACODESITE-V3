@@ -147,7 +147,7 @@ const ProfileCircles: React.FC = () => {
       id: 8,
       name: "A H L I Umayanga",
       role: "Software Engineer",
-      image: "/employee/umaya.png",
+      image: "/team/umayanga.jpg",
       bgColor: "bg-green-200",
       lightColor: "bg-gradient-to-br from-green-300 to-emerald-500"
     },
