@@ -21,7 +21,7 @@ const ServiceAbout: React.FC<ServiceAboutProps> = ({
   return (
     <>
     <div className="  bg-[#1A1A1A] font-lufga mt-20 ">
-         <div className="grid grid-cols-1 md:grid-cols-2 p-4 container mx-auto ">
+         <div className="grid grid-cols-1 lg:grid-cols-2 p-4 container mx-auto ">
            <div className="flex flex-col  items-start justify-start p-4 md:space-y-5">
                <p className="text-white mt-2 text-xl md:text-2xl">
                 {paragraph1}
@@ -34,7 +34,7 @@ const ServiceAbout: React.FC<ServiceAboutProps> = ({
                </p>
            </div>
            <div className=" text-white flex flex-wrap py-5 ">
-               <div className='flex flex-col md:gap-2 px-4 '>
+               <div className='flex flex-col md:gap-2 px-4  '>
                 <h1 className="text-4xl md:text-6xl text-[#FDA10A]">Highlights</h1>
                   <ul className="space-y-3 flex flex-wrap">
                     {highlights.map((item) => (
