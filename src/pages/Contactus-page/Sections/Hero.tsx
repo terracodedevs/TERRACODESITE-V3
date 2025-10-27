@@ -141,7 +141,7 @@ const Hero = () => {
               </div>
 
               {/* Terms Checkbox */}
-              <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
+              <div className="flex flex-col justify-start items-start lg:flex-row lg:items-center gap-3 lg:justify-between">
                 <div className='flex flex-row items-center'>
                 <input
                   type="checkbox"
