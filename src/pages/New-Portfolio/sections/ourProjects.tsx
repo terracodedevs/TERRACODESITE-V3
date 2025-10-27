@@ -216,7 +216,7 @@ const OurProjects = () => {
                                         />
                                         
                                         {/* Hover Overlay - now only on the image */}
-                                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex-col justify-center items-center hidden md:flex ">
+                                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex-col justify-center items-center hidden xl:flex ">
                                             <button 
                                                 onClick={() => handleProjectClick(project)}
                                                 className=" text-white px-6 py-3 rounded-full hover:shadow-lg transition-all transform hover:scale-105 border-2 border-amber-500 font-bold"
@@ -225,7 +225,7 @@ const OurProjects = () => {
                                             </button>
                                         </div>
                                          {/* mobile version preview button */}
-                                        <div className="absolute inset-0 bg-black/30 rounded-3xl flex flex-col justify-center items-center md:hidden">
+                                        <div className="absolute inset-0 bg-black/30 rounded-3xl flex flex-col justify-center items-center xl:hidden">
                                             <button 
                                                 onClick={() => handleProjectClick(project)}
                                                 className=" text-white px-6 py-3 rounded-full bg-orange-400 transition-all transform  border-2 border-white font-bold"

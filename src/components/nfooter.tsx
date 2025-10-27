@@ -12,10 +12,10 @@ export default function Footer() {
   return (
     <div>
     {/* Dextop View     */}
-    <div className="hidden md:grid md:grid-cols-4 font-lufga container mx-auto">
-        <div className="flex flex-col px-4 gap-4 items-start justify-start">
+    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 font-lufga container mx-auto space-y-10 lg:space-y-0">
+        <div className="flex flex-col px-4 gap-4  items-start justify-start ">
             <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" />
-             <a className=" [text-decoration:underline]  font-semibold text-wrap " href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
+             <a className=" [text-decoration:underline]  font-semibold text-wrap" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
              <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">

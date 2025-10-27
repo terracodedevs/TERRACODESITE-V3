@@ -80,7 +80,7 @@ const Questions = () => {
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               {/* First Name and Email Row */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 gap-4">
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="firstName" className="text-white text-xl font-medium">
                     Tell us your name
@@ -135,7 +135,7 @@ Where can we reach you?
               </div>
 
               {/* Terms Checkbox */}
-              <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
+              <div className="flex flex-col justify-start items-start lg:flex-row lg:items-center gap-3 lg:justify-between">
                 <div className='flex flex-row items-center'>
                 <input
                   type="checkbox"

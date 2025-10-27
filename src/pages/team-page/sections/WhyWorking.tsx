@@ -52,7 +52,7 @@ const WhyWorking = () => {
                     Why Work at Terracode
                     </p>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:flex-row gap-5 flex-wrap xl:flex-nowrap"> 
+                <div className="flex flex-col justify-center items-center lg:flex-row gap-5 flex-wrap xl:flex-nowrap "> 
                 {WorkCardData.map((item, index) => (
                     <ProcessCardItem
                     key={index}

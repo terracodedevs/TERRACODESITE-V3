@@ -16,11 +16,11 @@ const DirectContact = () => {
                     </a>
                     <li className="text-md md:text-xl flex flex-row justify-start gap-4 items-center">
                       <Phone/>
-                      <div className="flex flex-col md:flex-row gap-2">
+                      <div className="flex flex-col lg:flex-row gap-2">
                         <a href="tel:+94112838640"> +94 11 283 86 40 </a> 
-                        <span className="hidden md:block">|</span>
+                        <span className="hidden lg:block">|</span>
                         <a href="tel:+94701908095"> +94 70 190 80 95 </a> 
-                        <span className="hidden md:block">|</span>
+                        <span className="hidden lg:block">|</span>
                         <a href="tel:+94770086857"> +94 77 008 68 57</a>
                       </div>
                     </li>
