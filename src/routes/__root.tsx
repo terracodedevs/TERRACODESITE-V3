@@ -9,6 +9,7 @@ import { CookieBanner } from '@/components/CookieFile'
 import NotFound from '@/components/NotFound'
 import Navbar from '@/components/navbar'
 import { ScrollToTop } from '@/components/scrolltop'
+import SnowFlowerEffect  from '@/components/snow/snow-effect'
 
 
 
@@ -19,7 +20,9 @@ export const Route = createRootRoute({
 
     return (
       <div>
+        
         <AnimatePresence mode="wait">
+          
           <motion.div
             key="content"
             initial={{ opacity: 0, y: 10 }}
@@ -27,6 +30,7 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <SnowFlowerEffect />
             <ScrollToTop/>
             <CookieBanner />
             {/* <Navbar /> */}
