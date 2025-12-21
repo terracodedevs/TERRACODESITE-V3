@@ -38,7 +38,7 @@ const Snowfall: React.FC = () => {
     };
 
     const initSnowflakes = () => {
-      const count = Math.floor((canvas.width * canvas.height) / 20000);
+      const count = Math.floor((canvas.width * canvas.height) / 25000);
       const flakes: Snowflake[] = [];
       for (let i = 0; i < count; i++) {
         flakes.push({
