@@ -1,9 +1,329 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from '@tanstack/react-router';
+import { ChevronDown, Tag } from 'lucide-react';
 
-const Payform = () => {
-  return (
-    <div>pay-form</div>
-  )
+interface PackageType {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
 }
 
-export default Payform
+interface FormData {
+  firstName: string;
+  lastName: string;
+  companyName: string;
+  note: string;
+  selectedPackage: string;
+  discountCode: string;
+  totalPrice: string;
+  agreeToTerms: boolean;
+}
+
+const packages: PackageType[] = [
+  { id: 'starter', name: 'Starter', price: 999, description: 'Perfect for small projects' },
+  { id: 'professional', name: 'Professional', price: 2499, description: 'For growing businesses' },
+  { id: 'business', name: 'Business', price: 4999, description: 'Enterprise solutions' },
+  { id: 'custom', name: 'Custom', price: 0, description: 'Tailored to your needs' }
+];
+
+const discountCodes: { [key: string]: number } = {
+  'SAVE10': 10,
+  'SAVE20': 20,
+  'SAVE30': 30
+};
+
+const Payform = () => {
+  const navigate = useNavigate();
+  const [showPackageDropdown, setShowPackageDropdown] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    companyName: '',
+    note: '',
+    selectedPackage: '',
+    discountCode: '',
+    totalPrice: '',
+    agreeToTerms: false
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
+  };
+
+  const handlePackageSelect = (packageId: string) => {
+    const selectedPkg = packages.find(p => p.id === packageId);
+    setFormData(prev => ({
+      ...prev,
+      selectedPackage: packageId,
+      totalPrice: packageId === 'custom' ? '' : String(selectedPkg?.price || 0)
+    }));
+    setShowPackageDropdown(false);
+  };
+
+  const calculateTotal = () => {
+    if (!formData.selectedPackage) return 0;
+    
+    const selectedPkg = packages.find(p => p.id === formData.selectedPackage);
+    let total = formData.selectedPackage === 'custom' 
+      ? Number(formData.totalPrice) || 0 
+      : selectedPkg?.price || 0;
+
+    if (formData.discountCode && discountCodes[formData.discountCode.toUpperCase()]) {
+      const discount = discountCodes[formData.discountCode.toUpperCase()];
+      total = total - (total * discount / 100);
+    }
+
+    return total;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.agreeToTerms) {
+      alert('Please agree with Terms and Privacy Policy.');
+      return;
+    }
+
+    const queryParams = new URLSearchParams({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      companyName: formData.companyName,
+      note: formData.note,
+      selectedPackage: formData.selectedPackage,
+      discountCode: formData.discountCode,
+      totalPrice: String(calculateTotal())
+    });
+
+    navigate({ to: '/payments-details' as any, search: Object.fromEntries(queryParams) as any });
+  };
+
+  const selectedPackageData = packages.find(p => p.id === formData.selectedPackage);
+
+  return (
+    <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4">
+      <div className="container mx-auto max-w-4xl">
+        <div className="mb-8">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">
+            Complete Your Order
+          </h1>
+          <p className="text-xl text-gray-300">Fill in your details to proceed with payment</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name Fields */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="firstName" className="text-white text-lg font-medium">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
+                placeholder="Your first name"
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300"
+              />
+            </div>
+
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="lastName" className="text-white text-lg font-medium">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+                placeholder="Your last name"
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Company Name */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="companyName" className="text-white text-lg font-medium">
+              Company Name
+            </label>
+            <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleInputChange}
+              placeholder="Your company name"
+              required
+              className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300"
+            />
+          </div>
+
+          {/* Note */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="note" className="text-white text-lg font-medium">
+              Note
+            </label>
+            <textarea
+              id="note"
+              name="note"
+              value={formData.note}
+              onChange={handleInputChange}
+              placeholder="We are listening, what's on your mind?"
+              rows={6}
+              className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300 resize-none"
+            />
+          </div>
+
+          {/* Package Selection and Discount Code */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Package Dropdown */}
+            <div className="flex flex-col space-y-2 relative">
+              <label htmlFor="package" className="text-white text-lg font-medium">
+                Select Package
+              </label>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setShowPackageDropdown(!showPackageDropdown)}
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white text-left focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300 flex items-center justify-between"
+                >
+                  <span className={selectedPackageData ? 'text-white' : 'text-gray-400'}>
+                    {selectedPackageData ? selectedPackageData.name : 'Please select your package'}
+                  </span>
+                  <ChevronDown className={`w-5 h-5 transition-transform ${showPackageDropdown ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu */}
+                {showPackageDropdown && (
+                  <div className="absolute z-10 w-full mt-2 bg-neutral-800 border border-neutral-700 rounded-xl shadow-lg overflow-hidden">
+                    {packages.map((pkg) => (
+                      <button
+                        key={pkg.id}
+                        type="button"
+                        onClick={() => handlePackageSelect(pkg.id)}
+                        className="w-full px-4 py-3 text-left hover:bg-neutral-700 transition-colors duration-200 border-b border-neutral-700 last:border-b-0"
+                      >
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <div className="text-white font-medium">{pkg.name}</div>
+                            <div className="text-gray-400 text-sm">{pkg.description}</div>
+                          </div>
+                          {pkg.price > 0 && (
+                            <div className="text-[#FDA10A] font-semibold">${pkg.price}</div>
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Discount Code */}
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="discountCode" className="text-white text-lg font-medium">
+                Code
+              </label>
+              <div className="relative">
+                <Tag className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  id="discountCode"
+                  name="discountCode"
+                  value={formData.discountCode}
+                  onChange={handleInputChange}
+                  placeholder="Enter discount code"
+                  className="w-full pl-10 pr-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300"
+                />
+              </div>
+              {formData.discountCode && discountCodes[formData.discountCode.toUpperCase()] && (
+                <p className="text-green-400 text-sm">
+                  {discountCodes[formData.discountCode.toUpperCase()]}% discount applied!
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Total Price */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="totalPrice" className="text-white text-lg font-medium">
+              Total Price
+            </label>
+            <input
+              type="number"
+              id="totalPrice"
+              name="totalPrice"
+              value={formData.selectedPackage === 'custom' ? formData.totalPrice : calculateTotal()}
+              onChange={handleInputChange}
+              placeholder="Total amount"
+              readOnly={formData.selectedPackage !== 'custom'}
+              className={`w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-transparent transition-all duration-300 ${
+                formData.selectedPackage !== 'custom' ? 'cursor-not-allowed opacity-75' : ''
+              }`}
+            />
+            {formData.discountCode && discountCodes[formData.discountCode.toUpperCase()] && formData.selectedPackage !== 'custom' && (
+              <div className="text-sm text-gray-400">
+                Original: ${packages.find(p => p.id === formData.selectedPackage)?.price || 0} - 
+                Discount: {discountCodes[formData.discountCode.toUpperCase()]}% = 
+                <span className="text-[#FDA10A] font-semibold"> ${calculateTotal()}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Terms and Submit */}
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:justify-between">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="agreeToTerms"
+                name="agreeToTerms"
+                checked={formData.agreeToTerms}
+                onChange={handleInputChange}
+                className="sr-only"
+              />
+              <div
+                className={`w-5 h-5 flex items-center justify-center border ${
+                  formData.agreeToTerms ? 'bg-[#FDA10A] border-[#FDA10A]' : 'bg-transparent border-gray-400'
+                } rounded cursor-pointer`}
+                onClick={() => setFormData(prev => ({ ...prev, agreeToTerms: !prev.agreeToTerms }))}
+              >
+                {formData.agreeToTerms && (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
+              <label htmlFor="agreeToTerms" className="text-gray-300 text-lg ml-2 cursor-pointer">
+                I agree with Terms and Privacy Policy
+              </label>
+            </div>
+
+            <button
+              type="submit"
+            //   disabled={!formData.agreeToTerms || !formData.selectedPackage}
+              className="flex items-center justify-center gap-4 w-1/3 mt-auto py-3 rounded-3xl border-2 border-orange-500
+             hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
+              hover:text-white transition-all font-extrabold duration-700 cursor-pointer"
+            >
+              Proceed
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Payform;
