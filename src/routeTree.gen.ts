@@ -15,6 +15,7 @@ import { Route as TestRouteImport } from './routes/test'
 import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PaymentsDetailsRouteImport } from './routes/payments-details'
 import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as PartnershipsRouteImport } from './routes/partnerships'
 import { Route as MobileAppsRouteImport } from './routes/mobile-apps'
@@ -59,6 +60,11 @@ const ServiceRoute = ServiceRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsDetailsRoute = PaymentsDetailsRouteImport.update({
+  id: '/payments-details',
+  path: '/payments-details',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PaymentsRoute = PaymentsRouteImport.update({
@@ -153,6 +159,7 @@ export interface FileRoutesByFullPath {
   '/mobile-apps': typeof MobileAppsRoute
   '/partnerships': typeof PartnershipsRoute
   '/payments': typeof PaymentsRoute
+  '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -176,6 +183,7 @@ export interface FileRoutesByTo {
   '/mobile-apps': typeof MobileAppsRoute
   '/partnerships': typeof PartnershipsRoute
   '/payments': typeof PaymentsRoute
+  '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -200,6 +208,7 @@ export interface FileRoutesById {
   '/mobile-apps': typeof MobileAppsRoute
   '/partnerships': typeof PartnershipsRoute
   '/payments': typeof PaymentsRoute
+  '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/terms-conditions': typeof TermsConditionsRoute
@@ -225,6 +234,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/partnerships'
     | '/payments'
+    | '/payments-details'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -248,6 +258,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/partnerships'
     | '/payments'
+    | '/payments-details'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -271,6 +282,7 @@ export interface FileRouteTypes {
     | '/mobile-apps'
     | '/partnerships'
     | '/payments'
+    | '/payments-details'
     | '/pricing'
     | '/service'
     | '/terms-conditions'
@@ -295,6 +307,7 @@ export interface RootRouteChildren {
   MobileAppsRoute: typeof MobileAppsRoute
   PartnershipsRoute: typeof PartnershipsRoute
   PaymentsRoute: typeof PaymentsRoute
+  PaymentsDetailsRoute: typeof PaymentsDetailsRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   TermsConditionsRoute: typeof TermsConditionsRoute
@@ -345,6 +358,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments-details': {
+      id: '/payments-details'
+      path: '/payments-details'
+      fullPath: '/payments-details'
+      preLoaderRoute: typeof PaymentsDetailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/payments': {
@@ -471,6 +491,7 @@ const rootRouteChildren: RootRouteChildren = {
   MobileAppsRoute: MobileAppsRoute,
   PartnershipsRoute: PartnershipsRoute,
   PaymentsRoute: PaymentsRoute,
+  PaymentsDetailsRoute: PaymentsDetailsRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   TermsConditionsRoute: TermsConditionsRoute,
