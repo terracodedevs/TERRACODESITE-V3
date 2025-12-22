@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from '@tanstack/react-router';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useSearch } from '@tanstack/react-router';
 import { ChevronDown, Tag } from 'lucide-react';
 
 interface PackageType {
@@ -35,6 +35,7 @@ const discountCodes: { [key: string]: number } = {
 
 const Payform = () => {
   const navigate = useNavigate();
+  const searchParams = useSearch({ strict: false }) as any;
   const [showPackageDropdown, setShowPackageDropdown] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -46,6 +47,22 @@ const Payform = () => {
     totalPrice: '',
     agreeToTerms: false
   });
+
+  // Populate form with search params when coming back from details page
+  useEffect(() => {
+    if (searchParams && Object.keys(searchParams).length > 0) {
+      setFormData({
+        firstName: searchParams.firstName || '',
+        lastName: searchParams.lastName || '',
+        companyName: searchParams.companyName || '',
+        note: searchParams.note || '',
+        selectedPackage: searchParams.selectedPackage || '',
+        discountCode: searchParams.discountCode || '',
+        totalPrice: searchParams.totalPrice || '',
+        agreeToTerms: searchParams.agreeToTerms === 'true' || false
+      });
+    }
+  }, [searchParams]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -60,7 +77,7 @@ const Payform = () => {
     setFormData(prev => ({
       ...prev,
       selectedPackage: packageId,
-      totalPrice: packageId === 'custom' ? '' : String(selectedPkg?.price || 0)
+      totalPrice: packageId === 'custom' ? prev.totalPrice : String(selectedPkg?.price || 0)
     }));
     setShowPackageDropdown(false);
   };
@@ -96,7 +113,8 @@ const Payform = () => {
       note: formData.note,
       selectedPackage: formData.selectedPackage,
       discountCode: formData.discountCode,
-      totalPrice: String(calculateTotal())
+      totalPrice: String(calculateTotal()),
+      agreeToTerms: String(formData.agreeToTerms)
     });
 
     navigate({ to: '/payments-details' as any, search: Object.fromEntries(queryParams) as any });
@@ -246,7 +264,7 @@ const Payform = () => {
                 />
               </div>
               {formData.discountCode && discountCodes[formData.discountCode.toUpperCase()] && (
-                <p className="text-green-400 text-sm">
+                <p className="text-orange-300 text-sm">
                   {discountCodes[formData.discountCode.toUpperCase()]}% discount applied!
                 </p>
               )}
@@ -309,10 +327,10 @@ const Payform = () => {
 
             <button
               type="submit"
-            //   disabled={!formData.agreeToTerms || !formData.selectedPackage}
-              className="flex items-center justify-center gap-4 w-1/3 mt-auto py-3 rounded-3xl border-2 border-orange-500
+              // disabled={!formData.agreeToTerms || !formData.selectedPackage}
+              className="flex items-center justify-center gap-4 w-full lg:w-1/3 mt-auto py-3 rounded-3xl border-2 border-orange-500
              hover:border-white text-orange-400 hover:bg-gradient-to-r from-[#f56d04] to-[#fb9709]
-              hover:text-white transition-all font-extrabold duration-700 cursor-pointer"
+              hover:text-white transition-all font-extrabold duration-700 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Proceed
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

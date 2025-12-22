@@ -112,7 +112,7 @@ const PaymentDetails = () => {
               {discountCode && (
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Discount Code</p>
-                  <p className="text-green-400 text-lg font-medium">{discountCode}</p>
+                  <p className="text-orange-400 text-lg font-medium">{discountCode}</p>
                 </div>
               )}
             </div>
@@ -131,7 +131,7 @@ const PaymentDetails = () => {
               {discountCode && (
                 <div className="flex justify-between items-center py-3 border-b border-neutral-700">
                   <span className="text-gray-300 text-lg">Discount Applied</span>
-                  <span className="text-green-400 text-lg font-medium">{discountCode}</span>
+                  <span className="text-orange-400 text-lg font-medium">{discountCode}</span>
                 </div>
               )}
               <div className="flex justify-between items-center py-4 bg-[#FDA10A]/10 rounded-lg px-4 mt-4">
