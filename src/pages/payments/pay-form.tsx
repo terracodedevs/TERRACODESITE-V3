@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearch } from '@tanstack/react-router';
-import { ChevronDown, Tag } from 'lucide-react';
+import { ArrowLeft, ChevronDown, Tag } from 'lucide-react';
 
 interface PackageType {
   id: string;
@@ -123,9 +123,16 @@ const Payform = () => {
   const selectedPackageData = packages.find(p => p.id === formData.selectedPackage);
 
   return (
-    <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4">
+    <div className="bg-black text-white font-lufga min-h-screen py-10  px-4 md:px-4 ">
       <div className="container mx-auto max-w-4xl">
         <div className="mb-8">
+          <button
+            onClick={() => navigate({ to: '/' })}
+            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Home
+          </button>
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">
             Complete Your Order
           </h1>
