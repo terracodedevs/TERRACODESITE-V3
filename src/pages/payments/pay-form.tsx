@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearch } from '@tanstack/react-router';
-import { ArrowLeft, ChevronDown, Tag } from 'lucide-react';
+import { ArrowLeft, ChevronDown} from 'lucide-react';
 
 interface PackageType {
   id: string;

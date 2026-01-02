@@ -1,10 +1,26 @@
 import { useNavigate, useSearch } from '@tanstack/react-router';
 import { ArrowLeft, CheckCircle, Edit } from 'lucide-react';
+import api from '@/api/axios';
 
 const PaymentDetails = () => {
   const navigate = useNavigate();
   const searchParams = useSearch({ strict: false });
-
+  
+  interface FormData {
+    firstName: string;
+    lastName: string;
+    companyName: string;
+    email: string;
+    country: string;
+    phoneNumber: string;
+    currency: string;
+    note: string;
+    items: string;
+    discountCode: string;
+    amount: string;
+    agreeToTerms: string;
+  }
+  
   const {
     firstName = '',
     lastName = '',
@@ -16,8 +32,9 @@ const PaymentDetails = () => {
     items = '',
     discountCode = '',
     amount = '0',
-    currency = 'LKR'
-  } = searchParams as any;
+    currency = 'LKR',
+    agreeToTerms = ''
+  } = searchParams as FormData;
 
   const packageNames: { [key: string]: string } = {
     starter: 'Starter Package',
@@ -33,10 +50,42 @@ const PaymentDetails = () => {
     });
   };
 
-  const handleConfirmPayment = () => {
-    // Here you would integrate with your payment gateway
-    alert('Payment gateway integration would happen here');
+  const handleConfirmPayment = async () => {
+    try {
+      const payload = {
+        first_name: firstName,
+        last_name: lastName,
+        company_name: companyName,
+        email: email,
+        phone: phoneNumber,
+        address: " ",
+        note: note,
+        city: " ",
+        country: country,
+        items: items,
+        agree_to_terms: Boolean(agreeToTerms),
+        amount: amount,
+        currency: currency,
+      };
+  
+      const response = await api.post("api/payment-hash", payload);
+  
+      // Example: backend returns payment hash / redirect URL
+      console.log("Payment initiated:", response.data);
+  
+      // Optional: navigate to payment gateway or success page
+      // navigate({ to: "/payment-success", search: response.data });
+  
+    } catch (error: any) {
+      console.error("Payment error:", error);
+  
+      const message =
+        error?.response?.data?.message || "Payment initiation failed";
+  
+      alert(message);
+    }
   };
+
 
   return (
     <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4 mb-32">
