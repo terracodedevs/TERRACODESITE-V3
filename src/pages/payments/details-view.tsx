@@ -61,7 +61,7 @@ const PaymentDetails = () => {
         address: " ",
         note: note,
         city: " ",
-        country: country,
+        country: " ",
         items: items,
         agree_to_terms: Boolean(agreeToTerms),
         amount: amount,
