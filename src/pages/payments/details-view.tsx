@@ -9,10 +9,14 @@ const PaymentDetails = () => {
     firstName = '',
     lastName = '',
     companyName = '',
+    email = '',
+    phoneNumber = '',
+    country = '',
     note = '',
-    selectedPackage = '',
+    items = '',
     discountCode = '',
-    totalPrice = '0'
+    amount = '0',
+    currency = 'LKR'
   } = searchParams as any;
 
   const packageNames: { [key: string]: string } = {
@@ -35,7 +39,7 @@ const PaymentDetails = () => {
   };
 
   return (
-    <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4">
+    <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4 mb-32">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-8">
@@ -48,7 +52,7 @@ const PaymentDetails = () => {
           </button>
           <div className="flex items-center gap-3 mb-4">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-extralight text-[#FDA10A]">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight text-[#FDA10A]">
                 Review Your Order
               </h1>
               <p className="text-xl text-gray-300 mt-2">Please review your details before confirming payment</p>
@@ -72,6 +76,20 @@ const PaymentDetails = () => {
                 <p className="text-gray-400 text-sm mb-1">Last Name</p>
                 <p className="text-white text-lg font-medium">{lastName}</p>
               </div>
+              <div>
+                <p className="text-gray-400 text-sm mb-1">Email</p>
+                <p className="text-white text-lg font-medium">{email}</p>
+              </div>
+              <div>
+                <p className="text-gray-400 text-sm mb-1">Phone Number</p>
+                <p className="text-white text-lg font-medium">{phoneNumber}</p>
+              </div>
+              {country && (
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Country</p>
+                  <p className="text-white text-lg font-medium">{country}</p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -107,7 +125,7 @@ const PaymentDetails = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Selected Package</p>
-                <p className="text-white text-lg font-medium">{packageNames[selectedPackage] || 'N/A'}</p>
+                <p className="text-white text-lg font-medium">{packageNames[items] || 'N/A'}</p>
               </div>
               {discountCode && (
                 <div>
@@ -126,7 +144,7 @@ const PaymentDetails = () => {
             <div className="space-y-3">
               <div className="flex justify-between items-center py-3 border-b border-neutral-700">
                 <span className="text-gray-300 text-lg">Package</span>
-                <span className="text-white text-lg font-medium">{packageNames[selectedPackage]}</span>
+                <span className="text-white text-lg font-medium">{packageNames[items]}</span>
               </div>
               {discountCode && (
                 <div className="flex justify-between items-center py-3 border-b border-neutral-700">
@@ -136,7 +154,9 @@ const PaymentDetails = () => {
               )}
               <div className="flex justify-between items-center py-4 bg-[#FDA10A]/10 rounded-lg px-4 mt-4">
                 <span className="text-white text-2xl font-semibold">Total Amount</span>
-                <span className="text-[#FDA10A] text-3xl font-bold">${totalPrice}</span>
+                <span className="text-[#FDA10A] text-3xl font-bold">
+                  {currency} {Number(amount).toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
