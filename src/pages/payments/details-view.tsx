@@ -69,13 +69,27 @@ const PaymentDetails = () => {
       };
   
       const response = await api.post("api/payment-hash", payload);
-  
-      // Example: backend returns payment hash / redirect URL
-      console.log("Payment initiated:", response.data);
-  
-      // Optional: navigate to payment gateway or success page
-      // navigate({ to: "/payment-success", search: response.data });
-  
+      
+      const result = await response.data;
+      if (!response.status || !result.success) {
+        throw new Error(result.error || "Payment initiation failed");
+      }
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://sandbox.payhere.lk/pay/checkout"; // Use https://www.payhere.lk/pay/checkout for production
+
+      // Add all payment data as hidden fields
+      Object.keys(result).forEach((key) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = result[key];
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();    
+      
     } catch (error: any) {
       console.error("Payment error:", error);
   
