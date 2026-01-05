@@ -13,6 +13,7 @@ import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions
 import { Route as UxDesignRouteImport } from './routes/ux-design'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
+import { Route as SuccessPageRouteImport } from './routes/success-page'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PaymentsDetailsRouteImport } from './routes/payments-details'
@@ -26,6 +27,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CompanyPortfolioRouteImport } from './routes/company-portfolio'
 import { Route as CloudSolutionsRouteImport } from './routes/cloud-solutions'
 import { Route as CareerRouteImport } from './routes/career'
+import { Route as CancelPageRouteImport } from './routes/cancel-page'
 import { Route as BusinessSoftwaresRouteImport } from './routes/business-softwares'
 import { Route as ArticlesRouteImport } from './routes/articles'
 import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
@@ -50,6 +52,11 @@ const TestRoute = TestRouteImport.update({
 const TermsConditionsRoute = TermsConditionsRouteImport.update({
   id: '/terms-conditions',
   path: '/terms-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuccessPageRoute = SuccessPageRouteImport.update({
+  id: '/success-page',
+  path: '/success-page',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceRoute = ServiceRouteImport.update({
@@ -117,6 +124,11 @@ const CareerRoute = CareerRouteImport.update({
   path: '/career',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CancelPageRoute = CancelPageRouteImport.update({
+  id: '/cancel-page',
+  path: '/cancel-page',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BusinessSoftwaresRoute = BusinessSoftwaresRouteImport.update({
   id: '/business-softwares',
   path: '/business-softwares',
@@ -149,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/ai-solutions': typeof AiSolutionsRoute
   '/articles': typeof ArticlesRoute
   '/business-softwares': typeof BusinessSoftwaresRoute
+  '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/company-portfolio': typeof CompanyPortfolioRoute
@@ -162,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/success-page': typeof SuccessPageRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
@@ -173,6 +187,7 @@ export interface FileRoutesByTo {
   '/ai-solutions': typeof AiSolutionsRoute
   '/articles': typeof ArticlesRoute
   '/business-softwares': typeof BusinessSoftwaresRoute
+  '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/company-portfolio': typeof CompanyPortfolioRoute
@@ -186,6 +201,7 @@ export interface FileRoutesByTo {
   '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/success-page': typeof SuccessPageRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
@@ -198,6 +214,7 @@ export interface FileRoutesById {
   '/ai-solutions': typeof AiSolutionsRoute
   '/articles': typeof ArticlesRoute
   '/business-softwares': typeof BusinessSoftwaresRoute
+  '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
   '/cloud-solutions': typeof CloudSolutionsRoute
   '/company-portfolio': typeof CompanyPortfolioRoute
@@ -211,6 +228,7 @@ export interface FileRoutesById {
   '/payments-details': typeof PaymentsDetailsRoute
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
+  '/success-page': typeof SuccessPageRoute
   '/terms-conditions': typeof TermsConditionsRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
@@ -224,6 +242,7 @@ export interface FileRouteTypes {
     | '/ai-solutions'
     | '/articles'
     | '/business-softwares'
+    | '/cancel-page'
     | '/career'
     | '/cloud-solutions'
     | '/company-portfolio'
@@ -237,6 +256,7 @@ export interface FileRouteTypes {
     | '/payments-details'
     | '/pricing'
     | '/service'
+    | '/success-page'
     | '/terms-conditions'
     | '/test'
     | '/ux-design'
@@ -248,6 +268,7 @@ export interface FileRouteTypes {
     | '/ai-solutions'
     | '/articles'
     | '/business-softwares'
+    | '/cancel-page'
     | '/career'
     | '/cloud-solutions'
     | '/company-portfolio'
@@ -261,6 +282,7 @@ export interface FileRouteTypes {
     | '/payments-details'
     | '/pricing'
     | '/service'
+    | '/success-page'
     | '/terms-conditions'
     | '/test'
     | '/ux-design'
@@ -272,6 +294,7 @@ export interface FileRouteTypes {
     | '/ai-solutions'
     | '/articles'
     | '/business-softwares'
+    | '/cancel-page'
     | '/career'
     | '/cloud-solutions'
     | '/company-portfolio'
@@ -285,6 +308,7 @@ export interface FileRouteTypes {
     | '/payments-details'
     | '/pricing'
     | '/service'
+    | '/success-page'
     | '/terms-conditions'
     | '/test'
     | '/ux-design'
@@ -297,6 +321,7 @@ export interface RootRouteChildren {
   AiSolutionsRoute: typeof AiSolutionsRoute
   ArticlesRoute: typeof ArticlesRoute
   BusinessSoftwaresRoute: typeof BusinessSoftwaresRoute
+  CancelPageRoute: typeof CancelPageRoute
   CareerRoute: typeof CareerRoute
   CloudSolutionsRoute: typeof CloudSolutionsRoute
   CompanyPortfolioRoute: typeof CompanyPortfolioRoute
@@ -310,6 +335,7 @@ export interface RootRouteChildren {
   PaymentsDetailsRoute: typeof PaymentsDetailsRoute
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
+  SuccessPageRoute: typeof SuccessPageRoute
   TermsConditionsRoute: typeof TermsConditionsRoute
   TestRoute: typeof TestRoute
   UxDesignRoute: typeof UxDesignRoute
@@ -344,6 +370,13 @@ declare module '@tanstack/react-router' {
       path: '/terms-conditions'
       fullPath: '/terms-conditions'
       preLoaderRoute: typeof TermsConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/success-page': {
+      id: '/success-page'
+      path: '/success-page'
+      fullPath: '/success-page'
+      preLoaderRoute: typeof SuccessPageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service': {
@@ -437,6 +470,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cancel-page': {
+      id: '/cancel-page'
+      path: '/cancel-page'
+      fullPath: '/cancel-page'
+      preLoaderRoute: typeof CancelPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/business-softwares': {
       id: '/business-softwares'
       path: '/business-softwares'
@@ -481,6 +521,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiSolutionsRoute: AiSolutionsRoute,
   ArticlesRoute: ArticlesRoute,
   BusinessSoftwaresRoute: BusinessSoftwaresRoute,
+  CancelPageRoute: CancelPageRoute,
   CareerRoute: CareerRoute,
   CloudSolutionsRoute: CloudSolutionsRoute,
   CompanyPortfolioRoute: CompanyPortfolioRoute,
@@ -494,6 +535,7 @@ const rootRouteChildren: RootRouteChildren = {
   PaymentsDetailsRoute: PaymentsDetailsRoute,
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
+  SuccessPageRoute: SuccessPageRoute,
   TermsConditionsRoute: TermsConditionsRoute,
   TestRoute: TestRoute,
   UxDesignRoute: UxDesignRoute,
