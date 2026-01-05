@@ -69,21 +69,21 @@ const PaymentDetails = () => {
       };
   
       const response = await api.post("api/payment-hash", payload);
-      
+      console.log("response data -->", response.data)
       const result = await response.data;
       if (!response.status || !result.success) {
         throw new Error(result.error || "Payment initiation failed");
       }
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = "https://sandbox.payhere.lk/pay/checkout"; // Use https://www.payhere.lk/pay/checkout for production
-
-      // Add all payment data as hidden fields
-      Object.keys(result).forEach((key) => {
+      form.action = "https://sandbox.payhere.lk/pay/checkout"; 
+      
+      // Add all payment data as hidden fields - FIX THIS PART
+      Object.keys(result.data).forEach((key) => {  // Change result to result.data
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = key;
-        input.value = result[key];
+        input.value = result.data[key];  // Change result[key] to result.data[key]
         form.appendChild(input);
       });
 
