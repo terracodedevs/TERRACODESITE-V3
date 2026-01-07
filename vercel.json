@@ -2,7 +2,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/index.html",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://sandbox.payhere.lk https://www.google-analytics.com https://maxcdn.bootstrapcdn.com; form-action 'self' https://sandbox.payhere.lk; frame-ancestors 'self';"
+        }
+      ]
     }
   ]
 }

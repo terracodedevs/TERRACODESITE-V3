@@ -1,11 +1,11 @@
-import { useNavigate, useSearch } from '@tanstack/react-router';
-import { ArrowLeft, CheckCircle, Edit } from 'lucide-react';
-import api from '@/api/axios';
+import { useNavigate, useSearch } from "@tanstack/react-router";
+import { ArrowLeft, CheckCircle, Edit } from "lucide-react";
+import api from "@/api/axios";
 
 const PaymentDetails = () => {
   const navigate = useNavigate();
   const searchParams = useSearch({ strict: false });
-  
+
   interface FormData {
     firstName: string;
     lastName: string;
@@ -20,33 +20,33 @@ const PaymentDetails = () => {
     amount: string;
     agreeToTerms: string;
   }
-  
+
   const {
-    firstName = '',
-    lastName = '',
-    companyName = '',
-    email = '',
-    phoneNumber = '',
-    country = '',
-    note = '',
-    items = '',
-    discountCode = '',
-    amount = '0',
-    currency = 'LKR',
-    agreeToTerms = ''
+    firstName = "",
+    lastName = "",
+    companyName = "",
+    email = "",
+    phoneNumber = "",
+    country = "",
+    note = "",
+    items = "",
+    discountCode = "",
+    amount = "0",
+    currency = "LKR",
+    agreeToTerms = "",
   } = searchParams as FormData;
 
   const packageNames: { [key: string]: string } = {
-    starter: 'Starter Package',
-    professional: 'Professional Package',
-    business: 'Business Package',
-    custom: 'Custom Package'
+    starter: "Starter Package",
+    professional: "Professional Package",
+    business: "Business Package",
+    custom: "Custom Package",
   };
 
   const handleEdit = () => {
-    navigate({ 
-      to: '/payments',
-      search: searchParams
+    navigate({
+      to: "/payments",
+      search: searchParams,
     });
   };
 
@@ -67,39 +67,36 @@ const PaymentDetails = () => {
         amount: amount,
         currency: currency,
       };
-  
-      const response = await api.post("api/payment-hash", payload);
-      console.log("response data -->", response.data)
+
+      const response = await api.post("/api/payment-hash", payload);
+      console.log("response data -->", response.data);
       const result = await response.data;
       if (!response.status || !result.success) {
         throw new Error(result.error || "Payment initiation failed");
       }
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = "https://sandbox.payhere.lk/pay/checkout"; 
-      
-      // Add all payment data as hidden fields - FIX THIS PART
-      Object.keys(result.data).forEach((key) => {  // Change result to result.data
+      form.action = "https://sandbox.payhere.lk/pay/checkout";
+
+      Object.keys(result.data).forEach((key) => {
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = key;
-        input.value = result.data[key];  // Change result[key] to result.data[key]
+        input.value = result.data[key];
         form.appendChild(input);
       });
 
       document.body.appendChild(form);
-      form.submit();    
-      
+      form.submit();
     } catch (error: any) {
       console.error("Payment error:", error);
-  
+
       const message =
         error?.response?.data?.message || "Payment initiation failed";
-  
+
       alert(message);
     }
   };
-
 
   return (
     <div className="bg-black text-white font-lufga min-h-screen py-10 xl:py-20 px-4 md:px-4 mb-32">
@@ -107,7 +104,7 @@ const PaymentDetails = () => {
         {/* Header */}
         <div className="mb-8">
           <button
-            onClick={() => navigate({ to: '/payments' })}
+            onClick={() => navigate({ to: "/payments" })}
             className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -118,7 +115,9 @@ const PaymentDetails = () => {
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extralight text-[#FDA10A]">
                 Review Your Order
               </h1>
-              <p className="text-xl text-gray-300 mt-2">Please review your details before confirming payment</p>
+              <p className="text-xl text-gray-300 mt-2">
+                Please review your details before confirming payment
+              </p>
             </div>
           </div>
         </div>
@@ -188,12 +187,16 @@ const PaymentDetails = () => {
             <div className="space-y-4">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Selected Package</p>
-                <p className="text-white text-lg font-medium">{packageNames[items] || 'N/A'}</p>
+                <p className="text-white text-lg font-medium">
+                  {packageNames[items] || "N/A"}
+                </p>
               </div>
               {discountCode && (
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Discount Code</p>
-                  <p className="text-orange-400 text-lg font-medium">{discountCode}</p>
+                  <p className="text-orange-400 text-lg font-medium">
+                    {discountCode}
+                  </p>
                 </div>
               )}
             </div>
@@ -207,16 +210,24 @@ const PaymentDetails = () => {
             <div className="space-y-3">
               <div className="flex justify-between items-center py-3 border-b border-neutral-700">
                 <span className="text-gray-300 text-lg">Package</span>
-                <span className="text-white text-lg font-medium">{packageNames[items]}</span>
+                <span className="text-white text-lg font-medium">
+                  {packageNames[items]}
+                </span>
               </div>
               {discountCode && (
                 <div className="flex justify-between items-center py-3 border-b border-neutral-700">
-                  <span className="text-gray-300 text-lg">Discount Applied</span>
-                  <span className="text-orange-400 text-lg font-medium">{discountCode}</span>
+                  <span className="text-gray-300 text-lg">
+                    Discount Applied
+                  </span>
+                  <span className="text-orange-400 text-lg font-medium">
+                    {discountCode}
+                  </span>
                 </div>
               )}
               <div className="flex justify-between items-center py-4 bg-[#FDA10A]/10 rounded-lg px-4 mt-4">
-                <span className="text-white text-2xl font-semibold">Total Amount</span>
+                <span className="text-white text-2xl font-semibold">
+                  Total Amount
+                </span>
                 <span className="text-[#FDA10A] text-3xl font-bold">
                   {currency} {Number(amount).toLocaleString()}
                 </span>
