@@ -1,0 +1,112 @@
+# llm.txt - Terracode
+# This file provides context for Large Language Models about Terracode
+# Learn more: https://llmstxt.org/
+
+> Terracode is a software development company crafting intelligent digital futures through AI, IoT, web, mobile, and cloud solutions.
+
+## Company Overview
+
+Terracode is a full-service software development agency specializing in innovative digital solutions for businesses of all sizes. We combine cutting-edge technology with creative design to deliver exceptional digital experiences that drive business growth.
+
+**Company Name:** Terracode
+**Website:** https://www.terracodedev.com
+**Tagline:** Crafting Intelligent Digital Futures
+**Contact:** contact@terracodedev.com
+
+## Services
+
+### UX Design
+- User experience research and strategy
+- UI/UX design and prototyping
+- User interface design
+- Usability testing and optimization
+- Design systems and brand guidelines
+- URL: https://www.terracodedev.com/ux-design
+
+### Business Software
+- Custom enterprise software development
+- ERP and CRM solutions
+- Business process automation
+- Workflow management systems
+- Legacy system modernization
+- URL: https://www.terracodedev.com/business-softwares
+
+### Website Solutions
+- Custom website development
+- E-commerce platforms
+- Content management systems
+- Progressive web applications
+- Website maintenance and support
+- URL: https://www.terracodedev.com/website-solutions
+
+### Mobile Apps
+- iOS app development
+- Android app development
+- Cross-platform mobile applications
+- Mobile app UI/UX design
+- App maintenance and updates
+- URL: https://www.terracodedev.com/mobile-apps
+
+### AI Solutions
+- Artificial intelligence integration
+- Machine learning model development
+- Natural language processing
+- Computer vision solutions
+- AI-powered automation
+- Predictive analytics
+- URL: https://www.terracodedev.com/ai-solutions
+
+### Cloud Solutions
+- Cloud architecture design
+- Cloud migration services
+- AWS, Azure, and Google Cloud
+- DevOps and CI/CD implementation
+- Cloud infrastructure management
+- Serverless solutions
+- URL: https://www.terracodedev.com/cloud-solutions
+
+## Key Pages
+
+- **Home:** https://www.terracodedev.com
+- **About Us:** https://www.terracodedev.com/about
+- **Contact:** https://www.terracodedev.com/contact
+- **Partnerships:** https://www.terracodedev.com/partnerships
+- **Portfolio:** https://www.terracodedev.com/digitalportfolio
+- **Articles/Blog:** https://www.terracodedev.com/articles
+
+## Expertise Areas
+
+- Custom Software Development
+- AI & Machine Learning
+- Internet of Things (IoT)
+- Cloud Computing & DevOps
+- Mobile Application Development
+- Web Development
+- User Experience Design
+- Business Process Automation
+- Digital Transformation
+
+## Target Audience
+
+- Startups seeking MVP development
+- Small and medium businesses needing digital solutions
+- Enterprises requiring custom software
+- Organizations looking for AI/ML integration
+- Companies needing cloud migration
+- Businesses wanting mobile presence
+
+## Technology Stack
+
+**Frontend:** React, Next.js, Vue.js, Angular, TypeScript
+**Backend:** Node.js, Python, Go, .NET, Java
+**Mobile:** Flutter, React Native, Swift, Kotlin
+**Cloud:** AWS, Azure, Google Cloud Platform
+**AI/ML:** TensorFlow, PyTorch, OpenAI, LangChain
+**Database:** PostgreSQL, MongoDB, Redis, Firebase
+
+## Contact Information
+
+- **Website:** https://www.terracodedev.com
+- **Email:** contact@terracodedev.com
+- **LinkedIn:** https://lk.linkedin.com/company/terracodedev
+- **GitHub:** https://github.com/Terracode-Dev

@@ -1,0 +1,90 @@
+# robots.txt for terracodedev.com
+# Terracode - Crafting Intelligent Digital Futures
+# Last updated: January 2025
+
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /tmp/
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Google AI/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI GPTBot
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT User Agent
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple AI/Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: Copilot
+Allow: /
+
+# Common Crawl (used for AI training)
+User-agent: CCBot
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.terracodedev.com/sitemap.xml
+
+# AI/LLM specific files
+# llm.txt: https://www.terracodedev.com/llm.txt
+# ai.txt: https://www.terracodedev.com/ai.txt
