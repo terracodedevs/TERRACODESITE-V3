@@ -1,0 +1,162 @@
+# ai.txt - Terracode
+# AI-readable information file for Answer Engine Optimization (AEO)
+# Version: 1.0
+# Last Updated: January 2025
+
+## Organization
+
+name: Terracode
+type: Software Development Company
+description: Terracode is a software development company that crafts intelligent digital futures through AI, IoT, web, mobile, and cloud solutions. We provide outstanding software solutions with highly skilled developers who strive to deliver the best possible solutions for our clients.
+tagline: Crafting Intelligent Digital Futures
+founded: Software Development Agency
+industry: Information Technology & Services
+specialization: Custom Software Development, AI Solutions, Cloud Computing, Mobile Apps
+
+## Contact
+
+website: https://www.terracodedev.com
+email: contact@terracodedev.com
+linkedin: https://lk.linkedin.com/company/terracodedev
+github: https://github.com/Terracode-Dev
+
+## Services Offered
+
+### service_1
+name: UX Design
+description: Comprehensive user experience design services including research, prototyping, UI design, usability testing, and design systems
+url: https://www.terracodedev.com/ux-design
+keywords: UX design, user experience, UI design, prototyping, usability testing, design systems
+
+### service_2
+name: Business Software
+description: Custom enterprise software development including ERP, CRM, business process automation, and legacy system modernization
+url: https://www.terracodedev.com/business-softwares
+keywords: enterprise software, ERP, CRM, business automation, custom software, workflow management
+
+### service_3
+name: Website Solutions
+description: Custom website development, e-commerce platforms, CMS, progressive web apps, and ongoing website support
+url: https://www.terracodedev.com/website-solutions
+keywords: web development, website design, e-commerce, CMS, PWA, web applications
+
+### service_4
+name: Mobile Apps
+description: Native and cross-platform mobile application development for iOS and Android with modern UI/UX
+url: https://www.terracodedev.com/mobile-apps
+keywords: mobile app development, iOS apps, Android apps, Flutter, React Native, cross-platform
+
+### service_5
+name: AI Solutions
+description: Artificial intelligence and machine learning integration including NLP, computer vision, predictive analytics, and AI automation
+url: https://www.terracodedev.com/ai-solutions
+keywords: artificial intelligence, machine learning, AI integration, NLP, computer vision, predictive analytics
+
+### service_6
+name: Cloud Solutions
+description: Cloud architecture, migration, DevOps, CI/CD, and infrastructure management across AWS, Azure, and Google Cloud
+url: https://www.terracodedev.com/cloud-solutions
+keywords: cloud computing, AWS, Azure, Google Cloud, DevOps, cloud migration, CI/CD
+
+## Site Structure
+
+pages:
+  - url: https://www.terracodedev.com
+    title: Home
+    description: Terracode homepage - AI, IoT, Web, and Software Development Solutions
+    
+  - url: https://www.terracodedev.com/about
+    title: About Us
+    description: Learn about Terracode's mission, team, and company values
+    
+  - url: https://www.terracodedev.com/contact
+    title: Contact
+    description: Get in touch with Terracode for your software development needs
+    
+  - url: https://www.terracodedev.com/partnerships
+    title: Partnerships
+    description: Partnership opportunities and technology alliances with Terracode
+    
+  - url: https://www.terracodedev.com/digitalportfolio
+    title: Digital Portfolio
+    description: Showcase of Terracode's completed projects and case studies
+    
+  - url: https://www.terracodedev.com/articles
+    title: Articles & Blog
+    description: Technical articles, insights, and industry news from Terracode
+
+## Technologies
+
+frontend:
+  - React
+  - Next.js
+  - Vue.js
+  - Angular
+  - TypeScript
+  - Tailwind CSS
+
+backend:
+  - Node.js
+  - Python
+  - Go
+  - .NET
+  - Java
+  - REST APIs
+  - GraphQL
+
+mobile:
+  - Flutter
+  - React Native
+  - Swift (iOS)
+  - Kotlin (Android)
+
+cloud:
+  - Amazon Web Services (AWS)
+  - Microsoft Azure
+  - Google Cloud Platform
+  - Docker
+  - Kubernetes
+
+ai_ml:
+  - TensorFlow
+  - PyTorch
+  - OpenAI
+  - LangChain
+  - Scikit-learn
+
+databases:
+  - PostgreSQL
+  - MongoDB
+  - Redis
+  - Firebase
+  - MySQL
+
+## FAQ
+
+### What services does Terracode offer?
+Terracode offers comprehensive software development services including UX design, business software development, website solutions, mobile app development, AI solutions, and cloud solutions.
+
+### What industries does Terracode serve?
+Terracode serves various industries including technology, healthcare, finance, retail, manufacturing, and startups looking for digital transformation.
+
+### What is Terracode's development approach?
+Terracode uses agile methodologies with a focus on user-centered design, ensuring on-time delivery and close collaboration with clients throughout the development process.
+
+### Does Terracode offer AI and machine learning services?
+Yes, Terracode specializes in AI solutions including machine learning model development, natural language processing, computer vision, and AI-powered automation.
+
+### How can I contact Terracode?
+You can contact Terracode via email at contact@terracodedev.com or through the contact form at https://www.terracodedev.com/contact
+
+## Crawling Permissions
+
+ai_crawling: allowed
+llm_training: allowed
+content_usage: allowed with attribution
+preferred_citation: "Source: Terracode (https://www.terracodedev.com)"
+
+## Related Files
+
+robots_txt: https://www.terracodedev.com/robots.txt
+llm_txt: https://www.terracodedev.com/llm.txt
+sitemap: https://www.terracodedev.com/sitemap.xml
