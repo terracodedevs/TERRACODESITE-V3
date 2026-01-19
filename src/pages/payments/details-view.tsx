@@ -76,7 +76,7 @@ const PaymentDetails = () => {
       }
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = "https://sandbox.payhere.lk/pay/checkout";
+      form.action = "https://www.payhere.lk/pay/checkout";
 
       Object.keys(result.data).forEach((key) => {
         const input = document.createElement("input");
