@@ -1,11 +1,15 @@
 import Loader from '@/components/loader'
 import Navbar from '@/components/navbar'
 import { useAssetLoader } from '@/hooks/useAssetLoader'
+import { trackEvent } from '@/lib/analytics'
 import Page from '@/pages/team-page/page'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/about')({
-  component: ()=>{
+  component: () => {
+    trackEvent("about-page", {
+      event: "page visit"
+    })
     const assets = [
       'employee/aveen.png',
       'employee/chamod.png',
@@ -33,7 +37,7 @@ export const Route = createFileRoute('/about')({
     if (!loaded) {
       return (
         <div className="flex justify-center items-center h-screen w-full bg-black">
-          <Loader/>
+          <Loader />
         </div>
       )
     }

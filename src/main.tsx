@@ -7,6 +7,9 @@ import { ToastProvider } from '@/components/toast';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
+import { initGA } from './lib/analytics'
+
+initGA()
 
 // Create a new router instance
 const router = createRouter({ routeTree })
@@ -17,6 +20,11 @@ declare module '@tanstack/react-router' {
     router: typeof router
   }
 }
+
+router.subscribe("onResolved", () => {
+  router.state.location.pathname + router.state.location.searchStr,
+    document.title
+})
 
 // Render the app
 const rootElement = document.getElementById('root')!
