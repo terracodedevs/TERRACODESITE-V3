@@ -6,7 +6,8 @@ interface PartnershipsPricingPlan {
   className: string;
   className2?: string;
   subtitle: string;
-  price: string;
+  originalPrice?: string; 
+  price: string; //discounted price
   per: string;
   features: string[];
   category: "Monthly" | "Annually";
@@ -15,43 +16,55 @@ interface PartnershipsPricingPlan {
 
 const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
-    title: "Silver Partnership",
-    subtitle: "Ideal for startups and small businesses",
-    price: "85000 LKR",
-    per: " / per month",
+    title: "Founder Growth Partnership",
+    subtitle: "Built for startup founders and early-stage businesses",
+    originalPrice: "120,000 LKR",
+    price: "85,000 LKR",
+    per: "/ month",
     features: [
-      "A dedicated virtual expert team to assist you.",
-      "Proactive Software and Hardware monitoring.",
-      "Regular design updates to keep your site professional.",
-      
+      "Full digital ecosystem planning and deployment tailored to your business stage",
+      "Dedicated support across software, hardware, AI, and cybersecurity",
+      "Business analysis and solution design (no technical planning needed from you)",
+      "Startup-friendly model to reduce upfront technology costs",
+      "Continuous guidance and structured tech support for scaling",
     ],
     category: "Monthly",
-    className:"bg-gray-400",
+    className: "bg-gray-400",
   },
   {
     title: "Gold Partnership",
-    subtitle: "Perfect for growing businesses",
-    price: "125000 LKR",
-    per: "/ per month",
+    subtitle: "Ideal for scaling businesses",
+    originalPrice: "150,000 LKR",
+    price: "89,000 LKR",
+    per: "/ month",
     features: [
-      "Everything in Silver Partnership plan.",
-      "Performant terracode implemented infrastructure.",
-      "Extra development allowances per month.",
+      "Full digital ecosystem planning and deployment",
+      "Everything in Founder Growth Partnership",
+      "Integration of proprietary security solutions",
+      "Access to in-house research products and devices",
+      "Stronger implementation capacity for scaling operations",
+      "Ongoing optimization and upgrade support",
     ],
     category: "Monthly",
-    className:" bg-yellow-500 ",
-    className2:"border-1 border-orange-400 scale-105 ",
+    className: "bg-yellow-500",
+    className2: "border border-orange-400 scale-105",
   },
-   {
+  {
     title: "Elite Partnership",
-    subtitle: "Best for established businesses",
-    price: "200000 LKR",
-    per: "/ per month",
+    subtitle: "Built for enterprises and large-scale businesses",
+    originalPrice: "250,000 LKR",
+    price: "180,000 LKR",
+    per: "/ month",
     features: [
-      "On-site dev team on your your business premisses.",
+      "Enterprise-level digital ecosystem planning and deployment",
+      "Everything in Gold Partnership",
+      "Advanced infrastructure design for large-scale environments",
+      "Access to in-house research products",
+      "Full business system re-engineering",
+      "Long-term strategic technology partnership",
     ],
     category: "Monthly",
-    className:"bg-sky-500",
+    className: "bg-sky-500",
   },
 ];
 
@@ -92,10 +105,23 @@ const PartnershipsSection: React.FC = () => {
             {/* Header */}
             <h3 className="text-xl font-semibold">{plan.title}</h3>
             <p className="text-sm text-gray-400 mb-4">{plan.subtitle}</p>
-            <h2 className="text-xl font-semibold">
-              {plan.price} <span className="text-xl font-semibold">{plan.per}</span>
-            </h2>
+            <h2 className="text-2xl font-semibold flex flex-col gap-1">
+              {/* Original price (cut) */}
+              {plan.originalPrice && (
+                <span className="text-sm text-gray-500 line-through">
+                  {plan.originalPrice}
+                </span>
+              )}
 
+              {/* Discounted price */}
+              <span className="text-white text-2xl font-bold">
+                {plan.price}
+                <span className="text-sm font-normal text-gray-400 ml-1">
+                  {plan.per}
+                </span>
+              </span>
+
+            </h2>
             <hr className="my-6 border-gray-700" />
 
             {/* Features */}
