@@ -126,7 +126,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
     <div className="flex justify-center container mx-auto font-lufga">
       <div className="md:w-10/12 px-4 py-9 relative max-h-[90vh]">
         {/* Scrollable form container */}
-        <div className="space-y-6 overflow-y-auto scrollbar-hide pr-2 max-h-[90vh]">
+        <div className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 max-h-[90vh]">
           {/* Heading */}
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
@@ -176,7 +176,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
                 value={formData.package}
                 onChange={handleInputChanges}
                 required
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:ring-offset-2 focus:ring-offset-neutral-800 transition-all duration-300"
               >
                 <option value="Founder Growth Partnership">Founder Growth Partnership</option>
                 <option value="Gold Partnership">Gold Partnership</option>
