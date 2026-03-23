@@ -24,7 +24,9 @@ interface InquireProps {
 const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
   const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -47,6 +49,18 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
       ...prev,
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+      // If user scrolls within 5px from bottom, consider it "bottom"
+      if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 5) {
+        setIsAtBottom(true);
+      } else {
+        setIsAtBottom(false);
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -124,9 +138,13 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
 
   return (
     <div className="flex justify-center container mx-auto font-lufga">
-      <div className="md:w-10/12 px-4 py-9 relative max-h-[90vh]">
+      <div className="md:w-10/12 px-4 py-9 relative max-h-[90vh] flex flex-col">
         {/* Scrollable form container */}
-        <div className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 max-h-[90vh]">
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 flex-1"
+        >
           {/* Heading */}
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
@@ -138,7 +156,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
             </p>
           </div>
 
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 pb-16">
             {/* Name + Email */}
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col space-y-4">
@@ -295,17 +313,40 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
           </form>
         </div>
 
-        {/* Scroll down arrow */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
-          <svg
-            className="w-6 h-6 text-gray-400 animate-bounce"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+        {/* Scroll down/up arrow */}
+        <div 
+          className="absolute bottom-2 left-1/2 -translate-x-1/2 cursor-pointer z-10 p-2 bg-neutral-900/80 backdrop-blur-sm rounded-full drop-shadow-lg transition-all hover:scale-110"
+          onClick={() => {
+            if (scrollRef.current) {
+              if (isAtBottom) {
+                scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                scrollRef.current.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+              }
+            }
+          }}
+        >
+          {isAtBottom ? (
+            <svg
+              className="w-6 h-6 text-[#FDA10A]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 text-gray-400 animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          )}
         </div>
       </div>
     </div>
