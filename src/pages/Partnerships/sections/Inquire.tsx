@@ -256,7 +256,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
                 value={formData.meetingDate}
                 onChange={handleInputChanges}
                 required
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 appearance-none"
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 appearance-none [color-scheme:dark]"
               />
             </div>
 
