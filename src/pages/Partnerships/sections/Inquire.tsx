@@ -1,211 +1,356 @@
-import TerraButton from "@/components/button"
-import React, { useState, useRef} from 'react';
-import emailjs from '@emailjs/browser';
-import { useToast } from '@/components/toast';
+import TerraButton from "@/components/button";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@/components/toast";
 
 interface FormData {
   firstName: string;
   email: string;
-  message: string;
-  agreeToTerms: boolean;
   package: string;
+  businessName: string;
+  businessStage: string;
+  website: string;       // optional
+  meetingDate: string;
+  message: string;
+  notes: string;         // optional
+  agreeToTerms: boolean;
 }
 
 interface InquireProps {
   defaultPackage?: string;
+  onClose?: () => void;
 }
 
-const Inquire = ({ defaultPackage = '' }: InquireProps) => {
- const { showToast } = useToast();
+const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
+  const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-     const [formData, setFormData] = useState<FormData>({
-        firstName: '',
-        email: '',
-        message: '',
-        agreeToTerms: false,
-         package: defaultPackage
-      });
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
-        const handleInputChanges = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    email: "",
+    package: defaultPackage,
+    businessName: "",
+    businessStage: "",
+    website: "",
+    meetingDate: "",
+    message: "",
+    notes: "",
+    agreeToTerms: false,
+  });
+
+  const handleInputChanges = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value, type } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
-    const handleSubmit =async (e: React.FormEvent) => {
-    e.preventDefault();
-   if (!formRef.current) return;
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+      // If user scrolls within 5px from bottom, consider it "bottom"
+      if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 5) {
+        setIsAtBottom(true);
+      } else {
+        setIsAtBottom(false);
+      }
+    }
+  };
 
-    if (!formData.agreeToTerms) {
-      alert("Please agree with Terms and Privacy Policy.");
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    const {
+      firstName,
+      email,
+      package: selectedPackage,
+      businessName,
+      businessStage,
+      meetingDate,
+      message,
+      agreeToTerms,
+    } = formData;
+
+    // Validate required fields
+    if (
+      !firstName ||
+      !email ||
+      !selectedPackage ||
+      !businessName ||
+      !businessStage ||
+      !meetingDate ||
+      !message
+    ) {
+      showToast("Please fill in all required fields.", "error");
       return;
     }
 
-    setIsSubmitting(true); 
+    if (!agreeToTerms) {
+      showToast("Please agree with Terms and Privacy Policy.", "error");
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-      await emailjs.sendForm(
-        String(serviceId),
-        String(templateId),
-        formRef.current,
-        { publicKey: String(publicKey) }
-      );
+      await emailjs.sendForm(String(serviceId), String(templateId), formRef.current, {
+        publicKey: String(publicKey),
+      });
 
-      showToast('Thank you! Your message has been sent successfully.', 'success');
+      showToast("Thank you! Your message has been sent successfully.", "success");
 
       // Reset form
-     setFormData({
-        firstName: '',
-        email: '',
-        message: '',
+      setFormData({
+        firstName: "",
+        email: "",
+        package: defaultPackage,
+        businessName: "",
+        businessStage: "",
+        website: "",
+        meetingDate: "",
+        message: "",
+        notes: "",
         agreeToTerms: false,
-        package: '' // Reset package as well
       });
+
+      if (onClose) onClose();
     } catch (error) {
       console.error(error);
-      showToast('Oops! Something went wrong. Please try again later.', 'error');
+      showToast("Oops! Something went wrong. Please try again later.", "error");
     } finally {
-      setIsSubmitting(false); // End loading state
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="flex justify-center container mx-auto font-lufga ">
-    <div className="md:w-10/12  px-4 py-9  overflow-y-auto max-h-[90vh] ">
-    <div className="space-y-6">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">Still Have Questions?</h2>
-              <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light">We're Here to Help.</p>
-            </div>
+    <div className="flex justify-center container mx-auto font-lufga">
+      <div className="md:w-10/12 px-4 py-9 relative max-h-[90vh] flex flex-col">
+        {/* Scrollable form container */}
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 flex-1"
+        >
+          {/* Heading */}
+          <div className="space-y-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
+              Let’s Talk About Your Business
+            </h2>
+            <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light max-w-3xl">
+              Share a few details and choose a convenient date. Our team will review your request and
+              reach out to confirm the meeting.
+            </p>
+          </div>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              {/* First Name and Email Row */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex flex-col space-y-4">
-                  <label htmlFor="firstName" className="text-white text-xl font-medium">
-                    Tell us your name
-
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChanges}
-                    placeholder="your name"
-                    required
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
-                  />
-                </div>
-                <div className="flex flex-col space-y-4">
-                  <label htmlFor="email" className="text-white text-xl font-medium">
-                    
-                    Where can we reach you?
-
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChanges}
-                    placeholder="your email or contact number"
-                    required
-                    className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300"
-                  />
-                </div>
-              </div>
-
-               {/* Package Selection */}
-<div className="flex flex-col space-y-2 md:space-y-4">
-  <label htmlFor="package" className="text-white text-lg md:text-xl font-medium">
-    Partnership Package
-  </label>
-  <div className="relative">
-    <select
-      id="package"
-      name="package"
-      value={formData.package}
-      onChange={handleInputChanges}
-      className="w-full px-3 py-2 md:px-4 md:py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white appearance-none focus:outline-none focus:ring-2 focus:ring-[#FDA10A] focus:border-[#FDA10A] transition-all duration-300"
-      style={{backgroundImage: 'url("public/hero/icons8-down-button-72.png")',
-        backgroundRepeat: 'no-repeat', 
-        backgroundPosition: 'right 1rem center',
-        backgroundSize: '2em'}}
-    >
-      <option value="Silver Partnership">Silver Partnership</option>
-      <option value="Gold Partnership">Gold Partnership</option>
-      <option value="Elite Partnership">Elite Partnership</option>
-
-    </select>
-  </div>
-</div>
-
-              {/* Message */}
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 pb-16">
+            {/* Name + Email */}
+            <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col space-y-4">
-                <label htmlFor="message" className="text-white text-lg font-medium">
-                  Tell us your idea and our team will reach out to you soon.
-
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                <label className="text-white text-xl font-medium">Tell us your name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
                   onChange={handleInputChanges}
-                  placeholder="We’re listening , what’s on your mind?"
+                  placeholder="Your name"
                   required
-                  rows={8}
-                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
                 />
               </div>
 
-              {/* Terms Checkbox */}
-              <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
-                <div className='flex flex-row items-center'>
+              <div className="flex flex-col space-y-4">
+                <label className="text-white text-xl font-medium">Where can we reach you?</label>
+                <input
+                  type="text"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChanges}
+                  placeholder="Your email or phone number"
+                  required
+                  className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Package */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-xl font-medium">Partnership Package</label>
+              <select
+                name="package"
+                value={formData.package}
+                onChange={handleInputChanges}
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] focus:ring-offset-2 focus:ring-offset-neutral-800 transition-all duration-300"
+              >
+                <option value="Founder Growth Partnership">Founder Growth Partnership</option>
+                <option value="Gold Partnership">Gold Partnership</option>
+                <option value="Elite Partnership">Elite Partnership</option>
+              </select>
+            </div>
+
+            {/* Business Name */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-xl font-medium">Business Name</label>
+              <input
+                type="text"
+                name="businessName"
+                value={formData.businessName}
+                onChange={handleInputChanges}
+                placeholder="Your business or company name"
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
+              />
+            </div>
+
+            {/* Business Stage */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-xl font-medium">Current Business Stage</label>
+              <select
+                name="businessStage"
+                value={formData.businessStage}
+                onChange={handleInputChanges}
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
+              >
+                <option value="">Select stage</option>
+                <option>Startup</option>
+                <option>Growing Business</option>
+                <option>Scaling Business</option>
+                <option>Enterprise</option>
+              </select>
+            </div>
+
+            {/* Website / Social Page (Optional) */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-xl font-medium">Website or Social Page</label>
+              <input
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleInputChanges}
+                placeholder="Website, LinkedIn, Instagram, or any relevant link"
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300"
+              />
+            </div>
+
+            {/* Meeting Date */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-xl font-medium">Preferred Meeting Date</label>
+              <input
+                type="date"
+                name="meetingDate"
+                value={formData.meetingDate}
+                onChange={handleInputChanges}
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 appearance-none [color-scheme:dark]"
+              />
+            </div>
+
+            {/* Main Message */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-lg font-medium">
+                Tell us about your business
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChanges}
+                placeholder="Tell us about your business, your current systems, and what you want to improve..."
+                rows={6}
+                required
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 resize-none"
+              />
+            </div>
+
+            {/* Optional Notes */}
+            <div className="flex flex-col space-y-4">
+              <label className="text-white text-lg font-medium">Optional Notes</label>
+              <textarea
+                name="notes"
+                value={formData.notes}
+                onChange={handleInputChanges}
+                placeholder="Anything else you would like us to review before the meeting"
+                rows={4}
+                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 resize-none"
+              />
+            </div>
+
+            {/* Terms + Submit */}
+            <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
+              <div className="flex flex-row items-center">
                 <input
                   type="checkbox"
-                  id="agreeToTerms"
                   name="agreeToTerms"
                   checked={formData.agreeToTerms}
                   onChange={handleInputChanges}
+                  className="mr-2"
                   required
-                 className="sr-only" // Hide the actual checkbox but keep it accessible
-                  />
-                  <div 
-                    className={`w-5 h-5 flex items-center justify-center border ${formData.agreeToTerms ? 'bg-[#FDA10A] border-[#FDA10A]' : 'bg-transparent border-gray-400'} rounded cursor-pointer`}
-                    onClick={() => setFormData(prev => ({...prev, agreeToTerms: !prev.agreeToTerms}))}
-                  >
-                    {formData.agreeToTerms && (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    )}
-                  </div>
-                <label htmlFor="agreeToTerms" className="text-gray-300 text-xl mx-2">
-                  I agree with Terms and Privacy Policy
-                </label>
-                </div>
-                 {/* Submit Button with loader */}
-                <TerraButton 
-                  type='submit' 
-                  label={isSubmitting ? 'Sending...' : 'Submit'}
-                  iconSrc={isSubmitting ? '' : '/button/Arrow.svg'}
-                  isLoading={isSubmitting}
                 />
+                <label className="text-gray-300 text-lg">I agree with Terms and Privacy Policy</label>
               </div>
-            </form>
-          </div>
-        </div>
-        </div>
-        
-  )
-}
 
-export default Inquire
+              <TerraButton
+                type="submit"
+                label={isSubmitting ? "Sending..." : "Submit"}
+                iconSrc={isSubmitting ? "" : "/button/Arrow.svg"}
+                isLoading={isSubmitting}
+              />
+            </div>
+          </form>
+        </div>
+
+        {/* Scroll down/up arrow */}
+        <div 
+          className="absolute bottom-2 left-1/2 -translate-x-1/2 cursor-pointer z-10 p-2 bg-neutral-900/80 backdrop-blur-sm rounded-full drop-shadow-lg transition-all hover:scale-110"
+          onClick={() => {
+            if (scrollRef.current) {
+              if (isAtBottom) {
+                scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                scrollRef.current.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+              }
+            }
+          }}
+        >
+          {isAtBottom ? (
+            <svg
+              className="w-6 h-6 text-[#FDA10A]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 text-gray-400 animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Inquire;

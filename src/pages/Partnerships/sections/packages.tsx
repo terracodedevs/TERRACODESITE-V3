@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import PartPopup from "./Part-popup";
 
 interface PartnershipsPricingPlan {
@@ -6,83 +6,157 @@ interface PartnershipsPricingPlan {
   className: string;
   className2?: string;
   subtitle: string;
-  price: string;
+  originalPriceLKR?: string; 
+  priceLKR: string;
+  originalPriceUSD?: string; 
+  priceUSD: string;
   per: string;
   features: string[];
   category: "Monthly" | "Annually";
 }
 
-
 const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
-    title: "Silver Partnership",
-    subtitle: "Ideal for startups and small businesses",
-    price: "85000 LKR",
-    per: " / per month",
+    title: "Founder Growth Partnership",
+    subtitle: "Built for startup founders and early-stage businesses",
+    originalPriceLKR: "",
+    priceLKR: "Custom Pricing",
+    originalPriceUSD: "",
+    priceUSD: "Custom Pricing",
+    per: "/ month",
     features: [
-      "A dedicated virtual expert team to assist you.",
-      "Proactive Software and Hardware monitoring.",
-      "Regular design updates to keep your site professional.",
-      
+      "Full digital ecosystem planning and deployment tailored to your business stage",
+      "Dedicated support across software, hardware, AI, and cybersecurity",
+      "Business analysis and solution design (no technical planning needed from you)",
+      "Startup-friendly model to reduce upfront technology costs",
+      "Continuous guidance and structured tech support for scaling",
     ],
     category: "Monthly",
-    className:"bg-gray-400",
+    className: "bg-gray-400",
   },
   {
     title: "Gold Partnership",
-    subtitle: "Perfect for growing businesses",
-    price: "125000 LKR",
-    per: "/ per month",
+    subtitle: "Ideal for scaling businesses",
+    originalPriceLKR: "129,000 LKR",
+    priceLKR: "89,000 LKR",
+    originalPriceUSD: "$1199",
+    priceUSD: "$899",
+    per: "/ month",
     features: [
-      "Everything in Silver Partnership plan.",
-      "Performant terracode implemented infrastructure.",
-      "Extra development allowances per month.",
+      "Full digital ecosystem planning and deployment",
+      "Everything in Founder Growth Partnership",
+      "Integration of proprietary security solutions",
+      "Access to in-house research products and devices",
+      "Stronger implementation capacity for scaling operations",
+      "Ongoing optimization and upgrade support",
     ],
     category: "Monthly",
-    className:" bg-yellow-500 ",
-    className2:"border-1 border-orange-400 scale-105 ",
+    className: "bg-yellow-500",
+    className2: "border border-orange-400 scale-105",
   },
-   {
+  {
     title: "Elite Partnership",
-    subtitle: "Best for established businesses",
-    price: "200000 LKR",
-    per: "/ per month",
+    subtitle: "Built for enterprises and large-scale businesses",
+    originalPriceLKR: "250,000 LKR",
+    priceLKR: "180,000 LKR",
+    originalPriceUSD: "$1599",
+    priceUSD: "$1299",
+    per: "/ month",
     features: [
-      "On-site dev team on your your business premisses.",
+      "Enterprise-level digital ecosystem planning and deployment",
+      "Everything in Gold Partnership",
+      "Advanced infrastructure design for large-scale environments",
+      "Access to in-house research products",
+      "Full business system re-engineering",
+      "Long-term strategic technology partnership",
     ],
     category: "Monthly",
-    className:"bg-sky-500",
+    className: "bg-sky-500",
   },
 ];
 
 const PartnershipsSection: React.FC = () => {
   const [selectedCategory, _setSelectedCategory] = useState<"Monthly" | "Annually">("Monthly");
-  const [selectedProject, setSelectedProject] = useState<PartnershipsPricingPlan | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<PartnershipsPricingPlan | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const [currency, setCurrency] = useState<"USD" | "LKR">("USD");
+  const [locationPermission, setLocationPermission] = useState<"prompt" | "granted" | "denied">("prompt");
+
+  useEffect(() => {
+    const fetchLocation = () => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            setLocationPermission("granted");
+            const { latitude, longitude } = position.coords;
+
+            try {
+              const res = await fetch(
+                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+              );
+              const data = await res.json();
+              const country = data.countryCode;
+
+              if (country === "LK") {
+                setCurrency("LKR");
+              } else {
+                setCurrency("USD");
+              }
+            } catch (error) {
+              console.error("Error fetching location", error);
+              setCurrency("USD");
+            }
+          },
+          (error) => {
+            console.error("Geolocation error:", error);
+            setLocationPermission("denied");
+            setCurrency("USD");
+          }
+        );
+      } else {
+        setLocationPermission("denied");
+        setCurrency("USD");
+      }
+    };
+
+    fetchLocation();
+  }, []);
 
   const filteredPlans = useMemo(() => {
     return PartnershipspricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
-    const handleProjectClick = (project: PartnershipsPricingPlan) => {
-        setSelectedProject(project)
-        setIsModalOpen(true)
-    }
+  const handleProjectClick = (project: PartnershipsPricingPlan) => {
+      setSelectedProject(project);
+      setIsModalOpen(true);
+  };
 
-    const handleCloseModal = () => {
-        setIsModalOpen(false)
-        setSelectedProject(null)
-    }
+  const handleCloseModal = () => {
+      setIsModalOpen(false);
+      setSelectedProject(null);
+  };
 
   return (
     <>
     <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:my-28 ">
+      
+      {/* Location Banner */}
+      {locationPermission === "denied" && (
+        <div className="bg-orange-500/10 border border-orange-500/50 text-orange-200 px-4 py-3 rounded-xl mb-8 flex items-center justify-between max-w-2xl w-full text-center text-sm md:text-base transition-all duration-300">
+          <p className="flex-1">
+            You have not allowed location permission. Prices are displayed in USD by default. 
+            Please allow location access to ensure you see the correct pricing for your country.
+          </p>
+        </div>
+      )}
+
       {/* Pricing Cards */}
       <div className="grid md:grid-cols-3  gap-8 w-full max-w-5xl ">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
-            className={`${plan.className2} bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between`}
+            className={`${plan.className2 || ""} bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between`}
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
@@ -92,10 +166,30 @@ const PartnershipsSection: React.FC = () => {
             {/* Header */}
             <h3 className="text-xl font-semibold">{plan.title}</h3>
             <p className="text-sm text-gray-400 mb-4">{plan.subtitle}</p>
-            <h2 className="text-xl font-semibold">
-              {plan.price} <span className="text-xl font-semibold">{plan.per}</span>
-            </h2>
+            <h2 className="text-2xl font-semibold flex flex-col gap-1">
+            {plan.title === "Founder Growth Partnership" ? (
+              <span className="text-white text-2xl font-bold">
+                Special growth-friendly pricing
+              </span>
+            ) : (
+              <>
+                {/* Original price (cut) */}
+                {(currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD) && (
+                  <span className="text-sm text-gray-500 line-through">
+                    {currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD}
+                  </span>
+                )}
 
+                {/* Discounted price */}
+                <span className="text-white text-2xl font-bold">
+                  {currency === "LKR" ? plan.priceLKR : plan.priceUSD}
+                  <span className="text-sm font-normal text-gray-400 ml-1">
+                    {plan.per}
+                  </span>
+                </span>
+              </>
+            )}
+          </h2>
             <hr className="my-6 border-gray-700" />
 
             {/* Features */}
@@ -125,7 +219,7 @@ const PartnershipsSection: React.FC = () => {
 
      {/* Project Modal */}
             <PartPopup
-                project={selectedProject}
+                project={selectedProject as any}
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 defaultPackage={selectedProject?.title}
