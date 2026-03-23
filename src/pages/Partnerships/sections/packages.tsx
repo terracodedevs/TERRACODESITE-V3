@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import PartPopup from "./Part-popup";
 
 interface PartnershipsPricingPlan {
@@ -6,20 +6,23 @@ interface PartnershipsPricingPlan {
   className: string;
   className2?: string;
   subtitle: string;
-  originalPrice?: string; 
-  price: string; //discounted price
+  originalPriceLKR?: string; 
+  priceLKR: string;
+  originalPriceUSD?: string; 
+  priceUSD: string;
   per: string;
   features: string[];
   category: "Monthly" | "Annually";
 }
 
-
 const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
     title: "Founder Growth Partnership",
     subtitle: "Built for startup founders and early-stage businesses",
-    originalPrice: "120,000 LKR",
-    price: "85,000 LKR",
+    originalPriceLKR: "120,000 LKR",
+    priceLKR: "85,000 LKR",
+    originalPriceUSD: "$400",
+    priceUSD: "$285",
     per: "/ month",
     features: [
       "Full digital ecosystem planning and deployment tailored to your business stage",
@@ -34,8 +37,10 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
     title: "Gold Partnership",
     subtitle: "Ideal for scaling businesses",
-    originalPrice: "150,000 LKR",
-    price: "89,000 LKR",
+    originalPriceLKR: "150,000 LKR",
+    priceLKR: "89,000 LKR",
+    originalPriceUSD: "$500",
+    priceUSD: "$300",
     per: "/ month",
     features: [
       "Full digital ecosystem planning and deployment",
@@ -52,8 +57,10 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
     title: "Elite Partnership",
     subtitle: "Built for enterprises and large-scale businesses",
-    originalPrice: "250,000 LKR",
-    price: "180,000 LKR",
+    originalPriceLKR: "250,000 LKR",
+    priceLKR: "180,000 LKR",
+    originalPriceUSD: "$850",
+    priceUSD: "$600",
     per: "/ month",
     features: [
       "Enterprise-level digital ecosystem planning and deployment",
@@ -70,32 +77,86 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
 
 const PartnershipsSection: React.FC = () => {
   const [selectedCategory, _setSelectedCategory] = useState<"Monthly" | "Annually">("Monthly");
-  const [selectedProject, setSelectedProject] = useState<PartnershipsPricingPlan | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<PartnershipsPricingPlan | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const [currency, setCurrency] = useState<"USD" | "LKR">("USD");
+  const [locationPermission, setLocationPermission] = useState<"prompt" | "granted" | "denied">("prompt");
+
+  useEffect(() => {
+    const fetchLocation = () => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            setLocationPermission("granted");
+            const { latitude, longitude } = position.coords;
+
+            try {
+              const res = await fetch(
+                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+              );
+              const data = await res.json();
+              const country = data.countryCode;
+
+              if (country === "LK") {
+                setCurrency("LKR");
+              } else {
+                setCurrency("USD");
+              }
+            } catch (error) {
+              console.error("Error fetching location", error);
+              setCurrency("USD");
+            }
+          },
+          (error) => {
+            console.error("Geolocation error:", error);
+            setLocationPermission("denied");
+            setCurrency("USD");
+          }
+        );
+      } else {
+        setLocationPermission("denied");
+        setCurrency("USD");
+      }
+    };
+
+    fetchLocation();
+  }, []);
 
   const filteredPlans = useMemo(() => {
     return PartnershipspricingPlans.filter((plan) => plan.category === selectedCategory);
   }, [selectedCategory]);
 
-    const handleProjectClick = (project: PartnershipsPricingPlan) => {
-        setSelectedProject(project)
-        setIsModalOpen(true)
-    }
+  const handleProjectClick = (project: PartnershipsPricingPlan) => {
+      setSelectedProject(project);
+      setIsModalOpen(true);
+  };
 
-    const handleCloseModal = () => {
-        setIsModalOpen(false)
-        setSelectedProject(null)
-    }
+  const handleCloseModal = () => {
+      setIsModalOpen(false);
+      setSelectedProject(null);
+  };
 
   return (
     <>
     <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:my-28 ">
+      
+      {/* Location Banner */}
+      {locationPermission === "denied" && (
+        <div className="bg-orange-500/10 border border-orange-500/50 text-orange-200 px-4 py-3 rounded-xl mb-8 flex items-center justify-between max-w-2xl w-full text-center text-sm md:text-base transition-all duration-300">
+          <p className="flex-1">
+            You have not allowed location permission. Prices are displayed in USD by default. 
+            Please allow location access to ensure you see the correct pricing for your country.
+          </p>
+        </div>
+      )}
+
       {/* Pricing Cards */}
       <div className="grid md:grid-cols-3  gap-8 w-full max-w-5xl ">
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
-            className={`${plan.className2} bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between`}
+            className={`${plan.className2 || ""} bg-gradient-to-b from-neutral-800 to-neutral-950 text-white rounded-2xl shadow-lg p-8 flex flex-col justify-between`}
           >
             {/* Circle Icon */}
             <div className="flex items-center justify-center w-6 h-6 border-2 border-gray-400 rounded-full mb-4">
@@ -107,15 +168,15 @@ const PartnershipsSection: React.FC = () => {
             <p className="text-sm text-gray-400 mb-4">{plan.subtitle}</p>
             <h2 className="text-2xl font-semibold flex flex-col gap-1">
               {/* Original price (cut) */}
-              {plan.originalPrice && (
+              {(currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD) && (
                 <span className="text-sm text-gray-500 line-through">
-                  {plan.originalPrice}
+                  {currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD}
                 </span>
               )}
 
               {/* Discounted price */}
               <span className="text-white text-2xl font-bold">
-                {plan.price}
+                {currency === "LKR" ? plan.priceLKR : plan.priceUSD}
                 <span className="text-sm font-normal text-gray-400 ml-1">
                   {plan.per}
                 </span>
@@ -151,7 +212,7 @@ const PartnershipsSection: React.FC = () => {
 
      {/* Project Modal */}
             <PartPopup
-                project={selectedProject}
+                project={selectedProject as any}
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 defaultPackage={selectedProject?.title}
