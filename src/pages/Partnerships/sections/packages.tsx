@@ -19,10 +19,10 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
     title: "Founder Growth Partnership",
     subtitle: "Built for startup founders and early-stage businesses",
-    originalPriceLKR: "120,000 LKR",
-    priceLKR: "85,000 LKR",
-    originalPriceUSD: "$400",
-    priceUSD: "$285",
+    originalPriceLKR: "",
+    priceLKR: "Custom Pricing",
+    originalPriceUSD: "",
+    priceUSD: "Custom Pricing",
     per: "/ month",
     features: [
       "Full digital ecosystem planning and deployment tailored to your business stage",
@@ -37,10 +37,10 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
   {
     title: "Gold Partnership",
     subtitle: "Ideal for scaling businesses",
-    originalPriceLKR: "150,000 LKR",
+    originalPriceLKR: "129,000 LKR",
     priceLKR: "89,000 LKR",
-    originalPriceUSD: "$500",
-    priceUSD: "$300",
+    originalPriceUSD: "$1199",
+    priceUSD: "$899",
     per: "/ month",
     features: [
       "Full digital ecosystem planning and deployment",
@@ -59,8 +59,8 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     subtitle: "Built for enterprises and large-scale businesses",
     originalPriceLKR: "250,000 LKR",
     priceLKR: "180,000 LKR",
-    originalPriceUSD: "$850",
-    priceUSD: "$600",
+    originalPriceUSD: "$1599",
+    priceUSD: "$1299",
     per: "/ month",
     features: [
       "Enterprise-level digital ecosystem planning and deployment",
@@ -167,22 +167,29 @@ const PartnershipsSection: React.FC = () => {
             <h3 className="text-xl font-semibold">{plan.title}</h3>
             <p className="text-sm text-gray-400 mb-4">{plan.subtitle}</p>
             <h2 className="text-2xl font-semibold flex flex-col gap-1">
-              {/* Original price (cut) */}
-              {(currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD) && (
-                <span className="text-sm text-gray-500 line-through">
-                  {currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD}
-                </span>
-              )}
-
-              {/* Discounted price */}
+            {plan.title === "Founder Growth Partnership" ? (
               <span className="text-white text-2xl font-bold">
-                {currency === "LKR" ? plan.priceLKR : plan.priceUSD}
-                <span className="text-sm font-normal text-gray-400 ml-1">
-                  {plan.per}
-                </span>
+                Special growth-friendly pricing
               </span>
+            ) : (
+              <>
+                {/* Original price (cut) */}
+                {(currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD) && (
+                  <span className="text-sm text-gray-500 line-through">
+                    {currency === "LKR" ? plan.originalPriceLKR : plan.originalPriceUSD}
+                  </span>
+                )}
 
-            </h2>
+                {/* Discounted price */}
+                <span className="text-white text-2xl font-bold">
+                  {currency === "LKR" ? plan.priceLKR : plan.priceUSD}
+                  <span className="text-sm font-normal text-gray-400 ml-1">
+                    {plan.per}
+                  </span>
+                </span>
+              </>
+            )}
+          </h2>
             <hr className="my-6 border-gray-700" />
 
             {/* Features */}

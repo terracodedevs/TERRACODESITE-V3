@@ -47,7 +47,7 @@ const PartPopup: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, defa
         </button>
 
         <div className="flex flex-col lg:flex-row h-full max-h-[90vh] ">
-        <Inquire defaultPackage={defaultPackage}/>
+        <Inquire defaultPackage={defaultPackage} onClose={onClose} />
         </div>
       </div>
     </div>
