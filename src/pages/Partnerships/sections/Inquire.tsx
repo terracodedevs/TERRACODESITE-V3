@@ -13,7 +13,6 @@ interface FormData {
   meetingDate: string;
   message: string;
   notes: string;         // optional
-  agreeToTerms: boolean;
 }
 
 interface InquireProps {
@@ -38,7 +37,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
     meetingDate: "",
     message: "",
     notes: "",
-    agreeToTerms: false,
   });
 
   const handleInputChanges = (
@@ -75,7 +73,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
       businessStage,
       meetingDate,
       message,
-      agreeToTerms,
     } = formData;
 
     // Validate required fields
@@ -89,11 +86,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
       !message
     ) {
       showToast("Please fill in all required fields.", "error");
-      return;
-    }
-
-    if (!agreeToTerms) {
-      showToast("Please agree with Terms and Privacy Policy.", "error");
       return;
     }
 
@@ -124,7 +116,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
         meetingDate: "",
         message: "",
         notes: "",
-        agreeToTerms: false,
       });
 
       if (onClose) onClose();
@@ -140,7 +131,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
     <div className="flex justify-center container mx-auto font-lufga">
       <div className="md:w-10/12 px-4 py-9 relative max-h-[90vh] flex flex-col">
         {/* Scrollable form container */}
-        <div 
+        <div
           ref={scrollRef}
           onScroll={handleScroll}
           className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 flex-1"
@@ -150,7 +141,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
               Let’s Talk About Your Business
             </h2>
-            <p className="text-[#A4A4A4] text-lg md:text-xl lg:text-2xl font-light max-w-3xl">
+            <p className="text-[#A4A4A4] text-md md:text-lg lg:text-xl font-light max-w-3xl">
               Share a few details and choose a convenient date. Our team will review your request and
               reach out to confirm the meeting.
             </p>
@@ -289,20 +280,8 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
               />
             </div>
 
-            {/* Terms + Submit */}
-            <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-between">
-              <div className="flex flex-row items-center">
-                <input
-                  type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleInputChanges}
-                  className="mr-2"
-                  required
-                />
-                <label className="text-gray-300 text-lg">I agree with Terms and Privacy Policy</label>
-              </div>
-
+            {/* Submit */}
+            <div className="flex flex-col justify-start items-start md:flex-row md:items-center gap-3 md:justify-end">
               <TerraButton
                 type="submit"
                 label={isSubmitting ? "Sending..." : "Submit"}
@@ -314,7 +293,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
         </div>
 
         {/* Scroll down/up arrow */}
-        <div 
+        <div
           className="absolute bottom-2 left-1/2 -translate-x-1/2 cursor-pointer z-10 p-2 bg-neutral-900/80 backdrop-blur-sm rounded-full drop-shadow-lg transition-all hover:scale-110"
           onClick={() => {
             if (scrollRef.current) {

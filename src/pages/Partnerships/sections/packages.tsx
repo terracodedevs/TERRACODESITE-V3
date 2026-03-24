@@ -43,8 +43,8 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     priceUSD: "$899",
     per: "/ month",
     features: [
-      "Full digital ecosystem planning and deployment",
       "Everything in Founder Growth Partnership",
+      "Full digital ecosystem planning and deployment",
       "Integration of proprietary security solutions",
       "Access to in-house research products and devices",
       "Stronger implementation capacity for scaling operations",
@@ -63,8 +63,8 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     priceUSD: "$1299",
     per: "/ month",
     features: [
-      "Enterprise-level digital ecosystem planning and deployment",
       "Everything in Gold Partnership",
+      "Enterprise-level digital ecosystem planning and deployment",
       "Advanced infrastructure design for large-scale environments",
       "Access to in-house research products",
       "Full business system re-engineering",
@@ -196,9 +196,9 @@ const PartnershipsSection: React.FC = () => {
             <h4 className="mb-3 font-semibold">What you will get</h4>
             <ul className="space-y-2 text-gray-300 text-sm mb-6">
               {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-start space-x-2 ">
-                  <span className="w-2 h-2 bg-gray-400 rounded-full mt-1"></span>
-                  <span>{feature}</span>
+               <li key={i} className="flex gap-3 items-start">
+                  <span className="w-2.5 h-2.5 mt-2 bg-orange-400 rounded-full flex-shrink-0"></span>
+                  <span className="text-sm leading-6">{feature}</span>
                 </li>
               ))}
             </ul>
