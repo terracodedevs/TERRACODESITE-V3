@@ -140,7 +140,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
           className="space-y-6 overflow-y-auto scrollbar-hide px-2 py-1 flex-1"
         >
           {/* Heading */}
-          <div className="space-y-8">
+          <div className="space-y-2 mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
               Let’s Talk About Your Business
             </h2>
