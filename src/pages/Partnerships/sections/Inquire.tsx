@@ -1,4 +1,6 @@
 import TerraButton from "@/components/button";
+import Calendar from "@/components/calender";
+import { Calendar as CalendarIcon } from "lucide-react";
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/components/toast";
@@ -26,6 +28,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -241,14 +244,44 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
             {/* Meeting Date */}
             <div className="flex flex-col space-y-4">
               <label className="text-white text-xl font-medium">Preferred Meeting Date</label>
-              <input
-                type="date"
-                name="meetingDate"
-                value={formData.meetingDate}
-                onChange={handleInputChanges}
-                required
-                className="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#f56d04] transition-all duration-300 appearance-none [color-scheme:dark]"
-              />
+              
+              <button
+                type="button"
+                onClick={() => setShowCalendar(!showCalendar)}
+                className={`w-full px-4 py-3 bg-neutral-800 border rounded-xl text-left flex items-center justify-between transition-all duration-300 ${
+                  showCalendar ? "border-[#f56d04] ring-2 ring-[#f56d04]" : "border-neutral-700 hover:border-neutral-500"
+                }`}
+              >
+                <span className={formData.meetingDate ? "text-white" : "text-gray-400"}>
+                  {formData.meetingDate ? (() => {
+                    const [year, month, day] = formData.meetingDate.split('-');
+                    return new Date(Number(year), Number(month) - 1, Number(day)).toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
+                  })() : "Select a date"}
+                </span>
+                <CalendarIcon className="w-5 h-5 text-gray-400" />
+              </button>
+
+              {showCalendar && (
+                <Calendar 
+                  isPopup
+                  value={formData.meetingDate ? (() => {
+                    const [year, month, day] = formData.meetingDate.split('-');
+                    return new Date(Number(year), Number(month) - 1, Number(day));
+                  })() : null}
+                  onApply={(date) => {
+                    const year = date.getFullYear();
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const day = String(date.getDate()).padStart(2, '0');
+                    setFormData((prev) => ({
+                      ...prev,
+                      meetingDate: `${year}-${month}-${day}`
+                    }));
+                    setShowCalendar(false);
+                  }}
+                  onClose={() => setShowCalendar(false)}
+                  minDate={new Date(new Date().setHours(0,0,0,0))}
+                />
+              )}
             </div>
 
             {/* Main Message */}
