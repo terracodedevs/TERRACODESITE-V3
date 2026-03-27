@@ -2,13 +2,6 @@ import { Link } from "@tanstack/react-router";
 
 const services = [
   {
-    title: 'User Experience Design(UX) ',
-    description: 'Dedicated UX engineers actively, architect, and refine exceptional experiences tailored to your product.',
-    tags: ['Wireframes', 'Design', 'User Research'],
-    img: 'mainicons/icons8-wacom-tablet-96.png',
-    link: '/ux-design'
-  },
-  {
     title: 'Custom Software Development',
     description: 'ERP, CRM, IMS and custom systems crafted with AI integrations to streamline your operations.',
     tags: ['SaaS', 'Enterprise', 'Product Engineering'],
@@ -23,13 +16,6 @@ const services = [
     link: '/website-solutions'
   },
   {
-    title: 'Mobile App Development',
-    description: 'iOS & Android apps shaped by your ideas and guided by our expert consulting.',
-    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
-    img: 'mainicons/icons8-phonelink-setup-96.png',
-    link: '/mobile-apps'
-  },
-  {
     title: 'AI & Machine Learning Solutions',
     description: 'Custom AI models and fine-tuned solutions built to automate, analyze, and enhance business decisions.',
     tags: ['Predictive Models', 'NLP', 'Generative AI'],
@@ -37,11 +23,25 @@ const services = [
     link: '/ai-solutions'
   },
   {
+    title: 'Mobile App Development',
+    description: 'iOS & Android apps shaped by your ideas and guided by our expert consulting.',
+    tags: ['iOS App', 'Android App', 'Cross-Platform Solutions'],
+    img: 'mainicons/icons8-phonelink-setup-96.png',
+    link: '/mobile-apps'
+  },
+  {
     title: 'Cloud & DevOps Engineering',
     description: 'Migrate, optimize, or automate your systems with scalable and secure cloud technologies.',
     tags: ['AWS', 'Docker', 'Kubernetes'],
     img: 'mainicons/icons8-cloud-connection-97.png',
     link: '/cloud-solutions'
+  },
+  {
+    title: 'User Experience Design(UX) ',
+    description: 'Dedicated UX engineers actively, architect, and refine exceptional experiences tailored to your product.',
+    tags: ['Wireframes', 'Design', 'User Research'],
+    img: 'mainicons/icons8-wacom-tablet-96.png',
+    link: '/ux-design'
   },
 ];
 
