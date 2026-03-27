@@ -32,6 +32,9 @@ export const Route = createRootRoute({
     useEffect(() => {
       trackPageView(location.pathname + location.search);
     }, [location.pathname, location.search]);
+
+    const isNoFooterPage = location.pathname === '/success-page';
+
     return (
       <div>
 
@@ -49,7 +52,7 @@ export const Route = createRootRoute({
             <CookieBanner />
             {/* <Navbar /> */}
             <Outlet />
-            <Footer />
+            {!isNoFooterPage && <Footer />}
             <TanStackRouterDevtools />
           </motion.div>
         </AnimatePresence>
