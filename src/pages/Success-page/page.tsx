@@ -120,7 +120,7 @@ export default function PaymentSuccessPage() {
                       note={customerDetails?.note}
                     />
                   }
-                  fileName={`Receipt-${search.order_id || 'unknown'}.pdf`}
+                  fileName={`terracode payment invoice - ${search.order_id || 'unknown'}.pdf`}
                 >
                   {({ loading }) => (
                     <button
