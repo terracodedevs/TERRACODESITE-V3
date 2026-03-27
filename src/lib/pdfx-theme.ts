@@ -49,23 +49,30 @@ interface PdfxTheme {
     size: 'A4' | 'LETTER' | 'LEGAL';
     orientation: 'portrait' | 'landscape';
   };
+  brand?: {
+    logo?: string;
+    logoWidth?: number;
+    logoHeight?: number;
+    siteUrl?: string;
+    supportEmail?: string;
+  };
 }
 
 // Theme values
 
 export const theme: PdfxTheme = {
-  name: 'professional',
+  name: 'terracode-dark',
 
   // Primitive scales.
   primitives: {
     typography: {
-      xs: 10,
-      sm: 12,
-      base: 15,
-      lg: 18,
-      xl: 22,
-      '2xl': 28,
-      '3xl': 36,
+      xs: 9,
+      sm: 11,
+      base: 14,
+      lg: 17,
+      xl: 21,
+      '2xl': 27,
+      '3xl': 35,
     },
     spacing: {
       0: 0,
@@ -88,19 +95,19 @@ export const theme: PdfxTheme = {
       bold: 700,
     },
     lineHeights: {
-      tight: 1.2,
+      tight: 1.15,
       normal: 1.4,
       relaxed: 1.6,
     },
     borderRadius: {
       none: 0,
-      sm: 2,
-      md: 4,
-      lg: 8,
+      sm: 4,
+      md: 8,
+      lg: 12,
       full: 9999,
     },
     letterSpacing: {
-      tight: -0.025,
+      tight: -0.015,
       normal: 0,
       wide: 0.025,
       wider: 0.05,
@@ -109,38 +116,38 @@ export const theme: PdfxTheme = {
 
   // Semantic colors. Values must be valid for react-pdf.
   colors: {
-    foreground: '#18181b',
-    background: '#ffffff',
-    muted: '#f4f4f5',
-    mutedForeground: '#71717a',
-    primary: '#18181b',
-    primaryForeground: '#ffffff',
-    border: '#e4e4e7',
-    accent: '#3b82f6',
-    destructive: '#dc2626',
-    success: '#16a34a',
-    warning: '#d97706',
-    info: '#0ea5e9',
+    foreground: '#fffbeb', // amber-50
+    background: '#0a0a0a', // very dark primary background
+    muted: '#171717', // neutral-900 equivalent for containers
+    mutedForeground: '#94a3b8', // slate-400
+    primary: '#FDA10A', // Brand orange
+    primaryForeground: '#000000',
+    border: '#262626', // neutral-800
+    accent: '#FDA10A',
+    destructive: '#ef4444',
+    success: '#22c55e',
+    warning: '#f59e0b',
+    info: '#3b82f6',
   },
 
   // Typography defaults.
   typography: {
     body: {
       fontFamily: 'Helvetica',
-      fontSize: 11,
-      lineHeight: 1.6,
+      fontSize: 10,
+      lineHeight: 1.5,
     },
     heading: {
-      fontFamily: 'Times-Roman',
+      fontFamily: 'Helvetica-Bold',
       fontWeight: 700,
-      lineHeight: 1.25,
+      lineHeight: 1.2,
       fontSize: {
-        h1: 32,
-        h2: 24,
-        h3: 20,
-        h4: 16,
-        h5: 14,
-        h6: 12,
+        h1: 30,
+        h2: 22,
+        h3: 18,
+        h4: 15,
+        h5: 13,
+        h6: 11,
       },
     },
   },
@@ -162,5 +169,14 @@ export const theme: PdfxTheme = {
   page: {
     size: 'A4',
     orientation: 'portrait',
+  },
+
+  // Brand identity.
+  brand: {
+    logo: '/Logo21.png',
+    logoWidth: 80,
+    logoHeight: 40,
+    siteUrl: 'www.terracode.lk',
+    supportEmail: 'support@terracode.lk',
   },
 };

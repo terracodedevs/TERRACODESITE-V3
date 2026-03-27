@@ -66,6 +66,7 @@ const PaymentDetails = () => {
         agree_to_terms: Boolean(agreeToTerms),
         amount: amount,
         currency: currency,
+        discount_code: discountCode,
       };
 
       const response = await api.post("/api/payment-hash", payload);
@@ -85,6 +86,9 @@ const PaymentDetails = () => {
         input.value = result.data[key];
         form.appendChild(input);
       });
+
+      // Store details for receipt generation on success page
+      localStorage.setItem('last_payment_details', JSON.stringify(payload));
 
       document.body.appendChild(form);
       form.submit();

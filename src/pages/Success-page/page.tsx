@@ -1,11 +1,21 @@
 import { useNavigate, useSearch } from '@tanstack/react-router';
-import { CheckCircle, Download, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Download } from 'lucide-react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { motion } from 'framer-motion';
-// import { PaymentReceipt } from '../../components/pdfx/PaymentReceipt';
+import { useEffect, useState } from 'react';
+import { PaymentReceipt } from '../../components/pdfx/PaymentReceipt';
 
 export default function PaymentSuccessPage() {
   const navigate = useNavigate();
+  const [customerDetails, setCustomerDetails] = useState<any>(null);
+
+  useEffect(() => {
+    // Retrieve details stored from the review page
+    const details = localStorage.getItem('last_payment_details');
+    if (details) {
+      setCustomerDetails(JSON.parse(details));
+    }
+  }, []);
 
   // PayHere redirects with query params
   const search = useSearch({ strict: false }) as {
@@ -95,12 +105,33 @@ export default function PaymentSuccessPage() {
                   Go to Site
                 </button>
 
-                <button
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 text-white/60 hover:text-white py-3 px-6 md:px-8 rounded-full border border-white/10 hover:bg-white/5 transition text-xs uppercase"
+                <PDFDownloadLink
+                  document={
+                    <PaymentReceipt
+                      orderId={search.order_id}
+                      paymentId={search.payment_id}
+                      amount={search.amount}
+                      currency={search.currency}
+                      customerName={customerDetails ? `${customerDetails.first_name} ${customerDetails.last_name}` : undefined}
+                      customerEmail={customerDetails?.email}
+                      companyName={customerDetails?.company_name}
+                      packageName={packageNames[customerDetails?.items] || packageName}
+                      discountCode={customerDetails?.discount_code}
+                      note={customerDetails?.note}
+                    />
+                  }
+                  fileName={`Receipt-${search.order_id || 'unknown'}.pdf`}
                 >
-                  <Download className="h-4 w-4" />
-                  Save Receipt
-                </button>
+                  {({ loading }) => (
+                    <button
+                      className="w-full sm:w-auto flex items-center justify-center gap-2 text-white/60 hover:text-white py-3 px-6 md:px-8 rounded-full border border-white/10 hover:bg-white/5 transition text-xs uppercase"
+                      disabled={loading}
+                    >
+                      <Download className="h-4 w-4" />
+                      {loading ? 'Preparing...' : 'Save Receipt'}
+                    </button>
+                  )}
+                </PDFDownloadLink>
 
               </div>
             </div>
