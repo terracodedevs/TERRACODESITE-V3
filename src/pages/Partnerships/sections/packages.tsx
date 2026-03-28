@@ -43,8 +43,8 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     priceUSD: "$899",
     per: "/ month",
     features: [
-      "Full digital ecosystem planning and deployment",
       "Everything in Founder Growth Partnership",
+      "Full digital ecosystem planning and deployment",
       "Integration of proprietary security solutions",
       "Access to in-house research products and devices",
       "Stronger implementation capacity for scaling operations",
@@ -63,8 +63,8 @@ const PartnershipspricingPlans: PartnershipsPricingPlan[] = [
     priceUSD: "$1299",
     per: "/ month",
     features: [
-      "Enterprise-level digital ecosystem planning and deployment",
       "Everything in Gold Partnership",
+      "Enterprise-level digital ecosystem planning and deployment",
       "Advanced infrastructure design for large-scale environments",
       "Access to in-house research products",
       "Full business system re-engineering",
@@ -141,16 +141,6 @@ const PartnershipsSection: React.FC = () => {
     <>
     <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:my-28 ">
       
-      {/* Location Banner */}
-      {locationPermission === "denied" && (
-        <div className="bg-orange-500/10 border border-orange-500/50 text-orange-200 px-4 py-3 rounded-xl mb-8 flex items-center justify-between max-w-2xl w-full text-center text-sm md:text-base transition-all duration-300">
-          <p className="flex-1">
-            You have not allowed location permission. Prices are displayed in USD by default. 
-            Please allow location access to ensure you see the correct pricing for your country.
-          </p>
-        </div>
-      )}
-
       {/* Pricing Cards */}
       <div className="grid md:grid-cols-3  gap-8 w-full max-w-5xl ">
         {filteredPlans.map((plan, index) => (
@@ -196,9 +186,9 @@ const PartnershipsSection: React.FC = () => {
             <h4 className="mb-3 font-semibold">What you will get</h4>
             <ul className="space-y-2 text-gray-300 text-sm mb-6">
               {plan.features.map((feature, i) => (
-                <li key={i} className="flex items-start space-x-2 ">
-                  <span className="w-2 h-2 bg-gray-400 rounded-full mt-1"></span>
-                  <span>{feature}</span>
+               <li key={i} className="flex gap-3 items-start">
+                  <span className="w-2.5 h-2.5 mt-2 bg-orange-400 rounded-full flex-shrink-0"></span>
+                  <span className="text-sm leading-6">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -214,6 +204,17 @@ const PartnershipsSection: React.FC = () => {
             </button>
           </div>
         ))}
+      </div>
+      {/* Location Status Message */}
+      <div className="mt-12 w-full max-w-5xl flex justify-center">
+        <div className="px-5 py-3 rounded-2xl bg-neutral-900/40 border border-neutral-800 text-gray-400 text-xs md:text-sm flex items-center gap-4 transition-opacity duration-500 max-w-2xl text-center">
+          <span className={`flex h-2 w-2 rounded-full shrink-0 ${locationPermission === 'granted' ? 'bg-green-500/70' : 'bg-orange-500/50'}`}></span>
+          <p>
+            {locationPermission === "granted"
+              ? `Location-aware pricing enabled. Currently viewing rates in ${currency}.`
+              : "Location access not allowed. Prices are displayed in USD by default. Please allow access for accurate regional pricing."}
+          </p>
+        </div>
       </div>
     </div>
 
