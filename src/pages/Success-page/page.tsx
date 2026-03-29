@@ -122,7 +122,7 @@ export default function PaymentSuccessPage() {
                   }
                   fileName={`terracode payment invoice - ${search.order_id || 'unknown'}.pdf`}
                 >
-                  {({ loading }) => (
+                  {({ loading }: { loading: boolean }) => (
                     <button
                       className="w-full sm:w-auto flex items-center justify-center gap-2 text-white/60 hover:text-white py-3 px-6 md:px-8 rounded-full border border-white/10 hover:bg-white/5 transition text-xs uppercase"
                       disabled={loading}
